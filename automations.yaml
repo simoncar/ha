@@ -2961,3 +2961,14 @@
       - media_content_type: app
         media_content_id: media-source://media_source
   mode: single
+- id: '1693058749777'
+  alias: Github Push Automation
+  description: ''
+  trigger:
+  - platform: time
+    at: 02:00:00
+  condition: []
+  action:
+  - service: shell_command.pushupdates_to_github
+    data: {}
+  mode: single
