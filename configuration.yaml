@@ -32,6 +32,7 @@ alarm_control_panel:
     arming_time: 30
     trigger_time: 30
     
+    
 zha:
     
 home_connect:
