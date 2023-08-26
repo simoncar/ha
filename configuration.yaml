@@ -127,6 +127,7 @@ remember_the_milk:
     api_key: f6061c3ab4047006a7b88d6b03b97974
     shared_secret: 00c976a197c79ca0
             
-            
+shell_command:
+  pushupdates_to_github: /bin/bash pushupdates.sh
             
             
