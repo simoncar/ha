@@ -2972,3 +2972,18 @@
   - service: shell_command.pushupdates_to_github
     data: {}
   mode: single
+- id: '1693060199060'
+  alias: Conversation agent agenda notification
+  description: ''
+  use_blueprint:
+    path: homeassistant/notify_agent_agenda.yaml
+    input:
+      conversation_agent: 575833380489cffba554d30acaf97492
+      calendar_entity: calendar.rovira
+      weather_entity: weather.gracia_2
+      zone_entity: zone.home
+      notify_time: '12:00:00'
+      calendar_duration:
+        hours: 99
+        minutes: 0
+        seconds: 0
