@@ -2980,10 +2980,11 @@
     input:
       conversation_agent: 575833380489cffba554d30acaf97492
       calendar_entity: calendar.rovira
-      weather_entity: weather.gracia_2
+      weather_entity: weather.gracia
       zone_entity: zone.home
-      notify_time: '12:00:00'
+      notify_time: '16:46:00'
       calendar_duration:
         hours: 99
         minutes: 0
         seconds: 0
+      notify_service: notify.living_room_notigy
