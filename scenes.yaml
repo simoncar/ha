@@ -1,0 +1,258 @@
+- id: '1626684708316'
+  name: Night Watching TV
+  entities:
+    light.led_tv_controller:
+      supported_color_modes:
+      - rgbw
+      color_mode: rgbw
+      brightness: 255
+      friendly_name: LED TV
+      supported_features: 32
+      state: 'on'
+    light.led_tv_controller_5:
+      supported_color_modes:
+      - brightness
+      color_mode: brightness
+      brightness: 116
+      friendly_name: LED TV - OnOff White
+      supported_features: 32
+      state: 'on'
+- id: '1627031640754'
+  name: Entry Lights ON
+  entities:
+    light.controller_lights_front_door:
+      supported_color_modes:
+      - rgbw
+      color_mode: rgbw
+      brightness: 201
+      hs_color:
+      - 0
+      - 0
+      rgb_color:
+      - 255
+      - 255
+      - 255
+      rgbw_color:
+      - 0
+      - 0
+      - 0
+      - 255
+      xy_color:
+      - 0.323
+      - 0.329
+      friendly_name: Controller Lights Front Door
+      supported_features: 32
+      state: 'on'
+    light.lights_front_door:
+      supported_color_modes:
+      - brightness
+      friendly_name: Lights Front Door
+      supported_features: 32
+      color_mode: brightness
+      brightness: 23
+      state: 'on'
+    switch.art_light_entry:
+      friendly_name: Art Light Entry
+      state: 'on'
+    switch.art_light_entry_2:
+      friendly_name: Art Light Entry  (2)
+      state: 'off'
+  metadata: {}
+- id: '1642267278000'
+  name: House Sleep
+  entities:
+    light.bookshelf_lights:
+      state: 'off'
+    switch.kitchen_led:
+      state: 'off'
+    light.controller_tv_lights:
+      state: 'off'
+  icon: mdi:sleep
+- id: '1672676425432'
+  name: Living Room Away
+  entities:
+    switch.kitchen_cabinets:
+      friendly_name: Kitchen Cabinets
+      state: 'off'
+    switch.kitchen_lights:
+      friendly_name: Kitchen Lights
+      state: 'off'
+    switch.kitchen_led:
+      friendly_name: Controller Kitchen LED
+      state: 'off'
+    light.chandelier:
+      supported_color_modes:
+      - brightness
+      friendly_name: Chandelier
+      supported_features: 32
+      state: 'off'
+    light.controller_tv_lights:
+      supported_color_modes:
+      - rgbw
+      color_mode: rgbw
+      brightness: 255
+      hs_color:
+      - 0
+      - 0
+      rgb_color:
+      - 255
+      - 255
+      - 255
+      rgbw_color:
+      - 255
+      - 255
+      - 255
+      - 31
+      xy_color:
+      - 0.323
+      - 0.329
+      friendly_name: Controller LED TV
+      supported_features: 32
+      state: 'on'
+    light.controller_tv_lights_led:
+      supported_color_modes:
+      - brightness
+      color_mode: brightness
+      brightness: 100
+      friendly_name: TV LED Lightstrip
+      supported_features: 32
+      state: 'on'
+    switch.smart_plug_1_outlet:
+      device_class: outlet
+      friendly_name: Lamp Tall
+      state: 'off'
+    switch.meross_m7_lamp_short_outlet:
+      device_class: outlet
+      friendly_name: Lamp Short
+      state: 'off'
+    light.bookshelf_controller:
+      supported_color_modes:
+      - rgbw
+      color_mode: rgbw
+      brightness: 255
+      hs_color:
+      - 0
+      - 0
+      rgb_color:
+      - 255
+      - 255
+      - 255
+      rgbw_color:
+      - 0
+      - 0
+      - 0
+      - 255
+      xy_color:
+      - 0.323
+      - 0.329
+      friendly_name: Bookshelf Controller
+      supported_features: 32
+      state: 'on'
+    light.bookshelf_lights:
+      supported_color_modes:
+      - brightness
+      color_mode: brightness
+      brightness: 10
+      friendly_name: Bookshelf Lights
+      supported_features: 32
+      state: 'off'
+    light.art_light:
+      supported_color_modes:
+      - brightness
+      friendly_name: Art Light
+      supported_features: 32
+      color_mode: brightness
+      brightness: 15
+      state: 'on'
+  icon: mdi:sofa-outline
+  metadata: {}
+- id: '1672676732444'
+  name: Living Room Occupied
+  entities:
+    switch.kitchen_cabinets:
+      friendly_name: Kitchen Cabinets
+      state: 'off'
+    switch.kitchen_lights:
+      friendly_name: Kitchen Lights
+      state: 'off'
+    switch.kitchen_led:
+      friendly_name: Controller Kitchen LED
+      state: 'off'
+    light.chandelier:
+      supported_color_modes:
+      - brightness
+      friendly_name: Chandelier
+      supported_features: 32
+      state: 'off'
+    light.bookshelf_controller:
+      supported_color_modes:
+      - rgbw
+      color_mode: rgbw
+      brightness: 255
+      hs_color:
+      - 0
+      - 0
+      rgb_color:
+      - 255
+      - 255
+      - 255
+      rgbw_color:
+      - 0
+      - 0
+      - 0
+      - 255
+      xy_color:
+      - 0.323
+      - 0.329
+      friendly_name: Bookshelf Controller
+      supported_features: 32
+      state: 'on'
+    light.bookshelf_lights:
+      supported_color_modes:
+      - brightness
+      color_mode: brightness
+      brightness: 122
+      friendly_name: Bookshelf Lights
+      supported_features: 32
+      state: 'on'
+    light.controller_tv_lights:
+      supported_color_modes:
+      - rgbw
+      color_mode: rgbw
+      brightness: 255
+      hs_color:
+      - 0
+      - 0
+      rgb_color:
+      - 255
+      - 255
+      - 255
+      rgbw_color:
+      - 255
+      - 255
+      - 255
+      - 31
+      xy_color:
+      - 0.323
+      - 0.329
+      friendly_name: Controller LED TV
+      supported_features: 32
+      state: 'on'
+    light.controller_tv_lights_led:
+      supported_color_modes:
+      - brightness
+      color_mode: brightness
+      brightness: 155
+      friendly_name: TV LED Lightstrip
+      supported_features: 32
+      state: 'on'
+    switch.smart_plug_1_outlet:
+      device_class: outlet
+      friendly_name: Lamp Tall
+      state: 'off'
+    switch.meross_m7_lamp_short_outlet:
+      device_class: outlet
+      friendly_name: Lamp Short
+      state: 'off'
+  icon: mdi:sofa-outline
+  metadata: {}

@@ -1,0 +1,254 @@
+blinds_down:
+  alias: Blinds Down
+  sequence:
+  - service: remote.send_command
+    target:
+      entity_id: remote.universal_remote_living_room_remote
+    data:
+      device: blinds
+      command:
+      - down1
+      num_repeats: 1
+      delay_secs: 0.4
+      hold_secs: 0
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 4
+      milliseconds: 0
+  - service: remote.send_command
+    target:
+      entity_id: remote.universal_remote_living_room_remote
+    data:
+      device: blinds
+      command:
+      - down1
+      - down2
+      num_repeats: 1
+      delay_secs: 0.4
+      hold_secs: 0
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 4
+      milliseconds: 0
+  - service: remote.send_command
+    target:
+      entity_id: remote.universal_remote_living_room_remote
+    data:
+      device: blinds
+      command:
+      - down1
+      - down2
+      - down3
+      num_repeats: 1
+      delay_secs: 0.4
+      hold_secs: 0
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 4
+      milliseconds: 0
+  - service: remote.send_command
+    target:
+      entity_id: remote.universal_remote_living_room_remote
+    data:
+      device: blinds
+      command:
+      - down1
+      - down2
+      - down3
+      - down4
+      num_repeats: 1
+      delay_secs: 0.4
+      hold_secs: 0
+  mode: single
+  icon: hass:blinds
+blinds_up:
+  alias: Blinds Up
+  sequence:
+  - service: remote.send_command
+    data:
+      device: blinds
+      num_repeats: 1
+      delay_secs: 0.4
+      hold_secs: 0
+      command:
+      - up1
+      - up2
+      - up3
+      - up4
+    target:
+      entity_id: remote.universal_remote_living_room_remote
+  mode: single
+  icon: hass:blinds
+blinds_stop:
+  alias: Blinds Stop
+  sequence:
+  - service: remote.send_command
+    target:
+      entity_id: remote.universal_remote_living_room_remote
+    data:
+      device: blinds
+      command: stop
+  mode: single
+  icon: hass:blinds
+air_con_on:
+  alias: Living Room Air Con On
+  sequence:
+  - service: remote.send_command
+    target:
+      entity_id:
+      - remote.universal_remote_living_room_remote
+    data:
+      device: aircon
+      command: power_on
+  mode: single
+air_con_off:
+  alias: Living Room Air Con Off
+  sequence:
+  - service: remote.send_command
+    target:
+      entity_id:
+      - remote.universal_remote_living_room_remote
+    data:
+      device: aircon
+      command: power_off
+      num_repeats: 1
+      delay_secs: 0.4
+      hold_secs: 0
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 3
+      milliseconds: 0
+  - service: remote.send_command
+    data:
+      num_repeats: 1
+      delay_secs: 0.4
+      hold_secs: 0
+      command: 'off'
+      device: HVAC
+    target:
+      device_id: 9325eec3a09d66cf232af2fbc3ac7c42
+  mode: single
+air_con_on_22:
+  alias: Living Room Air Con On 22
+  sequence:
+  - service: remote.send_command
+    target:
+      entity_id:
+      - remote.universal_remote_living_room_remote
+    data:
+      device: aircon
+      command: temp_22_fan_5
+  mode: single
+bedroom_air_con_off:
+  alias: Bedroom AC Off
+  sequence:
+  - service: remote.send_command
+    data:
+      device: Master Bedroom AC
+      command: 'off'
+    target:
+      device_id: 57fdd525cc96afe7982612e0e1c15b14
+  mode: single
+  icon: mdi:hvac-off
+bedroom_air_con_adjust_18:
+  alias: Bedroom Air Con
+  sequence:
+  - service: remote.send_command
+    data:
+      device: Master Bedroom AC
+      command: on AC 17
+    target:
+      device_id: 57fdd525cc96afe7982612e0e1c15b14
+  mode: single
+  icon: mdi:air-conditioner
+study_hvac_off:
+  alias: Study HVAC Off
+  sequence:
+  - service: remote.send_command
+    data:
+      device: HVAC
+      command: 'off'
+    target:
+      device_id: 9325eec3a09d66cf232af2fbc3ac7c42
+  mode: single
+range_hood_power_cycle:
+  sequence:
+  - type: turn_off
+    device_id: c66858c5e356895cd1b8712db6867be5
+    entity_id: switch.range_hood
+    domain: switch
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 5
+      milliseconds: 0
+  - type: turn_on
+    device_id: c66858c5e356895cd1b8712db6867be5
+    entity_id: switch.range_hood
+    domain: switch
+  mode: single
+  alias: Range Hood Power Cycle
+bedroom_skylight_open:
+  alias: Bedroom Skylight Close
+  sequence:
+  - service: remote.send_command
+    data:
+      device: skylight
+      command: close
+    target:
+      device_id: 57fdd525cc96afe7982612e0e1c15b14
+  mode: single
+bedroom_skylight_open_2:
+  alias: Bedroom Skylight Open
+  sequence:
+  - service: remote.send_command
+    data:
+      device: skylight
+      command: open
+    target:
+      device_id: 57fdd525cc96afe7982612e0e1c15b14
+  mode: single
+living_room_hvac_30:
+  alias: Living Room HVAC 30
+  sequence:
+  - service: remote.send_command
+    target:
+      entity_id:
+      - remote.universal_remote_living_room_remote
+    data:
+      device: HVAC
+      command: heater_30
+  mode: single
+bedroom_heater:
+  alias: Bedroom Heater
+  sequence:
+  - service: remote.send_command
+    data:
+      device: Master Bedroom AC
+      command: on Heater 22
+    target:
+      device_id: 57fdd525cc96afe7982612e0e1c15b14
+  mode: single
+  icon: mdi:heat-pump
+bedroom_tv_power_cycle:
+  alias: Bedroom TV power cycle
+  sequence:
+  - type: turn_off
+    device_id: dc0014ad1642075d60139c27023c265b
+    entity_id: switch.meross_m6_bedroom_tv_outlet
+    domain: switch
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 5
+      milliseconds: 0
+  - type: turn_on
+    device_id: dc0014ad1642075d60139c27023c265b
+    entity_id: switch.meross_m6_bedroom_tv_outlet
+    domain: switch
+  mode: single
+  icon: mdi:lock-reset

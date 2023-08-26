@@ -1,0 +1,2963 @@
+- id: '1623661934962'
+  alias: Front Door Stuck Open
+  description: ''
+  trigger:
+  - type: opened
+    platform: device
+    device_id: 9aaa2ec04264aef1d47ef722576b59b1
+    entity_id: binary_sensor.node_7_access_control_window_door_is_open
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 2
+      seconds: 0
+      milliseconds: 0
+  condition: []
+  action:
+  - service: tts.google_translate_say
+    data:
+      entity_id: media_player.family_room_speaker
+      message: Front Door has been open for 2 minutes
+      cache: true
+  - service: notify.mobile_app_simons_iphone
+    data:
+      message: Front Door has been opened for 2 minutes
+      data:
+        actions:
+        - action: ALARM
+          title: Sound Alarm
+        - action: URI
+          title: Open Url
+          uri: https://google.com
+  mode: single
+- id: '1627031275624'
+  alias: Front Door Light VIA Door Switch
+  description: ''
+  trigger:
+  - type: opened
+    platform: device
+    device_id: 9aaa2ec04264aef1d47ef722576b59b1
+    entity_id: binary_sensor.node_7_access_control_window_door_is_open
+    domain: binary_sensor
+  condition:
+  - condition: not
+    conditions:
+    - condition: state
+      entity_id: input_select.home_mode
+      state: Dark
+  - condition: numeric_state
+    entity_id: sensor.everything_living_room_illuminance
+    below: 30
+  action:
+  - scene: scene.entry_lights_on
+  - type: turn_on
+    device_id: 09a12aab6e27c3f64fdc160918e9d8ca
+    entity_id: light.entry_pendant
+    domain: light
+  - delay:
+      hours: 0
+      minutes: 5
+      seconds: 0
+      milliseconds: 0
+  - scene: scene.entry_lights_off
+  mode: restart
+- id: '1627125695278'
+  alias: Front Door Light VIA Motion ON
+  description: ''
+  trigger:
+  - type: motion
+    platform: device
+    device_id: 5d05376413e58078114279dd0f63843f
+    entity_id: binary_sensor.entry_motion_sensor
+    domain: binary_sensor
+  condition:
+  - condition: not
+    conditions:
+    - condition: state
+      entity_id: input_select.home_mode
+      state: Dark
+  - condition: numeric_state
+    entity_id: sensor.front_door_motion_sensor_illuminance
+    below: 10
+  action:
+  - scene: scene.entry_lights_on
+  - type: turn_on
+    device_id: 09a12aab6e27c3f64fdc160918e9d8ca
+    entity_id: light.entry_pendant
+    domain: light
+  mode: restart
+- id: '1627146339094'
+  alias: Nighttime Family Room Sunset TV Strip
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: -00:29:00
+  - platform: time
+    at: '19:30:00'
+  condition:
+  - condition: state
+    entity_id: input_select.home_mode
+    state: Normal
+  action:
+  - type: turn_on
+    device_id: 817d13a2421b3abc46991c8c7d8c4a65
+    entity_id: light.controller_tv_lights
+    domain: light
+    brightness_pct: 100
+  - type: turn_on
+    device_id: 817d13a2421b3abc46991c8c7d8c4a65
+    entity_id: light.controller_tv_lights_led
+    domain: light
+    brightness_pct: 30
+  - delay:
+      hours: 0
+      minutes: 15
+      seconds: 0
+      milliseconds: 0
+  - type: turn_on
+    device_id: b733ae3ffdf5a2025971b625500b1a33
+    entity_id: light.chandelier
+    domain: light
+    brightness_pct: 1
+    enabled: false
+  mode: single
+- id: '1627149007172'
+  alias: Nighttime Family Room Blinds Down
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: -00:30:00
+  - platform: time
+    at: '19:00:00'
+  condition: []
+  action:
+  - service: script.blinds_down
+    data: {}
+  - delay:
+      hours: 0
+      minutes: 8
+      seconds: 5
+      milliseconds: 0
+  - service: script.blinds_down
+    data: {}
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 5
+      milliseconds: 0
+  - service: script.blinds_down
+    data: {}
+  - service: input_boolean.turn_off
+    data: {}
+    target:
+      entity_id: input_boolean.daytime
+  mode: single
+- id: '1627149079860'
+  alias: Morning Family Room Blinds Up
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunrise
+    offset: -0:20:00
+  condition: []
+  action:
+  - service: script.blinds_up
+    data: {}
+  - delay:
+      hours: 0
+      minutes: 1
+      seconds: 5
+      milliseconds: 0
+  - service: script.blinds_up
+    data: {}
+  - delay:
+      hours: 0
+      minutes: 1
+      seconds: 5
+      milliseconds: 0
+  - service: script.blinds_up
+    data: {}
+  - service: input_boolean.turn_on
+    data: {}
+    target:
+      entity_id: input_boolean.daytime
+  mode: single
+- id: '1627154759247'
+  alias: Outdoor Party Lights ON
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: +0:10:00
+  condition: []
+  action:
+  - type: turn_on
+    device_id: bff2976ba3365a33a441c70f43bdbe18
+    entity_id: switch.node_8
+    domain: switch
+  mode: single
+- id: '1627154800447'
+  alias: Outdoor Party Lights OFF
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: +0:12:00
+  condition: []
+  action:
+  - type: turn_off
+    device_id: bff2976ba3365a33a441c70f43bdbe18
+    entity_id: switch.node_8
+    domain: switch
+  mode: single
+- id: '1628152299524'
+  alias: Living Room Master Automation OFF
+  description: ''
+  trigger: []
+  condition: []
+  action:
+  - parallel:
+    - service: media_player.volume_set
+      data:
+        volume_level: 0.63
+      target:
+        device_id: 08bc393f35640fa1188c130d63e366e4
+    - service: tts.google_translate_say
+      data:
+        cache: false
+        entity_id: media_player.family_room_speaker
+        message: Turning Everything Off, Good night.
+    - type: turn_off
+      device_id: 3bde07aac5e6792e1ab5ebad70800b27
+      entity_id: switch.kitchen_lights
+      domain: switch
+    - type: turn_off
+      device_id: b733ae3ffdf5a2025971b625500b1a33
+      entity_id: light.chandelier
+      domain: light
+    - type: turn_off
+      device_id: 24d89796ab08b28ed3780aa80be5873b
+      entity_id: switch.meross_m7_lamp_short_outlet
+      domain: switch
+    - type: turn_off
+      device_id: 3fcd7674c82c5d829d5f21653a268980
+      entity_id: switch.lamp_tall_gold
+      domain: switch
+    - type: turn_off
+      device_id: 87b30484f04bc58897eb73ff16aa11e5
+      entity_id: switch.smart_plug_20072944061154251h5448e1e927dba2_outlet
+      domain: switch
+    - service: script.air_con_off
+      data: {}
+    - scene: scene.entry_lights_off
+    - service: light.turn_off
+      target:
+        device_id: 09a12aab6e27c3f64fdc160918e9d8ca
+      data:
+        transition: 60
+    - type: turn_off
+      device_id: bff2976ba3365a33a441c70f43bdbe18
+      entity_id: switch.node_8
+      domain: switch
+    - type: turn_off
+      device_id: 817d13a2421b3abc46991c8c7d8c4a65
+      entity_id: light.controller_tv_lights_led
+      domain: light
+    - type: turn_off
+      device_id: 7c945f90dc76ab5e53ea466957d840c0
+      entity_id: light.bookshelf_lights
+      domain: light
+    - type: turn_off
+      device_id: 74b7d8ccc9cd25e78386835a9ae301c1
+      entity_id: switch.m1_christmas_tree_outlet
+      domain: switch
+    - type: turn_off
+      device_id: 3bde07aac5e6792e1ab5ebad70800b27
+      entity_id: switch.kitchen_cabinets
+      domain: switch
+    - type: turn_off
+      device_id: b3cd0f6a14cd02f85de8e20c76356ee9
+      entity_id: switch.kitchen_led
+      domain: switch
+    - type: turn_off
+      device_id: b805fa111e96bf06bb581e38bf9c7b47
+      entity_id: switch.meross_3_second_monitor_outlet
+      domain: switch
+      enabled: true
+    - service: script.range_hood_power_cycle
+      data: {}
+    - service: script.study_hvac_off
+      data: {}
+    - type: turn_off
+      device_id: 63e0fd14c627720090b913f2b1e45ff3
+      entity_id: switch.m8_study_fan_outlet
+      domain: switch
+    - device_id: 24e61243c4428dcdcede0423f24d4d80
+      domain: climate
+      entity_id: climate.nest_hvac
+      type: set_hvac_mode
+      hvac_mode: 'off'
+      enabled: false
+    - type: turn_off
+      device_id: eb5a340722cdfdd321e5e297e1657e3a
+      entity_id: light.study_lights
+      domain: light
+    - type: turn_off
+      device_id: 7618fe3eb0c76d6fbe99879a2f80aa2b
+      entity_id: light.art_light_staircase
+      domain: light
+    - type: turn_off
+      device_id: 9589be47ae6db0a86b8925d0d69a6cf5
+      entity_id: light.living_room_spotlights
+      domain: light
+    - service: remote.send_command
+      data:
+        device: Dog Door
+        command: open
+        num_repeats: 200
+        delay_secs: 0.4
+        hold_secs: 0
+      target:
+        device_id: 57fdd525cc96afe7982612e0e1c15b14
+    - service: script.air_con_off
+      data: {}
+    - service: notify.mobile_app_simons_iphone_14
+      data:
+        message: Living Room Master OFF
+    - type: turn_off
+      device_id: a51c183cf093f8ca49a63262b69c6ded
+      entity_id: switch.pantry
+      domain: switch
+  mode: single
+- id: '1629659730250'
+  alias: Nighttime Family Room Sunset (Darker Lamps)
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: -00:20:00
+  - platform: time
+    at: '20:33:00'
+  condition:
+  - condition: state
+    entity_id: input_select.home_mode
+    state: Normal
+  action:
+  - type: turn_on
+    device_id: 87b30484f04bc58897eb73ff16aa11e5
+    entity_id: switch.smart_plug_20072944061154251h5448e1e927dba2_outlet
+    domain: switch
+  - type: turn_on
+    device_id: 24d89796ab08b28ed3780aa80be5873b
+    entity_id: switch.meross_m7_lamp_short_outlet
+    domain: switch
+  - type: turn_on
+    device_id: 09a12aab6e27c3f64fdc160918e9d8ca
+    entity_id: light.entry_pendant
+    domain: light
+    brightness_pct: 100
+  - delay:
+      hours: 0
+      minutes: 10
+      seconds: 0
+      milliseconds: 0
+  - type: turn_on
+    device_id: b733ae3ffdf5a2025971b625500b1a33
+    entity_id: light.chandelier
+    domain: light
+    brightness_pct: 20
+    enabled: false
+  - delay:
+      hours: 0
+      minutes: 10
+      seconds: 0
+      milliseconds: 0
+  - type: turn_on
+    device_id: 7618fe3eb0c76d6fbe99879a2f80aa2b
+    entity_id: light.art_light_staircase
+    domain: light
+  mode: single
+- id: '1630578384761'
+  alias: Magic Button 1 - Watch a movie
+  description: ''
+  trigger:
+  - device_id: cc10c24447f8373f25875af0db287ddc
+    domain: zha
+    platform: device
+    type: remote_button_short_press
+    subtype: turn_on
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 7c945f90dc76ab5e53ea466957d840c0
+    entity_id: light.bookshelf_lights
+    domain: light
+    brightness_pct: 5
+  - type: turn_on
+    device_id: 817d13a2421b3abc46991c8c7d8c4a65
+    entity_id: light.controller_tv_lights
+    domain: light
+    brightness_pct: 100
+  - type: turn_on
+    device_id: 817d13a2421b3abc46991c8c7d8c4a65
+    entity_id: light.controller_tv_lights_5
+    domain: light
+    brightness_pct: 7
+  - type: turn_off
+    device_id: b733ae3ffdf5a2025971b625500b1a33
+    entity_id: light.chandelier
+    domain: light
+  - device_id: 09a12aab6e27c3f64fdc160918e9d8ca
+    domain: light
+    entity_id: light.entry_pendant
+    type: brightness_decrease
+  - type: turn_off
+    device_id: b3cd0f6a14cd02f85de8e20c76356ee9
+    entity_id: switch.kitchen_led
+    domain: switch
+  - type: turn_off
+    device_id: 3bde07aac5e6792e1ab5ebad70800b27
+    entity_id: switch.kitchen_lights
+    domain: switch
+  mode: single
+- id: '1632239999448'
+  alias: Outdoor Party Lights Motion ON
+  description: ''
+  trigger:
+  - type: occupied
+    platform: device
+    device_id: a6b8ae904a3f9c9da46d789e7d8b4358
+    entity_id: binary_sensor.philips_backyard_sensor_occupancy
+    domain: binary_sensor
+  condition:
+  - condition: numeric_state
+    entity_id: sensor.philips_backyard_sensor_illuminance
+    below: '20'
+  - condition: not
+    conditions:
+    - condition: state
+      entity_id: input_select.home_mode
+      state: Dark
+  action:
+  - type: turn_on
+    device_id: bff2976ba3365a33a441c70f43bdbe18
+    entity_id: switch.node_8
+    domain: switch
+  - delay:
+      hours: 0
+      minutes: 3
+      seconds: 0
+      milliseconds: 0
+  - type: turn_off
+    device_id: bff2976ba3365a33a441c70f43bdbe18
+    entity_id: switch.node_8
+    domain: switch
+  mode: restart
+- id: '1632329246315'
+  alias: Workshop Lightstrip ON
+  description: ''
+  trigger:
+  - type: motion
+    platform: device
+    device_id: 7f000b45720a98d01fbb3092a7e5aa3c
+    entity_id: 89e26c9adcd3e9c5af1b8fa2b335e68f
+    domain: binary_sensor
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 8bd375d65a41eced2f1d85431504f4ec
+    entity_id: switch.smart_plug_2_outlet
+    domain: switch
+  mode: queued
+  max: 10
+- id: '1633105182543'
+  alias: Workshop Lightstrip OFF
+  description: ''
+  trigger:
+  - type: no_motion
+    platform: device
+    device_id: 7f000b45720a98d01fbb3092a7e5aa3c
+    entity_id: 89e26c9adcd3e9c5af1b8fa2b335e68f
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 5
+      seconds: 0
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 8bd375d65a41eced2f1d85431504f4ec
+    entity_id: switch.smart_plug_2_outlet
+    domain: switch
+  mode: restart
+- id: '1633107104655'
+  alias: Outdoor Party Lights Motion OFF
+  description: ''
+  trigger:
+  - type: not_occupied
+    platform: device
+    device_id: a6b8ae904a3f9c9da46d789e7d8b4358
+    entity_id: binary_sensor.backyard_occupancy
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 1
+      seconds: 0
+  condition: []
+  action:
+  - type: turn_off
+    device_id: bff2976ba3365a33a441c70f43bdbe18
+    entity_id: switch.node_8
+    domain: switch
+  mode: single
+- id: '1633108500829'
+  alias: Front Door Light VIA Motion OFF
+  description: ''
+  trigger:
+  - type: no_motion
+    platform: device
+    device_id: 5d05376413e58078114279dd0f63843f
+    entity_id: binary_sensor.entry_motion_sensor
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 1
+      seconds: 1
+  condition: []
+  action:
+  - type: turn_off
+    device_id: f40b8bbfb30009c2050e83b2a02c1585
+    entity_id: e4aed43d5f1f0c0940575e777bdb2c37
+    domain: light
+  - type: turn_on
+    device_id: f40b8bbfb30009c2050e83b2a02c1585
+    entity_id: e4aed43d5f1f0c0940575e777bdb2c37
+    domain: light
+  - type: turn_off
+    device_id: f40b8bbfb30009c2050e83b2a02c1585
+    entity_id: be23b82757583d7a6b57bb8f7ee9df0a
+    domain: light
+  - type: turn_off
+    device_id: d95f415c2d871e2c5e5bf4aa1a569785
+    entity_id: d9e75827f162d0b16dcb82f1d2d3f030
+    domain: switch
+  mode: restart
+- id: '1636022206980'
+  alias: Front Door Open Trigger Security
+  description: ''
+  trigger:
+  - type: opened
+    platform: device
+    device_id: 9aaa2ec04264aef1d47ef722576b59b1
+    entity_id: binary_sensor.node_7_access_control_window_door_is_open
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 0
+  condition: []
+  action:
+  - service: notify.mobile_app_simons_iphone_14
+    data:
+      message: front door opened
+  mode: single
+- id: '1639863852901'
+  alias: Pendant Night OFF
+  description: ''
+  trigger:
+  - platform: time
+    at: '23:12'
+  - platform: time
+    at: 00:35:00
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 09a12aab6e27c3f64fdc160918e9d8ca
+    entity_id: light.entry_pendant
+    domain: light
+  mode: single
+- id: '1640792814094'
+  alias: Kitchen Motion Sensor ON
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.group_downstairs_motion_detection
+    from: 'off'
+    to: 'on'
+  condition:
+  - condition: not
+    conditions:
+    - condition: state
+      entity_id: input_select.home_mode
+      state: Dark
+  - condition: numeric_state
+    entity_id: sensor.everything_living_room_illuminance
+    below: 60
+  action:
+  - type: turn_on
+    device_id: 3bde07aac5e6792e1ab5ebad70800b27
+    entity_id: switch.kitchen_lights
+    domain: switch
+  mode: restart
+- id: '1640796248500'
+  alias: Kitchen Motion Sensor OFF - Daytime
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.group_downstairs_motion_detection
+    to: 'off'
+    for:
+      hours: 0
+      minutes: 5
+      seconds: 10
+  condition:
+  - condition: sun
+    before: sunset
+    after: sunrise
+  action:
+  - type: turn_off
+    device_id: 3bde07aac5e6792e1ab5ebad70800b27
+    entity_id: switch.kitchen_lights
+    domain: switch
+  mode: restart
+- id: '1640803019926'
+  alias: Pendant ON Via Motion
+  description: ''
+  trigger:
+  - type: motion
+    platform: device
+    device_id: 5d05376413e58078114279dd0f63843f
+    entity_id: binary_sensor.entry_motion_sensor
+    domain: binary_sensor
+  condition:
+  - condition: not
+    conditions:
+    - condition: state
+      entity_id: input_select.home_mode
+      state: Dark
+  - condition: numeric_state
+    entity_id: sensor.front_door_motion_sensor_illuminance
+    below: 10
+  action:
+  - type: turn_on
+    device_id: 09a12aab6e27c3f64fdc160918e9d8ca
+    entity_id: light.entry_pendant
+    domain: light
+  mode: single
+- id: '1640803186810'
+  alias: Pendant OFF (daytime only)
+  description: ''
+  trigger:
+  - type: no_motion
+    platform: device
+    device_id: 5d05376413e58078114279dd0f63843f
+    entity_id: binary_sensor.entry_motion_sensor
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 2
+      seconds: 0
+  condition:
+  - condition: sun
+    before: sunset
+  action:
+  - type: turn_off
+    device_id: 09a12aab6e27c3f64fdc160918e9d8ca
+    entity_id: light.entry_pendant
+    domain: light
+    enabled: true
+  mode: single
+- id: '1640803578536'
+  alias: Pendant ON Sunset 100
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: '0'
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 09a12aab6e27c3f64fdc160918e9d8ca
+    entity_id: light.entry_pendant
+    domain: light
+    brightness_pct: 100
+  mode: single
+- id: '1640803645597'
+  alias: Pendant ON Sunset + 20
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: 01:00:00
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 09a12aab6e27c3f64fdc160918e9d8ca
+    entity_id: light.entry_pendant
+    domain: light
+    brightness_pct: 20
+  mode: single
+- id: '1640803753969'
+  alias: Pendant ON Sunset ++ 5
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: 02:00:00
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 09a12aab6e27c3f64fdc160918e9d8ca
+    entity_id: light.entry_pendant
+    domain: light
+    brightness_pct: 5
+  mode: single
+- id: '1641116840199'
+  alias: Kitchen LED ON with Range
+  description: ''
+  trigger:
+  - type: power
+    platform: device
+    device_id: c66858c5e356895cd1b8712db6867be5
+    entity_id: sensor.range_hood_power
+    domain: sensor
+    above: 2
+  condition: []
+  action:
+  - type: turn_on
+    device_id: b3cd0f6a14cd02f85de8e20c76356ee9
+    entity_id: switch.kitchen_led
+    domain: switch
+  mode: single
+- id: '1641410359693'
+  alias: Bedroom Heater ON - Morning
+  description: ''
+  trigger:
+  - platform: time
+    at: 06:00:00
+  condition:
+  - condition: numeric_state
+    entity_id: sensor.remote_master_bedroom_temperature
+    below: 20
+  action:
+  - service: script.bedroom_heater
+    data: {}
+  - delay:
+      hours: 3
+      minutes: 0
+      seconds: 0
+      milliseconds: 0
+  - service: script.bedroom_air_con_off
+    data: {}
+  mode: single
+- id: '1641722776513'
+  alias: Kitchen Glasses Cabinets
+  description: ''
+  trigger:
+  - type: opened
+    platform: device
+    device_id: 70b319434d2825ecc61ae9e101036285
+    entity_id: binary_sensor.glasses_cupboard_access_control_window_door_is_open
+    domain: binary_sensor
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 3bde07aac5e6792e1ab5ebad70800b27
+    entity_id: switch.kitchen_cabinets
+    domain: switch
+  - delay:
+      hours: 0
+      minutes: 4
+      seconds: 0
+      milliseconds: 0
+  - type: turn_off
+    device_id: 3bde07aac5e6792e1ab5ebad70800b27
+    entity_id: switch.kitchen_cabinets
+    domain: switch
+  mode: restart
+- id: '1642266537438'
+  alias: No motion downstairs turn stuff off
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: group.downstairs_motion_sensors
+    to: 'off'
+    for:
+      hours: 1
+      minutes: 0
+      seconds: 0
+  condition: []
+  action:
+  - service: tts.google_translate_say
+    data:
+      message: No motion, i'm going to turn stuff off
+      entity_id: media_player.family_room_speaker
+      cache: true
+  - scene: scene.living_room_all_off
+  - service: script.air_con_off
+    data: {}
+  - service: script.study_hvac_off
+    data: {}
+  - service: notify.mobile_app_simons_iphone
+    data:
+      message: No Motion Living Room turning stuff off
+      data:
+        actions:
+        - action: ALARM
+          title: No Motion
+        - action: URI
+          title: Open Url
+          uri: https://google.com
+  mode: single
+- id: '1643474938352'
+  alias: Living Room Nest Heater On
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - climate.nest_hvac
+    attribute: temperature
+  condition: []
+  action:
+  - service: tts.google_translate_say
+    data:
+      entity_id: media_player.family_room_speaker
+      message: Turning on the heater
+      cache: true
+  - service: remote.send_command
+    target:
+      device_id: 2e515e26f2e12b233509760613d9b796
+    data:
+      device: HVAC
+      command: heater_30
+  - service: notify.notify
+    data:
+      title: Thermostat mode has changed.
+      message: Thermostat mode is now {{ trigger.to_state.state }} x 25+
+  mode: single
+- id: '1643475048192'
+  alias: Living Room Nest OFF
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - climate.nest_hvac
+    to: 'off'
+  condition: []
+  action:
+  - service: tts.google_translate_say
+    data:
+      entity_id: media_player.family_room_speaker
+      message: Turning off the heater
+      cache: true
+  - service: script.air_con_off
+    data: {}
+  mode: single
+- id: '1643993735383'
+  alias: Chandelier Ikea Button On Off
+  description: ''
+  trigger:
+  - device_id: 5f97d7028d3121f0a59ad668c7b1cdd4
+    domain: zha
+    platform: device
+    type: remote_button_short_press
+    subtype: turn_on
+  condition: []
+  action:
+  - type: toggle
+    device_id: b733ae3ffdf5a2025971b625500b1a33
+    entity_id: light.chandelier
+    domain: light
+  mode: single
+- id: '1646310528896'
+  alias: Push Button White Bedroom Off
+  description: ''
+  trigger:
+  - platform: device
+    device_id: 1d3ea4833ddfda743e05e05368213cd2
+    domain: zwave_js
+    type: event.value_notification.central_scene
+    property: scene
+    property_key: '001'
+    endpoint: 0
+    command_class: 91
+    subtype: Endpoint 0 Scene 001
+    value: 0
+  - platform: device
+    device_id: 653fdf321218685604af0c6c29592c40
+    domain: zwave_js
+    type: event.value_notification.central_scene
+    property: scene
+    property_key: '001'
+    endpoint: 0
+    command_class: 91
+    subtype: Endpoint 0 Scene 001
+    value: 0
+  condition: []
+  action:
+  - parallel:
+    - type: turn_off
+      device_id: 96eebeea5c10f7a7e98cf4f484918c1c
+      entity_id: light.bathroom_mirror_left
+      domain: light
+    - type: turn_off
+      device_id: 96eebeea5c10f7a7e98cf4f484918c1c
+      entity_id: light.bathroom_mirror_right
+      domain: light
+    - type: turn_off
+      device_id: 6f872fd46e4d0439ef2456f700d4398b
+      entity_id: light.bed_lamp_mel
+      domain: light
+    - type: turn_off
+      device_id: 605e572814970daeb76e0dca4f8a17d7
+      entity_id: light.master_bed_led_2_2
+      domain: light
+    - type: turn_off
+      device_id: 247f56cc429ca49a254e3df37e263e37
+      entity_id: switch.bedroom_lamp
+      domain: switch
+    - type: turn_off
+      device_id: 6f6cf472f4fef1f0c20d9931d001ac70
+      entity_id: switch.master_closet
+      domain: switch
+    - type: turn_off
+      device_id: 3db0cec90e321434657d44397bbf327e
+      entity_id: switch.bedroom_lights
+      domain: switch
+    - type: turn_off
+      device_id: 3928371e49be816319eec1dac9c531a6
+      entity_id: light.bed_lamp_left
+      domain: light
+    - type: turn_off
+      device_id: e2d9c795303d91a6d576077b39fe32d3
+      entity_id: light.bath_circle
+      domain: light
+    - type: turn_off
+      device_id: 840fc824e00664e9c9cc36def0d6e277
+      entity_id: light.bathroom_mirror_spotlights
+      domain: light
+    - type: turn_off
+      device_id: f664adcdadd558ce399a7ba96dd2c7e1
+      entity_id: switch.bedroom_entry
+      domain: switch
+    - type: turn_off
+      device_id: 11a686020163e55732126863d48b41de
+      entity_id: light.shower_spotlights
+      domain: light
+    - service: script.bedroom_skylight_open
+      data: {}
+      enabled: false
+    - service: script.air_con_off
+      data: {}
+  mode: parallel
+  max: 10
+- id: '1646310544527'
+  alias: AEOTEC-2 Button 4 - Close Dog Door
+  description: ''
+  trigger:
+  - platform: device
+    device_id: 7d3271cf93990888448cec33ab9d64a3
+    domain: zwave_js
+    type: event.value_notification.central_scene
+    property: scene
+    property_key: '004'
+    endpoint: 0
+    command_class: 91
+    subtype: Endpoint 0 Scene 004
+    value: 0
+  condition: []
+  action:
+  - service: tts.google_translate_say
+    data:
+      entity_id: media_player.den_wifi
+      message: Closing Dog Door.
+  - service: remote.send_command
+    data:
+      device: Dog Door
+      command: close
+      num_repeats: 10
+    target:
+      device_id: 57fdd525cc96afe7982612e0e1c15b14
+  mode: single
+- id: '1646312502247'
+  alias: Kitchen Motion Sensor OFF - Nighttime
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.group_downstairs_motion_detection
+    to: 'off'
+    for:
+      hours: 0
+      minutes: 20
+      seconds: 0
+  condition:
+  - condition: sun
+    before: sunrise
+    before_offset: -00:30:00
+    after: sunset
+    after_offset: -00:30:00
+  action:
+  - type: turn_off
+    device_id: 3bde07aac5e6792e1ab5ebad70800b27
+    entity_id: switch.kitchen_lights
+    domain: switch
+  mode: restart
+- id: '1648372335632'
+  alias: Study Smoke Detected
+  description: ''
+  trigger:
+  - type: smoke
+    platform: device
+    device_id: 8a9bd4c8eda6ac20de8a9bccd6a1cf7e
+    entity_id: binary_sensor.smoke_detector_smoke_alarm_smoke_detected
+    domain: binary_sensor
+  condition: []
+  action:
+  - service: notify.mobile_app_simons_iphone_14
+    data:
+      message: smoke detected
+      title: SMOKE
+  - service: tts.google_translate_say
+    data:
+      entity_id: media_player.everywhere
+      message: Smoke Detected In Study
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 20
+      milliseconds: 0
+  - service: tts.google_translate_say
+    data:
+      entity_id: media_player.everywhere
+      message: Smoke Detected In Study
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 20
+      milliseconds: 0
+  - service: tts.google_translate_say
+    data:
+      entity_id: media_player.everywhere
+      message: Smoke Detected In Study
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 20
+      milliseconds: 0
+  - service: tts.google_translate_say
+    data:
+      entity_id: media_player.everywhere
+      message: Smoke Detected In Study
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 20
+      milliseconds: 0
+  - service: tts.google_translate_say
+    data:
+      entity_id: media_player.everywhere
+      message: Smoke Detected In Study
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 20
+      milliseconds: 0
+  - service: tts.google_translate_say
+    data:
+      entity_id: media_player.everywhere
+      message: Smoke Detected In Study
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 20
+      milliseconds: 0
+  - service: tts.google_translate_say
+    data:
+      entity_id: media_player.everywhere
+      message: Smoke Detected In Study
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 20
+      milliseconds: 0
+  - service: tts.google_translate_say
+    data:
+      entity_id: media_player.everywhere
+      message: Smoke Detected In Study
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 20
+      milliseconds: 0
+  - service: tts.google_translate_say
+    data:
+      entity_id: media_player.everywhere
+      message: Smoke Detected In Study
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 20
+      milliseconds: 0
+  - service: tts.google_translate_say
+    data:
+      entity_id: media_player.everywhere
+      message: Smoke Detected In Study
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 20
+      milliseconds: 0
+  - service: tts.google_translate_say
+    data:
+      entity_id: media_player.everywhere
+      message: Smoke Detected In Study
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 20
+      milliseconds: 0
+  mode: single
+- id: '1648585519581'
+  alias: AWAY Turn Off at Night
+  description: ''
+  trigger:
+  - platform: time
+    at: '21:10:00'
+  condition:
+  - condition: state
+    entity_id: input_select.home_mode
+    state: Away
+  action:
+  - service: tts.google_translate_say
+    data:
+      entity_id: media_player.family_room_speaker
+      message: Turning everything off, Goodnight
+      cache: true
+  - service: script.air_con_off
+    data: {}
+  - scene: scene.entry_lights_off
+  - service: light.turn_off
+    target:
+      device_id: 09a12aab6e27c3f64fdc160918e9d8ca
+    data:
+      transition: 60
+  - type: turn_off
+    device_id: bff2976ba3365a33a441c70f43bdbe18
+    entity_id: switch.node_8
+    domain: switch
+  - type: turn_off
+    device_id: 817d13a2421b3abc46991c8c7d8c4a65
+    entity_id: light.controller_tv_lights_led
+    domain: light
+  - type: turn_off
+    device_id: 3fcd7674c82c5d829d5f21653a268980
+    entity_id: switch.lamp_tall_gold
+    domain: switch
+  - type: turn_off
+    device_id: 7c945f90dc76ab5e53ea466957d840c0
+    entity_id: light.bookshelf_lights
+    domain: light
+  - type: turn_off
+    device_id: 74b7d8ccc9cd25e78386835a9ae301c1
+    entity_id: switch.m1_christmas_tree_outlet
+    domain: switch
+  - type: turn_off
+    device_id: 3bde07aac5e6792e1ab5ebad70800b27
+    entity_id: switch.kitchen_lights
+    domain: switch
+  - type: turn_off
+    device_id: 3bde07aac5e6792e1ab5ebad70800b27
+    entity_id: switch.kitchen_cabinets
+    domain: switch
+  - type: turn_off
+    device_id: 24d89796ab08b28ed3780aa80be5873b
+    entity_id: switch.meross_m7_lamp_short_outlet
+    domain: switch
+  - type: turn_off
+    device_id: b3cd0f6a14cd02f85de8e20c76356ee9
+    entity_id: switch.kitchen_led
+    domain: switch
+  - type: turn_off
+    device_id: b733ae3ffdf5a2025971b625500b1a33
+    entity_id: light.chandelier
+    domain: light
+  - type: turn_off
+    device_id: b805fa111e96bf06bb581e38bf9c7b47
+    entity_id: switch.meross_3_second_monitor_outlet
+    domain: switch
+  - service: script.range_hood_power_cycle
+    data: {}
+  - service: script.study_hvac_off
+    data: {}
+  mode: single
+- id: '1654539286740'
+  alias: Nighttime Family Room Lights
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: -00:30:00
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 09a12aab6e27c3f64fdc160918e9d8ca
+    entity_id: light.entry_pendant
+    domain: light
+  - type: turn_on
+    device_id: 74b7d8ccc9cd25e78386835a9ae301c1
+    entity_id: switch.smart_plug_1_outlet
+    domain: switch
+  mode: single
+- id: '1662826655444'
+  alias: Bedroom Nighttime Toilet
+  description: ''
+  trigger:
+  - type: motion
+    platform: device
+    device_id: ff51915b13dc1e63995c222c38cf76f3
+    entity_id: binary_sensor.motion_sensor_master_bathroom_home_security_motion_detection_3
+    domain: binary_sensor
+  condition:
+  - condition: state
+    entity_id: input_boolean.daytime
+    state: 'off'
+  action:
+  - if:
+    - condition: time
+      before: '23:00:00'
+      after: '18:00:00'
+    then:
+    - type: turn_on
+      device_id: e2d9c795303d91a6d576077b39fe32d3
+      entity_id: light.bath_circle
+      domain: light
+    - type: turn_on
+      device_id: 96eebeea5c10f7a7e98cf4f484918c1c
+      entity_id: light.bathroom_mirror_right
+      domain: light
+      brightness_pct: 50
+    - type: turn_on
+      device_id: 96eebeea5c10f7a7e98cf4f484918c1c
+      entity_id: light.bathroom_mirror_left
+      domain: light
+      brightness_pct: 50
+    else:
+    - type: turn_on
+      device_id: 96eebeea5c10f7a7e98cf4f484918c1c
+      entity_id: light.bathroom_mirror_right
+      domain: light
+      brightness_pct: 20
+    - type: turn_on
+      device_id: 96eebeea5c10f7a7e98cf4f484918c1c
+      entity_id: light.bathroom_mirror_left
+      domain: light
+      brightness_pct: 20
+  - delay:
+      hours: 0
+      minutes: 1
+      seconds: 0
+      milliseconds: 0
+  - if:
+    - condition: time
+      after: 06:00:00
+      before: '22:59:00'
+    then:
+    - delay:
+        hours: 0
+        minutes: 3
+        seconds: 0
+        milliseconds: 0
+    else:
+    - delay:
+        hours: 0
+        minutes: 0
+        seconds: 20
+        milliseconds: 0
+  - service: light.turn_off
+    target:
+      entity_id: light.bathroom_mirror_left
+    data:
+      transition: 60
+  - service: light.turn_off
+    target:
+      entity_id: light.bathroom_mirror_right
+    data:
+      transition: 60
+  - delay:
+      hours: 0
+      minutes: 20
+      seconds: 0
+      milliseconds: 0
+  - type: turn_off
+    device_id: 605e572814970daeb76e0dca4f8a17d7
+    entity_id: light.master_bed_led_2_2
+    domain: light
+  - type: turn_off
+    device_id: e2d9c795303d91a6d576077b39fe32d3
+    entity_id: light.bath_circle
+    domain: light
+  mode: restart
+- id: '1663222775661'
+  alias: Tag e1f1cdf3-c790-4f2e-9280-82d976c2d1be is scanned
+  description: ''
+  trigger:
+  - platform: tag
+    tag_id: e1f1cdf3-c790-4f2e-9280-82d976c2d1be
+  condition: []
+  action:
+  - event: ''
+    event_data: {}
+  - type: turn_on
+    device_id: 817d13a2421b3abc46991c8c7d8c4a65
+    entity_id: light.controller_tv_lights_5
+    domain: light
+  mode: single
+- id: '1663241028094'
+  alias: Bedroom Entry Lift Toggle
+  description: ''
+  trigger:
+  - platform: device
+    type: changed_states
+    device_id: f664adcdadd558ce399a7ba96dd2c7e1
+    entity_id: switch.bedroom_entry_2
+    domain: switch
+  condition: []
+  action:
+  - type: toggle
+    device_id: f664adcdadd558ce399a7ba96dd2c7e1
+    entity_id: switch.bedroom_entry
+    domain: switch
+  mode: single
+- id: '1663264053588'
+  alias: Master Closet
+  description: ''
+  trigger:
+  - type: motion
+    platform: device
+    device_id: ee233693d4a6f7534b434a3c8eda6108
+    entity_id: binary_sensor.motion_sensor_closet_home_security_motion_detection_3
+    domain: binary_sensor
+  condition:
+  - type: is_illuminance
+    condition: device
+    device_id: ee233693d4a6f7534b434a3c8eda6108
+    entity_id: sensor.motion_sensor_closet_illuminance_3
+    domain: sensor
+    below: 80
+  - condition: state
+    entity_id: input_boolean.bedroom_curtain_motion
+    state: 'off'
+  action:
+  - type: turn_on
+    device_id: 6f6cf472f4fef1f0c20d9931d001ac70
+    entity_id: switch.master_closet
+    domain: switch
+  mode: restart
+- id: '1663500500086'
+  alias: Curtains Open Timer
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunrise
+    offset: -0:25:00
+  - platform: time
+    at: 07:00:00
+  condition:
+  - condition: time
+    weekday:
+    - sat
+    - fri
+    - thu
+    - wed
+    - tue
+    - mon
+    after: 06:58:00
+  - condition: device
+    device_id: 2f3366a2291c0b2ac9f21b04546ad5df
+    domain: cover
+    entity_id: cover.bedroom_curtains
+    type: is_position
+    below: 99
+  action:
+  - if:
+    - condition: numeric_state
+      entity_id: sensor.remote_master_bedroom_temperature
+      below: 18
+    then:
+    - service: script.bedroom_skylight_open_2
+      data: {}
+  - service: input_boolean.turn_on
+    data: {}
+    target:
+      entity_id: input_boolean.bedroom_curtain_motion
+  - device_id: 2f3366a2291c0b2ac9f21b04546ad5df
+    domain: cover
+    entity_id: cover.bedroom_curtains
+    type: set_position
+    position: 100
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 30
+      milliseconds: 0
+  - service: input_boolean.turn_off
+    data: {}
+    target:
+      entity_id: input_boolean.bedroom_curtain_motion
+  mode: single
+- id: '1663837121336'
+  alias: Bedroom LED via Bed Lamps
+  description: ''
+  trigger:
+  - platform: device
+    type: turned_on
+    device_id: 3928371e49be816319eec1dac9c531a6
+    entity_id: light.bed_lamp_left
+    domain: light
+  - platform: device
+    type: turned_on
+    device_id: 6a19562dbd6094045283a87bbc87d90f
+    entity_id: light.bed_lamp_right
+    domain: light
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 605e572814970daeb76e0dca4f8a17d7
+    entity_id: light.master_bed_led_2_2
+    domain: light
+    brightness_pct: 10
+  mode: single
+- id: '1663837975051'
+  alias: Bed Lamp LED gradually turn off
+  description: ''
+  trigger:
+  - platform: device
+    type: turned_off
+    device_id: 3928371e49be816319eec1dac9c531a6
+    entity_id: light.bed_lamp_left
+    domain: light
+  - platform: device
+    type: turned_off
+    device_id: 6a19562dbd6094045283a87bbc87d90f
+    entity_id: light.bed_lamp_right
+    domain: light
+  condition: []
+  action:
+  - service: light.turn_off
+    target:
+      entity_id: light.master_bed_led_2_2
+    data:
+      transition: 11
+  mode: single
+- id: '1664129718864'
+  alias: Bedroom Entry Lights
+  description: ''
+  trigger:
+  - type: motion
+    platform: device
+    device_id: dc623ed6f5b820c9b9b22b5aa5512450
+    entity_id: binary_sensor.bedroom_entry_sensor
+    domain: binary_sensor
+  condition:
+  - condition: or
+    conditions:
+    - condition: sun
+      before: sunrise
+    - condition: sun
+      after: sunset
+      after_offset: '-1:00'
+  action:
+  - type: turn_on
+    device_id: 605e572814970daeb76e0dca4f8a17d7
+    entity_id: light.master_bed_led_2_2
+    domain: light
+    brightness_pct: 6
+  - type: turn_on
+    device_id: 247f56cc429ca49a254e3df37e263e37
+    entity_id: switch.bedroom_lamp
+    domain: switch
+  mode: single
+- id: '1666551899943'
+  alias: Bedroom HVAC.off 0200
+  description: ''
+  trigger:
+  - platform: time
+    at: 02:00:00
+  condition: []
+  action:
+  - service: script.bedroom_air_con_off
+    data: {}
+  mode: single
+- id: '1666706803522'
+  alias: Bedroom Close Skylight at 10am
+  description: ''
+  trigger:
+  - platform: time
+    at: 00:10:00
+  condition: []
+  action:
+  - service: script.bedroom_skylight_open
+    data: {}
+  mode: single
+- id: '1666792121740'
+  alias: Bedroom Lamp off with Mel Light
+  description: ''
+  trigger:
+  - platform: device
+    type: turned_off
+    device_id: 6a19562dbd6094045283a87bbc87d90f
+    entity_id: light.bed_lamp_right
+    domain: light
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 247f56cc429ca49a254e3df37e263e37
+    entity_id: switch.bedroom_lamp
+    domain: switch
+  mode: single
+- id: '1667051528061'
+  alias: AEOTEC-2 Button 2 - Heater
+  description: ''
+  trigger:
+  - platform: device
+    device_id: 7d3271cf93990888448cec33ab9d64a3
+    domain: zwave_js
+    type: event.value_notification.central_scene
+    property: scene
+    property_key: '002'
+    endpoint: 0
+    command_class: 91
+    subtype: Endpoint 0 Scene 002
+    value: 0
+  condition: []
+  action:
+  - service: remote.send_command
+    data:
+      device: Master Bedroom AC
+      command: on Heater 22
+    target:
+      device_id: 57fdd525cc96afe7982612e0e1c15b14
+  mode: single
+- id: '1667051590173'
+  alias: AEOTEC-2 Button 1 AC
+  description: ''
+  trigger:
+  - platform: device
+    device_id: 7d3271cf93990888448cec33ab9d64a3
+    domain: zwave_js
+    type: event.value_notification.central_scene
+    property: scene
+    property_key: '001'
+    endpoint: 0
+    command_class: 91
+    subtype: Endpoint 0 Scene 001
+    value: 0
+  condition: []
+  action:
+  - service: script.bedroom_air_con_adjust_18
+    data: {}
+  mode: single
+- id: '1667132025388'
+  alias: AEOTEC-2 Button 4 Long Press - Open Dog Door
+  description: ''
+  trigger:
+  - platform: device
+    device_id: 7d3271cf93990888448cec33ab9d64a3
+    domain: zwave_js
+    type: event.value_notification.central_scene
+    property: scene
+    property_key: '004'
+    endpoint: 0
+    command_class: 91
+    subtype: Endpoint 0 Scene 004
+    value: 2
+  condition: []
+  action:
+  - service: tts.google_translate_say
+    data:
+      entity_id: media_player.den_wifi
+      message: Opening Dog Door
+  - service: remote.send_command
+    data:
+      device: Dog Door
+      command: open
+      num_repeats: 200
+    target:
+      device_id: 57fdd525cc96afe7982612e0e1c15b14
+  mode: single
+- id: '1667132450083'
+  alias: AEOTEC-2 Button 1 Long Press - HVAC Off
+  description: ''
+  trigger:
+  - platform: device
+    device_id: 7d3271cf93990888448cec33ab9d64a3
+    domain: zwave_js
+    type: event.value_notification.central_scene
+    property: scene
+    property_key: '001'
+    endpoint: 0
+    command_class: 91
+    subtype: Endpoint 0 Scene 001
+    value: 2
+  condition: []
+  action:
+  - service: remote.send_command
+    data:
+      device: Master Bedroom AC
+      command: 'off'
+    target:
+      device_id: 57fdd525cc96afe7982612e0e1c15b14
+  mode: single
+- id: '1667133332988'
+  alias: AEOTEC-2 Button 2 Long Press - HVAC Off
+  description: ''
+  trigger:
+  - platform: device
+    device_id: 7d3271cf93990888448cec33ab9d64a3
+    domain: zwave_js
+    type: event.value_notification.central_scene
+    property: scene
+    property_key: '002'
+    endpoint: 0
+    command_class: 91
+    subtype: Endpoint 0 Scene 002
+    value: 2
+  condition: []
+  action:
+  - service: remote.send_command
+    data:
+      device: Master Bedroom AC
+      command: 'off'
+    target:
+      device_id: 57fdd525cc96afe7982612e0e1c15b14
+  mode: single
+- id: '1667133832773'
+  alias: AEOTEC-2 Button 3 Long Press - Lights ON downstairs
+  description: ''
+  trigger:
+  - platform: device
+    device_id: 7d3271cf93990888448cec33ab9d64a3
+    domain: zwave_js
+    type: event.value_notification.central_scene
+    property: scene
+    property_key: '003'
+    endpoint: 0
+    command_class: 91
+    subtype: Endpoint 0 Scene 003
+    value: 2
+  condition: []
+  action:
+  - if:
+    - condition: state
+      entity_id: input_boolean.emergency_lights
+      state: 'on'
+    then:
+    - service: tts.google_translate_say
+      data:
+        entity_id: media_player.den_wifi
+        message: Turning Lights Off Downstairs
+    - type: turn_off
+      device_id: 3bde07aac5e6792e1ab5ebad70800b27
+      entity_id: switch.kitchen_lights
+      domain: switch
+    - service: scene.turn_on
+      target:
+        entity_id: scene.entry_lights_off
+      metadata: {}
+    - type: turn_off
+      device_id: b3cd0f6a14cd02f85de8e20c76356ee9
+      entity_id: switch.kitchen_led
+      domain: switch
+    - type: turn_off
+      device_id: 817d13a2421b3abc46991c8c7d8c4a65
+      entity_id: light.controller_tv_lights_5
+      domain: light
+    - type: turn_off
+      device_id: b733ae3ffdf5a2025971b625500b1a33
+      entity_id: light.chandelier
+      domain: light
+    - service: input_boolean.turn_off
+      data: {}
+      target:
+        entity_id: input_boolean.emergency_lights
+    else:
+    - service: tts.google_translate_say
+      data:
+        entity_id: media_player.den_wifi
+        message: Turning Lights On Downstairs
+    - type: turn_on
+      device_id: b733ae3ffdf5a2025971b625500b1a33
+      entity_id: light.chandelier
+      domain: light
+    - service: scene.turn_on
+      target:
+        entity_id: scene.entry_lights_on
+      metadata: {}
+    - type: turn_on
+      device_id: 3bde07aac5e6792e1ab5ebad70800b27
+      entity_id: switch.kitchen_lights
+      domain: switch
+    - type: turn_on
+      device_id: b3cd0f6a14cd02f85de8e20c76356ee9
+      entity_id: switch.kitchen_led
+      domain: switch
+    - type: turn_on
+      device_id: 817d13a2421b3abc46991c8c7d8c4a65
+      entity_id: light.controller_tv_lights_5
+      domain: light
+      brightness_pct: 100
+    - service: input_boolean.turn_on
+      data: {}
+      target:
+        entity_id: input_boolean.emergency_lights
+  mode: single
+- id: '1667398985218'
+  alias: Nighttime Family Room Sunset Bookshelf
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: -00:00:00
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 7c945f90dc76ab5e53ea466957d840c0
+    entity_id: light.bookshelf_lights
+    domain: light
+    brightness_pct: 20
+  mode: single
+- id: '1668425141640'
+  alias: AWAY Cycle Bedroom Light
+  description: ''
+  trigger:
+  - platform: time
+    at: '21:12:00'
+  condition:
+  - condition: state
+    entity_id: input_select.home_mode
+    state: Away
+  action:
+  - type: turn_on
+    device_id: 247f56cc429ca49a254e3df37e263e37
+    entity_id: switch.bedroom_lamp
+    domain: switch
+  - delay:
+      hours: 0
+      minutes: 22
+      seconds: 0
+      milliseconds: 0
+  - type: turn_off
+    device_id: 247f56cc429ca49a254e3df37e263e37
+    entity_id: switch.bedroom_lamp
+    domain: switch
+  mode: single
+- id: '1669803810178'
+  alias: HVAC Off Downstairs
+  description: ''
+  trigger:
+  - platform: time
+    at: 00:02:00
+  condition: []
+  action:
+  - service: script.air_con_off
+    data: {}
+  mode: single
+- id: '1670315297840'
+  alias: AEOTEC Button 3 All Off
+  description: ''
+  trigger:
+  - platform: device
+    device_id: 14a16136393b5cf16d7f7ea86a944371
+    domain: zwave_js
+    type: event.value_notification.central_scene
+    property: scene
+    property_key: '003'
+    endpoint: 0
+    command_class: 91
+    subtype: Endpoint 0 Scene 003
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 6f872fd46e4d0439ef2456f700d4398b
+    entity_id: light.bed_lamp_mel
+    domain: light
+  - type: turn_off
+    device_id: 605e572814970daeb76e0dca4f8a17d7
+    entity_id: light.master_bed_led_2_2
+    domain: light
+  - type: turn_off
+    device_id: 247f56cc429ca49a254e3df37e263e37
+    entity_id: switch.bedroom_lamp
+    domain: switch
+  - type: turn_off
+    device_id: 6f6cf472f4fef1f0c20d9931d001ac70
+    entity_id: switch.master_closet
+    domain: switch
+  - type: turn_off
+    device_id: 3db0cec90e321434657d44397bbf327e
+    entity_id: switch.bedroom_lights
+    domain: switch
+  - type: turn_off
+    device_id: 3928371e49be816319eec1dac9c531a6
+    entity_id: light.bed_lamp_left
+    domain: light
+  - type: turn_off
+    device_id: e2d9c795303d91a6d576077b39fe32d3
+    entity_id: light.bath_circle
+    domain: light
+  - type: turn_off
+    device_id: 840fc824e00664e9c9cc36def0d6e277
+    entity_id: light.bathroom_mirror_spotlights
+    domain: light
+  - type: turn_off
+    device_id: f664adcdadd558ce399a7ba96dd2c7e1
+    entity_id: switch.bedroom_entry
+    domain: switch
+  - type: turn_off
+    device_id: 96eebeea5c10f7a7e98cf4f484918c1c
+    entity_id: light.bathroom_mirror_left
+    domain: light
+  - type: turn_off
+    device_id: 96eebeea5c10f7a7e98cf4f484918c1c
+    entity_id: light.bathroom_mirror_right
+    domain: light
+  - type: turn_off
+    device_id: 11a686020163e55732126863d48b41de
+    entity_id: light.shower_spotlights
+    domain: light
+  - service: script.bedroom_skylight_open
+    data: {}
+  - service: script.air_con_off
+    data: {}
+  mode: single
+- id: '1670316588879'
+  alias: New Automation
+  description: ''
+  trigger:
+  - device_id: 70801e5ee2b3a3ebd3994ace48240760
+    domain: zha
+    platform: device
+    type: remote_button_short_press
+    subtype: turn_on
+  condition: []
+  action:
+  - type: turn_off
+    device_id: eb5a340722cdfdd321e5e297e1657e3a
+    entity_id: light.study_lights
+    domain: light
+  mode: single
+- id: '1670688450998'
+  alias: Bedroom Heater ON - Evening
+  description: ''
+  trigger:
+  - platform: time
+    at: '19:40:00'
+  condition: []
+  action:
+  - service: script.bedroom_heater
+    data: {}
+  - service: tts.google_translate_say
+    data:
+      entity_id: media_player.family_room_speaker
+      message: 'Turning on Bedroom Heater '
+      cache: false
+  - service: tts.google_translate_say
+    data:
+      entity_id: media_player.master_bedroom_wifi
+      message: Closing Dog Door.
+      cache: false
+    enabled: false
+  - service: remote.send_command
+    data:
+      device: Dog Door
+      command: close
+      num_repeats: 200
+      delay_secs: 0.4
+      hold_secs: 0
+    target:
+      device_id: 57fdd525cc96afe7982612e0e1c15b14
+    enabled: false
+  mode: single
+- id: '1670694879093'
+  alias: Open dog door 5am
+  description: ''
+  trigger:
+  - platform: time
+    at: 05:00:00
+  condition: []
+  action:
+  - service: remote.send_command
+    data:
+      device: Dog Door
+      command: open
+      num_repeats: 200
+    target:
+      device_id: 57fdd525cc96afe7982612e0e1c15b14
+  mode: single
+- id: '1670695511918'
+  alias: Close Dog Door at 4pm (cold)
+  description: ''
+  trigger:
+  - platform: time
+    at: '16:00:00'
+  condition: []
+  action:
+  - service: remote.send_command
+    data:
+      device: Dog Door
+      command: close
+      num_repeats: 200
+    target:
+      device_id: 57fdd525cc96afe7982612e0e1c15b14
+  mode: single
+- id: '1670834203230'
+  alias: Bedroom Lamp OFF no motion
+  description: ''
+  trigger:
+  - type: no_motion
+    platform: device
+    device_id: dc623ed6f5b820c9b9b22b5aa5512450
+    entity_id: binary_sensor.bedroom_entry_sensor
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 10
+      seconds: 0
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 247f56cc429ca49a254e3df37e263e37
+    entity_id: switch.bedroom_lamp
+    domain: switch
+  mode: single
+- id: '1671388779432'
+  alias: Study Lights On
+  description: ''
+  trigger:
+  - type: occupied
+    platform: device
+    device_id: 9f0afe69985b661372d8f8644fdf6b95
+    entity_id: 4b1e660eb90ea47414015d0be8f943b1
+    domain: binary_sensor
+  condition: []
+  action:
+  - type: turn_on
+    device_id: eb5a340722cdfdd321e5e297e1657e3a
+    entity_id: light.study_lights
+    domain: light
+    brightness_pct: 100
+  - type: turn_on
+    device_id: 63e0fd14c627720090b913f2b1e45ff3
+    entity_id: switch.m8_study_fan_outlet
+    domain: switch
+  mode: single
+- id: '1671388815466'
+  alias: Study Lights Off
+  description: ''
+  trigger:
+  - type: not_occupied
+    platform: device
+    device_id: 9f0afe69985b661372d8f8644fdf6b95
+    entity_id: 4b1e660eb90ea47414015d0be8f943b1
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 3
+      seconds: 0
+  condition: []
+  action:
+  - type: turn_off
+    device_id: eb5a340722cdfdd321e5e297e1657e3a
+    entity_id: light.study_lights
+    domain: light
+  - type: turn_off
+    device_id: 63e0fd14c627720090b913f2b1e45ff3
+    entity_id: switch.m8_study_fan_outlet
+    domain: switch
+  mode: restart
+- id: '1671466128765'
+  alias: Entry Bathroom OFF
+  description: ''
+  trigger:
+  - type: no_motion
+    platform: device
+    device_id: dfbd36b1b522aa65205358681ff35f4e
+    entity_id: binary_sensor.entry_bathroom_motion_sensor_motion_detection
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 2
+      seconds: 0
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 8ec5845bc5cccb9b58298481f99b49ad
+    entity_id: light.entry_bathroom_spotlights
+    domain: light
+  - delay:
+      hours: 0
+      minutes: 1
+      seconds: 0
+      milliseconds: 0
+  - type: turn_off
+    device_id: 2c18e1cb84c339cec12d4877c38d80e5
+    domain: light
+    entity_id: light.entry_bathroom_led_led
+  mode: restart
+- id: '1671466503267'
+  alias: Entry Bathroom ON
+  description: ''
+  trigger:
+  - type: motion
+    platform: device
+    device_id: dfbd36b1b522aa65205358681ff35f4e
+    entity_id: binary_sensor.entry_bathroom_motion_sensor_motion_detection
+    domain: binary_sensor
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 2c18e1cb84c339cec12d4877c38d80e5
+    entity_id: light.entry_bathroom_led_controller
+    domain: light
+  - type: turn_on
+    device_id: 2c18e1cb84c339cec12d4877c38d80e5
+    domain: light
+    entity_id: light.entry_bathroom_led_led
+  - if:
+    - condition: time
+      after: 06:00:00
+      before: '18:00:00'
+    then:
+    - type: turn_on
+      device_id: 8ec5845bc5cccb9b58298481f99b49ad
+      entity_id: light.entry_bathroom_spotlights
+      domain: light
+      brightness_pct: 100
+    else:
+    - type: turn_on
+      device_id: 8ec5845bc5cccb9b58298481f99b49ad
+      entity_id: light.entry_bathroom_spotlights
+      domain: light
+      brightness_pct: 1
+    enabled: false
+  mode: single
+- id: '1671725325984'
+  alias: Everything Living Room No Motion
+  description: ''
+  trigger:
+  - type: not_occupied
+    platform: device
+    device_id: c3a8396028ad77fe1ae6078045f0e9a9
+    entity_id: binary_sensor.occupancy_living_room
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 30
+      seconds: 0
+  condition: []
+  action:
+  - type: turn_off
+    device_id: b733ae3ffdf5a2025971b625500b1a33
+    entity_id: light.chandelier
+    domain: light
+  - type: turn_off
+    device_id: b3cd0f6a14cd02f85de8e20c76356ee9
+    entity_id: switch.kitchen_led
+    domain: switch
+  - type: turn_off
+    device_id: 3bde07aac5e6792e1ab5ebad70800b27
+    entity_id: switch.kitchen_lights
+    domain: switch
+  mode: single
+- id: '1672156457320'
+  alias: Bedroom Lights Melissa Switch 2 ON
+  description: ''
+  trigger:
+  - platform: device
+    type: turned_on
+    device_id: 3db0cec90e321434657d44397bbf327e
+    entity_id: switch.bedroom_lights_2
+    domain: switch
+  condition:
+  - condition: numeric_state
+    entity_id: sensor.uptime_minutes
+    above: 5
+  action:
+  - type: turn_on
+    device_id: 3db0cec90e321434657d44397bbf327e
+    entity_id: switch.bedroom_lights
+    domain: switch
+  mode: single
+- id: '1672307224838'
+  alias: Bedroom Daytime Off No Motion
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.group_bedroom_motion_detection
+    to: 'off'
+    for:
+      hours: 0
+      minutes: 10
+      seconds: 0
+  condition:
+  - condition: time
+    after: 07:00:00
+    before: '20:00:00'
+  action:
+  - type: turn_off
+    device_id: f664adcdadd558ce399a7ba96dd2c7e1
+    entity_id: switch.bedroom_entry_lights
+    domain: switch
+  - type: turn_off
+    device_id: 840fc824e00664e9c9cc36def0d6e277
+    entity_id: light.bathroom_mirror_spotlights
+    domain: light
+  - type: turn_off
+    device_id: 11a686020163e55732126863d48b41de
+    entity_id: light.shower_spotlights
+    domain: light
+  - type: turn_off
+    device_id: 96eebeea5c10f7a7e98cf4f484918c1c
+    entity_id: light.bathroom_mirror_left
+    domain: light
+  - type: turn_off
+    device_id: 96eebeea5c10f7a7e98cf4f484918c1c
+    entity_id: light.bathroom_mirror_right
+    domain: light
+  - type: turn_off
+    device_id: e2d9c795303d91a6d576077b39fe32d3
+    entity_id: light.bath_circle
+    domain: light
+  - type: turn_off
+    device_id: 605e572814970daeb76e0dca4f8a17d7
+    entity_id: light.master_bed_led_2_2
+    domain: light
+  - type: turn_off
+    device_id: 3db0cec90e321434657d44397bbf327e
+    entity_id: switch.bedroom_lights
+    domain: switch
+  - service: script.bedroom_air_con_off
+    data: {}
+    enabled: false
+  mode: single
+- id: '1672331267768'
+  alias: Living Room set Occupied - ON
+  description: ''
+  trigger:
+  - type: occupied
+    platform: device
+    device_id: c3a8396028ad77fe1ae6078045f0e9a9
+    entity_id: binary_sensor.occupancy_living_room
+    domain: binary_sensor
+  - platform: state
+    entity_id:
+    - binary_sensor.group_downstairs_motion_detection
+    to: 'on'
+  condition: []
+  action:
+  - service: input_boolean.turn_on
+    data: {}
+    target:
+      entity_id: input_boolean.living_room_occupied
+  mode: restart
+- id: '1672332061462'
+  alias: Living Room set Occupied - OFF
+  description: ''
+  trigger:
+  - type: not_occupied
+    platform: device
+    device_id: c3a8396028ad77fe1ae6078045f0e9a9
+    entity_id: binary_sensor.occupancy_living_room
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 10
+      seconds: 0
+  - platform: state
+    entity_id:
+    - binary_sensor.group_downstairs_motion_detection
+    to: 'off'
+    for:
+      hours: 0
+      minutes: 10
+      seconds: 0
+  condition:
+  - condition: and
+    conditions:
+    - type: is_not_occupied
+      condition: device
+      device_id: c3a8396028ad77fe1ae6078045f0e9a9
+      entity_id: binary_sensor.occupancy_living_room
+      domain: binary_sensor
+      for:
+        hours: 0
+        minutes: 10
+        seconds: 0
+    - condition: state
+      entity_id: binary_sensor.group_downstairs_motion_detection
+      state: 'off'
+      for:
+        hours: 0
+        minutes: 10
+        seconds: 0
+  action:
+  - service: input_boolean.turn_off
+    data: {}
+    target:
+      entity_id: input_boolean.living_room_occupied
+  mode: restart
+- id: '1672509145331'
+  alias: AEOTEC Button 3 Master Bed LED
+  description: ''
+  trigger:
+  - platform: device
+    device_id: 14a16136393b5cf16d7f7ea86a944371
+    domain: zwave_js
+    type: event.value_notification.central_scene
+    property: scene
+    property_key: '002'
+    endpoint: 0
+    command_class: 91
+    subtype: Endpoint 0 Scene 002
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 605e572814970daeb76e0dca4f8a17d7
+    entity_id: light.master_bed_led_2_2
+    domain: light
+  - delay:
+      hours: 0
+      minutes: 30
+      seconds: 0
+      milliseconds: 0
+  - type: turn_off
+    device_id: 605e572814970daeb76e0dca4f8a17d7
+    entity_id: light.master_bed_led_2_2
+    domain: light
+  mode: single
+- id: '1672830363491'
+  alias: Record Player auto Off
+  description: ''
+  trigger:
+  - platform: device
+    type: turned_on
+    device_id: b4acd588f9685b7be1761e7ddbacac8e
+    entity_id: switch.shelly_1_record_player
+    domain: switch
+  condition:
+  - condition: device
+    type: is_on
+    device_id: b4acd588f9685b7be1761e7ddbacac8e
+    entity_id: switch.shelly_1_record_player
+    domain: switch
+  action:
+  - delay:
+      hours: 0
+      minutes: 30
+      seconds: 0
+      milliseconds: 0
+  - type: turn_off
+    device_id: b4acd588f9685b7be1761e7ddbacac8e
+    entity_id: switch.shelly_1_record_player
+    domain: switch
+  - service: notify.mobile_app_simons_iphone_14
+    data:
+      message: Turing Off Record Player
+  mode: single
+- id: '1673073103253'
+  alias: Living Room Master Switch Toggle Reset
+  description: ''
+  trigger:
+  - platform: device
+    type: turned_on
+    device_id: 7618fe3eb0c76d6fbe99879a2f80aa2b
+    entity_id: light.living_room_master_off
+    domain: light
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 7618fe3eb0c76d6fbe99879a2f80aa2b
+    entity_id: light.living_room_master_off
+    domain: light
+  mode: single
+- id: '1673073895340'
+  alias: Art Light Auto On when dark
+  description: ''
+  trigger:
+  - type: motion
+    platform: device
+    device_id: 14a3e6ecd209194f49ecbda65ec89e84
+    entity_id: binary_sensor.art_light_motion_sensor_motion_detection
+    domain: binary_sensor
+  condition:
+  - type: is_illuminance
+    condition: device
+    device_id: 14a3e6ecd209194f49ecbda65ec89e84
+    entity_id: sensor.art_light_motion_sensor_illuminance
+    domain: sensor
+    below: 10
+  - condition: state
+    entity_id: input_select.home_mode
+    state: Normal
+  action:
+  - type: turn_on
+    device_id: 7618fe3eb0c76d6fbe99879a2f80aa2b
+    entity_id: light.art_light_staircase
+    domain: light
+  mode: single
+- id: '1673534974277'
+  alias: Art Light Master Switch Increment
+  description: ''
+  trigger:
+  - platform: device
+    type: changed_states
+    device_id: 9589be47ae6db0a86b8925d0d69a6cf5
+    entity_id: light.living_room_spotlights_2
+    domain: light
+  condition:
+  - condition: numeric_state
+    entity_id: sensor.uptime_minutes
+    above: 5
+  action:
+  - type: turn_off
+    device_id: 7618fe3eb0c76d6fbe99879a2f80aa2b
+    entity_id: light.living_room_master_off
+    domain: light
+  - service: input_number.increment
+    data: {}
+    target:
+      entity_id: input_number.art_light_double_counter
+  - service: tts.google_translate_say
+    data:
+      entity_id: media_player.family_room_speaker
+      message: Count is {{states('input_number.art_light_double_counter')}}
+  - service: notify.mobile_app_simons_iphone_14
+    data:
+      message: 'message: Count is {{states(''input_number.art_light_double_counter'')}}'
+  mode: queued
+  max: 10
+- id: '1675198922247'
+  alias: Towel Heater ON
+  description: ''
+  trigger:
+  - platform: time
+    at: 06:00:00
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 0f30c9dc21696bc5557a5c96c9b597b2
+    entity_id: switch.meross_towel_heater_outlet
+    domain: switch
+  mode: single
+- id: '1675248926199'
+  alias: Pantry ON
+  description: ''
+  trigger:
+  - type: motion
+    platform: device
+    device_id: 005dbc4dbdcc2acde74c3e1f4caa4aa4
+    entity_id: binary_sensor.pantry_motion_sensor_motion_detection
+    domain: binary_sensor
+  condition: []
+  action:
+  - type: turn_on
+    device_id: a51c183cf093f8ca49a63262b69c6ded
+    entity_id: switch.pantry
+    domain: switch
+  mode: single
+- id: '1675248958996'
+  alias: Pantry daytime OFF
+  description: ''
+  trigger:
+  - type: no_motion
+    platform: device
+    device_id: 005dbc4dbdcc2acde74c3e1f4caa4aa4
+    entity_id: binary_sensor.pantry_motion_sensor_motion_detection
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 3
+      seconds: 0
+  condition:
+  - condition: sun
+    before: sunset
+    before_offset: '-1:00:00'
+    after: sunrise
+  action:
+  - type: turn_off
+    device_id: a51c183cf093f8ca49a63262b69c6ded
+    entity_id: switch.pantry
+    domain: switch
+  mode: single
+- id: '1675270924310'
+  alias: Pantry Nighttime OFF
+  description: ''
+  trigger:
+  - type: no_motion
+    platform: device
+    device_id: 005dbc4dbdcc2acde74c3e1f4caa4aa4
+    entity_id: binary_sensor.pantry_motion_sensor_motion_detection
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 15
+      seconds: 0
+  condition:
+  - condition: sun
+    before: sunrise
+    after: sunset
+    after_offset: '-1:00:00'
+  action:
+  - type: turn_off
+    device_id: a51c183cf093f8ca49a63262b69c6ded
+    entity_id: switch.pantry
+    domain: switch
+  mode: single
+- id: '1675353057599'
+  alias: Lift Button Blue 1 Press All OFF
+  description: ''
+  trigger:
+  - platform: device
+    device_id: 5b0738fa5401ea46ad2b1d6350f5ab5d
+    domain: zwave_js
+    type: event.value_notification.central_scene
+    property: scene
+    property_key: '001'
+    endpoint: 0
+    command_class: 91
+    subtype: Endpoint 0 Scene 001
+    value: 0
+  condition: []
+  action:
+  - parallel:
+    - service: media_player.volume_set
+      data:
+        volume_level: 0.63
+      target:
+        device_id: 08bc393f35640fa1188c130d63e366e4
+    - service: tts.google_translate_say
+      data:
+        cache: true
+        entity_id: media_player.family_room_speaker
+        message: Turning Everything Off, Good night.
+    - type: turn_off
+      device_id: 3bde07aac5e6792e1ab5ebad70800b27
+      entity_id: switch.kitchen_lights
+      domain: switch
+    - type: turn_off
+      device_id: b733ae3ffdf5a2025971b625500b1a33
+      entity_id: light.chandelier
+      domain: light
+    - type: turn_off
+      device_id: 24d89796ab08b28ed3780aa80be5873b
+      entity_id: switch.meross_m7_lamp_short_outlet
+      domain: switch
+    - type: turn_off
+      device_id: 3fcd7674c82c5d829d5f21653a268980
+      entity_id: switch.lamp_tall_gold
+      domain: switch
+    - type: turn_off
+      device_id: 87b30484f04bc58897eb73ff16aa11e5
+      entity_id: switch.smart_plug_20072944061154251h5448e1e927dba2_outlet
+      domain: switch
+    - service: script.air_con_off
+      data: {}
+    - service: light.turn_off
+      target:
+        device_id: 09a12aab6e27c3f64fdc160918e9d8ca
+      data:
+        transition: 60
+    - type: turn_off
+      device_id: bff2976ba3365a33a441c70f43bdbe18
+      entity_id: switch.node_8
+      domain: switch
+    - type: turn_off
+      device_id: 817d13a2421b3abc46991c8c7d8c4a65
+      entity_id: light.controller_tv_lights_led
+      domain: light
+    - type: turn_off
+      device_id: 7c945f90dc76ab5e53ea466957d840c0
+      entity_id: light.bookshelf_lights
+      domain: light
+    - type: turn_off
+      device_id: 74b7d8ccc9cd25e78386835a9ae301c1
+      entity_id: switch.m1_christmas_tree_outlet
+      domain: switch
+    - type: turn_off
+      device_id: 3bde07aac5e6792e1ab5ebad70800b27
+      entity_id: switch.kitchen_cabinets
+      domain: switch
+    - type: turn_off
+      device_id: b3cd0f6a14cd02f85de8e20c76356ee9
+      entity_id: switch.kitchen_led
+      domain: switch
+    - type: turn_off
+      device_id: b805fa111e96bf06bb581e38bf9c7b47
+      entity_id: switch.meross_3_second_monitor_outlet
+      domain: switch
+      enabled: true
+    - service: script.range_hood_power_cycle
+      data: {}
+    - service: script.study_hvac_off
+      data: {}
+    - type: turn_off
+      device_id: 63e0fd14c627720090b913f2b1e45ff3
+      entity_id: switch.m8_study_fan_outlet
+      domain: switch
+    - device_id: 24e61243c4428dcdcede0423f24d4d80
+      domain: climate
+      entity_id: climate.nest_hvac
+      type: set_hvac_mode
+      hvac_mode: 'off'
+      enabled: false
+    - type: turn_off
+      device_id: eb5a340722cdfdd321e5e297e1657e3a
+      entity_id: light.study_lights
+      domain: light
+    - type: turn_off
+      device_id: 7618fe3eb0c76d6fbe99879a2f80aa2b
+      entity_id: light.art_light_staircase
+      domain: light
+    - type: turn_off
+      device_id: 9589be47ae6db0a86b8925d0d69a6cf5
+      entity_id: light.living_room_spotlights
+      domain: light
+    - service: remote.send_command
+      data:
+        device: Dog Door
+        command: open
+        num_repeats: 200
+        delay_secs: 0.4
+        hold_secs: 0
+      target:
+        device_id: 57fdd525cc96afe7982612e0e1c15b14
+    - service: script.air_con_off
+      data: {}
+    - service: notify.mobile_app_simons_iphone_14
+      data:
+        message: Living Room Master OFF
+    - type: turn_off
+      device_id: a51c183cf093f8ca49a63262b69c6ded
+      entity_id: switch.pantry
+      domain: switch
+    - type: turn_off
+      device_id: 09a12aab6e27c3f64fdc160918e9d8ca
+      entity_id: ea1345f7f25f78893f390a3d5aa98944
+      domain: light
+      enabled: false
+    - type: turn_off
+      device_id: f40b8bbfb30009c2050e83b2a02c1585
+      entity_id: be23b82757583d7a6b57bb8f7ee9df0a
+      domain: light
+  mode: parallel
+  max: 10
+- id: '1675529087145'
+  alias: Push Button Simon Double Press
+  description: ''
+  trigger:
+  - platform: device
+    device_id: 653fdf321218685604af0c6c29592c40
+    domain: zwave_js
+    type: event.value_notification.central_scene
+    property: scene
+    property_key: '001'
+    endpoint: 0
+    command_class: 91
+    subtype: Endpoint 0 Scene 001
+    value: 3
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 605e572814970daeb76e0dca4f8a17d7
+    entity_id: light.master_bed_led_2_2
+    domain: light
+    brightness_pct: 10
+  mode: single
+- id: '1676806703302'
+  alias: Daytime Input Boolean OFF
+  description: ''
+  trigger:
+  - type: illuminance
+    platform: device
+    device_id: c3a8396028ad77fe1ae6078045f0e9a9
+    entity_id: sensor.illuminance_2
+    domain: sensor
+    below: 18
+    for:
+      hours: 0
+      minutes: 1
+      seconds: 0
+  condition: []
+  action:
+  - service: input_boolean.turn_off
+    data: {}
+    target:
+      entity_id: input_boolean.daytime
+  mode: single
+- id: '1676807571883'
+  alias: Daytime Input Boolean ON
+  description: ''
+  trigger:
+  - type: illuminance
+    platform: device
+    device_id: c3a8396028ad77fe1ae6078045f0e9a9
+    entity_id: sensor.illuminance_2
+    domain: sensor
+    for:
+      hours: 0
+      minutes: 1
+      seconds: 0
+    above: 18
+  condition: []
+  action:
+  - service: input_boolean.turn_on
+    data: {}
+    target:
+      entity_id: input_boolean.daytime
+  mode: single
+- id: '1677338785722'
+  alias: AWAY off at night
+  description: ''
+  trigger:
+  - platform: time
+    at: '20:44:00'
+  condition: []
+  action:
+  - service: notify.mobile_app_simons_iphone_14
+    data:
+      message: Turning everything off
+  - service: automation.trigger
+    data:
+      skip_condition: true
+    target:
+      entity_id: automation.aaa_button
+  mode: single
+- id: '1682849332738'
+  alias: Rain
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.gracia_precipitation
+    above: 0
+  condition: []
+  action:
+  - service: notify.mobile_app_simons_iphone_14
+    data:
+      message: Rain
+  - service: script.bedroom_skylight_open
+    data: {}
+  mode: single
+- id: '1684737233395'
+  alias: Spanish Lesson Monday
+  description: ''
+  trigger:
+  - platform: time
+    at: '10:00:00'
+  condition:
+  - condition: state
+    entity_id: input_select.home_mode
+    state: Normal
+  - condition: time
+    weekday:
+    - mon
+  action:
+  - type: turn_on
+    device_id: b733ae3ffdf5a2025971b625500b1a33
+    entity_id: light.chandelier
+    domain: light
+    brightness_pct: 100
+  - delay:
+      hours: 1
+      minutes: 10
+      seconds: 0
+      milliseconds: 0
+  - device_id: b733ae3ffdf5a2025971b625500b1a33
+    domain: light
+    entity_id: light.chandelier
+    type: brightness_decrease
+  mode: single
+- id: '1685010098530'
+  alias: Bedroom Lights Melissa Switch 2 OFF
+  description: ''
+  trigger:
+  - platform: device
+    type: turned_off
+    device_id: 3db0cec90e321434657d44397bbf327e
+    entity_id: switch.bedroom_lights_2
+    domain: switch
+  condition:
+  - condition: numeric_state
+    entity_id: sensor.uptime_minutes
+    above: 5
+  action:
+  - type: turn_off
+    device_id: 3db0cec90e321434657d44397bbf327e
+    entity_id: switch.bedroom_lights
+    domain: switch
+  mode: single
+- id: '1685017537428'
+  alias: Push Button Triple Press
+  description: ''
+  trigger:
+  - platform: device
+    device_id: 653fdf321218685604af0c6c29592c40
+    domain: zwave_js
+    type: event.value_notification.central_scene
+    property: scene
+    property_key: '001'
+    endpoint: 0
+    command_class: 91
+    subtype: Endpoint 0 Scene 001
+    value: 4
+  condition: []
+  action:
+  - service: remote.send_command
+    data:
+      device: Dog Door
+      command: close
+      num_repeats: 17
+    target:
+      device_id: 57fdd525cc96afe7982612e0e1c15b14
+  - service: remote.send_command
+    data:
+      device: Dog Door
+      command: open
+      num_repeats: 15
+    target:
+      device_id: 57fdd525cc96afe7982612e0e1c15b14
+  mode: single
+- id: '1686069680676'
+  description: ''
+  trigger:
+  - type: motion
+    platform: device
+    device_id: ee233693d4a6f7534b434a3c8eda6108
+    entity_id: binary_sensor.motion_sensor_closet_home_security_motion_detection_3
+    domain: binary_sensor
+  condition:
+  - type: is_illuminance
+    condition: device
+    device_id: ee233693d4a6f7534b434a3c8eda6108
+    entity_id: sensor.motion_sensor_closet_illuminance_3
+    domain: sensor
+    below: 80
+  - condition: state
+    entity_id: input_boolean.bedroom_curtain_motion
+    state: 'off'
+  action:
+  - type: turn_on
+    device_id: 6f6cf472f4fef1f0c20d9931d001ac70
+    entity_id: switch.master_closet
+    domain: switch
+  - delay:
+      hours: 0
+      minutes: 3
+      seconds: 0
+      milliseconds: 0
+  mode: restart
+- id: '1686069739638'
+  alias: Master Closet Off
+  description: ''
+  trigger:
+  - type: no_motion
+    platform: device
+    device_id: ee233693d4a6f7534b434a3c8eda6108
+    entity_id: binary_sensor.motion_sensor_closet_home_security_motion_detection_3
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 4
+      seconds: 0
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 6f6cf472f4fef1f0c20d9931d001ac70
+    entity_id: switch.master_closet
+    domain: switch
+  mode: restart
+- id: '1690810958793'
+  alias: Push Button White HOLD
+  description: ''
+  trigger:
+  - platform: device
+    device_id: 1d3ea4833ddfda743e05e05368213cd2
+    domain: zwave_js
+    type: event.value_notification.central_scene
+    property: scene
+    property_key: '001'
+    endpoint: 0
+    command_class: 91
+    subtype: Endpoint 0 Scene 001
+    value: 2
+  - platform: device
+    device_id: 653fdf321218685604af0c6c29592c40
+    domain: zwave_js
+    type: event.value_notification.central_scene
+    property: scene
+    property_key: '001'
+    endpoint: 0
+    command_class: 91
+    subtype: Endpoint 0 Scene 001
+    value: 2
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 605e572814970daeb76e0dca4f8a17d7
+    entity_id: 7e3c4cb93faca5053d36eee005a23b4a
+    domain: light
+    brightness_pct: 3
+  - type: turn_off
+    device_id: 96eebeea5c10f7a7e98cf4f484918c1c
+    entity_id: light.bathroom_mirror_left
+    domain: light
+  - type: turn_off
+    device_id: 96eebeea5c10f7a7e98cf4f484918c1c
+    entity_id: light.bathroom_mirror_right
+    domain: light
+  - type: turn_off
+    device_id: 6f872fd46e4d0439ef2456f700d4398b
+    entity_id: light.bed_lamp_mel
+    domain: light
+  - type: turn_off
+    device_id: 247f56cc429ca49a254e3df37e263e37
+    entity_id: switch.bedroom_lamp
+    domain: switch
+  - type: turn_off
+    device_id: 6f6cf472f4fef1f0c20d9931d001ac70
+    entity_id: switch.master_closet
+    domain: switch
+  - type: turn_off
+    device_id: 3db0cec90e321434657d44397bbf327e
+    entity_id: switch.bedroom_lights
+    domain: switch
+  - type: turn_off
+    device_id: 3928371e49be816319eec1dac9c531a6
+    entity_id: light.bed_lamp_left
+    domain: light
+  - type: turn_off
+    device_id: e2d9c795303d91a6d576077b39fe32d3
+    entity_id: light.bath_circle
+    domain: light
+  - type: turn_off
+    device_id: 840fc824e00664e9c9cc36def0d6e277
+    entity_id: light.bathroom_mirror_spotlights
+    domain: light
+  - type: turn_off
+    device_id: f664adcdadd558ce399a7ba96dd2c7e1
+    entity_id: switch.bedroom_entry
+    domain: switch
+  - type: turn_off
+    device_id: 11a686020163e55732126863d48b41de
+    entity_id: light.shower_spotlights
+    domain: light
+  - service: script.bedroom_skylight_open
+    data: {}
+    enabled: false
+  - service: script.air_con_off
+    data: {}
+  mode: single
+- id: '1692268375561'
+  alias: Art Life Off No Motion
+  description: ''
+  trigger:
+  - type: no_motion
+    platform: device
+    device_id: 14a3e6ecd209194f49ecbda65ec89e84
+    entity_id: 392172ee573afe78f38c80cd67a9b29e
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 10
+      seconds: 0
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 7618fe3eb0c76d6fbe99879a2f80aa2b
+    entity_id: 37c23fdc9309929d6523f520fa1b4ca0
+    domain: light
+  mode: single
+- id: '1692648560759'
+  alias: SET Home Mode AWAY
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_select.home_mode
+    to: Away
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 0f30c9dc21696bc5557a5c96c9b597b2
+    entity_id: 1c2b352f8aa84052f1ae0d0c1ad87f0c
+    domain: switch
+  mode: single
+- id: '1692648626425'
+  alias: Set Home Mode Home Again (not away)
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_select.home_mode
+    from: Away
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 0f30c9dc21696bc5557a5c96c9b597b2
+    entity_id: 1c2b352f8aa84052f1ae0d0c1ad87f0c
+    domain: switch
+  mode: single
+- id: '1692872468098'
+  alias: Thursday Wood Night
+  description: ''
+  trigger:
+  - platform: time
+    at: '19:00:56'
+  condition:
+  - condition: time
+    weekday:
+    - thu
+  action:
+  - service: media_player.volume_set
+    data:
+      volume_level: 0.63
+    target:
+      device_id: 08bc393f35640fa1188c130d63e366e4
+  - service: tts.google_translate_say
+    data:
+      cache: false
+      entity_id: media_player.family_room_speaker
+      message: It's Wood Night Tonight
+  mode: single
+- id: '1693036648005'
+  alias: Galaxy
+  description: ''
+  trigger: []
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 26e70ac262459c625c60e7c722fb6ecf
+    entity_id: 586e11fe010a0a261d1f4be75d5d211c
+    domain: switch
+  - service: media_player.play_media
+    target:
+      entity_id: media_player.galaxy_tab_a8
+    data:
+      media_content_id: media-source://media_source/local/Thank you and goodnight.m4a
+      media_content_type: audio/mp4
+    metadata:
+      title: Thank you and goodnight.m4a
+      thumbnail:
+      media_class: music
+      children_media_class:
+      navigateIds:
+      - {}
+      - media_content_type: app
+        media_content_id: media-source://media_source
+  mode: single

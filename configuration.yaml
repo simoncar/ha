@@ -1,0 +1,132 @@
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+# Text to speech
+tts:
+  - platform: google_translate
+  
+frontend:
+    themes: !include_dir_merge_named themes
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+switch: !include switch.yaml
+    
+influxdb:
+  host: a0d7b954-influxdb
+  port: 8086
+  database: homeassistant
+  username: homeassistant
+  password: hainfluxdb383ijf8eh
+  max_retries: 3
+  default_measurement: state
+ 
+  
+alarm_control_panel:
+  - platform: manual
+    code: 1234
+    delay_time: 30
+    arming_time: 30
+    trigger_time: 30
+    
+zha:
+    
+home_connect:
+  client_id: 704F06B825D8902F9B4A454A108946C40F21AB7432272F54947DFF7BBBD39DDD
+  client_secret: CDE87108CEE72C0CCF35677156489DADC13C8DECE1DB64F8D1B615E8D9C072A1
+
+# UTILITY METER #
+utility_meter:
+  # HOME ENERGY #
+  home_energy_hourly:
+    source: sensor.ide_meter_reading
+    cycle: hourly
+
+  home_energy_daily:
+    source: sensor.ide_meter_reading
+    cycle: daily
+
+  home_energy_monthly:
+    source: sensor.ide_meter_reading
+    cycle: monthly
+
+  home_energy_cost_hourly:
+    source: sensor.home_energy_cost
+    cycle: hourly
+
+  home_energy_cost_daily:
+    source: sensor.home_energy_cost
+    cycle: daily
+
+  home_energy_cost_monthly:
+    source: sensor.home_energy_cost
+    cycle: monthly
+
+bluetooth:
+
+# Example configuration.yaml entry
+samsungtv_smart:
+    host: 192.168.87.31
+    mac: 7c:0a:3f:9f:f5:3a
+    name: HA Rovira TV Bedroom
+    app_list: '{"Netflix": "11101200001/org.tizen.netflix-app", "Prime Video": "3201512006785/org.tizen.ignition", "Spotify": "3201606009684"}'
+
+
+sensor:
+  - platform: edata
+    debug: true
+   
+  - platform: ide
+    username: !secret edistribucion_user
+    password: !secret edistribucion_pass
+    
+    # ENERGY COST #
+  - platform: template
+    sensors:
+      home_energy_cost:
+          friendly_name: "Home Energy Cost"
+          unit_of_measurement: "€"
+          value_template: >
+            {% if is_state_attr('sensor.pvpc', 'period', 'P1') %} {% set peaje=states('input_number.peaje_energia_p1') | float %}
+            {% elif is_state_attr('sensor.pvpc', 'period', 'P2') %} {% set peaje=states('input_number.peaje_energia_p2') | float %}
+            {% elif is_state_attr('sensor.pvpc', 'period', 'P3') %} {% set peaje=states('input_number.peaje_energia_p3') | float %}
+            {% endif %}
+            {{ (( states('sensor.home_energy_hourly') | float * (peaje + states('sensor.pvpc') | float) ) * states('input_number.impuesto_energia') | float * states('input_number.iva_energia') | float) | round(3) }}
+      home_total_power:
+          friendly_name: "Home Total Power"
+          unit_of_measurement: 'W'
+          device_class: power
+          value_template: >
+            {{ 
+                float(states('sensor.shelly_power_meter_l1_l2_channel_1_power')) 
+                + float(states('sensor.shelly_power_meter_l1_l2_channel_2_power')) 
+                + float(states('sensor.shelly_power_meter_l3_spa_channel_1_power')) 
+                + float(states('sensor.shelly_power_meter_l3_spa_channel_2_power')) 
+            }}
+      uptime_minutes:
+        friendly_name: UpTime Minutes
+        value_template: >
+          {{ (as_timestamp(now()) - as_timestamp(states('sensor.uptime'))) // 60| round (0)  }}
+        
+ios:
+  actions:
+    - name: Fred
+      background_color: "#000000"
+      label:
+        text: "Hello, World"
+        color: "#ff0000"
+      icon:
+        icon: earth
+        color: "#ffffff"    
+            
+remember_the_milk:
+  - name: your_rtm_account
+    api_key: f6061c3ab4047006a7b88d6b03b97974
+    shared_secret: 00c976a197c79ca0
+            
+            
+            
+            
