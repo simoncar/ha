@@ -123,9 +123,13 @@ ios:
         icon: earth
         color: "#ffffff"    
         
+tts:
+  - platform: google_translate
+    service_name: google_say   
+        
 notify:
   - platform: tts
-    name: living_room_notigy
+    name: living_room_notify
     entity_id: tts.google_en_com
     media_player: media_player.family_room_speaker
     

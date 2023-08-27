@@ -95,6 +95,16 @@
     offset: -00:29:00
   - platform: time
     at: '19:30:00'
+  - type: illuminance
+    platform: device
+    device_id: c3a8396028ad77fe1ae6078045f0e9a9
+    entity_id: 3ba402a1161d49a8ef150f6bb916d552
+    domain: sensor
+    below: 30
+    for:
+      hours: 0
+      minutes: 1
+      seconds: 0
   condition:
   - condition: state
     entity_id: input_select.home_mode
