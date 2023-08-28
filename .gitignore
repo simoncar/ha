@@ -4,14 +4,14 @@
 !*.sh
 !*.js*
 !node-red/
-
+!*lovelace*
 
 secrets.yaml
 
 .ssh
 
 .storage
-!*lovelace*
+
 
 .cloud
 .google.token
