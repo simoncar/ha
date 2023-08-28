@@ -1,0 +1,1243 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace",
+  "data": {
+    "config": {
+      "title": "Gracia",
+      "views": [
+        {
+          "title": "Tablet5",
+          "path": "tablet",
+          "icon": "mdi:tablet",
+          "theme": "Mushroom",
+          "type": "custom:grid-layout",
+          "badges": [],
+          "cards": [
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "tile",
+                      "entity": "script.air_con_on",
+                      "name": "AC On",
+                      "icon": "mdi:air-conditioner"
+                    },
+                    {
+                      "type": "tile",
+                      "entity": "script.air_con_off",
+                      "name": "AC Off",
+                      "icon": "mdi:fan-off",
+                      "icon_tap_action": {
+                        "action": "call-service",
+                        "service": "script.living_room_hvac_30",
+                        "data": {},
+                        "target": {}
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "tile",
+                      "entity": "script.blinds_up"
+                    },
+                    {
+                      "type": "tile",
+                      "entity": "script.blinds_down"
+                    }
+                  ]
+                },
+                {
+                  "hours_to_show": 24,
+                  "graph": "line",
+                  "type": "sensor",
+                  "entity": "sensor.temperature_living_room_presence",
+                  "detail": 2,
+                  "name": "Living Room Temperature"
+                }
+              ]
+            },
+            {
+              "show_name": true,
+              "view_layout": {
+                "column": 2
+              },
+              "show_icon": true,
+              "type": "button",
+              "entity": "automation.automation_86",
+              "name": "All OFF",
+              "icon": "mdi:radiobox-indeterminate-variant"
+            },
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "tile",
+                      "entity": "light.controller_tv_lights_led",
+                      "icon": "mdi:awning-outline"
+                    },
+                    {
+                      "type": "tile",
+                      "entity": "light.bookshelf_lights",
+                      "icon": "mdi:bookshelf"
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "tile",
+                      "entity": "switch.meross_m7_lamp_short_outlet",
+                      "icon": "mdi:lamp"
+                    },
+                    {
+                      "type": "tile",
+                      "entity": "switch.smart_plug_20072944061154251h5448e1e927dba2_outlet",
+                      "name": "Lamp Tall",
+                      "icon": "mdi:floor-lamp"
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "tile",
+                      "name": "Kitchen Lights",
+                      "icon": "mdi:light-recessed",
+                      "entity": "switch.kitchen_lights"
+                    },
+                    {
+                      "type": "tile",
+                      "name": "Kitchen LED",
+                      "icon": "mdi:led-strip",
+                      "entity": "switch.kitchen_led"
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "tile",
+                      "name": "Chandelier",
+                      "entity": "light.chandelier",
+                      "icon": "mdi:chandelier"
+                    },
+                    {
+                      "type": "tile",
+                      "entity": "light.living_room_spotlights",
+                      "icon": "mdi:spotlight-beam",
+                      "name": "Spotlights"
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "tile",
+                      "name": "Glasses",
+                      "icon": "mdi:glass-cocktail",
+                      "entity": "switch.kitchen_cabinets"
+                    },
+                    {
+                      "type": "tile",
+                      "entity": "light.art_light_staircase"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "custom:mushroom-select-card",
+              "entity": "input_select.home_mode"
+            },
+            {
+              "type": "horizontal-stack",
+              "cards": [
+                {
+                  "type": "vertical-stack",
+                  "cards": [
+                    {
+                      "type": "horizontal-stack",
+                      "cards": [
+                        {
+                          "type": "tile",
+                          "entity": "script.air_con_on",
+                          "name": "AC On",
+                          "icon": "mdi:air-conditioner"
+                        },
+                        {
+                          "type": "tile",
+                          "entity": "script.air_con_off",
+                          "name": "AC Off",
+                          "icon": "mdi:fan-off",
+                          "icon_tap_action": {
+                            "action": "call-service",
+                            "service": "script.living_room_hvac_30",
+                            "data": {},
+                            "target": {}
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "horizontal-stack",
+                      "cards": [
+                        {
+                          "type": "tile",
+                          "entity": "script.blinds_up"
+                        },
+                        {
+                          "type": "tile",
+                          "entity": "script.blinds_down"
+                        }
+                      ]
+                    },
+                    {
+                      "hours_to_show": 24,
+                      "graph": "line",
+                      "type": "sensor",
+                      "entity": "sensor.temperature_living_room_presence",
+                      "detail": 2,
+                      "name": "Living Room Temperature"
+                    }
+                  ]
+                },
+                {
+                  "type": "vertical-stack",
+                  "cards": [
+                    {
+                      "type": "horizontal-stack",
+                      "cards": [
+                        {
+                          "type": "tile",
+                          "entity": "script.air_con_on",
+                          "name": "AC On",
+                          "icon": "mdi:air-conditioner"
+                        },
+                        {
+                          "type": "tile",
+                          "entity": "script.air_con_off",
+                          "name": "AC Off",
+                          "icon": "mdi:fan-off",
+                          "icon_tap_action": {
+                            "action": "call-service",
+                            "service": "script.living_room_hvac_30",
+                            "data": {},
+                            "target": {}
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "horizontal-stack",
+                      "cards": [
+                        {
+                          "type": "tile",
+                          "entity": "script.blinds_up"
+                        },
+                        {
+                          "type": "tile",
+                          "entity": "script.blinds_down"
+                        }
+                      ]
+                    },
+                    {
+                      "hours_to_show": 24,
+                      "graph": "line",
+                      "type": "sensor",
+                      "entity": "sensor.temperature_living_room_presence",
+                      "detail": 2,
+                      "name": "Living Room Temperature"
+                    }
+                  ]
+                },
+                {
+                  "type": "vertical-stack",
+                  "cards": [
+                    {
+                      "type": "horizontal-stack",
+                      "cards": [
+                        {
+                          "type": "weather-forecast",
+                          "entity": "weather.gracia",
+                          "forecast_type": "legacy"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "path": "default_view",
+          "icon": "mdi:home",
+          "theme": "Mushroom",
+          "cards": [
+            {
+              "type": "custom:mushroom-select-card",
+              "entity": "input_select.home_mode",
+              "tap_action": {
+                "action": "none"
+              },
+              "fill_container": false,
+              "secondary_info": "none",
+              "layout": "horizontal"
+            },
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "graph": "line",
+                  "type": "sensor",
+                  "entity": "sensor.home_total_power",
+                  "hours_to_show": 24,
+                  "detail": 2,
+                  "unit": "W"
+                }
+              ]
+            },
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "tile",
+                      "name": "Lights",
+                      "entity": "switch.node_8",
+                      "vertical": false
+                    }
+                  ]
+                },
+                {
+                  "graph": "none",
+                  "type": "sensor",
+                  "entity": "sensor.shelly1_pool_temperature_2",
+                  "hours_to_show": 0,
+                  "detail": 1
+                }
+              ]
+            },
+            {
+              "show_current": true,
+              "show_forecast": true,
+              "type": "weather-forecast",
+              "entity": "weather.gracia",
+              "forecast_type": "legacy"
+            }
+          ]
+        },
+        {
+          "path": "bedroom",
+          "icon": "mdi:home",
+          "columns": 3,
+          "badges": [],
+          "cards": [
+            {
+              "type": "vertical-stack",
+              "title": "Bedroom",
+              "cards": [
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "show_name": true,
+                      "show_icon": true,
+                      "type": "button",
+                      "tap_action": {
+                        "action": "toggle"
+                      },
+                      "entity": "script.bedroom_air_con_adjust_18",
+                      "name": "On"
+                    },
+                    {
+                      "show_name": true,
+                      "show_icon": true,
+                      "type": "button",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.bedroom_air_con_off",
+                        "target": {}
+                      },
+                      "entity": "script.bedroom_air_con_adjust_18",
+                      "show_state": false,
+                      "name": "AC Off",
+                      "icon": "mdi:close-circle-outline"
+                    }
+                  ]
+                },
+                {
+                  "type": "vertical-stack",
+                  "cards": [
+                    {
+                      "graph": "none",
+                      "hours_to_show": 24,
+                      "type": "sensor",
+                      "entity": "sensor.remote_master_bedroom_temperature",
+                      "detail": 2,
+                      "name": "Bedroom Temperature"
+                    },
+                    {
+                      "type": "horizontal-stack",
+                      "cards": [
+                        {
+                          "type": "custom:mushroom-cover-card",
+                          "entity": "cover.bedroom_curtains",
+                          "show_position_control": true,
+                          "show_buttons_control": false,
+                          "show_tilt_position_control": false,
+                          "layout": "horizontal",
+                          "fill_container": true
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "horizontal-stack",
+                  "title": "Living Room",
+                  "cards": []
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "tile",
+                      "entity": "script.air_con_on",
+                      "name": "AC On",
+                      "icon": "mdi:air-conditioner"
+                    },
+                    {
+                      "type": "tile",
+                      "entity": "script.air_con_off",
+                      "name": "AC Off",
+                      "icon": "mdi:fan-off",
+                      "icon_tap_action": {
+                        "action": "call-service",
+                        "service": "script.living_room_hvac_30",
+                        "data": {},
+                        "target": {}
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "tile",
+                      "entity": "script.blinds_up"
+                    },
+                    {
+                      "type": "tile",
+                      "entity": "script.blinds_down"
+                    }
+                  ]
+                },
+                {
+                  "hours_to_show": 24,
+                  "graph": "line",
+                  "type": "sensor",
+                  "entity": "sensor.temperature_living_room_presence",
+                  "detail": 2,
+                  "name": "Living Room Temperature"
+                }
+              ]
+            },
+            {
+              "type": "custom:mushroom-select-card",
+              "entity": "input_select.home_mode",
+              "tap_action": {
+                "action": "none"
+              },
+              "fill_container": false,
+              "secondary_info": "none",
+              "layout": "horizontal"
+            },
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "graph": "line",
+                  "type": "sensor",
+                  "entity": "sensor.home_total_power",
+                  "hours_to_show": 24,
+                  "detail": 2,
+                  "unit": "W"
+                }
+              ]
+            },
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "tile",
+                      "name": "Lights",
+                      "entity": "switch.node_8",
+                      "vertical": false
+                    }
+                  ]
+                },
+                {
+                  "graph": "none",
+                  "type": "sensor",
+                  "entity": "sensor.shelly1_pool_temperature_2",
+                  "hours_to_show": 0,
+                  "detail": 1
+                }
+              ]
+            },
+            {
+              "show_current": true,
+              "show_forecast": true,
+              "type": "weather-forecast",
+              "entity": "weather.gracia",
+              "forecast_type": "legacy"
+            }
+          ]
+        },
+        {
+          "path": "detail_view",
+          "icon": "mdi:home-analytics",
+          "columns": 3,
+          "badges": [],
+          "cards": [
+            {
+              "type": "vertical-stack",
+              "title": "Bedroom",
+              "cards": [
+                {
+                  "type": "vertical-stack",
+                  "cards": [
+                    {
+                      "type": "horizontal-stack",
+                      "cards": [
+                        {
+                          "type": "tile",
+                          "entity": "script.bedroom_tv_power_cycle",
+                          "tap_action": {
+                            "action": "call-service",
+                            "service": "script.bedroom_tv_power_cycle",
+                            "data": {},
+                            "target": {}
+                          },
+                          "name": "TV Reset",
+                          "icon": "mdi:power-plug-off-outline"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "horizontal-stack",
+                      "cards": [
+                        {
+                          "type": "custom:mushroom-entity-card",
+                          "entity": "sensor.remote_master_bedroom_temperature",
+                          "icon": "mdi:hvac",
+                          "tap_action": {
+                            "action": "call-service",
+                            "service": "script.bedroom_air_con_adjust_18",
+                            "target": {}
+                          },
+                          "name": "AC On",
+                          "icon_color": "red"
+                        },
+                        {
+                          "type": "custom:mushroom-entity-card",
+                          "entity": "sensor.remote_master_bedroom_temperature",
+                          "icon": "mdi:hvac-off",
+                          "tap_action": {
+                            "action": "call-service",
+                            "service": "script.bedroom_air_con_off",
+                            "data": {},
+                            "target": {}
+                          },
+                          "name": "AC OFF",
+                          "icon_color": "pink"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "horizontal-stack",
+                      "cards": [
+                        {
+                          "type": "tile",
+                          "name": "Simon",
+                          "entity": "light.bathroom_mirror_left",
+                          "icon": "mdi:face-man"
+                        },
+                        {
+                          "type": "tile",
+                          "name": "Mel",
+                          "entity": "light.bathroom_mirror_right",
+                          "icon": "mdi:face-woman-profile"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "horizontal-stack",
+                      "cards": [
+                        {
+                          "type": "tile",
+                          "entity": "light.bed_lamp_mel",
+                          "icon": "mdi:spotlight-beam",
+                          "name": "Mel"
+                        },
+                        {
+                          "type": "tile",
+                          "entity": "light.bed_lamp_left",
+                          "icon": "mdi:spotlight-beam",
+                          "name": "Simon"
+                        },
+                        {
+                          "type": "tile",
+                          "entity": "light.master_bed_led_2_2",
+                          "icon": "mdi:led-strip",
+                          "name": "LED"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "horizontal-stack",
+                      "cards": [
+                        {
+                          "type": "tile",
+                          "entity": "light.bath_circle",
+                          "icon": "mdi:dome-light",
+                          "show_entity_picture": false
+                        },
+                        {
+                          "type": "tile",
+                          "entity": "light.shower_spotlights",
+                          "name": "Shower"
+                        },
+                        {
+                          "type": "tile",
+                          "entity": "light.bathroom_mirror_spotlights",
+                          "name": "Mirror Spot",
+                          "icon": "mdi:vanity-light"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "horizontal-stack",
+                      "cards": [
+                        {
+                          "type": "tile",
+                          "entity": "switch.bedroom_lamp",
+                          "icon": "mdi:floor-lamp",
+                          "name": "Lamp"
+                        },
+                        {
+                          "type": "tile",
+                          "entity": "switch.bedroom_lights",
+                          "icon": "mdi:light-recessed",
+                          "name": "Lights"
+                        },
+                        {
+                          "type": "tile",
+                          "entity": "switch.master_closet",
+                          "icon": "mdi:light-recessed",
+                          "name": "Closet"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "horizontal-stack",
+                      "cards": [
+                        {
+                          "type": "custom:mushroom-cover-card",
+                          "entity": "cover.bedroom_curtains",
+                          "show_position_control": true,
+                          "show_buttons_control": false,
+                          "show_tilt_position_control": false,
+                          "layout": "horizontal",
+                          "fill_container": true
+                        }
+                      ]
+                    },
+                    {
+                      "hours_to_show": 24,
+                      "graph": "line",
+                      "type": "sensor",
+                      "entity": "sensor.remote_master_bedroom_temperature",
+                      "detail": 2,
+                      "name": "Temperature"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "horizontal-stack",
+                  "title": "Living Room",
+                  "cards": [
+                    {
+                      "type": "tile",
+                      "entity": "input_boolean.living_room_occupied"
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "tile",
+                      "entity": "script.air_con_on",
+                      "name": "AC On",
+                      "icon": "mdi:air-conditioner"
+                    },
+                    {
+                      "type": "tile",
+                      "entity": "script.air_con_off",
+                      "name": "AC Off",
+                      "icon": "mdi:fan-off",
+                      "icon_tap_action": {
+                        "action": "call-service",
+                        "service": "script.living_room_hvac_30",
+                        "data": {},
+                        "target": {}
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "tile",
+                      "entity": "binary_sensor.occupancy_living_room",
+                      "name": "POne Occupancy"
+                    },
+                    {
+                      "type": "tile",
+                      "entity": "binary_sensor.group_downstairs_motion_detection"
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "tile",
+                      "entity": "binary_sensor.pir_living_room"
+                    },
+                    {
+                      "type": "tile",
+                      "entity": "binary_sensor.mmwave_living_room",
+                      "icon": "mdi:sine-wave"
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "tile",
+                      "entity": "light.controller_tv_lights_led",
+                      "icon": "mdi:awning-outline"
+                    },
+                    {
+                      "type": "tile",
+                      "entity": "light.bookshelf_lights",
+                      "icon": "mdi:bookshelf"
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "tile",
+                      "entity": "switch.meross_m7_lamp_short_outlet",
+                      "icon": "mdi:lamp"
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "tile",
+                      "entity": "script.blinds_up"
+                    },
+                    {
+                      "type": "tile",
+                      "entity": "script.blinds_down"
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "tile",
+                      "entity": "climate.nest_hvac"
+                    },
+                    {
+                      "type": "tile",
+                      "entity": "sensor.temperature"
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "tile",
+                      "name": "Kitchen Lights",
+                      "icon": "mdi:light-recessed",
+                      "entity": "switch.kitchen_lights"
+                    },
+                    {
+                      "type": "tile",
+                      "name": "Kitchen LED",
+                      "icon": "mdi:led-strip",
+                      "entity": "switch.kitchen_led"
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "tile",
+                      "name": "Chandelier",
+                      "entity": "light.chandelier",
+                      "icon": "mdi:chandelier"
+                    },
+                    {
+                      "type": "tile",
+                      "entity": "light.living_room_spotlights",
+                      "icon": "mdi:spotlight-beam",
+                      "name": "Spotlights"
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "tile",
+                      "entity": "switch.smart_plug_20072944061154251h5448e1e927dba2_outlet",
+                      "name": "Lamp Tall",
+                      "icon": "mdi:floor-lamp"
+                    },
+                    {
+                      "type": "tile",
+                      "name": "Glasses",
+                      "icon": "mdi:glass-cocktail",
+                      "entity": "switch.kitchen_cabinets"
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "tile",
+                      "entity": "switch.shelly_1_record_player",
+                      "icon": "mdi:album",
+                      "name": "Record Player"
+                    },
+                    {
+                      "type": "tile",
+                      "entity": "light.art_light_staircase"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "tile",
+                      "entity": "switch.smart_plug_2_outlet"
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "tile",
+                      "name": "Temperature",
+                      "entity": "sensor.rm4_study_temperature"
+                    },
+                    {
+                      "type": "tile",
+                      "entity": "binary_sensor.smoke_detector_smoke_alarm_smoke_detected"
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "tile",
+                      "entity": "light.study_lights"
+                    },
+                    {
+                      "type": "tile",
+                      "entity": "switch.m8_study_fan_outlet",
+                      "icon": "mdi:fan",
+                      "name": "Study Fan"
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "tile",
+                      "entity": "switch.washing_machine"
+                    },
+                    {
+                      "type": "tile",
+                      "entity": "switch.tumble_dryer"
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "tile",
+                      "entity": "binary_sensor.presence_study_occupancy"
+                    },
+                    {
+                      "type": "tile",
+                      "entity": "binary_sensor.presence_study_mmwave"
+                    },
+                    {
+                      "type": "tile",
+                      "entity": "binary_sensor.presence_study_pir"
+                    }
+                  ]
+                }
+              ],
+              "title": "Study"
+            },
+            {
+              "type": "vertical-stack",
+              "title": "Entry",
+              "cards": [
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "tile",
+                      "entity": "light.entry_bathroom_spotlights",
+                      "icon": "mdi:lightbulb-spot"
+                    },
+                    {
+                      "type": "tile",
+                      "entity": "light.entry_bathroom_led_led",
+                      "icon": "mdi:led-strip"
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "tile",
+                      "entity": "light.entry_pendant",
+                      "icon": "mdi:chandelier"
+                    },
+                    {
+                      "type": "tile",
+                      "entity": "light.controller_lights_front_door",
+                      "icon": "mdi:led-strip",
+                      "name": "Front Door"
+                    },
+                    {
+                      "type": "tile",
+                      "entity": "binary_sensor.node_7_access_control_window_door_is_open"
+                    }
+                  ]
+                },
+                {
+                  "type": "tile",
+                  "entity": "switch.art_light_entry"
+                }
+              ]
+            },
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "horizontal-stack",
+                  "title": "Backyard",
+                  "cards": [
+                    {
+                      "type": "tile",
+                      "name": "Water",
+                      "entity": "sensor.shelly1_pool_temperature_2"
+                    },
+                    {
+                      "type": "tile",
+                      "name": "Pump",
+                      "entity": "sensor.shelly1_pool_temperature"
+                    },
+                    {
+                      "type": "tile",
+                      "name": "Humidity",
+                      "entity": "sensor.rm4_pool_humidity"
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "tile",
+                      "name": "Lights",
+                      "entity": "switch.node_8"
+                    },
+                    {
+                      "type": "tile",
+                      "name": "Occupancy",
+                      "entity": "binary_sensor.philips_backyard_sensor_occupancy"
+                    },
+                    {
+                      "type": "tile",
+                      "name": "Lux",
+                      "entity": "sensor.philips_backyard_sensor_illuminance"
+                    }
+                  ]
+                },
+                {
+                  "type": "sensor",
+                  "entity": "sensor.shelly1_pool_temperature_2",
+                  "hours_to_show": 281,
+                  "graph": "line"
+                }
+              ]
+            },
+            {
+              "type": "entities",
+              "entities": [
+                "sensor.uptime"
+              ],
+              "title": "Uptime"
+            },
+            {
+              "type": "custom:mushroom-select-card",
+              "entity": "input_select.home_mode",
+              "tap_action": {
+                "action": "call-service",
+                "service": "input_boolean.toggle",
+                "target": {
+                  "entity_id": "input_boolean.away"
+                },
+                "data": {}
+              },
+              "fill_container": false
+            }
+          ]
+        },
+        {
+          "title": "Battery",
+          "path": "battery",
+          "icon": "mdi:battery",
+          "badges": [],
+          "cards": [
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "binary_sensor.blink_g8t1_k000_1306_09dx_battery_2"
+                },
+                {
+                  "entity": "binary_sensor.blink_g8t1_k000_1306_09eb_battery"
+                },
+                {
+                  "entity": "binary_sensor.flood_sensor_low_battery_level"
+                },
+                {
+                  "entity": "sensor.lift_button_blue_battery_level"
+                },
+                {
+                  "entity": "sensor.push_button_mel_white_battery_level"
+                },
+                {
+                  "entity": "sensor.push_button_simon_white_battery_level"
+                },
+                {
+                  "entity": "binary_sensor.blink_inside_battery"
+                },
+                {
+                  "entity": "binary_sensor.blink_level_2_battery"
+                },
+                {
+                  "entity": "binary_sensor.blink_level_3_battery"
+                },
+                {
+                  "entity": "binary_sensor.blink_g8t1_k000_1306_09eb_battery"
+                },
+                {
+                  "entity": "sensor.flood_sensor_battery_level"
+                },
+                {
+                  "entity": "sensor.node_7_battery_level"
+                },
+                {
+                  "entity": "sensor.bedroom_entry_battery_level_3"
+                },
+                {
+                  "entity": "sensor.motion_sensor_study_battery_level_2"
+                },
+                {
+                  "entity": "sensor.pantry_motion_sensor_battery_level"
+                },
+                {
+                  "entity": "sensor.glasses_cupboard_battery_level"
+                },
+                {
+                  "entity": "sensor.motion_sensor_master_bathroom_battery_level_3"
+                },
+                {
+                  "entity": "sensor.motion_sensor_kitchen_table_battery_level_3"
+                },
+                {
+                  "entity": "sensor.motion_sensor_closet_battery_level_3"
+                }
+              ],
+              "state_color": true
+            }
+          ]
+        },
+        {
+          "theme": "Backend-selected",
+          "title": "Power",
+          "path": "power",
+          "icon": "mdi:home-lightning-bolt-outline",
+          "type": "panel",
+          "badges": [],
+          "cards": [
+            {
+              "type": "custom:apexcharts-card",
+              "apex_config": {
+                "legend": {
+                  "show": false
+                }
+              },
+              "all_series_config": {
+                "stroke_width": 1
+              },
+              "graph_span": "60min",
+              "layout": "minimal",
+              "header": {
+                "show": true,
+                "title": "ApexCharts-Card",
+                "show_states": true,
+                "colorize_states": true
+              },
+              "series": [
+                {
+                  "entity": "sensor.home_total_power",
+                  "stroke_width": 3
+                },
+                {
+                  "entity": "sensor.shelly_power_meter_l1_l2_channel_1_power"
+                },
+                {
+                  "entity": "sensor.shelly_power_meter_l1_l2_channel_2_power"
+                },
+                {
+                  "entity": "sensor.shelly_power_meter_l3_spa_channel_1_power"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "theme": "Backend-selected",
+          "title": "Rain",
+          "path": "rain",
+          "icon": "mdi:home-lightning-bolt-outline",
+          "type": "panel",
+          "badges": [],
+          "cards": [
+            {
+              "type": "custom:apexcharts-card",
+              "apex_config": {
+                "legend": {
+                  "show": true
+                }
+              },
+              "all_series_config": {
+                "stroke_width": 1
+              },
+              "graph_span": "30d",
+              "span": {
+                "end": "isoWeek"
+              },
+              "layout": "minimal",
+              "header": {
+                "show": true,
+                "title": "ApexCharts-Card",
+                "show_states": true,
+                "colorize_states": true
+              },
+              "series": [
+                {
+                  "entity": "sensor.gracia_precipitation",
+                  "type": "column"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Weather",
+          "path": "weather",
+          "icon": "mdi:weather-hazy",
+          "badges": [],
+          "cards": [
+            {
+              "type": "custom:weather-radar-card",
+              "show_playback": false,
+              "show_zoom": true,
+              "show_range": false,
+              "extra_labels": false,
+              "show_recenter": false,
+              "show_marker": false
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

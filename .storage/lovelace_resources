@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace_resources",
+  "data": {
+    "items": [
+      {
+        "url": "/hacsfiles/bootstrap-grid-card/bootstrap-grid-card.js?hacstag=334448958020",
+        "type": "module",
+        "id": "ddeda884fd5b4a539b113ca08dfd25fa"
+      },
+      {
+        "url": "/hacsfiles/apexcharts-card/apexcharts-card.js?hacstag=331701152204",
+        "type": "module",
+        "id": "6df5651a4a68467f893b39a703270020"
+      },
+      {
+        "url": "/hacsfiles/lovelace-mushroom/mushroom.js?hacstag=444350375305",
+        "type": "module",
+        "id": "d17f66539d974de9969dd923443481d1"
+      },
+      {
+        "id": "87838a598b904aa5a8615a3d74008a2d",
+        "url": "/hacsfiles/weather-radar-card/weather-radar-card.js?hacstag=487680971210",
+        "type": "module"
+      },
+      {
+        "id": "fcccab9139c44627a08ef4c3e9f1e7bd",
+        "url": "/hacsfiles/lovelace-layout-card/layout-card.js?hacstag=156434866244",
+        "type": "module"
+      }
+    ]
+  }
+}
