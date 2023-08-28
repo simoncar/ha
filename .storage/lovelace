@@ -55,22 +55,30 @@
                       "type": "horizontal-stack",
                       "cards": [
                         {
-                          "type": "tile",
-                          "entity": "script.blinds_up",
+                          "show_name": true,
+                          "show_icon": true,
+                          "type": "button",
                           "tap_action": {
                             "action": "call-service",
                             "service": "script.blinds_up",
                             "target": {}
-                          }
+                          },
+                          "entity": "script.blinds_up",
+                          "name": "Blinds Up",
+                          "icon": "mdi:blinds-open"
                         },
                         {
-                          "type": "tile",
-                          "entity": "script.blinds_down",
+                          "show_name": true,
+                          "show_icon": true,
+                          "type": "button",
                           "tap_action": {
                             "action": "call-service",
                             "service": "script.blinds_down",
                             "target": {}
-                          }
+                          },
+                          "entity": "script.blinds_down",
+                          "name": "Blinds Down",
+                          "icon": "mdi:blinds"
                         }
                       ]
                     },
@@ -88,7 +96,7 @@
                       "type": "button",
                       "entity": "automation.automation_86",
                       "name": "All OFF",
-                      "icon": "mdi:radiobox-indeterminate-variant",
+                      "icon": "mdi:weather-night",
                       "tap_action": {
                         "action": "call-service",
                         "service": "automation.trigger",
@@ -111,12 +119,14 @@
                         {
                           "type": "tile",
                           "entity": "light.controller_tv_lights_led",
-                          "icon": "mdi:awning-outline"
+                          "icon": "mdi:awning-outline",
+                          "vertical": true
                         },
                         {
                           "type": "tile",
                           "entity": "light.bookshelf_lights",
-                          "icon": "mdi:bookshelf"
+                          "icon": "mdi:bookshelf",
+                          "vertical": true
                         }
                       ]
                     },
@@ -126,13 +136,15 @@
                         {
                           "type": "tile",
                           "entity": "switch.meross_m7_lamp_short_outlet",
-                          "icon": "mdi:lamp"
+                          "icon": "mdi:lamp",
+                          "vertical": true
                         },
                         {
                           "type": "tile",
                           "entity": "switch.smart_plug_20072944061154251h5448e1e927dba2_outlet",
                           "name": "Lamp Tall",
-                          "icon": "mdi:floor-lamp"
+                          "icon": "mdi:floor-lamp",
+                          "vertical": true
                         }
                       ]
                     },
@@ -143,13 +155,15 @@
                           "type": "tile",
                           "name": "Kitchen Lights",
                           "icon": "mdi:light-recessed",
-                          "entity": "switch.kitchen_lights"
+                          "entity": "switch.kitchen_lights",
+                          "vertical": true
                         },
                         {
                           "type": "tile",
                           "name": "Kitchen LED",
                           "icon": "mdi:led-strip",
-                          "entity": "switch.kitchen_led"
+                          "entity": "switch.kitchen_led",
+                          "vertical": true
                         }
                       ]
                     },
@@ -160,13 +174,15 @@
                           "type": "tile",
                           "name": "Chandelier",
                           "entity": "light.chandelier",
-                          "icon": "mdi:chandelier"
+                          "icon": "mdi:chandelier",
+                          "vertical": true
                         },
                         {
                           "type": "tile",
                           "entity": "light.living_room_spotlights",
                           "icon": "mdi:spotlight-beam",
-                          "name": "Spotlights"
+                          "name": "Spotlights",
+                          "vertical": true
                         }
                       ]
                     },
@@ -177,11 +193,13 @@
                           "type": "tile",
                           "name": "Glasses",
                           "icon": "mdi:glass-cocktail",
-                          "entity": "switch.kitchen_cabinets"
+                          "entity": "switch.kitchen_cabinets",
+                          "vertical": true
                         },
                         {
                           "type": "tile",
-                          "entity": "light.art_light_staircase"
+                          "entity": "light.art_light_staircase",
+                          "vertical": true
                         }
                       ]
                     }
@@ -191,17 +209,79 @@
                   "type": "vertical-stack",
                   "cards": [
                     {
-                      "type": "vertical-stack",
+                      "type": "custom:mushroom-select-card",
+                      "entity": "input_select.outdoor_lights",
+                      "layout": "vertical"
+                    },
+                    {
+                      "type": "weather-forecast",
+                      "entity": "weather.gracia",
+                      "forecast_type": "legacy"
+                    },
+                    {
+                      "type": "custom:mushroom-select-card",
+                      "entity": "input_select.home_mode",
+                      "layout": "vertical"
+                    },
+                    {
+                      "type": "horizontal-stack",
                       "cards": [
                         {
-                          "type": "weather-forecast",
-                          "entity": "weather.gracia",
-                          "forecast_type": "legacy"
+                          "show_name": true,
+                          "show_icon": true,
+                          "type": "button",
+                          "tap_action": {
+                            "action": "call-service",
+                            "service": "input_select.select_option",
+                            "target": {
+                              "entity_id": [
+                                "input_select.home_mode"
+                              ]
+                            },
+                            "data": {
+                              "option": "Normal"
+                            }
+                          },
+                          "icon": "mdi:folder-home-outline",
+                          "show_state": true
                         },
                         {
-                          "type": "custom:mushroom-select-card",
-                          "entity": "input_select.home_mode",
-                          "card_mod": null
+                          "show_name": true,
+                          "show_icon": true,
+                          "type": "button",
+                          "tap_action": {
+                            "action": "call-service",
+                            "service": "input_select.select_option",
+                            "target": {
+                              "entity_id": [
+                                "input_select.home_mode"
+                              ]
+                            },
+                            "data": {
+                              "option": "Away"
+                            }
+                          },
+                          "icon": "mdi:beach",
+                          "show_state": true
+                        },
+                        {
+                          "show_name": true,
+                          "show_icon": true,
+                          "type": "button",
+                          "tap_action": {
+                            "action": "call-service",
+                            "service": "input_select.select_option",
+                            "target": {
+                              "entity_id": [
+                                "input_select.home_mode"
+                              ]
+                            },
+                            "data": {
+                              "option": "Dark"
+                            }
+                          },
+                          "icon": "mdi:moon-waxing-crescent",
+                          "show_state": true
                         }
                       ]
                     }

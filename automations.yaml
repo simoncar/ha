@@ -103,12 +103,14 @@
     below: 30
     for:
       hours: 0
-      minutes: 1
+      minutes: 10
       seconds: 0
   condition:
   - condition: state
     entity_id: input_select.home_mode
     state: Normal
+  - condition: time
+    after: '15:00:00'
   action:
   - type: turn_on
     device_id: 817d13a2421b3abc46991c8c7d8c4a65
@@ -120,17 +122,6 @@
     entity_id: light.controller_tv_lights_led
     domain: light
     brightness_pct: 30
-  - delay:
-      hours: 0
-      minutes: 15
-      seconds: 0
-      milliseconds: 0
-  - type: turn_on
-    device_id: b733ae3ffdf5a2025971b625500b1a33
-    entity_id: light.chandelier
-    domain: light
-    brightness_pct: 1
-    enabled: false
   mode: single
 - id: '1627149007172'
   alias: Nighttime Family Room Blinds Down
@@ -198,9 +189,10 @@
   alias: Outdoor Party Lights ON
   description: ''
   trigger:
-  - platform: sun
-    event: sunset
-    offset: +0:10:00
+  - platform: state
+    entity_id:
+    - input_select.outdoor_lights
+    to: 'On'
   condition: []
   action:
   - type: turn_on
@@ -212,9 +204,10 @@
   alias: Outdoor Party Lights OFF
   description: ''
   trigger:
-  - platform: sun
-    event: sunset
-    offset: +0:12:00
+  - platform: state
+    entity_id:
+    - input_select.outdoor_lights
+    to: 'Off'
   condition: []
   action:
   - type: turn_off
@@ -450,6 +443,9 @@
     - condition: state
       entity_id: input_select.home_mode
       state: Dark
+  - condition: state
+    entity_id: input_select.outdoor_lights
+    state: Auto
   action:
   - type: turn_on
     device_id: bff2976ba3365a33a441c70f43bdbe18
@@ -513,9 +509,12 @@
     domain: binary_sensor
     for:
       hours: 0
-      minutes: 1
+      minutes: 3
       seconds: 0
-  condition: []
+  condition:
+  - condition: state
+    entity_id: input_select.outdoor_lights
+    state: Auto
   action:
   - type: turn_off
     device_id: bff2976ba3365a33a441c70f43bdbe18
@@ -3006,4 +3005,4 @@
         hours: 99
         minutes: 0
         seconds: 0
-      notify_service: notify.living_room_notigy
+      notify_service: notify.notify
