@@ -1966,6 +1966,15 @@
     device_id: 63e0fd14c627720090b913f2b1e45ff3
     entity_id: switch.m8_study_fan_outlet
     domain: switch
+  - if:
+    - condition: numeric_state
+      entity_id: sensor.temperature_living_room_presence
+      above: 26
+    then:
+    - type: turn_on
+      device_id: 63e0fd14c627720090b913f2b1e45ff3
+      entity_id: ee11d7264fc74611204d52ca3913a5f2
+      domain: switch
   mode: single
 - id: '1671388815466'
   alias: Study Lights Off
