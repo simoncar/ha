@@ -13,7 +13,9 @@ secrets.yaml
 .ssh
 
 .storage
-
+!.storage/lovelace*
+!.storage/lovelace
+!.storage/lovelace.lovelace_mushroom
 
 .cloud
 .google.token
