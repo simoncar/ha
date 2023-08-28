@@ -4,7 +4,8 @@
 !*.sh
 !*.js*
 !node-red/
-!*lovelace*
+!.storage/lovelace*
+!.storage/lovelace
 !.storage/lovelace.lovelace_mushroom
 
 secrets.yaml
