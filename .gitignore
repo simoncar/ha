@@ -4,12 +4,15 @@
 !*.sh
 !*.js*
 !node-red/
-!.storage/lovelace
+
 
 secrets.yaml
 
 .ssh
+
 .storage
+!.storage/lovelace
+
 .cloud
 .google.token
 home-assistant.log*
