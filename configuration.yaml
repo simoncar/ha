@@ -1,13 +1,11 @@
 
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
-
-# Text to speech
-tts:
-  - platform: google_translate
   
 frontend:
     themes: !include_dir_merge_named themes
+    extra_module_url:
+    - /hacsfiles/lovelace-card-mod/card-mod.js
 
 group: !include groups.yaml
 automation: !include automations.yaml

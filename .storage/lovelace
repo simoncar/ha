@@ -7,162 +7,13 @@
       "title": "Gracia",
       "views": [
         {
-          "title": "Tablet5",
+          "title": "Tablet2",
           "path": "tablet",
           "icon": "mdi:tablet",
           "theme": "Mushroom",
           "type": "custom:grid-layout",
           "badges": [],
           "cards": [
-            {
-              "type": "vertical-stack",
-              "cards": [
-                {
-                  "type": "horizontal-stack",
-                  "cards": [
-                    {
-                      "type": "tile",
-                      "entity": "script.air_con_on",
-                      "name": "AC On",
-                      "icon": "mdi:air-conditioner"
-                    },
-                    {
-                      "type": "tile",
-                      "entity": "script.air_con_off",
-                      "name": "AC Off",
-                      "icon": "mdi:fan-off",
-                      "icon_tap_action": {
-                        "action": "call-service",
-                        "service": "script.living_room_hvac_30",
-                        "data": {},
-                        "target": {}
-                      }
-                    }
-                  ]
-                },
-                {
-                  "type": "horizontal-stack",
-                  "cards": [
-                    {
-                      "type": "tile",
-                      "entity": "script.blinds_up"
-                    },
-                    {
-                      "type": "tile",
-                      "entity": "script.blinds_down"
-                    }
-                  ]
-                },
-                {
-                  "hours_to_show": 24,
-                  "graph": "line",
-                  "type": "sensor",
-                  "entity": "sensor.temperature_living_room_presence",
-                  "detail": 2,
-                  "name": "Living Room Temperature"
-                }
-              ]
-            },
-            {
-              "show_name": true,
-              "view_layout": {
-                "column": 2
-              },
-              "show_icon": true,
-              "type": "button",
-              "entity": "automation.automation_86",
-              "name": "All OFF",
-              "icon": "mdi:radiobox-indeterminate-variant"
-            },
-            {
-              "type": "vertical-stack",
-              "cards": [
-                {
-                  "type": "horizontal-stack",
-                  "cards": [
-                    {
-                      "type": "tile",
-                      "entity": "light.controller_tv_lights_led",
-                      "icon": "mdi:awning-outline"
-                    },
-                    {
-                      "type": "tile",
-                      "entity": "light.bookshelf_lights",
-                      "icon": "mdi:bookshelf"
-                    }
-                  ]
-                },
-                {
-                  "type": "horizontal-stack",
-                  "cards": [
-                    {
-                      "type": "tile",
-                      "entity": "switch.meross_m7_lamp_short_outlet",
-                      "icon": "mdi:lamp"
-                    },
-                    {
-                      "type": "tile",
-                      "entity": "switch.smart_plug_20072944061154251h5448e1e927dba2_outlet",
-                      "name": "Lamp Tall",
-                      "icon": "mdi:floor-lamp"
-                    }
-                  ]
-                },
-                {
-                  "type": "horizontal-stack",
-                  "cards": [
-                    {
-                      "type": "tile",
-                      "name": "Kitchen Lights",
-                      "icon": "mdi:light-recessed",
-                      "entity": "switch.kitchen_lights"
-                    },
-                    {
-                      "type": "tile",
-                      "name": "Kitchen LED",
-                      "icon": "mdi:led-strip",
-                      "entity": "switch.kitchen_led"
-                    }
-                  ]
-                },
-                {
-                  "type": "horizontal-stack",
-                  "cards": [
-                    {
-                      "type": "tile",
-                      "name": "Chandelier",
-                      "entity": "light.chandelier",
-                      "icon": "mdi:chandelier"
-                    },
-                    {
-                      "type": "tile",
-                      "entity": "light.living_room_spotlights",
-                      "icon": "mdi:spotlight-beam",
-                      "name": "Spotlights"
-                    }
-                  ]
-                },
-                {
-                  "type": "horizontal-stack",
-                  "cards": [
-                    {
-                      "type": "tile",
-                      "name": "Glasses",
-                      "icon": "mdi:glass-cocktail",
-                      "entity": "switch.kitchen_cabinets"
-                    },
-                    {
-                      "type": "tile",
-                      "entity": "light.art_light_staircase"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "custom:mushroom-select-card",
-              "entity": "input_select.home_mode"
-            },
             {
               "type": "horizontal-stack",
               "cards": [
@@ -173,22 +24,30 @@
                       "type": "horizontal-stack",
                       "cards": [
                         {
-                          "type": "tile",
+                          "show_name": true,
+                          "show_icon": true,
+                          "type": "button",
+                          "tap_action": {
+                            "action": "call-service",
+                            "service": "script.air_con_on",
+                            "target": {}
+                          },
                           "entity": "script.air_con_on",
                           "name": "AC On",
                           "icon": "mdi:air-conditioner"
                         },
                         {
-                          "type": "tile",
+                          "show_name": true,
+                          "show_icon": true,
+                          "type": "button",
+                          "tap_action": {
+                            "action": "call-service",
+                            "service": "script.air_con_off",
+                            "target": {}
+                          },
                           "entity": "script.air_con_off",
                           "name": "AC Off",
-                          "icon": "mdi:fan-off",
-                          "icon_tap_action": {
-                            "action": "call-service",
-                            "service": "script.living_room_hvac_30",
-                            "data": {},
-                            "target": {}
-                          }
+                          "icon": "mdi:fan-off"
                         }
                       ]
                     },
@@ -197,11 +56,21 @@
                       "cards": [
                         {
                           "type": "tile",
-                          "entity": "script.blinds_up"
+                          "entity": "script.blinds_up",
+                          "tap_action": {
+                            "action": "call-service",
+                            "service": "script.blinds_up",
+                            "target": {}
+                          }
                         },
                         {
                           "type": "tile",
-                          "entity": "script.blinds_down"
+                          "entity": "script.blinds_down",
+                          "tap_action": {
+                            "action": "call-service",
+                            "service": "script.blinds_down",
+                            "target": {}
+                          }
                         }
                       ]
                     },
@@ -212,6 +81,24 @@
                       "entity": "sensor.temperature_living_room_presence",
                       "detail": 2,
                       "name": "Living Room Temperature"
+                    },
+                    {
+                      "show_name": true,
+                      "show_icon": true,
+                      "type": "button",
+                      "entity": "automation.automation_86",
+                      "name": "All OFF",
+                      "icon": "mdi:radiobox-indeterminate-variant",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "automation.trigger",
+                        "target": {
+                          "entity_id": "automation.automation_86"
+                        },
+                        "data": {
+                          "skip_condition": true
+                        }
+                      }
                     }
                   ]
                 },
@@ -223,21 +110,13 @@
                       "cards": [
                         {
                           "type": "tile",
-                          "entity": "script.air_con_on",
-                          "name": "AC On",
-                          "icon": "mdi:air-conditioner"
+                          "entity": "light.controller_tv_lights_led",
+                          "icon": "mdi:awning-outline"
                         },
                         {
                           "type": "tile",
-                          "entity": "script.air_con_off",
-                          "name": "AC Off",
-                          "icon": "mdi:fan-off",
-                          "icon_tap_action": {
-                            "action": "call-service",
-                            "service": "script.living_room_hvac_30",
-                            "data": {},
-                            "target": {}
-                          }
+                          "entity": "light.bookshelf_lights",
+                          "icon": "mdi:bookshelf"
                         }
                       ]
                     },
@@ -246,21 +125,65 @@
                       "cards": [
                         {
                           "type": "tile",
-                          "entity": "script.blinds_up"
+                          "entity": "switch.meross_m7_lamp_short_outlet",
+                          "icon": "mdi:lamp"
                         },
                         {
                           "type": "tile",
-                          "entity": "script.blinds_down"
+                          "entity": "switch.smart_plug_20072944061154251h5448e1e927dba2_outlet",
+                          "name": "Lamp Tall",
+                          "icon": "mdi:floor-lamp"
                         }
                       ]
                     },
                     {
-                      "hours_to_show": 24,
-                      "graph": "line",
-                      "type": "sensor",
-                      "entity": "sensor.temperature_living_room_presence",
-                      "detail": 2,
-                      "name": "Living Room Temperature"
+                      "type": "horizontal-stack",
+                      "cards": [
+                        {
+                          "type": "tile",
+                          "name": "Kitchen Lights",
+                          "icon": "mdi:light-recessed",
+                          "entity": "switch.kitchen_lights"
+                        },
+                        {
+                          "type": "tile",
+                          "name": "Kitchen LED",
+                          "icon": "mdi:led-strip",
+                          "entity": "switch.kitchen_led"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "horizontal-stack",
+                      "cards": [
+                        {
+                          "type": "tile",
+                          "name": "Chandelier",
+                          "entity": "light.chandelier",
+                          "icon": "mdi:chandelier"
+                        },
+                        {
+                          "type": "tile",
+                          "entity": "light.living_room_spotlights",
+                          "icon": "mdi:spotlight-beam",
+                          "name": "Spotlights"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "horizontal-stack",
+                      "cards": [
+                        {
+                          "type": "tile",
+                          "name": "Glasses",
+                          "icon": "mdi:glass-cocktail",
+                          "entity": "switch.kitchen_cabinets"
+                        },
+                        {
+                          "type": "tile",
+                          "entity": "light.art_light_staircase"
+                        }
+                      ]
                     }
                   ]
                 },
@@ -268,12 +191,17 @@
                   "type": "vertical-stack",
                   "cards": [
                     {
-                      "type": "horizontal-stack",
+                      "type": "vertical-stack",
                       "cards": [
                         {
                           "type": "weather-forecast",
                           "entity": "weather.gracia",
                           "forecast_type": "legacy"
+                        },
+                        {
+                          "type": "custom:mushroom-select-card",
+                          "entity": "input_select.home_mode",
+                          "card_mod": null
                         }
                       ]
                     }
