@@ -123,7 +123,7 @@ ios:
         
 tts:
   - platform: google_translate
-    service_name: google_say   
+
         
 notify:
   - platform: tts
