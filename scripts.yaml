@@ -94,7 +94,7 @@ blinds_stop:
   mode: single
   icon: hass:blinds
 air_con_on:
-  alias: Living Room Air Con On
+  alias: Living Room Air Con On temp_17_fan_5
   sequence:
   - service: remote.send_command
     target:
@@ -102,7 +102,7 @@ air_con_on:
       - remote.universal_remote_living_room_remote
     data:
       device: aircon
-      command: power_on
+      command: temp_17_fan_5
   mode: single
 air_con_off:
   alias: Living Room Air Con Off
@@ -252,3 +252,14 @@ bedroom_tv_power_cycle:
     domain: switch
   mode: single
   icon: mdi:lock-reset
+air_con_on_maintain_25:
+  alias: Living Room Air Con On maintain 25
+  sequence:
+  - service: remote.send_command
+    target:
+      entity_id:
+      - remote.universal_remote_living_room_remote
+    data:
+      device: aircon
+      command: maintain25
+  mode: single

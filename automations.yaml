@@ -2882,7 +2882,7 @@
     data: {}
   mode: single
 - id: '1692268375561'
-  alias: Art Life Off No Motion
+  alias: Art Light Off No Motion
   description: ''
   trigger:
   - type: no_motion

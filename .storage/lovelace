@@ -33,8 +33,21 @@
                             "target": {}
                           },
                           "entity": "script.air_con_on",
+                          "name": "AC Max",
+                          "icon": "mdi:fan-chevron-up"
+                        },
+                        {
+                          "show_name": true,
+                          "show_icon": true,
+                          "type": "button",
+                          "tap_action": {
+                            "action": "call-service",
+                            "service": "script.air_con_on_maintain_25",
+                            "target": {}
+                          },
+                          "entity": "script.air_con_on_maintain_25",
                           "name": "AC On",
-                          "icon": "mdi:air-conditioner"
+                          "icon": "mdi:fan"
                         },
                         {
                           "show_name": true,
@@ -83,8 +96,8 @@
                       ]
                     },
                     {
-                      "hours_to_show": 24,
                       "graph": "line",
+                      "hours_to_show": 24,
                       "type": "sensor",
                       "entity": "sensor.temperature_living_room_presence",
                       "detail": 2,
@@ -95,7 +108,7 @@
                       "show_icon": true,
                       "type": "button",
                       "entity": "automation.automation_86",
-                      "name": "All OFF",
+                      "name": "All OFF (good night)",
                       "icon": "mdi:weather-night",
                       "tap_action": {
                         "action": "call-service",
@@ -219,69 +232,28 @@
                       "forecast_type": "legacy"
                     },
                     {
-                      "type": "custom:mushroom-select-card",
-                      "entity": "input_select.home_mode",
-                      "layout": "vertical"
-                    },
-                    {
-                      "type": "horizontal-stack",
+                      "type": "vertical-stack",
+                      "title": "Home Mode",
                       "cards": [
                         {
-                          "show_name": true,
-                          "show_icon": true,
-                          "type": "button",
-                          "tap_action": {
-                            "action": "call-service",
-                            "service": "input_select.select_option",
-                            "target": {
-                              "entity_id": [
-                                "input_select.home_mode"
-                              ]
-                            },
-                            "data": {
-                              "option": "Normal"
+                          "type": "custom:mushroom-chips-card",
+                          "chips": [
+                            {
+                              "type": "entity",
+                              "entity": "input_select.home_mode",
+                              "tap_action": {
+                                "action": "call-service",
+                                "service": "input_select.select_next",
+                                "target": {
+                                  "entity_id": "input_select.home_mode"
+                                },
+                                "data": {
+                                  "cycle": true
+                                }
+                              }
                             }
-                          },
-                          "icon": "mdi:folder-home-outline",
-                          "show_state": true
-                        },
-                        {
-                          "show_name": true,
-                          "show_icon": true,
-                          "type": "button",
-                          "tap_action": {
-                            "action": "call-service",
-                            "service": "input_select.select_option",
-                            "target": {
-                              "entity_id": [
-                                "input_select.home_mode"
-                              ]
-                            },
-                            "data": {
-                              "option": "Away"
-                            }
-                          },
-                          "icon": "mdi:beach",
-                          "show_state": true
-                        },
-                        {
-                          "show_name": true,
-                          "show_icon": true,
-                          "type": "button",
-                          "tap_action": {
-                            "action": "call-service",
-                            "service": "input_select.select_option",
-                            "target": {
-                              "entity_id": [
-                                "input_select.home_mode"
-                              ]
-                            },
-                            "data": {
-                              "option": "Dark"
-                            }
-                          },
-                          "icon": "mdi:moon-waxing-crescent",
-                          "show_state": true
+                          ],
+                          "alignment": "center"
                         }
                       ]
                     }
