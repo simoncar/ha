@@ -256,6 +256,38 @@
                           "alignment": "center"
                         }
                       ]
+                    },
+                    {
+                      "type": "horizontal-stack",
+                      "cards": [
+                        {
+                          "type": "custom:mushroom-chips-card",
+                          "chips": [
+                            {
+                              "type": "entity",
+                              "entity": "sensor.tablet_battery_level"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "custom:mushroom-chips-card",
+                          "chips": [
+                            {
+                              "type": "entity",
+                              "entity": "sensor.tablet_battery_state"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "custom:mushroom-chips-card",
+                          "chips": [
+                            {
+                              "type": "entity",
+                              "entity": "sensor.tablet_charger_type"
+                            }
+                          ]
+                        }
+                      ]
                     }
                   ]
                 }

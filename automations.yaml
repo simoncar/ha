@@ -284,11 +284,6 @@
       device_id: b3cd0f6a14cd02f85de8e20c76356ee9
       entity_id: switch.kitchen_led
       domain: switch
-    - type: turn_off
-      device_id: b805fa111e96bf06bb581e38bf9c7b47
-      entity_id: switch.meross_3_second_monitor_outlet
-      domain: switch
-      enabled: true
     - service: script.range_hood_power_cycle
       data: {}
     - service: script.study_hvac_off
@@ -1196,10 +1191,6 @@
     device_id: b733ae3ffdf5a2025971b625500b1a33
     entity_id: light.chandelier
     domain: light
-  - type: turn_off
-    device_id: b805fa111e96bf06bb581e38bf9c7b47
-    entity_id: switch.meross_3_second_monitor_outlet
-    domain: switch
   - service: script.range_hood_power_cycle
     data: {}
   - service: script.study_hvac_off
@@ -2516,11 +2507,6 @@
       device_id: b3cd0f6a14cd02f85de8e20c76356ee9
       entity_id: switch.kitchen_led
       domain: switch
-    - type: turn_off
-      device_id: b805fa111e96bf06bb581e38bf9c7b47
-      entity_id: switch.meross_3_second_monitor_outlet
-      domain: switch
-      enabled: true
     - service: script.range_hood_power_cycle
       data: {}
     - service: script.study_hvac_off
@@ -2752,6 +2738,7 @@
       device_id: 57fdd525cc96afe7982612e0e1c15b14
   mode: single
 - id: '1686069680676'
+  alias: Master Bedroom Closet
   description: ''
   trigger:
   - type: motion
@@ -3006,3 +2993,56 @@
         minutes: 0
         seconds: 0
       notify_service: notify.notify
+- id: '1693417369748'
+  alias: Galaxy Charger Automation
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.tablet_battery_level
+    below: 20
+    id: below
+  - platform: numeric_state
+    entity_id: sensor.tablet_battery_level
+    above: 80
+    id: above
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: trigger
+        id:
+        - below
+      sequence:
+      - service: switch.turn_on
+        data: {}
+        target:
+          device_id: b805fa111e96bf06bb581e38bf9c7b47
+      - choose:
+        - conditions: []
+          sequence: []
+    - conditions:
+      - condition: trigger
+        id:
+        - above
+      sequence:
+      - service: switch.turn_off
+        data: {}
+        target:
+          device_id: b805fa111e96bf06bb581e38bf9c7b47
+  mode: single
+- id: '1693419564492'
+  alias: Galaxy Art Light Motion
+  description: ''
+  trigger:
+  - type: motion
+    platform: device
+    device_id: 14a3e6ecd209194f49ecbda65ec89e84
+    entity_id: 392172ee573afe78f38c80cd67a9b29e
+    domain: binary_sensor
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 26e70ac262459c625c60e7c722fb6ecf
+    entity_id: 586e11fe010a0a261d1f4be75d5d211c
+    domain: switch
+  mode: single
