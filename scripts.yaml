@@ -7,7 +7,7 @@ blinds_down:
     data:
       device: blinds
       command:
-      - down1
+      - down
       num_repeats: 1
       delay_secs: 0.4
       hold_secs: 0
@@ -74,10 +74,7 @@ blinds_up:
       delay_secs: 0.4
       hold_secs: 0
       command:
-      - up1
-      - up2
-      - up3
-      - up4
+      - up
     target:
       entity_id: remote.universal_remote_living_room_remote
   mode: single

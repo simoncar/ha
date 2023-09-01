@@ -133,7 +133,13 @@
                           "type": "tile",
                           "entity": "light.controller_tv_lights_led",
                           "icon": "mdi:awning-outline",
-                          "vertical": true
+                          "vertical": true,
+                          "tap_action": {
+                            "action": "toggle"
+                          },
+                          "icon_tap_action": {
+                            "action": "toggle"
+                          }
                         },
                         {
                           "type": "tile",
@@ -284,6 +290,34 @@
                             {
                               "type": "entity",
                               "entity": "sensor.tablet_charger_type"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "horizontal-stack",
+                      "cards": [
+                        {
+                          "type": "custom:button-card",
+                          "entity": "input_select.outdoor_lights",
+                          "show_state": true,
+                          "tap_action": {
+                            "action": "more-info"
+                          },
+                          "state": [
+                            {
+                              "value": "On",
+                              "color": "rgb(5, 147, 255)",
+                              "icon": "mdi:cube-outline"
+                            },
+                            {
+                              "value": "Off",
+                              "color": "var(--disabled-text-color)"
+                            },
+                            {
+                              "value": "Auto",
+                              "color": "blue"
                             }
                           ]
                         }
