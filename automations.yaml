@@ -208,6 +208,10 @@
     entity_id:
     - input_select.outdoor_lights
     to: 'Off'
+  - platform: state
+    entity_id:
+    - input_select.outdoor_lights
+    to: Auto
   condition: []
   action:
   - type: turn_off
@@ -2999,7 +3003,7 @@
   trigger:
   - platform: numeric_state
     entity_id: sensor.tablet_battery_level
-    below: 20
+    below: 60
     id: below
   - platform: numeric_state
     entity_id: sensor.tablet_battery_level

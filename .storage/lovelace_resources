@@ -38,6 +38,11 @@
         "id": "fc8c4bc1180e48d6b14b2ee706394427",
         "url": "/hacsfiles/button-card/button-card.js?hacstag=146194325411",
         "type": "module"
+      },
+      {
+        "id": "e0c4fa0b137343dd88e32dae615b4f41",
+        "url": "/hacsfiles/lovelace-wallpanel/wallpanel.js?hacstag=3095064164170",
+        "type": "module"
       }
     ]
   }
