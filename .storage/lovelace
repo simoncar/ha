@@ -150,7 +150,7 @@
                       "graph": "line",
                       "hours_to_show": 24,
                       "type": "sensor",
-                      "entity": "sensor.temperature_living_room_presence",
+                      "entity": "sensor.rm4_study_temperature",
                       "detail": 2,
                       "name": "Living Room Temperature"
                     },
