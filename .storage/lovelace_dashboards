@@ -11,6 +11,15 @@
         "mode": "storage",
         "url_path": "lovelace-mushroom",
         "id": "lovelace_mushroom"
+      },
+      {
+        "id": "dashboard_general",
+        "show_in_sidebar": true,
+        "icon": "mdi:monitor-dashboard",
+        "title": "General",
+        "require_admin": false,
+        "mode": "storage",
+        "url_path": "dashboard-general"
       }
     ]
   }
