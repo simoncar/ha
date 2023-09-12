@@ -5,14 +5,6 @@
   "data": {
     "items": [
       {
-        "show_in_sidebar": true,
-        "title": "Mushroom",
-        "require_admin": false,
-        "mode": "storage",
-        "url_path": "lovelace-mushroom",
-        "id": "lovelace_mushroom"
-      },
-      {
         "id": "dashboard_general",
         "show_in_sidebar": true,
         "icon": "mdi:monitor-dashboard",
