@@ -260,3 +260,21 @@ air_con_on_maintain_25:
       device: aircon
       command: maintain25
   mode: single
+tablet_button_tab_1:
+  alias: Tablet Button Tab 1
+  sequence:
+  - service: input_select.select_option
+    data:
+      option: Living
+    target:
+      entity_id: input_select.dashboard
+  mode: single
+tablet_button_tab_2:
+  alias: Tablet Button Tab 2
+  sequence:
+  - service: input_select.select_option
+    data:
+      option: Upstairs
+    target:
+      entity_id: input_select.dashboard
+  mode: single

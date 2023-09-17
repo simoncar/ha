@@ -1949,7 +1949,12 @@
     device_id: 9f0afe69985b661372d8f8644fdf6b95
     entity_id: 4b1e660eb90ea47414015d0be8f943b1
     domain: binary_sensor
-  condition: []
+  condition:
+  - condition: not
+    conditions:
+    - condition: state
+      entity_id: input_select.home_mode
+      state: Dark
   action:
   - type: turn_on
     device_id: eb5a340722cdfdd321e5e297e1657e3a
