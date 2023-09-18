@@ -3008,11 +3008,11 @@
   description: ''
   trigger:
   - platform: numeric_state
-    entity_id: sensor.tablet_battery_level
-    below: 60
+    entity_id: sensor.galaxy_tab_a8_battery
+    below: 40
     id: below
   - platform: numeric_state
-    entity_id: sensor.tablet_battery_level
+    entity_id: sensor.galaxy_tab_a8_battery
     above: 80
     id: above
   condition: []

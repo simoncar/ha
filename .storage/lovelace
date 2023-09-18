@@ -339,6 +339,29 @@
                               }
                             }
                           ]
+                        },
+                        {
+                          "type": "horizontal-stack",
+                          "cards": [
+                            {
+                              "type": "custom:button-card",
+                              "entity": "switch.art_light_entry",
+                              "icon": "mdi:panorama-variant-outline",
+                              "name": "Door Art",
+                              "tap_action": {
+                                "action": "toggle"
+                              }
+                            },
+                            {
+                              "type": "custom:button-card",
+                              "entity": "light.entry_pendant",
+                              "icon": "mdi:floor-lamp-torchiere-variant",
+                              "name": "Entry Pendant",
+                              "tap_action": {
+                                "action": "toggle"
+                              }
+                            }
+                          ]
                         }
                       ]
                     },
