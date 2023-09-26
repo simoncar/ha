@@ -1370,8 +1370,9 @@
   - platform: sun
     event: sunrise
     offset: -0:25:00
+    enabled: false
   - platform: time
-    at: 07:00:00
+    at: 07:45:00
   condition:
   - condition: time
     weekday:
