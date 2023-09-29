@@ -2335,9 +2335,9 @@
   description: ''
   trigger:
   - platform: device
-    type: changed_states
+    type: turned_on
     device_id: 9589be47ae6db0a86b8925d0d69a6cf5
-    entity_id: light.living_room_spotlights_2
+    entity_id: bdeb8a5501fe79be2a7556b9054bffdc
     domain: light
   condition:
   - condition: numeric_state
