@@ -78,7 +78,7 @@
       state: Dark
   - condition: numeric_state
     entity_id: sensor.front_door_motion_sensor_illuminance
-    below: 10
+    below: 20
   action:
   - scene: scene.entry_lights_on
   - type: turn_on
