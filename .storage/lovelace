@@ -6,8 +6,8 @@
     "config": {
       "wallpanel": {
         "enabled": true,
-        "hide_toolbar": true,
-        "hide_sidebar": true,
+        "hide_toolbar": false,
+        "hide_sidebar": false,
         "show_images": false,
         "idle_time": 0
       },

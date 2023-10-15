@@ -33,9 +33,6 @@ alarm_control_panel:
     
 zha:
     
-home_connect:
-  client_id: 704F06B825D8902F9B4A454A108946C40F21AB7432272F54947DFF7BBBD39DDD
-  client_secret: CDE87108CEE72C0CCF35677156489DADC13C8DECE1DB64F8D1B615E8D9C072A1
 
 # UTILITY METER #
 utility_meter:
@@ -94,8 +91,8 @@ sensor:
             {% elif is_state_attr('sensor.pvpc', 'period', 'P3') %} {% set peaje=states('input_number.peaje_energia_p3') | float %}
             {% endif %}
             {{ (( states('sensor.home_energy_hourly') | float * (peaje + states('sensor.pvpc') | float) ) * states('input_number.impuesto_energia') | float * states('input_number.iva_energia') | float) | round(3) }}
-      home_total_power:
-          friendly_name: "Home Total Power"
+      home_current_power:
+          friendly_name: "Home Current Power"
           unit_of_measurement: 'W'
           device_class: power
           value_template: >
@@ -104,6 +101,17 @@ sensor:
                 + float(states('sensor.shelly_power_meter_l1_l2_channel_2_power')) 
                 + float(states('sensor.shelly_power_meter_l3_spa_channel_1_power')) 
                 + float(states('sensor.shelly_power_meter_l3_spa_channel_2_power')) 
+            }}
+      home_meter_power:
+          friendly_name: "Home Meter Energy"
+          unit_of_measurement: 'W'
+          device_class: power
+          value_template: >
+            {{ 
+                float(states('sensor.shelly_power_meter_l1_l2_channel_1_energy')) 
+                + float(states('sensor.shelly_power_meter_l1_l2_channel_2_energy')) 
+                + float(states('sensor.shelly_power_meter_l3_spa_channel_1_energy')) 
+                + float(states('sensor.shelly_power_meter_l3_spa_channel_2_energy')) 
             }}
       uptime_minutes:
         friendly_name: UpTime Minutes
