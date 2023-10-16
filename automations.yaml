@@ -472,8 +472,8 @@
   condition: []
   action:
   - type: turn_on
-    device_id: 8bd375d65a41eced2f1d85431504f4ec
-    entity_id: switch.smart_plug_2_outlet
+    device_id: 74b7d8ccc9cd25e78386835a9ae301c1
+    entity_id: abdc7d1b6dcc60f44230824121e889fd
     domain: switch
   mode: queued
   max: 10
@@ -493,8 +493,8 @@
   condition: []
   action:
   - type: turn_off
-    device_id: 8bd375d65a41eced2f1d85431504f4ec
-    entity_id: switch.smart_plug_2_outlet
+    device_id: 74b7d8ccc9cd25e78386835a9ae301c1
+    entity_id: abdc7d1b6dcc60f44230824121e889fd
     domain: switch
   mode: restart
 - id: '1633107104655'

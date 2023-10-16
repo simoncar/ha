@@ -484,7 +484,7 @@
     },
     "node-red-contrib-home-assistant-websocket": {
         "name": "node-red-contrib-home-assistant-websocket",
-        "version": "0.57.2",
+        "version": "0.57.4",
         "local": false,
         "user": false,
         "nodes": {
