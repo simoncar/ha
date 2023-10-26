@@ -3056,3 +3056,118 @@
     entity_id: 586e11fe010a0a261d1f4be75d5d211c
     domain: switch
   mode: single
+- id: '1698249463736'
+  alias: Water Leak Study
+  description: ''
+  trigger:
+  - type: moist
+    platform: device
+    device_id: 8af201775cb6ea58abf79bb72cb12a0d
+    entity_id: 52642596ea9d50d4781be5cd3e50d974
+    domain: binary_sensor
+  condition: []
+  action:
+  - service: notify.mobile_app_simons_iphone_14
+    data:
+      message: water leak detected
+      title: WATER LEAK STUDY
+  - service: tts.google_translate_say
+    data:
+      entity_id: media_player.everywhere
+      message: Water Leak Detected In Study
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 20
+      milliseconds: 0
+  - service: tts.google_translate_say
+    data:
+      entity_id: media_player.everywhere
+      message: Water Leak Detected In Study
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 20
+      milliseconds: 0
+  - service: tts.google_translate_say
+    data:
+      entity_id: media_player.everywhere
+      message: Water Leak Detected In Study
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 20
+      milliseconds: 0
+  - service: tts.google_translate_say
+    data:
+      entity_id: media_player.everywhere
+      message: Water Leak Detected In Study
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 20
+      milliseconds: 0
+  - service: tts.google_translate_say
+    data:
+      entity_id: media_player.everywhere
+      message: Water Leak Detected In Study
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 20
+      milliseconds: 0
+  - service: tts.google_translate_say
+    data:
+      entity_id: media_player.everywhere
+      message: Water Leak Detected In Study
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 20
+      milliseconds: 0
+  - service: tts.google_translate_say
+    data:
+      entity_id: media_player.everywhere
+      message: Water Leak Detected In Study
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 20
+      milliseconds: 0
+  - service: tts.google_translate_say
+    data:
+      entity_id: media_player.everywhere
+      message: Water Leak Detected In Study
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 20
+      milliseconds: 0
+  - service: tts.google_translate_say
+    data:
+      entity_id: media_player.everywhere
+      message: Water Leak Detected In Study
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 20
+      milliseconds: 0
+  - service: tts.google_translate_say
+    data:
+      entity_id: media_player.everywhere
+      message: Water Leak Detected In Study
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 20
+      milliseconds: 0
+  - service: tts.google_translate_say
+    data:
+      entity_id: media_player.everywhere
+      message: Water Leak Detected In Study
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 20
+      milliseconds: 0
+  mode: single
