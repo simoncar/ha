@@ -1231,6 +1231,7 @@
   - condition: state
     entity_id: input_boolean.daytime
     state: 'off'
+    enabled: false
   action:
   - if:
     - condition: time
@@ -3170,4 +3171,49 @@
       minutes: 0
       seconds: 20
       milliseconds: 0
+  mode: single
+- id: '1698426456972'
+  alias: Shower Motion ON
+  description: ''
+  trigger:
+  - type: motion
+    platform: device
+    device_id: bfdde3fbf181992236092bedff305a06
+    entity_id: ce6fe015d759890617cd5f5571222ecc
+    domain: binary_sensor
+  condition: []
+  action:
+  - type: turn_on
+    device_id: e2d9c795303d91a6d576077b39fe32d3
+    entity_id: 0f38e3773e1aa8639d867ba4417e9a42
+    domain: light
+    brightness_pct: 100
+  - type: turn_on
+    device_id: 11a686020163e55732126863d48b41de
+    entity_id: 43137feae1931f7180f780096e75b1ca
+    domain: light
+  - type: turn_on
+    device_id: 840fc824e00664e9c9cc36def0d6e277
+    entity_id: ad1964bd8453755c582e791a4a2169d4
+    domain: light
+  mode: single
+- id: '1698426476155'
+  alias: Shower Motion OFF
+  description: ''
+  trigger:
+  - type: no_motion
+    platform: device
+    device_id: bfdde3fbf181992236092bedff305a06
+    entity_id: ce6fe015d759890617cd5f5571222ecc
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 5
+      seconds: 0
+  condition: []
+  action:
+  - type: turn_off
+    device_id: e2d9c795303d91a6d576077b39fe32d3
+    entity_id: 0f38e3773e1aa8639d867ba4417e9a42
+    domain: light
   mode: single

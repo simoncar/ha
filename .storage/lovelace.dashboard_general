@@ -364,6 +364,25 @@
                       "entity": "light.art_light_staircase"
                     }
                   ]
+                },
+                {
+                  "features": [
+                    {
+                      "type": "climate-hvac-modes",
+                      "hvac_modes": [
+                        "heat",
+                        "off"
+                      ]
+                    },
+                    {
+                      "type": "target-temperature"
+                    }
+                  ],
+                  "type": "tile",
+                  "entity": "climate.nest_hvac",
+                  "show_entity_picture": false,
+                  "name": "Underfloor Heating",
+                  "icon": "mdi:heating-coil"
                 }
               ]
             },
