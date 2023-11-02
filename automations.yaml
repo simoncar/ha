@@ -276,10 +276,6 @@
       entity_id: light.bookshelf_lights
       domain: light
     - type: turn_off
-      device_id: 74b7d8ccc9cd25e78386835a9ae301c1
-      entity_id: switch.m1_christmas_tree_outlet
-      domain: switch
-    - type: turn_off
       device_id: 3bde07aac5e6792e1ab5ebad70800b27
       entity_id: switch.kitchen_cabinets
       domain: switch
@@ -1171,10 +1167,6 @@
     entity_id: light.bookshelf_lights
     domain: light
   - type: turn_off
-    device_id: 74b7d8ccc9cd25e78386835a9ae301c1
-    entity_id: switch.m1_christmas_tree_outlet
-    domain: switch
-  - type: turn_off
     device_id: 3bde07aac5e6792e1ab5ebad70800b27
     entity_id: switch.kitchen_lights
     domain: switch
@@ -1212,10 +1204,6 @@
     device_id: 09a12aab6e27c3f64fdc160918e9d8ca
     entity_id: light.entry_pendant
     domain: light
-  - type: turn_on
-    device_id: 74b7d8ccc9cd25e78386835a9ae301c1
-    entity_id: switch.smart_plug_1_outlet
-    domain: switch
   mode: single
 - id: '1662826655444'
   alias: Bedroom Nighttime Toilet
@@ -1366,8 +1354,9 @@
   - platform: sun
     event: sunrise
     offset: -0:25:00
+    enabled: false
   - platform: time
-    at: 07:00:00
+    at: 07:45:00
   condition:
   - condition: time
     weekday:
@@ -2517,10 +2506,6 @@
       device_id: 7c945f90dc76ab5e53ea466957d840c0
       entity_id: light.bookshelf_lights
       domain: light
-    - type: turn_off
-      device_id: 74b7d8ccc9cd25e78386835a9ae301c1
-      entity_id: switch.m1_christmas_tree_outlet
-      domain: switch
     - type: turn_off
       device_id: 3bde07aac5e6792e1ab5ebad70800b27
       entity_id: switch.kitchen_cabinets
