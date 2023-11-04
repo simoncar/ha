@@ -324,9 +324,6 @@
                           "type": "horizontal-stack",
                           "cards": [
                             {
-                              "type": "tile",
-                              "entity": "climate.nest_hvac",
-                              "vertical": true,
                               "features": [
                                 {
                                   "type": "climate-hvac-modes",
@@ -335,6 +332,14 @@
                                     "off"
                                   ]
                                 }
+                              ],
+                              "type": "tile",
+                              "entity": "climate.nest_hvac",
+                              "vertical": true,
+                              "state_content": [
+                                "current_temperature",
+                                "temperature",
+                                "state"
                               ]
                             }
                           ]

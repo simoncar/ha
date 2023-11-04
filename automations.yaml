@@ -2158,10 +2158,6 @@
     device_id: 605e572814970daeb76e0dca4f8a17d7
     entity_id: light.master_bed_led_2_2
     domain: light
-  - type: turn_off
-    device_id: 3db0cec90e321434657d44397bbf327e
-    entity_id: switch.bedroom_lights
-    domain: switch
   - service: script.bedroom_air_con_off
     data: {}
     enabled: false
