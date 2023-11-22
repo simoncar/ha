@@ -2175,6 +2175,11 @@
     entity_id:
     - binary_sensor.group_downstairs_motion_detection
     to: 'on'
+  - type: opened
+    platform: device
+    device_id: 9aaa2ec04264aef1d47ef722576b59b1
+    entity_id: 50963627ebbb91cd63bf85c920770c4d
+    domain: binary_sensor
   condition: []
   action:
   - service: input_boolean.turn_on
@@ -2547,9 +2552,9 @@
         device_id: 57fdd525cc96afe7982612e0e1c15b14
     - service: script.air_con_off
       data: {}
-    - service: notify.mobile_app_simons_iphone_14
+    - service: notify.mobile_app_simoncar
       data:
-        message: Living Room Master OFF
+        message: Goodnight, turning everything off
     - type: turn_off
       device_id: a51c183cf093f8ca49a63262b69c6ded
       entity_id: switch.pantry
@@ -3208,4 +3213,26 @@
     device_id: e2d9c795303d91a6d576077b39fe32d3
     entity_id: 0f38e3773e1aa8639d867ba4417e9a42
     domain: light
+  mode: single
+- id: '1700588200711'
+  alias: Lift Button Blue 1 Press All OFF - 5 hrs Automatic
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_boolean.living_room_occupied
+    to: 'off'
+    for:
+      hours: 5
+      minutes: 0
+      seconds: 0
+  condition:
+  - condition: time
+    after: '20:00:00'
+  action:
+  - service: automation.trigger
+    data:
+      skip_condition: true
+    target:
+      entity_id: automation.automation_86
   mode: single
