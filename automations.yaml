@@ -2660,7 +2660,7 @@
     above: 0
   condition: []
   action:
-  - service: notify.mobile_app_simons_iphone_14
+  - service: notify.mobile_app_simoncar
     data:
       message: Rain
   - service: script.bedroom_skylight_open
@@ -3229,6 +3229,7 @@
   condition:
   - condition: time
     after: '20:00:00'
+    before: 06:00:00
   action:
   - service: automation.trigger
     data:
