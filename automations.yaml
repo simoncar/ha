@@ -3218,18 +3218,16 @@
   alias: Lift Button Blue 1 Press All OFF - 5 hrs Automatic
   description: ''
   trigger:
-  - platform: state
-    entity_id:
-    - input_boolean.living_room_occupied
-    to: 'off'
+  - platform: time
+    at: '22:32:00'
+  condition:
+  - condition: state
+    entity_id: input_boolean.living_room_occupied
     for:
-      hours: 5
+      hours: 3
       minutes: 0
       seconds: 0
-  condition:
-  - condition: time
-    after: '20:00:00'
-    before: 06:00:00
+    state: 'off'
   action:
   - service: automation.trigger
     data:
