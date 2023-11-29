@@ -2550,6 +2550,7 @@
         hold_secs: 0
       target:
         device_id: 57fdd525cc96afe7982612e0e1c15b14
+      enabled: false
     - service: script.air_con_off
       data: {}
     - service: notify.mobile_app_simoncar
