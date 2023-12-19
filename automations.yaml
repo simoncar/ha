@@ -3220,12 +3220,33 @@
   description: ''
   trigger:
   - platform: time
-    at: '22:32:00'
+    at: '22:02:00'
   condition:
   - condition: state
     entity_id: input_boolean.living_room_occupied
     for:
-      hours: 3
+      hours: 1
+      minutes: 0
+      seconds: 0
+    state: 'off'
+  action:
+  - service: automation.trigger
+    data:
+      skip_condition: true
+    target:
+      entity_id: automation.automation_86
+  mode: single
+- id: '1702903582538'
+  alias: Blue Off 5 hours backup
+  description: ''
+  trigger:
+  - platform: time
+    at: '23:59:00'
+  condition:
+  - condition: state
+    entity_id: input_boolean.living_room_occupied
+    for:
+      hours: 1
       minutes: 0
       seconds: 0
     state: 'off'
