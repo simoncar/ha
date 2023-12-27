@@ -3257,3 +3257,24 @@
     target:
       entity_id: automation.automation_86
   mode: single
+- id: '1703595247910'
+  alias: Blue Off 5 hours backup 3am
+  description: ''
+  trigger:
+  - platform: time
+    at: 03:00:00
+  condition:
+  - condition: state
+    entity_id: input_boolean.living_room_occupied
+    for:
+      hours: 1
+      minutes: 0
+      seconds: 0
+    state: 'off'
+  action:
+  - service: automation.trigger
+    data:
+      skip_condition: true
+    target:
+      entity_id: automation.automation_86
+  mode: single
