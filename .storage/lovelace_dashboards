@@ -12,14 +12,6 @@
         "require_admin": false,
         "mode": "storage",
         "url_path": "dashboard-general"
-      },
-      {
-        "id": "dashboard_tesst",
-        "show_in_sidebar": true,
-        "title": "Tesst",
-        "require_admin": false,
-        "mode": "storage",
-        "url_path": "dashboard-tesst"
       }
     ]
   }
