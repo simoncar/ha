@@ -3363,3 +3363,16 @@
   - service: script.air_con_off
     data: {}
   mode: single
+- id: '1710246401199'
+  alias: Home Assistant Auto-update on a schedule base
+  description: ''
+  use_blueprint:
+    path: edwardtfn/auto_update_scheduled.yaml
+    input:
+      restart_bool: true
+      max_backup_age:
+        hours: 0
+        minutes: 0
+        seconds: 0
+        days: 90
+      schedule_monthday: 10
