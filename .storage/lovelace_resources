@@ -15,7 +15,7 @@
         "id": "6df5651a4a68467f893b39a703270020"
       },
       {
-        "url": "/hacsfiles/lovelace-mushroom/mushroom.js?hacstag=444350375305",
+        "url": "/hacsfiles/lovelace-mushroom/mushroom.js?hacstag=444350375352",
         "type": "module",
         "id": "d17f66539d974de9969dd923443481d1"
       },
@@ -26,22 +26,22 @@
       },
       {
         "id": "fcccab9139c44627a08ef4c3e9f1e7bd",
-        "url": "/hacsfiles/lovelace-layout-card/layout-card.js?hacstag=156434866244",
+        "url": "/hacsfiles/lovelace-layout-card/layout-card.js?hacstag=156434866245",
         "type": "module"
       },
       {
         "id": "6500e6a1104f4b259697d30cbd3c0352",
-        "url": "/hacsfiles/lovelace-card-mod/card-mod.js?hacstag=190927524322",
+        "url": "/hacsfiles/lovelace-card-mod/card-mod.js?hacstag=190927524343",
         "type": "module"
       },
       {
         "id": "fc8c4bc1180e48d6b14b2ee706394427",
-        "url": "/hacsfiles/button-card/button-card.js?hacstag=146194325411",
+        "url": "/hacsfiles/button-card/button-card.js?hacstag=146194325412",
         "type": "module"
       },
       {
         "id": "e0c4fa0b137343dd88e32dae615b4f41",
-        "url": "/hacsfiles/lovelace-wallpanel/wallpanel.js?hacstag=3095064164170",
+        "url": "/hacsfiles/lovelace-wallpanel/wallpanel.js?hacstag=3095064164241",
         "type": "module"
       }
     ]
