@@ -2554,9 +2554,6 @@
       enabled: false
     - service: script.air_con_off
       data: {}
-    - service: notify.mobile_app_simoncar
-      data:
-        message: Goodnight, turning everything off
     - type: turn_off
       device_id: a51c183cf093f8ca49a63262b69c6ded
       entity_id: switch.pantry
@@ -2662,9 +2659,6 @@
     above: 0
   condition: []
   action:
-  - service: notify.mobile_app_simoncar
-    data:
-      message: Rain
   - service: script.bedroom_skylight_open
     data: {}
   mode: single
