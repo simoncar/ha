@@ -455,6 +455,12 @@
                   }
                 }
               ]
+            },
+            {
+              "type": "todo-list",
+              "entity": "todo.programming_todo",
+              "title": "Programming Todo",
+              "theme": "Mushroom"
             }
           ]
         },
