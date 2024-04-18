@@ -394,15 +394,6 @@
                   "cards": [
                     {
                       "type": "tile",
-                      "entity": "switch.smart_plug_2_outlet"
-                    }
-                  ]
-                },
-                {
-                  "type": "horizontal-stack",
-                  "cards": [
-                    {
-                      "type": "tile",
                       "name": "Temperature",
                       "entity": "sensor.rm4_study_temperature"
                     },
@@ -424,19 +415,6 @@
                       "entity": "switch.m8_study_fan_outlet",
                       "icon": "mdi:fan",
                       "name": "Study Fan"
-                    }
-                  ]
-                },
-                {
-                  "type": "horizontal-stack",
-                  "cards": [
-                    {
-                      "type": "tile",
-                      "entity": "switch.washing_machine"
-                    },
-                    {
-                      "type": "tile",
-                      "entity": "switch.tumble_dryer"
                     }
                   ]
                 },

@@ -78,7 +78,7 @@
       state: Dark
   - condition: numeric_state
     entity_id: sensor.front_door_motion_sensor_illuminance
-    below: 20
+    below: 60
   action:
   - scene: scene.entry_lights_on
   - type: turn_on
@@ -877,7 +877,8 @@
     device_id: b733ae3ffdf5a2025971b625500b1a33
     entity_id: light.chandelier
     domain: light
-  mode: single
+  mode: queued
+  max: 10
 - id: '1646310528896'
   alias: Push Button White Bedroom Off
   description: ''
