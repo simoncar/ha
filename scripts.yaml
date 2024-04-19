@@ -129,6 +129,7 @@ air_con_off:
     target:
       device_id: 9325eec3a09d66cf232af2fbc3ac7c42
   mode: single
+  icon: mdi:hvac-off
 air_con_on_22:
   alias: Living Room Air Con On 22
   sequence:
@@ -140,6 +141,7 @@ air_con_on_22:
       device: aircon
       command: temp_22_fan_5
   mode: single
+  icon: mdi:hvac
 bedroom_air_con_off:
   alias: Bedroom AC Off
   sequence:

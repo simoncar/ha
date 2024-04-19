@@ -914,6 +914,9 @@
       device_id: 96eebeea5c10f7a7e98cf4f484918c1c
       entity_id: light.bathroom_mirror_right
       domain: light
+    - service: script.bedroom_skylight_open
+      data: {}
+      enabled: true
     - type: turn_off
       device_id: 6f872fd46e4d0439ef2456f700d4398b
       entity_id: light.bed_lamp_mel
@@ -935,8 +938,8 @@
       entity_id: switch.bedroom_lights
       domain: switch
     - type: turn_off
-      device_id: 3928371e49be816319eec1dac9c531a6
-      entity_id: light.bed_lamp_left
+      device_id: 5a3de908d86bb720230472cc31231aac
+      entity_id: 8c52c5923dca051ee143780ffee4fbcb
       domain: light
     - type: turn_off
       device_id: e2d9c795303d91a6d576077b39fe32d3
@@ -954,9 +957,6 @@
       device_id: 11a686020163e55732126863d48b41de
       entity_id: light.shower_spotlights
       domain: light
-    - service: script.bedroom_skylight_open
-      data: {}
-      enabled: false
     - service: script.air_con_off
       data: {}
   mode: parallel
@@ -1325,7 +1325,7 @@
     domain: switch
   mode: single
 - id: '1663264053588'
-  alias: Master Closet
+  alias: Master Closet On
   description: ''
   trigger:
   - type: motion
@@ -1376,22 +1376,16 @@
     type: is_position
     below: 99
   action:
-  - if:
-    - condition: numeric_state
-      entity_id: sensor.remote_master_bedroom_temperature
-      below: 18
-    then:
-    - service: script.bedroom_skylight_open_2
-      data: {}
+  - service: script.bedroom_skylight_open_2
+    data: {}
   - service: input_boolean.turn_on
     data: {}
     target:
       entity_id: input_boolean.bedroom_curtain_motion
   - device_id: 2f3366a2291c0b2ac9f21b04546ad5df
     domain: cover
-    entity_id: cover.bedroom_curtains
-    type: set_position
-    position: 100
+    entity_id: 188d965a044b2f7f3079892f268ebe16
+    type: open
   - delay:
       hours: 0
       minutes: 0
@@ -1401,28 +1395,6 @@
     data: {}
     target:
       entity_id: input_boolean.bedroom_curtain_motion
-  mode: single
-- id: '1663837121336'
-  alias: Bedroom LED via Bed Lamps
-  description: ''
-  trigger:
-  - platform: device
-    type: turned_on
-    device_id: 3928371e49be816319eec1dac9c531a6
-    entity_id: light.bed_lamp_left
-    domain: light
-  - platform: device
-    type: turned_on
-    device_id: 6a19562dbd6094045283a87bbc87d90f
-    entity_id: light.bed_lamp_right
-    domain: light
-  condition: []
-  action:
-  - type: turn_on
-    device_id: 605e572814970daeb76e0dca4f8a17d7
-    entity_id: light.master_bed_led_2_2
-    domain: light
-    brightness_pct: 10
   mode: single
 - id: '1663837975051'
   alias: Bed Lamp LED gradually turn off
@@ -1756,74 +1728,6 @@
     at: 00:02:00
   condition: []
   action:
-  - service: script.air_con_off
-    data: {}
-  mode: single
-- id: '1670315297840'
-  alias: AEOTEC Button 3 All Off
-  description: ''
-  trigger:
-  - platform: device
-    device_id: 14a16136393b5cf16d7f7ea86a944371
-    domain: zwave_js
-    type: event.value_notification.central_scene
-    property: scene
-    property_key: '003'
-    endpoint: 0
-    command_class: 91
-    subtype: Endpoint 0 Scene 003
-  condition: []
-  action:
-  - type: turn_off
-    device_id: 6f872fd46e4d0439ef2456f700d4398b
-    entity_id: light.bed_lamp_mel
-    domain: light
-  - type: turn_off
-    device_id: 605e572814970daeb76e0dca4f8a17d7
-    entity_id: light.master_bed_led_2_2
-    domain: light
-  - type: turn_off
-    device_id: 247f56cc429ca49a254e3df37e263e37
-    entity_id: switch.bedroom_lamp
-    domain: switch
-  - type: turn_off
-    device_id: 6f6cf472f4fef1f0c20d9931d001ac70
-    entity_id: switch.master_closet
-    domain: switch
-  - type: turn_off
-    device_id: 3db0cec90e321434657d44397bbf327e
-    entity_id: switch.bedroom_lights
-    domain: switch
-  - type: turn_off
-    device_id: 3928371e49be816319eec1dac9c531a6
-    entity_id: light.bed_lamp_left
-    domain: light
-  - type: turn_off
-    device_id: e2d9c795303d91a6d576077b39fe32d3
-    entity_id: light.bath_circle
-    domain: light
-  - type: turn_off
-    device_id: 840fc824e00664e9c9cc36def0d6e277
-    entity_id: light.bathroom_mirror_spotlights
-    domain: light
-  - type: turn_off
-    device_id: f664adcdadd558ce399a7ba96dd2c7e1
-    entity_id: switch.bedroom_entry
-    domain: switch
-  - type: turn_off
-    device_id: 96eebeea5c10f7a7e98cf4f484918c1c
-    entity_id: light.bathroom_mirror_left
-    domain: light
-  - type: turn_off
-    device_id: 96eebeea5c10f7a7e98cf4f484918c1c
-    entity_id: light.bathroom_mirror_right
-    domain: light
-  - type: turn_off
-    device_id: 11a686020163e55732126863d48b41de
-    entity_id: light.shower_spotlights
-    domain: light
-  - service: script.bedroom_skylight_open
-    data: {}
   - service: script.air_con_off
     data: {}
   mode: single
@@ -2742,36 +2646,6 @@
     target:
       device_id: 57fdd525cc96afe7982612e0e1c15b14
   mode: single
-- id: '1686069680676'
-  alias: Master Bedroom Closet
-  description: ''
-  trigger:
-  - type: motion
-    platform: device
-    device_id: ee233693d4a6f7534b434a3c8eda6108
-    entity_id: binary_sensor.motion_sensor_closet_home_security_motion_detection_3
-    domain: binary_sensor
-  condition:
-  - type: is_illuminance
-    condition: device
-    device_id: ee233693d4a6f7534b434a3c8eda6108
-    entity_id: sensor.motion_sensor_closet_illuminance_3
-    domain: sensor
-    below: 80
-  - condition: state
-    entity_id: input_boolean.bedroom_curtain_motion
-    state: 'off'
-  action:
-  - type: turn_on
-    device_id: 6f6cf472f4fef1f0c20d9931d001ac70
-    entity_id: switch.master_closet
-    domain: switch
-  - delay:
-      hours: 0
-      minutes: 3
-      seconds: 0
-      milliseconds: 0
-  mode: restart
 - id: '1686069739638'
   alias: Master Closet Off
   description: ''
@@ -2792,87 +2666,6 @@
     entity_id: switch.master_closet
     domain: switch
   mode: restart
-- id: '1690810958793'
-  alias: Push Button White HOLD
-  description: ''
-  trigger:
-  - platform: device
-    device_id: 1d3ea4833ddfda743e05e05368213cd2
-    domain: zwave_js
-    type: event.value_notification.central_scene
-    property: scene
-    property_key: '001'
-    endpoint: 0
-    command_class: 91
-    subtype: Endpoint 0 Scene 001
-    value: 2
-  - platform: device
-    device_id: 653fdf321218685604af0c6c29592c40
-    domain: zwave_js
-    type: event.value_notification.central_scene
-    property: scene
-    property_key: '001'
-    endpoint: 0
-    command_class: 91
-    subtype: Endpoint 0 Scene 001
-    value: 2
-  condition: []
-  action:
-  - type: turn_on
-    device_id: 605e572814970daeb76e0dca4f8a17d7
-    entity_id: 7e3c4cb93faca5053d36eee005a23b4a
-    domain: light
-    brightness_pct: 3
-  - type: turn_off
-    device_id: 96eebeea5c10f7a7e98cf4f484918c1c
-    entity_id: light.bathroom_mirror_left
-    domain: light
-  - type: turn_off
-    device_id: 96eebeea5c10f7a7e98cf4f484918c1c
-    entity_id: light.bathroom_mirror_right
-    domain: light
-  - type: turn_off
-    device_id: 6f872fd46e4d0439ef2456f700d4398b
-    entity_id: light.bed_lamp_mel
-    domain: light
-  - type: turn_off
-    device_id: 247f56cc429ca49a254e3df37e263e37
-    entity_id: switch.bedroom_lamp
-    domain: switch
-  - type: turn_off
-    device_id: 6f6cf472f4fef1f0c20d9931d001ac70
-    entity_id: switch.master_closet
-    domain: switch
-  - type: turn_off
-    device_id: 3db0cec90e321434657d44397bbf327e
-    entity_id: switch.bedroom_lights
-    domain: switch
-  - type: turn_off
-    device_id: 3928371e49be816319eec1dac9c531a6
-    entity_id: light.bed_lamp_left
-    domain: light
-  - type: turn_off
-    device_id: e2d9c795303d91a6d576077b39fe32d3
-    entity_id: light.bath_circle
-    domain: light
-  - type: turn_off
-    device_id: 840fc824e00664e9c9cc36def0d6e277
-    entity_id: light.bathroom_mirror_spotlights
-    domain: light
-  - type: turn_off
-    device_id: f664adcdadd558ce399a7ba96dd2c7e1
-    entity_id: switch.bedroom_entry
-    domain: switch
-  - type: turn_off
-    device_id: 11a686020163e55732126863d48b41de
-    entity_id: light.shower_spotlights
-    domain: light
-  - service: script.bedroom_skylight_open
-    data: {}
-    enabled: false
-  - service: script.air_con_off
-    data: {}
-  mode: single
 - id: '1692268375561'
   alias: Art Light Off No Motion
   description: ''
@@ -3304,6 +3097,9 @@
     device_id: 605e572814970daeb76e0dca4f8a17d7
     entity_id: 276db57a236348e7c0011435198f907f
     domain: light
+  - service: script.bedroom_skylight_open
+    data: {}
+    enabled: true
   - type: turn_on
     device_id: 605e572814970daeb76e0dca4f8a17d7
     entity_id: 7e3c4cb93faca5053d36eee005a23b4a
@@ -3334,8 +3130,8 @@
     entity_id: switch.bedroom_lights
     domain: switch
   - type: turn_off
-    device_id: 3928371e49be816319eec1dac9c531a6
-    entity_id: light.bed_lamp_left
+    device_id: 5a3de908d86bb720230472cc31231aac
+    entity_id: 8c52c5923dca051ee143780ffee4fbcb
     domain: light
   - type: turn_off
     device_id: e2d9c795303d91a6d576077b39fe32d3
@@ -3353,9 +3149,6 @@
     device_id: 11a686020163e55732126863d48b41de
     entity_id: light.shower_spotlights
     domain: light
-  - service: script.bedroom_skylight_open
-    data: {}
-    enabled: false
   - service: script.air_con_off
     data: {}
   mode: single
