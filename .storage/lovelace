@@ -65,7 +65,8 @@
                   "type": "sensor",
                   "entity": "sensor.rm4_study_temperature",
                   "detail": 2,
-                  "name": "Living Room Temperature"
+                  "name": "Living Room Temperature",
+                  "theme": "Mushroom"
                 },
                 {
                   "type": "horizontal-stack",
@@ -437,22 +438,26 @@
                   ]
                 },
                 {
-                  "show_name": true,
-                  "show_icon": true,
-                  "type": "custom:button-card",
-                  "entity": "automation.automation_86",
-                  "name": "All OFF (good night..)",
-                  "icon": "mdi:weather-night",
-                  "tap_action": {
-                    "action": "call-service",
-                    "service": "automation.trigger",
-                    "target": {
-                      "entity_id": "automation.automation_86"
-                    },
-                    "data": {
-                      "skip_condition": true
+                  "type": "horizontal-stack",
+                  "title": "Pool",
+                  "cards": [
+                    {
+                      "type": "glance",
+                      "entities": [
+                        "sensor.rm4_pool_humidity",
+                        "sensor.shelly1_pool_temperature",
+                        "sensor.shelly1_pool_temperature_2"
+                      ]
                     }
-                  }
+                  ]
+                },
+                {
+                  "graph": "line",
+                  "type": "sensor",
+                  "entity": "sensor.rm4_pool_humidity",
+                  "detail": 2,
+                  "name": "Pool Room Humidity",
+                  "hours_to_show": 48
                 }
               ]
             },

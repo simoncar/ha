@@ -1358,7 +1358,7 @@
     offset: -0:25:00
     enabled: false
   - platform: time
-    at: 07:45:00
+    at: 07:15:00
   condition:
   - condition: time
     weekday:
@@ -1983,7 +1983,7 @@
     domain: binary_sensor
     for:
       hours: 0
-      minutes: 30
+      minutes: 15
       seconds: 0
   condition: []
   action:
