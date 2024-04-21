@@ -424,14 +424,14 @@
   alias: Outdoor Party Lights Motion ON
   description: ''
   trigger:
-  - type: occupied
+  - type: motion
     platform: device
-    device_id: a6b8ae904a3f9c9da46d789e7d8b4358
-    entity_id: binary_sensor.philips_backyard_sensor_occupancy
+    device_id: d06d9529f30f8fa576b2fccdff62516f
+    entity_id: bbe35a4bf2ef5fa28ad73e63bcab829e
     domain: binary_sensor
   condition:
   - condition: numeric_state
-    entity_id: sensor.philips_backyard_sensor_illuminance
+    entity_id: sensor.philips_backyard_sensor_illuminance_lux
     below: '20'
   - condition: not
     conditions:
@@ -497,14 +497,14 @@
   alias: Outdoor Party Lights Motion OFF
   description: ''
   trigger:
-  - type: not_occupied
+  - type: no_motion
     platform: device
-    device_id: a6b8ae904a3f9c9da46d789e7d8b4358
-    entity_id: binary_sensor.backyard_occupancy
+    device_id: d06d9529f30f8fa576b2fccdff62516f
+    entity_id: bbe35a4bf2ef5fa28ad73e63bcab829e
     domain: binary_sensor
     for:
       hours: 0
-      minutes: 3
+      minutes: 5
       seconds: 0
   condition:
   - condition: state
@@ -3165,3 +3165,22 @@
         seconds: 0
         days: 90
       schedule_monthday: 10
+- id: '1713626431696'
+  alias: Cube
+  description: ''
+  use_blueprint:
+    path: SirGoodenough/Zigbee2MQTT-Aqara-Magic-Cube-T1-Pro-CTP-R01-Xiaomi-Lumi.yaml
+    input:
+      topic: zigbee2mqtt/Cube
+      action_slide_face_1:
+      - service: tts.google_translate_say
+        data:
+          cache: false
+          entity_id: media_player.family_room_speaker
+          message: Side 1 - Slide
+      action_shake:
+      - service: tts.google_translate_say
+        data:
+          cache: false
+          entity_id: media_player.family_room_speaker
+          message: Shake

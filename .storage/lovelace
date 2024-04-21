@@ -60,38 +60,6 @@
                   ]
                 },
                 {
-                  "graph": "line",
-                  "hours_to_show": 24,
-                  "type": "sensor",
-                  "entity": "sensor.rm4_study_temperature",
-                  "detail": 2,
-                  "name": "Living Room Temperature",
-                  "theme": "Mushroom"
-                },
-                {
-                  "type": "horizontal-stack",
-                  "cards": [
-                    {
-                      "type": "tile",
-                      "entity": "sensor.rm4_study_temperature",
-                      "name": "Level 1",
-                      "vertical": false
-                    },
-                    {
-                      "type": "tile",
-                      "entity": "sensor.rm4_level_2_temperature",
-                      "name": "Level 2",
-                      "vertical": false
-                    },
-                    {
-                      "type": "tile",
-                      "entity": "sensor.remote_master_bedroom_temperature",
-                      "name": "Level 3",
-                      "vertical": false
-                    }
-                  ]
-                },
-                {
                   "type": "horizontal-stack",
                   "title": "Home Mode",
                   "cards": [
@@ -184,6 +152,105 @@
                         {
                           "value": "Dark",
                           "color": "rgb(28, 128, 199)",
+                          "font-weight": "bold"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "title": "Outdoor Lights",
+                  "cards": [
+                    {
+                      "type": "custom:button-card",
+                      "name": "On",
+                      "entity": "input_select.outdoor_lights",
+                      "color_type": "card",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "input_select.select_option",
+                        "data": {
+                          "option": "On"
+                        },
+                        "target": {
+                          "entity_id": "input_select.outdoor_lights"
+                        }
+                      },
+                      "state": [
+                        {
+                          "value": "On",
+                          "color": "rgb(28, 128, 199)"
+                        },
+                        {
+                          "value": "Off",
+                          "color": "#131313"
+                        },
+                        {
+                          "value": "Auto",
+                          "color": "#131313",
+                          "font-weight": "bold"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "custom:button-card",
+                      "entity": "input_select.outdoor_lights",
+                      "name": "Auto",
+                      "color_type": "card",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "input_select.select_option",
+                        "data": {
+                          "option": "Auto"
+                        },
+                        "target": {
+                          "entity_id": "input_select.outdoor_lights"
+                        }
+                      },
+                      "state": [
+                        {
+                          "value": "On",
+                          "color": "#131313"
+                        },
+                        {
+                          "value": "Off",
+                          "color": "#131313"
+                        },
+                        {
+                          "value": "Auto",
+                          "color": "rgb(28, 128, 199)",
+                          "font-weight": "bold"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "custom:button-card",
+                      "entity": "input_select.outdoor_lights",
+                      "name": "Off",
+                      "color_type": "card",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "input_select.select_option",
+                        "data": {
+                          "option": "Off"
+                        },
+                        "target": {
+                          "entity_id": "input_select.outdoor_lights"
+                        }
+                      },
+                      "state": [
+                        {
+                          "value": "On",
+                          "color": "#131313"
+                        },
+                        {
+                          "value": "Off",
+                          "color": "rgb(28, 128, 199)"
+                        },
+                        {
+                          "value": "Auto",
+                          "color": "#131313",
                           "font-weight": "bold"
                         }
                       ]
@@ -315,157 +382,83 @@
               "type": "vertical-stack",
               "cards": [
                 {
-                  "type": "horizontal-stack",
-                  "cards": [
+                  "type": "custom:apexcharts-card",
+                  "header": {
+                    "show": true,
+                    "show_states": true,
+                    "colorize_states": true
+                  },
+                  "series": [
                     {
-                      "features": [
-                        {
-                          "type": "climate-hvac-modes",
-                          "hvac_modes": [
-                            "heat",
-                            "off"
-                          ]
-                        }
-                      ],
-                      "type": "tile",
-                      "entity": "climate.nest_hvac",
-                      "vertical": true,
-                      "state_content": [
-                        "current_temperature",
-                        "temperature",
-                        "state"
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "horizontal-stack",
-                  "title": "Outdoor Lights",
-                  "cards": [
-                    {
-                      "type": "custom:button-card",
-                      "name": "On",
-                      "entity": "input_select.outdoor_lights",
-                      "color_type": "card",
-                      "tap_action": {
-                        "action": "call-service",
-                        "service": "input_select.select_option",
-                        "data": {
-                          "option": "On"
-                        },
-                        "target": {
-                          "entity_id": "input_select.outdoor_lights"
-                        }
-                      },
-                      "state": [
-                        {
-                          "value": "On",
-                          "color": "rgb(28, 128, 199)"
-                        },
-                        {
-                          "value": "Off",
-                          "color": "#131313"
-                        },
-                        {
-                          "value": "Auto",
-                          "color": "#131313",
-                          "font-weight": "bold"
-                        }
-                      ]
+                      "entity": "sensor.rm4_study_temperature",
+                      "name": "Living Room",
+                      "stroke_width": 3,
+                      "curve": "stepline"
                     },
                     {
-                      "type": "custom:button-card",
-                      "entity": "input_select.outdoor_lights",
-                      "name": "Auto",
-                      "color_type": "card",
-                      "tap_action": {
-                        "action": "call-service",
-                        "service": "input_select.select_option",
-                        "data": {
-                          "option": "Auto"
-                        },
-                        "target": {
-                          "entity_id": "input_select.outdoor_lights"
-                        }
-                      },
-                      "state": [
-                        {
-                          "value": "On",
-                          "color": "#131313"
-                        },
-                        {
-                          "value": "Off",
-                          "color": "#131313"
-                        },
-                        {
-                          "value": "Auto",
-                          "color": "rgb(28, 128, 199)",
-                          "font-weight": "bold"
-                        }
-                      ]
+                      "entity": "sensor.remote_master_bedroom_temperature",
+                      "name": "Bedroom",
+                      "stroke_width": 3
                     },
                     {
-                      "type": "custom:button-card",
-                      "entity": "input_select.outdoor_lights",
-                      "name": "Off",
-                      "color_type": "card",
-                      "tap_action": {
-                        "action": "call-service",
-                        "service": "input_select.select_option",
-                        "data": {
-                          "option": "Off"
-                        },
-                        "target": {
-                          "entity_id": "input_select.outdoor_lights"
-                        }
-                      },
-                      "state": [
-                        {
-                          "value": "On",
-                          "color": "#131313"
-                        },
-                        {
-                          "value": "Off",
-                          "color": "rgb(28, 128, 199)"
-                        },
-                        {
-                          "value": "Auto",
-                          "color": "#131313",
-                          "font-weight": "bold"
-                        }
-                      ]
+                      "entity": "sensor.gw2000a_outdoor_temperature",
+                      "name": "Plaça Rovira",
+                      "stroke_width": 3
                     }
-                  ]
+                  ],
+                  "apex_config": {
+                    "legend": {
+                      "show": false
+                    },
+                    "yaxis": [
+                      {
+                        "show": true,
+                        "decimalsInFloat": 0
+                      }
+                    ]
+                  }
                 },
                 {
-                  "type": "horizontal-stack",
-                  "title": "Pool",
-                  "cards": [
+                  "type": "custom:apexcharts-card",
+                  "header": {
+                    "show": true,
+                    "title": "Swimming Pool",
+                    "show_states": true,
+                    "colorize_states": true
+                  },
+                  "series": [
                     {
-                      "type": "glance",
-                      "entities": [
-                        "sensor.rm4_pool_humidity",
-                        "sensor.shelly1_pool_temperature",
-                        "sensor.shelly1_pool_temperature_2"
-                      ]
+                      "entity": "sensor.rm4_pool_humidity",
+                      "name": "Plant Room Humidity",
+                      "stroke_width": 3
+                    },
+                    {
+                      "entity": "sensor.shelly1_pool_temperature_2",
+                      "name": "Water Temperature",
+                      "stroke_width": 3
+                    },
+                    {
+                      "entity": "switch.pool_fan_switch_out",
+                      "transform": "return x == 'on' ? 80 : 0;",
+                      "type": "area",
+                      "curve": "stepline",
+                      "stroke_width": 0,
+                      "name": "Vent Fan"
                     }
-                  ]
-                },
-                {
-                  "graph": "line",
-                  "type": "sensor",
-                  "entity": "sensor.rm4_pool_humidity",
-                  "detail": 2,
-                  "name": "Pool Room Humidity",
-                  "hours_to_show": 48
+                  ],
+                  "apex_config": {
+                    "legend": {
+                      "show": false
+                    },
+                    "yaxis": [
+                      {
+                        "show": true,
+                        "decimalsInFloat": 0
+                      }
+                    ]
+                  }
                 }
               ]
-            },
-            {
-              "type": "todo-list",
-              "entity": "todo.programming_todo",
-              "title": "Programming Todo",
-              "theme": "Mushroom"
             }
           ]
         },

@@ -1,0 +1,61 @@
+homeassistant: true
+advanced:
+  network_key:
+    - 230
+    - 226
+    - 205
+    - 240
+    - 125
+    - 13
+    - 58
+    - 170
+    - 128
+    - 121
+    - 106
+    - 55
+    - 17
+    - 146
+    - 98
+    - 91
+  pan_id: 40268
+  ext_pan_id:
+    - 154
+    - 82
+    - 143
+    - 134
+    - 147
+    - 26
+    - 188
+    - 167
+  homeassistant_legacy_entity_attributes: false
+  legacy_api: false
+  legacy_availability_payload: false
+  transmit_power: 20
+mqtt:
+  server: mqtt://core-mosquitto:1883
+  user: mqtt
+  password: mqtt_4837q
+serial:
+  port: tcp://192.168.87.68:6638
+  baudrate: 115200
+  disable_led: false
+frontend:
+  port: 8099
+device_options:
+  legacy: false
+devices:
+  '0xb4e3f9fffe249e15':
+    friendly_name: Button 4 - Movie
+  '0x04cd15fffe7ff98b':
+    friendly_name: Button 2 - Chandelier
+  '0xa4c13812921dddfd':
+    friendly_name: Smart Plug Z1
+  '0xb4e3f9fffe753317':
+    friendly_name: Button 3
+  '0x04cd15fffe268dcc':
+    friendly_name: Button 1
+  '0x54ef4410006a43c7':
+    friendly_name: Cube
+    legacy: false
+  '0x001788010649a073':
+    friendly_name: Philips Backyard Sensor
