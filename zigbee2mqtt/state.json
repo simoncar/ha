@@ -1,10 +1,10 @@
 {
     "0xa4c13812921dddfd": {
-        "voltage": 235,
+        "voltage": 237,
         "energy": 16.7,
         "power": 0,
         "current": 0,
-        "linkquality": 98,
+        "linkquality": 116,
         "state": "OFF",
         "update": {
             "state": "idle",
@@ -17,7 +17,7 @@
     },
     "0xb4e3f9fffe753317": {
         "battery": 100,
-        "linkquality": 94
+        "linkquality": 105
     },
     "0xb4e3f9fffe249e15": {
         "battery": 50,
@@ -26,7 +26,7 @@
             "installed_version": 604241926,
             "latest_version": 604241926
         },
-        "linkquality": 94
+        "linkquality": 54
     },
     "0x04cd15fffe7ff98b": {
         "battery": 50,
@@ -35,35 +35,44 @@
             "installed_version": 604241926,
             "latest_version": 604241926
         },
-        "linkquality": 156
+        "linkquality": 72
     },
     "0x04cd15fffe268dcc": {
-        "battery": 16,
-        "linkquality": 87
+        "battery": 11,
+        "linkquality": 105
     },
     "0x54ef4410006a43c7": {
         "operation_mode": "action_mode",
         "side": 1,
-        "linkquality": 94,
-        "voltage": 3060,
+        "linkquality": 120,
+        "voltage": 3065,
         "battery": 100,
         "power_outage_count": 159,
         "current": 0,
         "power": 2
     },
     "0x001788010649a073": {
-        "battery": 55,
-        "occupancy_timeout": 0,
+        "battery": 58,
+        "occupancy_timeout": 60,
         "occupancy": false,
         "motion_sensitivity": "high",
         "illuminance": 0,
         "illuminance_lux": 0,
-        "temperature": 15.31,
+        "temperature": 14.04,
         "update": {
             "state": "idle",
             "installed_version": 1107323831,
             "latest_version": 1107323831
         },
-        "linkquality": 83
+        "linkquality": 116,
+        "led_indication": true
+    },
+    "0x5c0272fffebb9cde": {
+        "water_leak": false,
+        "tamper": false,
+        "battery_low": false,
+        "battery": 100,
+        "voltage": 3000,
+        "linkquality": 105
     }
 }

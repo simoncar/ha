@@ -2185,17 +2185,14 @@
     domain: switch
   action:
   - delay:
-      hours: 0
-      minutes: 30
+      hours: 1
+      minutes: 0
       seconds: 0
       milliseconds: 0
   - type: turn_off
     device_id: b4acd588f9685b7be1761e7ddbacac8e
     entity_id: switch.shelly_1_record_player
     domain: switch
-  - service: notify.mobile_app_simons_iphone_14
-    data:
-      message: Turing Off Record Player
   mode: single
 - id: '1673073103253'
   alias: Living Room Master Switch Toggle Reset
@@ -3175,7 +3172,7 @@
       action_slide_face_1:
       - service: tts.google_translate_say
         data:
-          cache: false
+          cache: true
           entity_id: media_player.family_room_speaker
           message: Side 1 - Slide
       action_shake:

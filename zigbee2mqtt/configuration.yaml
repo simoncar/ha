@@ -59,3 +59,10 @@ devices:
     legacy: false
   '0x001788010649a073':
     friendly_name: Philips Backyard Sensor
+  '0x5c0272fffebb9cde':
+    friendly_name: Water Sensor 1
+availability:
+  active:
+    timeout: 10
+  passive:
+    timeout: 2880

@@ -393,12 +393,14 @@
                       "entity": "sensor.rm4_study_temperature",
                       "name": "Living Room",
                       "stroke_width": 3,
-                      "curve": "stepline"
+                      "curve": "stepline",
+                      "color": "#3399DC"
                     },
                     {
                       "entity": "sensor.remote_master_bedroom_temperature",
                       "name": "Bedroom",
-                      "stroke_width": 3
+                      "stroke_width": 3,
+                      "color": "#FF9800"
                     },
                     {
                       "entity": "sensor.gw2000a_outdoor_temperature",
@@ -430,16 +432,18 @@
                     {
                       "entity": "sensor.rm4_pool_humidity",
                       "name": "Plant Room Humidity",
-                      "stroke_width": 3
+                      "stroke_width": 3,
+                      "color": "#3399DC"
                     },
                     {
                       "entity": "sensor.shelly1_pool_temperature_2",
                       "name": "Water Temperature",
-                      "stroke_width": 3
+                      "stroke_width": 3,
+                      "color": "#FF9800"
                     },
                     {
                       "entity": "switch.pool_fan_switch_out",
-                      "transform": "return x == 'on' ? 80 : 0;",
+                      "transform": "return x == 'on' ? 95 : 0;",
                       "type": "area",
                       "curve": "stepline",
                       "stroke_width": 0,
@@ -453,7 +457,9 @@
                     "yaxis": [
                       {
                         "show": true,
-                        "decimalsInFloat": 0
+                        "decimalsInFloat": 0,
+                        "min": 90,
+                        "max": 100
                       }
                     ]
                   }
