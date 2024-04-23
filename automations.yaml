@@ -378,14 +378,14 @@
     domain: light
   mode: single
 - id: '1630578384761'
-  alias: Magic Button 1 - Watch a movie
+  alias: Button 4 - Watch a movie
   description: ''
   trigger:
-  - device_id: cc10c24447f8373f25875af0db287ddc
-    domain: zha
-    platform: device
-    type: remote_button_short_press
-    subtype: turn_on
+  - platform: device
+    domain: mqtt
+    device_id: e651d586bf8a6f90f2a298b9a0b56fa1
+    type: action
+    subtype: 'on'
   condition: []
   action:
   - type: turn_on
@@ -866,11 +866,11 @@
   alias: Chandelier Ikea Button On Off
   description: ''
   trigger:
-  - device_id: 5f97d7028d3121f0a59ad668c7b1cdd4
-    domain: zha
-    platform: device
-    type: remote_button_short_press
-    subtype: turn_on
+  - platform: device
+    domain: mqtt
+    device_id: d927f9fe3e7666f066ce0ec490e3ef37
+    type: action
+    subtype: 'on'
   condition: []
   action:
   - type: toggle
@@ -2225,7 +2225,7 @@
     device_id: 14a3e6ecd209194f49ecbda65ec89e84
     entity_id: sensor.art_light_motion_sensor_illuminance
     domain: sensor
-    below: 10
+    below: 20
   - condition: state
     entity_id: input_select.home_mode
     state: Normal
@@ -2852,109 +2852,9 @@
     domain: binary_sensor
   condition: []
   action:
-  - service: notify.mobile_app_simons_iphone_14
+  - service: notify.mobile_app_sm_s928b
     data:
-      message: water leak detected
-      title: WATER LEAK STUDY
-  - service: tts.google_translate_say
-    data:
-      entity_id: media_player.everywhere
-      message: Water Leak Detected In Study
-  - delay:
-      hours: 0
-      minutes: 0
-      seconds: 20
-      milliseconds: 0
-  - service: tts.google_translate_say
-    data:
-      entity_id: media_player.everywhere
-      message: Water Leak Detected In Study
-  - delay:
-      hours: 0
-      minutes: 0
-      seconds: 20
-      milliseconds: 0
-  - service: tts.google_translate_say
-    data:
-      entity_id: media_player.everywhere
-      message: Water Leak Detected In Study
-  - delay:
-      hours: 0
-      minutes: 0
-      seconds: 20
-      milliseconds: 0
-  - service: tts.google_translate_say
-    data:
-      entity_id: media_player.everywhere
-      message: Water Leak Detected In Study
-  - delay:
-      hours: 0
-      minutes: 0
-      seconds: 20
-      milliseconds: 0
-  - service: tts.google_translate_say
-    data:
-      entity_id: media_player.everywhere
-      message: Water Leak Detected In Study
-  - delay:
-      hours: 0
-      minutes: 0
-      seconds: 20
-      milliseconds: 0
-  - service: tts.google_translate_say
-    data:
-      entity_id: media_player.everywhere
-      message: Water Leak Detected In Study
-  - delay:
-      hours: 0
-      minutes: 0
-      seconds: 20
-      milliseconds: 0
-  - service: tts.google_translate_say
-    data:
-      entity_id: media_player.everywhere
-      message: Water Leak Detected In Study
-  - delay:
-      hours: 0
-      minutes: 0
-      seconds: 20
-      milliseconds: 0
-  - service: tts.google_translate_say
-    data:
-      entity_id: media_player.everywhere
-      message: Water Leak Detected In Study
-  - delay:
-      hours: 0
-      minutes: 0
-      seconds: 20
-      milliseconds: 0
-  - service: tts.google_translate_say
-    data:
-      entity_id: media_player.everywhere
-      message: Water Leak Detected In Study
-  - delay:
-      hours: 0
-      minutes: 0
-      seconds: 20
-      milliseconds: 0
-  - service: tts.google_translate_say
-    data:
-      entity_id: media_player.everywhere
-      message: Water Leak Detected In Study
-  - delay:
-      hours: 0
-      minutes: 0
-      seconds: 20
-      milliseconds: 0
-  - service: tts.google_translate_say
-    data:
-      entity_id: media_player.everywhere
-      message: Water Leak Detected In Study
-  - delay:
-      hours: 0
-      minutes: 0
-      seconds: 20
-      milliseconds: 0
+      message: Water Leak Study
   mode: single
 - id: '1698426456972'
   alias: Shower Motion ON
@@ -3181,3 +3081,23 @@
           cache: false
           entity_id: media_player.family_room_speaker
           message: Shake
+- id: '1713782059485'
+  alias: Water Leak Laundry
+  description: ''
+  trigger:
+  - type: moist
+    platform: device
+    device_id: db8991ee97929bb34e76fb16e613eca8
+    entity_id: 65917035576f1b0cf5a22f4ec98dd61a
+    domain: binary_sensor
+  condition: []
+  action:
+  - service: notify.mobile_app_sm_s928b
+    data:
+      message: Water Leak Laundry
+      title: Water Leak
+  - service: notify.persistent_notification
+    metadata: {}
+    data:
+      message: Water Leak Laundry
+  mode: single

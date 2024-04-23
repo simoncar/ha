@@ -17,7 +17,6 @@
           "title": "Ground Floor",
           "path": "tablet",
           "theme": "Mushroom",
-          "badges": [],
           "cards": [
             {
               "type": "vertical-stack",
@@ -466,14 +465,14 @@
                 }
               ]
             }
-          ]
+          ],
+          "icon": "mdi:home-floor-0"
         },
         {
           "title": "Upper Floors",
           "path": "upper",
-          "icon": "",
+          "icon": "mdi:home-floor-3",
           "theme": "Mushroom",
-          "badges": [],
           "cards": [
             {
               "type": "vertical-stack",
@@ -1182,6 +1181,178 @@
                 "data": {}
               },
               "fill_container": false
+            }
+          ]
+        },
+        {
+          "theme": "Backend-selected",
+          "title": "Distance",
+          "path": "distance",
+          "icon": "mdi:waves-arrow-up",
+          "badges": [],
+          "cards": [
+            {
+              "type": "gauge",
+              "entity": "sensor.connectix_distancemeter_percentage_full",
+              "needle": true,
+              "name": "Percentage Full",
+              "unit": "%",
+              "max": 100,
+              "min": 1,
+              "severity": {
+                "green": 0,
+                "yellow": 60,
+                "red": 85
+              }
+            },
+            {
+              "type": "gauge",
+              "entity": "sensor.connectix_distancemeter_level_full",
+              "needle": true,
+              "name": "Tank Level",
+              "unit": "cm",
+              "max": 450,
+              "min": 1,
+              "severity": {
+                "green": 0,
+                "yellow": 300,
+                "red": 400
+              }
+            },
+            {
+              "type": "gauge",
+              "entity": "sensor.distancemeter_wifi_signaalsterkte_rssi",
+              "min": -20,
+              "max": -90,
+              "severity": {
+                "green": -67,
+                "yellow": -70,
+                "red": -80
+              },
+              "name": "Wifi Strength"
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "sensor.distancemeter_mac_adres"
+                },
+                {
+                  "entity": "sensor.distancemeter_gateway_ip_address"
+                },
+                {
+                  "entity": "sensor.distancemeter_startup_time"
+                },
+                {
+                  "entity": "sensor.distancemeter_firmware_versie_van_gateway"
+                },
+                {
+                  "entity": "sensor.distancemeter_beschikbare_firmware_versie"
+                },
+                {
+                  "entity": "sensor.distancemeter_firmware_update_beschikbaar"
+                },
+                {
+                  "entity": "switch.distancemeter_install_firmware_update"
+                },
+                {
+                  "entity": "sensor.distancemeter_lastchanged"
+                },
+                {
+                  "entity": "binary_sensor.distancemeter_connectivity_status"
+                }
+              ],
+              "show_header_toggle": false,
+              "title": "Smart Gateways Distancemeter",
+              "state_color": true
+            },
+            {
+              "type": "gauge",
+              "entity": "sensor.connectix_distancemeter_corrected_distance",
+              "min": 20,
+              "name": "Corrected Distance",
+              "severity": {
+                "green": 2,
+                "yellow": 265,
+                "red": 380
+              },
+              "max": 450,
+              "needle": true,
+              "unit": "cm"
+            },
+            {
+              "type": "custom:apexcharts-card",
+              "experimental": {
+                "color_threshold": true
+              },
+              "graph_span": "1h",
+              "show": {
+                "last_updated": true
+              },
+              "apex_config": {
+                "yaxis": [
+                  {
+                    "id": "first",
+                    "forceNiceScale": true,
+                    "decimalsInFloat": 3
+                  }
+                ]
+              },
+              "header": {
+                "standard_format": false,
+                "show": true,
+                "show_states": true,
+                "colorize_states": true,
+                "title": "Percentage gevuld"
+              },
+              "series": [
+                {
+                  "entity": "sensor.connectix_distancemeter_percentage_full",
+                  "type": "line",
+                  "group_by": {
+                    "func": "last",
+                    "duration": "1m"
+                  },
+                  "stroke_width": 5
+                }
+              ]
+            },
+            {
+              "type": "custom:apexcharts-card",
+              "experimental": {
+                "color_threshold": true
+              },
+              "graph_span": "1h",
+              "show": {
+                "last_updated": true
+              },
+              "apex_config": {
+                "yaxis": [
+                  {
+                    "id": "first",
+                    "forceNiceScale": true,
+                    "decimalsInFloat": 3
+                  }
+                ]
+              },
+              "header": {
+                "standard_format": false,
+                "show": true,
+                "show_states": true,
+                "colorize_states": true,
+                "title": "Water Level"
+              },
+              "series": [
+                {
+                  "entity": "sensor.connectix_distancemeter_level_full",
+                  "type": "line",
+                  "group_by": {
+                    "func": "last",
+                    "duration": "1m"
+                  },
+                  "stroke_width": 5
+                }
+              ]
             }
           ]
         }
