@@ -3101,3 +3101,19 @@
     data:
       message: Water Leak Laundry
   mode: single
+- id: '1714205175954'
+  alias: Pool Fan Auto On
+  description: ''
+  trigger:
+  - platform: device
+    type: turned_off
+    device_id: 86dd471a6237bc5574dd92e01984a804
+    entity_id: d38b4ca5b74748c26c6c92ab67720906
+    domain: switch
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 86dd471a6237bc5574dd92e01984a804
+    entity_id: d38b4ca5b74748c26c6c92ab67720906
+    domain: switch
+  mode: single
