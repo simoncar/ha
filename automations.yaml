@@ -131,7 +131,7 @@
     event: sunset
     offset: -00:40:00
   - platform: time
-    at: '19:00:00'
+    at: '18:45:00'
   condition: []
   action:
   - service: script.blinds_down
@@ -3116,4 +3116,5 @@
     device_id: 86dd471a6237bc5574dd92e01984a804
     entity_id: d38b4ca5b74748c26c6c92ab67720906
     domain: switch
+    enabled: false
   mode: single

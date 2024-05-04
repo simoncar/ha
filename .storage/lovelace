@@ -1443,6 +1443,17 @@
             }
           ],
           "type": "panel"
+        },
+        {
+          "title": "Tasks",
+          "path": "tasks",
+          "icon": "mdi:checkbox-marked-circle-auto-outline",
+          "cards": [
+            {
+              "type": "todo-list",
+              "entity": "todo.programming_todo"
+            }
+          ]
         }
       ]
     }
