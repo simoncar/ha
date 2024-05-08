@@ -68,7 +68,7 @@
         "motion_sensitivity": "high",
         "illuminance": 0,
         "illuminance_lux": 0,
-        "temperature": 16.58,
+        "temperature": 15.73,
         "update": {
             "state": "idle",
             "installed_version": 1107323831,
