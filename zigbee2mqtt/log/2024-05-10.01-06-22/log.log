@@ -94,3 +94,54 @@
 [2024-05-11 00:30:22] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
 [2024-05-11 00:47:10] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
 [2024-05-11 01:06:43] info: 	zh:controller: Wrote coordinator backup to '/config/zigbee2mqtt/coordinator_backup.json'
+[2024-05-11 02:29:01] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-11 03:00:31] error: 	zh:controller:device: Default response to 0x001788010649a073 failed
+[2024-05-11 03:21:31] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-11 03:23:37] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-11 04:51:49] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-11 05:05:28] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-11 05:13:52] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-11 06:04:16] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-11 06:31:34] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-11 06:45:13] error: 	zh:controller:device: Default response to 0x001788010649a073 failed
+[2024-05-11 07:05:10] error: 	zh:controller:device: Default response to 0x001788010649a073 failed
+[2024-05-11 07:26:11] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-11 09:19:35] error: 	zh:controller:device: Default response to 0x001788010649a073 failed
+[2024-05-11 10:23:38] error: 	zh:controller:device: Default response to 0x001788010649a073 failed
+[2024-05-11 10:28:53] error: 	zh:controller:device: Default response to 0x001788010649a073 failed
+[2024-05-11 10:29:56] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-11 10:49:53] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-11 13:43:08] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-11 14:09:19] error: 	zh:zstack:znp: Error while parsing to ZpiObject 'Error: CommandID '68' from subsystem '6' not found
+    at Function.fromUnpiFrame (/app/node_modules/zigbee-herdsman/src/adapter/z-stack/znp/zpiObject.ts:60:19)
+    at Znp.onUnpiParsed (/app/node_modules/zigbee-herdsman/src/adapter/z-stack/znp/znp.ts:93:38)
+    at Parser.emit (node:events:517:28)
+    at Parser.parseNext (/app/node_modules/zigbee-herdsman/src/adapter/z-stack/unpi/parser.ts:45:26)
+    at Parser._transform (/app/node_modules/zigbee-herdsman/src/adapter/z-stack/unpi/parser.ts:19:14)
+    at Parser.Transform._write (node:internal/streams/transform:175:8)
+    at writeOrBuffer (node:internal/streams/writable:392:12)
+    at _write (node:internal/streams/writable:333:10)
+    at Parser.Writable.write (node:internal/streams/writable:337:10)
+    at Socket.ondata (node:internal/streams/readable:809:22)'
+[2024-05-11 14:09:23] error: 	zh:controller:device: Default response to 0x001788010649a073 failed
+[2024-05-11 14:17:47] error: 	zh:controller:device: Default response to 0x001788010649a073 failed
+[2024-05-11 14:26:11] error: 	zh:controller:device: Default response to 0x001788010649a073 failed
+[2024-05-11 14:39:50] error: 	zh:controller:device: Default response to 0x001788010649a073 failed
+[2024-05-11 15:12:23] error: 	zh:controller:device: Default response to 0x001788010649a073 failed
+[2024-05-11 16:09:05] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-11 16:19:36] error: 	zh:controller:device: Default response to 0x001788010649a073 failed
+[2024-05-11 17:12:06] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-11 18:48:42] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-11 19:44:21] error: 	zh:controller:device: Default response to 0x5c0272fffebb9cde failed
+[2024-05-11 19:45:24] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-11 20:44:12] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-11 21:38:48] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-11 21:44:03] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-11 22:47:03] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-11 22:55:27] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-12 00:26:48] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-12 01:04:36] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-12 01:05:41] info: 	z2m: Disconnecting from MQTT server
+[2024-05-12 01:05:41] info: 	z2m: Stopping zigbee-herdsman...
+[2024-05-12 01:05:47] error: 	zh:controller: Failed to disable join on stop: Error: SRSP - AF - dataRequestExt after 6000ms
+[2024-05-12 01:06:05] info: 	zh:controller: Wrote coordinator backup to '/config/zigbee2mqtt/coordinator_backup.json'
