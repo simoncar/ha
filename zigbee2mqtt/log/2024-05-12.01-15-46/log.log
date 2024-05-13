@@ -24,3 +24,71 @@
 [2024-05-12 01:15:50] info: 	z2m: Started frontend on port 8099
 [2024-05-12 01:15:51] info: 	z2m: Zigbee2MQTT started!
 [2024-05-12 01:29:49] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-12 02:06:34] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-12 02:37:01] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-12 03:53:40] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-12 04:00:20] info: 	z2m: Configuring 'Water Sensor 1'
+[2024-05-12 04:00:46] error: 	z2m: Failed to configure 'Water Sensor 1', attempt 1 (Error: ZCL command 0x5c0272fffebb9cde/1 genPowerCfg.configReport([{"attribute":"batteryPercentageRemaining","minimumReportInterval":3600,"maximumReportInterval":65000,"reportableChange":0}], {"timeout":10000,"disableResponse":false,"disableRecovery":false,"disableDefaultResponse":true,"direction":0,"srcEndpoint":null,"reservedBits":0,"manufacturerCode":null,"transactionSequenceNumber":null,"writeUndiv":false}) failed (Timeout - 42265 - 1 - 6 - 1 - 7 after 10000ms)
+    at Object.start (/app/node_modules/zigbee-herdsman/src/utils/waitress.ts:63:23)
+    at ZStackAdapter.sendZclFrameToEndpointInternal (/app/node_modules/zigbee-herdsman/src/adapter/z-stack/adapter/zStackAdapter.ts:498:47)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at Queue.execute (/app/node_modules/zigbee-herdsman/src/utils/queue.ts:35:20)
+    at Request.send (/app/node_modules/zigbee-herdsman/src/controller/helpers/request.ts:79:20)
+    at Endpoint.zclCommand (/app/node_modules/zigbee-herdsman/src/controller/model/endpoint.ts:766:28)
+    at Endpoint.configureReporting (/app/node_modules/zigbee-herdsman/src/controller/model/endpoint.ts:556:9)
+    at Object.batteryPercentageRemaining (/app/node_modules/zigbee-herdsman-converters/src/lib/reporting.ts:59:5)
+    at Object.configure (/app/node_modules/zigbee-herdsman-converters/src/devices/tuya.ts:1718:13)
+    at Configure.configure (/app/lib/extension/configure.ts:121:13))
+[2024-05-12 04:44:04] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-12 04:52:28] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-12 08:08:25] info: 	z2m: Configuring 'Water Sensor 1'
+[2024-05-12 08:08:49] error: 	z2m: Failed to configure 'Water Sensor 1', attempt 2 (Error: ZCL command 0x5c0272fffebb9cde/1 genPowerCfg.configReport([{"attribute":"batteryPercentageRemaining","minimumReportInterval":3600,"maximumReportInterval":65000,"reportableChange":0}], {"timeout":10000,"disableResponse":false,"disableRecovery":false,"disableDefaultResponse":true,"direction":0,"srcEndpoint":null,"reservedBits":0,"manufacturerCode":null,"transactionSequenceNumber":null,"writeUndiv":false}) failed (Timeout - 42265 - 1 - 8 - 1 - 7 after 10000ms)
+    at Object.start (/app/node_modules/zigbee-herdsman/src/utils/waitress.ts:63:23)
+    at ZStackAdapter.sendZclFrameToEndpointInternal (/app/node_modules/zigbee-herdsman/src/adapter/z-stack/adapter/zStackAdapter.ts:498:47)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at Queue.execute (/app/node_modules/zigbee-herdsman/src/utils/queue.ts:35:20)
+    at Request.send (/app/node_modules/zigbee-herdsman/src/controller/helpers/request.ts:79:20)
+    at Endpoint.zclCommand (/app/node_modules/zigbee-herdsman/src/controller/model/endpoint.ts:766:28)
+    at Endpoint.configureReporting (/app/node_modules/zigbee-herdsman/src/controller/model/endpoint.ts:556:9)
+    at Object.batteryPercentageRemaining (/app/node_modules/zigbee-herdsman-converters/src/lib/reporting.ts:59:5)
+    at Object.configure (/app/node_modules/zigbee-herdsman-converters/src/devices/tuya.ts:1718:13)
+    at Configure.configure (/app/lib/extension/configure.ts:121:13))
+[2024-05-12 08:11:58] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-12 09:49:37] error: 	zh:controller:device: Default response to 0x001788010649a073 failed
+[2024-05-12 09:59:04] error: 	zh:controller:device: Read response to 0xa4c13812921dddfd failed
+[2024-05-12 09:59:11] error: 	zh:controller:device: Read response to 0xa4c13812921dddfd failed
+[2024-05-12 10:26:23] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-12 10:31:38] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-12 10:50:32] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-12 11:20:59] error: 	zh:controller:device: Default response to 0x001788010649a073 failed
+[2024-05-12 11:52:29] error: 	zh:controller:device: Default response to 0x001788010649a073 failed
+[2024-05-12 12:04:02] error: 	zh:controller:device: Default response to 0x001788010649a073 failed
+[2024-05-12 12:16:32] info: 	z2m: Configuring 'Water Sensor 1'
+[2024-05-12 12:16:38] error: 	z2m: Failed to configure 'Water Sensor 1', attempt 3 (Error: Bind 0x5c0272fffebb9cde/1 genPowerCfg from '0x00124b002e0e1c5f/1' failed (SRSP - ZDO - bindReq after 6000ms)
+    at Object.start (/app/node_modules/zigbee-herdsman/src/utils/waitress.ts:63:23)
+    at /app/node_modules/zigbee-herdsman/src/adapter/z-stack/znp/znp.ts:305:45
+    at Queue.execute (/app/node_modules/zigbee-herdsman/src/utils/queue.ts:35:26)
+    at Znp.request (/app/node_modules/zigbee-herdsman/src/adapter/z-stack/znp/znp.ts:293:27)
+    at /app/node_modules/zigbee-herdsman/src/adapter/z-stack/adapter/zStackAdapter.ts:690:28
+    at Queue.execute (/app/node_modules/zigbee-herdsman/src/utils/queue.ts:35:26)
+    at ZStackAdapter.bind (/app/node_modules/zigbee-herdsman/src/adapter/z-stack/adapter/zStackAdapter.ts:675:27)
+    at Endpoint.bind (/app/node_modules/zigbee-herdsman/src/controller/model/endpoint.ts:464:34)
+    at Object.bind (/app/node_modules/zigbee-herdsman-converters/src/lib/reporting.ts:43:24)
+    at Object.configure (/app/node_modules/zigbee-herdsman-converters/src/devices/tuya.ts:1717:29))
+[2024-05-12 12:16:44] error: 	zh:controller:device: Default response to 0x5c0272fffebb9cde failed
+[2024-05-12 12:46:02] error: 	zh:controller:device: Default response to 0x001788010649a073 failed
+[2024-05-12 12:52:20] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-12 16:05:32] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-12 17:25:20] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-12 17:26:23] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-12 17:35:50] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-12 21:06:54] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-12 21:15:18] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-12 21:36:15] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-12 21:46:48] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-12 22:07:48] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-12 22:12:00] error: 	zh:controller:device: Read response to 0xa4c13812921dddfd failed
+[2024-05-12 22:12:06] error: 	zh:controller:device: Read response to 0xa4c13812921dddfd failed
+[2024-05-12 22:24:36] error: 	zh:controller:device: Default response to 0x001788010649a073 failed
+[2024-05-12 22:55:03] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-13 01:16:06] info: 	zh:controller: Wrote coordinator backup to '/config/zigbee2mqtt/coordinator_backup.json'
