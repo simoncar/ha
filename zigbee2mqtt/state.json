@@ -55,7 +55,7 @@
         "operation_mode": "action_mode",
         "side": 2,
         "linkquality": 123,
-        "voltage": 3075,
+        "voltage": 3077,
         "battery": 100,
         "power_outage_count": 159,
         "current": 0,
@@ -68,7 +68,7 @@
         "motion_sensitivity": "high",
         "illuminance": 0,
         "illuminance_lux": 0,
-        "temperature": 18.7,
+        "temperature": 19.26,
         "update": {
             "state": "idle",
             "installed_version": 1107323831,
