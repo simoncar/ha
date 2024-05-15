@@ -123,3 +123,18 @@
 [2024-05-14 01:16:06] info: 	zh:controller: Wrote coordinator backup to '/config/zigbee2mqtt/coordinator_backup.json'
 [2024-05-14 01:38:27] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
 [2024-05-14 01:43:42] error: 	zh:controller:device: Default response to 0x001788010649a073 failed
+[2024-05-14 02:36:12] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-14 04:00:12] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-14 05:54:39] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-14 06:18:39] error: 	zh:controller:device: Handling of poll check-in from 0x04cd15fffe268dcc failed
+[2024-05-14 06:38:46] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-14 09:27:49] error: 	zh:controller:device: Default response to 0x001788010649a073 failed
+[2024-05-14 11:18:04] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-14 12:11:04] info: 	zh:zstack:znp: Socket error
+[2024-05-14 12:11:04] info: 	zh:zstack:znp: Port closed
+[2024-05-14 12:11:04] info: 	zh:zstack:znp: closing
+[2024-05-14 12:11:04] error: 	z2m: Adapter disconnected, stopping
+[2024-05-14 12:11:04] info: 	z2m: Disconnecting from MQTT server
+[2024-05-14 12:11:04] info: 	z2m: Stopping zigbee-herdsman...
+[2024-05-14 12:11:04] error: 	zh:controller: Failed to disable join on stop: Error: Cannot request when znp has not been initialized yet
+[2024-05-14 12:11:04] error: 	z2m: Failed to stop Zigbee2MQTT
