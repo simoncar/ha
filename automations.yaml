@@ -3062,6 +3062,12 @@
         seconds: 0
         days: 90
       schedule_monthday: 10
+      actions_pos_update:
+      - service: notify.persistent_notification
+        metadata: {}
+        data:
+          message: Auto Update
+          title: Auto Update Complete
 - id: '1713626431696'
   alias: Cube
   description: ''
