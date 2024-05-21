@@ -1,6 +1,6 @@
 {
     "0xa4c13812921dddfd": {
-        "voltage": 238,
+        "voltage": 237,
         "energy": 16.7,
         "power": 0,
         "current": 0,
@@ -13,7 +13,8 @@
         },
         "power_outage_memory": "off",
         "indicator_mode": "off/on",
-        "child_lock": "UNLOCK"
+        "child_lock": "UNLOCK",
+        "countdown": 0
     },
     "0xb4e3f9fffe753317": {
         "battery": 100,
@@ -55,7 +56,7 @@
         "operation_mode": "action_mode",
         "side": 2,
         "linkquality": 123,
-        "voltage": 3068,
+        "voltage": 3070,
         "battery": 100,
         "power_outage_count": 159,
         "current": 0,
@@ -68,7 +69,7 @@
         "motion_sensitivity": "high",
         "illuminance": 0,
         "illuminance_lux": 0,
-        "temperature": 18.13,
+        "temperature": 17.57,
         "update": {
             "state": "idle",
             "installed_version": 1107323831,

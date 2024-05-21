@@ -396,7 +396,7 @@
                       "color": "#3399DC"
                     },
                     {
-                      "entity": "sensor.remote_master_bedroom_temperature",
+                      "entity": "sensor.gw2000a_indoor_temperature",
                       "name": "Bedroom",
                       "stroke_width": 3,
                       "color": "#FF9800"

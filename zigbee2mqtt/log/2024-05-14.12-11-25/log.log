@@ -235,3 +235,36 @@
 [2024-05-19 23:18:28] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
 [2024-05-19 23:39:28] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
 [2024-05-19 23:43:40] error: 	zh:controller:device: Default response to 0x001788010649a073 failed
+[2024-05-20 04:01:56] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-20 04:48:11] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-20 05:20:44] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-20 07:16:52] error: 	zh:controller:device: Handling of poll check-in from 0x04cd15fffe268dcc failed
+[2024-05-20 07:56:08] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-20 08:12:56] error: 	zh:controller:device: Default response to 0x001788010649a073 failed
+[2024-05-20 09:14:53] error: 	zh:controller:device: Default response to 0x001788010649a073 failed
+[2024-05-20 10:10:32] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-20 12:06:02] error: 	zh:controller:device: Default response to 0x001788010649a073 failed
+[2024-05-20 12:11:44] info: 	zh:controller: Wrote coordinator backup to '/config/zigbee2mqtt/coordinator_backup.json'
+[2024-05-20 12:34:23] error: 	zh:controller:device: Default response to 0x001788010649a073 failed
+[2024-05-20 12:35:26] error: 	zh:controller:device: Default response to 0x001788010649a073 failed
+[2024-05-20 12:55:24] error: 	zh:controller:device: Read response to 0xa4c13812921dddfd failed
+[2024-05-20 13:12:12] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-20 13:52:06] error: 	zh:controller:device: Default response to 0x001788010649a073 failed
+[2024-05-20 14:05:45] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-20 14:19:24] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-20 15:12:57] error: 	zh:controller:device: Default response to 0x001788010649a073 failed
+[2024-05-20 15:15:03] error: 	zh:controller:device: Default response to 0x001788010649a073 failed
+[2024-05-20 16:16:23] error: 	zh:controller:device: Handling of poll check-in from 0xb4e3f9fffe753317 failed
+[2024-05-20 16:32:45] error: 	zh:controller:device: Default response to 0x001788010649a073 failed
+[2024-05-20 16:48:30] error: 	zh:controller:device: Default response to 0x001788010649a073 failed
+[2024-05-20 18:48:12] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-20 18:57:39] error: 	zh:controller:device: Default response to 0x001788010649a073 failed
+[2024-05-20 19:07:06] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-20 19:40:42] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-20 19:51:12] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-20 21:11:00] error: 	zh:controller:device: Read response to 0xa4c13812921dddfd failed
+[2024-05-20 21:11:06] error: 	zh:controller:device: Read response to 0xa4c13812921dddfd failed
+[2024-05-20 22:32:55] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-20 23:10:43] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
+[2024-05-20 23:14:55] error: 	zh:controller:device: Read response to 0xa4c13812921dddfd failed
+[2024-05-21 00:45:13] error: 	zh:controller:device: Default response to 0xa4c13812921dddfd failed
