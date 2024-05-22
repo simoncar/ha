@@ -95,15 +95,15 @@
     offset: -00:29:00
   - platform: time
     at: '19:30:00'
-  - type: illuminance
+  - type: humidity
     platform: device
-    device_id: c3a8396028ad77fe1ae6078045f0e9a9
-    entity_id: 3ba402a1161d49a8ef150f6bb916d552
+    device_id: 1fd39b205e3707ea8a7dddb2c7c9cca7
+    entity_id: a90ffc5e1416b63c23f90bc24ca26aac
     domain: sensor
-    below: 30
+    below: 4000
     for:
       hours: 0
-      minutes: 10
+      minutes: 5
       seconds: 0
   condition:
   - condition: state
