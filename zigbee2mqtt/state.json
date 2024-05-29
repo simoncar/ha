@@ -1,6 +1,6 @@
 {
     "0xa4c13812921dddfd": {
-        "voltage": 235,
+        "voltage": 238,
         "energy": 16.7,
         "power": 0,
         "current": 0,
@@ -18,7 +18,7 @@
     },
     "0xb4e3f9fffe753317": {
         "battery": 100,
-        "linkquality": 112,
+        "linkquality": 3,
         "update": {
             "state": "idle",
             "installed_version": 604241926,
@@ -32,7 +32,7 @@
             "installed_version": 604241926,
             "latest_version": 604241926
         },
-        "linkquality": 116
+        "linkquality": 91
     },
     "0x04cd15fffe7ff98b": {
         "battery": 90,
@@ -41,11 +41,11 @@
             "installed_version": 604241926,
             "latest_version": 604241926
         },
-        "linkquality": 76
+        "linkquality": 61
     },
     "0x04cd15fffe268dcc": {
         "battery": 1,
-        "linkquality": 105,
+        "linkquality": 120,
         "update": {
             "state": "idle",
             "installed_version": 604241926,
@@ -55,8 +55,8 @@
     "0x54ef4410006a43c7": {
         "operation_mode": "action_mode",
         "side": 2,
-        "linkquality": 120,
-        "voltage": 3075,
+        "linkquality": 116,
+        "voltage": 3076,
         "battery": 100,
         "power_outage_count": 159,
         "current": 0,
@@ -75,7 +75,7 @@
             "installed_version": 1107323831,
             "latest_version": 1107323831
         },
-        "linkquality": 105,
+        "linkquality": 116,
         "led_indication": true
     },
     "0x5c0272fffebb9cde": {
@@ -84,6 +84,6 @@
         "battery_low": false,
         "battery": 95,
         "voltage": 2900,
-        "linkquality": 112
+        "linkquality": 116
     }
 }
