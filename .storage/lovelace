@@ -397,9 +397,15 @@
                     },
                     {
                       "entity": "sensor.gw2000a_indoor_temperature",
-                      "name": "Bedroom",
-                      "stroke_width": 3,
+                      "name": "Bathroom",
+                      "stroke_width": 2,
                       "color": "#FF9800"
+                    },
+                    {
+                      "entity": "sensor.remote_master_bedroom_temperature",
+                      "name": "Bedroom",
+                      "stroke_width": 2,
+                      "color": "#E84Cd3"
                     },
                     {
                       "entity": "sensor.gw2000a_outdoor_temperature",
