@@ -1368,6 +1368,7 @@
     - wed
     - tue
     - mon
+    - sun
     after: 06:58:00
   - condition: device
     device_id: 2f3366a2291c0b2ac9f21b04546ad5df
