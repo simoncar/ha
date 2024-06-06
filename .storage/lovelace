@@ -382,6 +382,7 @@
               "cards": [
                 {
                   "type": "custom:apexcharts-card",
+                  "graph_span": "2d",
                   "header": {
                     "show": true,
                     "show_states": true,
@@ -391,26 +392,20 @@
                     {
                       "entity": "sensor.rm4_study_temperature",
                       "name": "Living Room",
-                      "stroke_width": 3,
+                      "stroke_width": 2,
                       "curve": "stepline",
                       "color": "#3399DC"
                     },
                     {
                       "entity": "sensor.gw2000a_indoor_temperature",
-                      "name": "Bathroom",
+                      "name": "Bedroom",
                       "stroke_width": 2,
                       "color": "#FF9800"
                     },
                     {
-                      "entity": "sensor.remote_master_bedroom_temperature",
-                      "name": "Bedroom",
-                      "stroke_width": 2,
-                      "color": "#E84Cd3"
-                    },
-                    {
                       "entity": "sensor.gw2000a_outdoor_temperature",
                       "name": "Plaça Rovira",
-                      "stroke_width": 3
+                      "stroke_width": 2
                     }
                   ],
                   "apex_config": {
@@ -427,7 +422,7 @@
                 },
                 {
                   "type": "custom:apexcharts-card",
-                  "graph_span": "5d",
+                  "graph_span": "2d",
                   "header": {
                     "show": true,
                     "title": "Swimming Pool",
