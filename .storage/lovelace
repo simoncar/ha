@@ -38,7 +38,8 @@
                         "service": "script.blinds_down",
                         "target": {}
                       },
-                      "hide_state": true
+                      "hide_state": true,
+                      "color": "blue-grey"
                     },
                     {
                       "type": "tile",
@@ -338,42 +339,6 @@
                       "name": "LED"
                     }
                   ]
-                },
-                {
-                  "type": "horizontal-stack",
-                  "cards": [
-                    {
-                      "type": "tile",
-                      "entity": "switch.kitchen_cabinets",
-                      "icon": "mdi:glass-cocktail",
-                      "name": "Glasses",
-                      "hide_state": true
-                    },
-                    {
-                      "type": "tile",
-                      "entity": "light.art_light_staircase",
-                      "icon": "mdi:panorama-variant-outline",
-                      "hide_state": true
-                    }
-                  ]
-                },
-                {
-                  "type": "horizontal-stack",
-                  "cards": [
-                    {
-                      "type": "tile",
-                      "entity": "switch.art_light_entry",
-                      "icon": "mdi:panorama-variant",
-                      "hide_state": true,
-                      "name": "Door Art"
-                    },
-                    {
-                      "type": "tile",
-                      "entity": "light.entry_pendant",
-                      "icon": "mdi:graph-outline",
-                      "hide_state": true
-                    }
-                  ]
                 }
               ]
             },
@@ -474,7 +439,10 @@
               ]
             }
           ],
-          "icon": "mdi:home-floor-0"
+          "icon": "mdi:home-floor-0",
+          "background": {
+            "image": "/api/image/serve/87efa7a89bdc9eee902b5947f4cd5156/original"
+          }
         },
         {
           "title": "Upper Floors",

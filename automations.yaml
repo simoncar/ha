@@ -3125,3 +3125,36 @@
     domain: switch
     enabled: false
   mode: single
+- id: '1717694488828'
+  alias: Spa notification
+  description: ''
+  trigger:
+  - type: power
+    platform: device
+    device_id: a9bee384aec27df5069da3a21d43192c
+    entity_id: e6f5fa27f1bbc8555643a12cf05d9bfb
+    domain: sensor
+    above: 500
+    for:
+      hours: 0
+      minutes: 1
+      seconds: 0
+  condition: []
+  action:
+  - service: notify.mobile_app_sm_s928b
+    metadata: {}
+    data:
+      message: Spa On
+      title: SPA
+  mode: single
+- id: '1717694688944'
+  alias: Bedroom HVAC.off 0600
+  description: ''
+  trigger:
+  - platform: time
+    at: 06:00:00
+  condition: []
+  action:
+  - service: script.bedroom_air_con_off
+    data: {}
+  mode: single
