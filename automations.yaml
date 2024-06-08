@@ -599,8 +599,8 @@
       entity_id: input_select.home_mode
       state: Dark
   - condition: numeric_state
-    entity_id: sensor.everything_living_room_illuminance
-    below: 60
+    entity_id: sensor.gw2000a_solar_lux
+    below: 30000
   action:
   - type: turn_on
     device_id: 3bde07aac5e6792e1ab5ebad70800b27

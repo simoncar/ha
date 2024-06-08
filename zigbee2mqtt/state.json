@@ -1,10 +1,10 @@
 {
     "0xa4c13812921dddfd": {
-        "voltage": 237,
+        "voltage": 236,
         "energy": 16.7,
         "power": 0,
         "current": 0,
-        "linkquality": 109,
+        "linkquality": 127,
         "state": "OFF",
         "update": {
             "state": "idle",
@@ -18,7 +18,7 @@
     },
     "0xb4e3f9fffe753317": {
         "battery": 100,
-        "linkquality": 3,
+        "linkquality": 123,
         "update": {
             "state": "idle",
             "installed_version": 604241926,
@@ -32,7 +32,7 @@
             "installed_version": 604241926,
             "latest_version": 604241926
         },
-        "linkquality": 91
+        "linkquality": 105
     },
     "0x04cd15fffe7ff98b": {
         "battery": 90,
@@ -41,11 +41,11 @@
             "installed_version": 604241926,
             "latest_version": 604241926
         },
-        "linkquality": 61
+        "linkquality": 43
     },
     "0x04cd15fffe268dcc": {
         "battery": 1,
-        "linkquality": 120,
+        "linkquality": 127,
         "update": {
             "state": "idle",
             "installed_version": 604241926,
@@ -55,8 +55,8 @@
     "0x54ef4410006a43c7": {
         "operation_mode": "action_mode",
         "side": 2,
-        "linkquality": 116,
-        "voltage": 3082,
+        "linkquality": 134,
+        "voltage": 3084,
         "battery": 100,
         "power_outage_count": 159,
         "current": 0,
@@ -69,13 +69,13 @@
         "motion_sensitivity": "high",
         "illuminance": 0,
         "illuminance_lux": 0,
-        "temperature": 23.22,
+        "temperature": 23.08,
         "update": {
             "state": "idle",
             "installed_version": 1107323831,
             "latest_version": 1107323831
         },
-        "linkquality": 116,
+        "linkquality": 127,
         "led_indication": true
     },
     "0x5c0272fffebb9cde": {
@@ -84,6 +84,6 @@
         "battery_low": false,
         "battery": 95,
         "voltage": 2900,
-        "linkquality": 116
+        "linkquality": 123
     }
 }
