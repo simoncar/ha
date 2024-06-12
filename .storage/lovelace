@@ -1298,7 +1298,7 @@
               "experimental": {
                 "color_threshold": true
               },
-              "graph_span": "1h",
+              "graph_span": "24h",
               "show": {
                 "last_updated": true
               },
@@ -1324,9 +1324,9 @@
                   "type": "line",
                   "group_by": {
                     "func": "last",
-                    "duration": "1m"
+                    "duration": "10m"
                   },
-                  "stroke_width": 5
+                  "stroke_width": 3
                 }
               ]
             },
@@ -1353,65 +1353,6 @@
               "title": "Pool Fan"
             }
           ]
-        },
-        {
-          "title": "Chart",
-          "path": "chart",
-          "icon": "mdi:chart-areaspline",
-          "cards": [
-            {
-              "type": "custom:apexcharts-card",
-              "graph_span": "5d",
-              "header": {
-                "show": true,
-                "title": "Swimming Pool",
-                "show_states": true,
-                "colorize_states": true
-              },
-              "series": [
-                {
-                  "entity": "sensor.rm4_pool_humidity",
-                  "name": "Plant Room Humidity",
-                  "stroke_width": 3,
-                  "color": "#3399DC"
-                },
-                {
-                  "entity": "sensor.shelly1_pool_temperature_2",
-                  "name": "Water Temperature",
-                  "stroke_width": 3,
-                  "color": "#FF9800"
-                },
-                {
-                  "entity": "switch.pool_fan_switch_out",
-                  "transform": "return x == 'on' ? 90 : 0;",
-                  "type": "area",
-                  "curve": "stepline",
-                  "stroke_width": 0,
-                  "name": "Vent Fan"
-                },
-                {
-                  "entity": "sensor.gw2000a_humidity",
-                  "name": "Rovira Scaled",
-                  "stroke_width": 3,
-                  "transform": "return 80 + ((100 - 80) * (x - 20) / (100 - 20));"
-                }
-              ],
-              "apex_config": {
-                "legend": {
-                  "show": false
-                },
-                "yaxis": [
-                  {
-                    "show": true,
-                    "decimalsInFloat": 0,
-                    "min": 80,
-                    "max": 100
-                  }
-                ]
-              }
-            }
-          ],
-          "type": "panel"
         },
         {
           "title": "Tasks",

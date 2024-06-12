@@ -94,17 +94,13 @@
     event: sunset
     offset: -00:29:00
   - platform: time
-    at: '19:30:00'
-  - type: humidity
+    at: '19:00:00'
+  - type: illuminance
     platform: device
     device_id: 1fd39b205e3707ea8a7dddb2c7c9cca7
-    entity_id: a90ffc5e1416b63c23f90bc24ca26aac
+    entity_id: d332fff76b75f9190915c484f0dbfdc5
     domain: sensor
-    below: 4000
-    for:
-      hours: 0
-      minutes: 5
-      seconds: 0
+    below: 5000
   condition:
   - condition: state
     entity_id: input_select.home_mode
