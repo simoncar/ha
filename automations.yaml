@@ -560,9 +560,8 @@
       milliseconds: 0
   condition: []
   action:
-  - service: notify.mobile_app_simons_iphone_14
-    data:
-      message: front door opened
+  - service: notify.mobile_app_sm_s928b
+    data: {}
   mode: single
 - id: '1639863852901'
   alias: Pendant Night OFF
