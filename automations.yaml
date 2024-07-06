@@ -1731,11 +1731,11 @@
   alias: Movie Button
   description: ''
   trigger:
-  - device_id: 70801e5ee2b3a3ebd3994ace48240760
-    domain: zha
-    platform: device
-    type: remote_button_short_press
-    subtype: turn_on
+  - platform: device
+    domain: mqtt
+    device_id: e651d586bf8a6f90f2a298b9a0b56fa1
+    type: action
+    subtype: 'on'
   condition: []
   action:
   - type: turn_off
