@@ -368,6 +368,12 @@
                       "color": "#FF9800"
                     },
                     {
+                      "entity": "sensor.rm4_level_2_temperature",
+                      "name": "Level 2",
+                      "stroke_width": 2,
+                      "color": "#E74C3C"
+                    },
+                    {
                       "entity": "sensor.gw2000a_outdoor_temperature",
                       "name": "Plaça Rovira",
                       "stroke_width": 2
