@@ -1,0 +1,5 @@
+[2024-07-25 01:40:44] info: 	z2m: Logging to console, file (filename: log.log)
+[2024-07-25 01:40:44] info: 	z2m: Starting Zigbee2MQTT version 1.39.0 (commit #unknown)
+[2024-07-25 01:40:44] info: 	z2m: Starting zigbee-herdsman (0.50.1)
+[2024-07-25 01:40:45] info: 	zh:zstack:znp: Opening TCP socket with 192.168.87.68:6638
+[2024-07-25 01:41:00] info: 	zh:zstack:znp: Socket error

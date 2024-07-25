@@ -1,0 +1,19 @@
+[2024-07-25 01:08:29] info: 	z2m: Logging to console, file (filename: log.log)
+[2024-07-25 01:08:29] info: 	z2m: Starting Zigbee2MQTT version 1.39.0 (commit #unknown)
+[2024-07-25 01:08:29] info: 	z2m: Starting zigbee-herdsman (0.50.1)
+[2024-07-25 01:08:30] info: 	zh:zstack:znp: Opening TCP socket with 192.168.87.68:6638
+[2024-07-25 01:08:30] info: 	zh:zstack:znp: Socket connected
+[2024-07-25 01:08:30] info: 	zh:zstack:znp: Socket ready
+[2024-07-25 01:08:30] info: 	zh:zstack:znp: Writing CC2530/CC2531 skip bootloader payload
+[2024-07-25 01:08:31] info: 	zh:zstack:znp: Skip bootloader for CC2652/CC1352
+[2024-07-25 01:09:42] error: 	z2m: Error while starting zigbee-herdsman
+[2024-07-25 01:09:42] error: 	z2m: Failed to start zigbee
+[2024-07-25 01:09:42] error: 	z2m: Check https://www.zigbee2mqtt.io/guide/installation/20_zigbee2mqtt-fails-to-start.html for possible solutions
+[2024-07-25 01:09:42] error: 	z2m: Exiting...
+[2024-07-25 01:09:42] error: 	z2m: TypeError: Cannot read properties of null (reading 'key')
+    at ZnpAdapterManager.determineStrategy (/app/node_modules/zigbee-herdsman/src/adapter/z-stack/adapter/manager.ts:145:64)
+    at ZnpAdapterManager.start (/app/node_modules/zigbee-herdsman/src/adapter/z-stack/adapter/manager.ts:57:26)
+    at Controller.start (/app/node_modules/zigbee-herdsman/src/controller/controller.ts:129:29)
+    at Zigbee.start (/app/lib/zigbee.ts:63:27)
+    at Controller.start (/app/lib/controller.ts:139:27)
+    at start (/app/index.js:154:5)
