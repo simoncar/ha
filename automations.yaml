@@ -2010,35 +2010,6 @@
     target:
       entity_id: input_boolean.living_room_occupied
   mode: restart
-- id: '1672509145331'
-  alias: AEOTEC Button 3 Master Bed LED
-  description: ''
-  trigger:
-  - platform: device
-    device_id: 14a16136393b5cf16d7f7ea86a944371
-    domain: zwave_js
-    type: event.value_notification.central_scene
-    property: scene
-    property_key: '002'
-    endpoint: 0
-    command_class: 91
-    subtype: Endpoint 0 Scene 002
-  condition: []
-  action:
-  - type: turn_on
-    device_id: 605e572814970daeb76e0dca4f8a17d7
-    entity_id: light.master_bed_led_2_2
-    domain: light
-  - delay:
-      hours: 0
-      minutes: 30
-      seconds: 0
-      milliseconds: 0
-  - type: turn_off
-    device_id: 605e572814970daeb76e0dca4f8a17d7
-    entity_id: light.master_bed_led_2_2
-    domain: light
-  mode: single
 - id: '1672830363491'
   alias: Record Player auto Off
   description: ''
@@ -2606,7 +2577,7 @@
   description: ''
   trigger:
   - platform: time
-    at: 02:00:00
+    at: 09:00:00
   condition: []
   action:
   - service: shell_command.pushupdates_to_github
