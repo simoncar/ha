@@ -22,7 +22,6 @@ influxdb:
   max_retries: 3
   default_measurement: state
  
-  
 alarm_control_panel:
   - platform: manual
     code: 1234
