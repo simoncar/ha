@@ -956,34 +956,6 @@
       data: {}
   mode: parallel
   max: 10
-- id: '1646310544527'
-  alias: AEOTEC-2 Button 4 - Close Dog Door
-  description: ''
-  trigger:
-  - platform: device
-    device_id: 7d3271cf93990888448cec33ab9d64a3
-    domain: zwave_js
-    type: event.value_notification.central_scene
-    property: scene
-    property_key: '004'
-    endpoint: 0
-    command_class: 91
-    subtype: Endpoint 0 Scene 004
-    value: 0
-  condition: []
-  action:
-  - service: tts.google_translate_say
-    data:
-      entity_id: media_player.den_wifi
-      message: Closing Dog Door.
-  - service: remote.send_command
-    data:
-      device: Dog Door
-      command: close
-      num_repeats: 10
-    target:
-      device_id: 57fdd525cc96afe7982612e0e1c15b14
-  mode: single
 - id: '1646312502247'
   alias: Kitchen Motion Sensor OFF - Nighttime
   description: ''
@@ -1480,29 +1452,6 @@
     entity_id: switch.bedroom_lamp
     domain: switch
   mode: single
-- id: '1667051528061'
-  alias: AEOTEC-2 Button 2 - Heater
-  description: ''
-  trigger:
-  - platform: device
-    device_id: 7d3271cf93990888448cec33ab9d64a3
-    domain: zwave_js
-    type: event.value_notification.central_scene
-    property: scene
-    property_key: '002'
-    endpoint: 0
-    command_class: 91
-    subtype: Endpoint 0 Scene 002
-    value: 0
-  condition: []
-  action:
-  - service: remote.send_command
-    data:
-      device: Master Bedroom AC
-      command: on Heater 22
-    target:
-      device_id: 57fdd525cc96afe7982612e0e1c15b14
-  mode: single
 - id: '1667051590173'
   alias: AEOTEC-2 Button 1 AC
   description: ''
@@ -1521,80 +1470,6 @@
   action:
   - service: script.bedroom_air_con_adjust_18
     data: {}
-  mode: single
-- id: '1667132025388'
-  alias: AEOTEC-2 Button 4 Long Press - Open Dog Door
-  description: ''
-  trigger:
-  - platform: device
-    device_id: 7d3271cf93990888448cec33ab9d64a3
-    domain: zwave_js
-    type: event.value_notification.central_scene
-    property: scene
-    property_key: '004'
-    endpoint: 0
-    command_class: 91
-    subtype: Endpoint 0 Scene 004
-    value: 2
-  condition: []
-  action:
-  - service: tts.google_translate_say
-    data:
-      entity_id: media_player.den_wifi
-      message: Opening Dog Door
-  - service: remote.send_command
-    data:
-      device: Dog Door
-      command: open
-      num_repeats: 200
-    target:
-      device_id: 57fdd525cc96afe7982612e0e1c15b14
-  mode: single
-- id: '1667132450083'
-  alias: AEOTEC-2 Button 1 Long Press - HVAC Off
-  description: ''
-  trigger:
-  - platform: device
-    device_id: 7d3271cf93990888448cec33ab9d64a3
-    domain: zwave_js
-    type: event.value_notification.central_scene
-    property: scene
-    property_key: '001'
-    endpoint: 0
-    command_class: 91
-    subtype: Endpoint 0 Scene 001
-    value: 2
-  condition: []
-  action:
-  - service: remote.send_command
-    data:
-      device: Master Bedroom AC
-      command: 'off'
-    target:
-      device_id: 57fdd525cc96afe7982612e0e1c15b14
-  mode: single
-- id: '1667133332988'
-  alias: AEOTEC-2 Button 2 Long Press - HVAC Off
-  description: ''
-  trigger:
-  - platform: device
-    device_id: 7d3271cf93990888448cec33ab9d64a3
-    domain: zwave_js
-    type: event.value_notification.central_scene
-    property: scene
-    property_key: '002'
-    endpoint: 0
-    command_class: 91
-    subtype: Endpoint 0 Scene 002
-    value: 2
-  condition: []
-  action:
-  - service: remote.send_command
-    data:
-      device: Master Bedroom AC
-      command: 'off'
-    target:
-      device_id: 57fdd525cc96afe7982612e0e1c15b14
   mode: single
 - id: '1667133832773'
   alias: AEOTEC-2 Button 3 Long Press - Lights ON downstairs
@@ -2607,37 +2482,6 @@
     device_id: 3db0cec90e321434657d44397bbf327e
     entity_id: switch.bedroom_lights
     domain: switch
-  mode: single
-- id: '1685017537428'
-  alias: Push Button Triple Press
-  description: ''
-  trigger:
-  - platform: device
-    device_id: 653fdf321218685604af0c6c29592c40
-    domain: zwave_js
-    type: event.value_notification.central_scene
-    property: scene
-    property_key: '001'
-    endpoint: 0
-    command_class: 91
-    subtype: Endpoint 0 Scene 001
-    value: 4
-  condition: []
-  action:
-  - service: remote.send_command
-    data:
-      device: Dog Door
-      command: close
-      num_repeats: 17
-    target:
-      device_id: 57fdd525cc96afe7982612e0e1c15b14
-  - service: remote.send_command
-    data:
-      device: Dog Door
-      command: open
-      num_repeats: 15
-    target:
-      device_id: 57fdd525cc96afe7982612e0e1c15b14
   mode: single
 - id: '1686069739638'
   alias: Master Closet Off
