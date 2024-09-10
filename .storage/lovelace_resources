@@ -15,7 +15,7 @@
         "id": "6df5651a4a68467f893b39a703270020"
       },
       {
-        "url": "/hacsfiles/lovelace-mushroom/mushroom.js?hacstag=444350375405",
+        "url": "/hacsfiles/lovelace-mushroom/mushroom.js?hacstag=444350375407",
         "type": "module",
         "id": "d17f66539d974de9969dd923443481d1"
       },
@@ -41,12 +41,12 @@
       },
       {
         "id": "e0c4fa0b137343dd88e32dae615b4f41",
-        "url": "/hacsfiles/lovelace-wallpanel/wallpanel.js?hacstag=3095064164260",
+        "url": "/hacsfiles/lovelace-wallpanel/wallpanel.js?hacstag=3095064164280",
         "type": "module"
       },
       {
         "id": "dcc559c3e7b24823808c433d9592bf71",
-        "url": "/edata/edata-card.js?v=2024.07.4",
+        "url": "/edata/edata-card.js?v=2024.07.5",
         "type": "module"
       }
     ]
