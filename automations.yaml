@@ -1344,12 +1344,13 @@
     type: is_position
     below: 99
   action:
-  - service: script.bedroom_skylight_open_2
-    data: {}
-  - service: input_boolean.turn_on
-    data: {}
+  - data: {}
+    action: script.bedroom_skylight_open_2
+    enabled: false
+  - data: {}
     target:
       entity_id: input_boolean.bedroom_curtain_motion
+    action: input_boolean.turn_on
   - device_id: 2f3366a2291c0b2ac9f21b04546ad5df
     domain: cover
     entity_id: 188d965a044b2f7f3079892f268ebe16
@@ -1359,10 +1360,10 @@
       minutes: 0
       seconds: 30
       milliseconds: 0
-  - service: input_boolean.turn_off
-    data: {}
+  - data: {}
     target:
       entity_id: input_boolean.bedroom_curtain_motion
+    action: input_boolean.turn_off
   mode: single
 - id: '1663837975051'
   alias: Bed Lamp LED gradually turn off
