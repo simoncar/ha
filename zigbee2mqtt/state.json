@@ -67,8 +67,8 @@
         "occupancy_timeout": 60,
         "occupancy": false,
         "motion_sensitivity": "high",
-        "illuminance": 28013,
-        "illuminance_lux": 633,
+        "illuminance": 25060,
+        "illuminance_lux": 321,
         "temperature": 18.84,
         "update": {
             "state": "idle",
