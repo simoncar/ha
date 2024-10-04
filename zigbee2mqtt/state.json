@@ -1,6 +1,6 @@
 {
     "0xa4c13812921dddfd": {
-        "voltage": 232,
+        "voltage": 235,
         "energy": 16.7,
         "power": 0,
         "current": 0,
@@ -56,7 +56,7 @@
         "operation_mode": "action_mode",
         "side": 2,
         "linkquality": 83,
-        "voltage": 3081,
+        "voltage": 3078,
         "battery": 100,
         "power_outage_count": 159,
         "current": 0,
@@ -67,9 +67,9 @@
         "occupancy_timeout": 60,
         "occupancy": false,
         "motion_sensitivity": "high",
-        "illuminance": 24480,
-        "illuminance_lux": 280,
-        "temperature": 14.46,
+        "illuminance": 23535,
+        "illuminance_lux": 226,
+        "temperature": 16.3,
         "update": {
             "state": "idle",
             "installed_version": 1107323831,
