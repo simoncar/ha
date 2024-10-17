@@ -2969,3 +2969,26 @@
   - service: script.bedroom_air_con_off
     data: {}
   mode: single
+- id: '1729085775332'
+  alias: Z Wave Controllers On
+  description: ''
+  triggers: []
+  conditions: []
+  actions:
+  - type: turn_on
+    device_id: 605e572814970daeb76e0dca4f8a17d7
+    entity_id: 276db57a236348e7c0011435198f907f
+    domain: light
+  - type: turn_on
+    device_id: 7c945f90dc76ab5e53ea466957d840c0
+    entity_id: 4172a5e72d281fd44455bcd13b2311fd
+    domain: light
+  - type: turn_on
+    device_id: 96eebeea5c10f7a7e98cf4f484918c1c
+    entity_id: d7fb05624132a8a839a40a77396721f9
+    domain: light
+  - type: turn_on
+    device_id: f40b8bbfb30009c2050e83b2a02c1585
+    entity_id: e4aed43d5f1f0c0940575e777bdb2c37
+    domain: light
+  mode: single
