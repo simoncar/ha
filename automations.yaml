@@ -2972,7 +2972,9 @@
 - id: '1729085775332'
   alias: Z Wave Controllers On
   description: ''
-  triggers: []
+  triggers:
+  - trigger: time
+    at: '18:00:00'
   conditions: []
   actions:
   - type: turn_on
