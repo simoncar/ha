@@ -547,9 +547,8 @@
 - id: '1636022206980'
   alias: Front Door Open Trigger Security
   description: ''
-  trigger:
+  triggers:
   - type: opened
-    platform: device
     device_id: 9aaa2ec04264aef1d47ef722576b59b1
     entity_id: binary_sensor.node_7_access_control_window_door_is_open
     domain: binary_sensor
@@ -558,10 +557,13 @@
       minutes: 0
       seconds: 1
       milliseconds: 0
-  condition: []
-  action:
-  - service: notify.mobile_app_sm_s928b
-    data: {}
+    trigger: device
+  conditions: []
+  actions:
+  - action: notify.mobile_app_sm_s928b
+    data:
+      message: Door Open
+      title: Gracia Door
   mode: single
 - id: '1639863852901'
   alias: Pendant Night OFF
