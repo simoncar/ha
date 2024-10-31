@@ -26,7 +26,7 @@
         }
     },
     "0xb4e3f9fffe249e15": {
-        "battery": 90,
+        "battery": 100,
         "update": {
             "state": "idle",
             "installed_version": 604241926,
@@ -67,9 +67,9 @@
         "occupancy_timeout": 60,
         "occupancy": false,
         "motion_sensitivity": "high",
-        "illuminance": 24764,
-        "illuminance_lux": 299,
-        "temperature": 19.12,
+        "illuminance": 25937,
+        "illuminance_lux": 392,
+        "temperature": 18.56,
         "update": {
             "state": "idle",
             "installed_version": 1107323831,
