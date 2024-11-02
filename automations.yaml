@@ -2924,19 +2924,29 @@
 - id: '1714205175954'
   alias: Pool Fan Auto On
   description: ''
-  trigger:
-  - platform: device
-    type: turned_off
-    device_id: 86dd471a6237bc5574dd92e01984a804
-    entity_id: d38b4ca5b74748c26c6c92ab67720906
-    domain: switch
-  condition: []
-  action:
+  triggers:
+  - trigger: time_pattern
+    hours: '3'
+  conditions: []
+  actions:
   - type: turn_on
     device_id: 86dd471a6237bc5574dd92e01984a804
     entity_id: d38b4ca5b74748c26c6c92ab67720906
     domain: switch
-    enabled: false
+    enabled: true
+  - type: turn_on
+    device_id: 86dd471a6237bc5574dd92e01984a804
+    entity_id: f08b696d8ac2854e199812d4970d5e43
+    domain: switch
+  - delay:
+      hours: 0
+      minutes: 10
+      seconds: 0
+      milliseconds: 0
+  - type: turn_off
+    device_id: 86dd471a6237bc5574dd92e01984a804
+    entity_id: f08b696d8ac2854e199812d4970d5e43
+    domain: switch
   mode: single
 - id: '1717694488828'
   alias: Spa notification
@@ -2994,5 +3004,37 @@
   - type: turn_on
     device_id: f40b8bbfb30009c2050e83b2a02c1585
     entity_id: e4aed43d5f1f0c0940575e777bdb2c37
+    domain: light
+  mode: single
+- id: '1730451790730'
+  alias: Random Light On/Off
+  description: ''
+  triggers:
+  - at: '20:45:00'
+    trigger: time
+  actions:
+  - delay:
+      minutes: '{{ range(0, 121) | random }}'
+  - type: turn_on
+    device_id: e2d9c795303d91a6d576077b39fe32d3
+    entity_id: light.bath_circle
+    domain: light
+  - delay:
+      minutes: '{{ range(30, 91) | random }}'
+  - type: turn_off
+    device_id: e2d9c795303d91a6d576077b39fe32d3
+    entity_id: light.bath_circle
+    domain: light
+  - delay:
+      minutes: '{{ range(0, 121) | random }}'
+  - type: turn_on
+    device_id: e2d9c795303d91a6d576077b39fe32d3
+    entity_id: light.bath_circle
+    domain: light
+  - delay:
+      minutes: '{{ range(30, 91) | random }}'
+  - type: turn_off
+    device_id: e2d9c795303d91a6d576077b39fe32d3
+    entity_id: light.bath_circle
     domain: light
   mode: single
