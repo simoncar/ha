@@ -3010,7 +3010,7 @@
   alias: Random Light On/Off
   description: ''
   triggers:
-  - at: '20:45:00'
+  - at: '19:51:00'
     trigger: time
   actions:
   - delay:
