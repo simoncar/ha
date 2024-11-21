@@ -2926,7 +2926,9 @@
   description: ''
   triggers:
   - trigger: time_pattern
-    hours: '3'
+    minutes: '10'
+  - trigger: time_pattern
+    minutes: '40'
   conditions: []
   actions:
   - type: turn_on
@@ -2940,7 +2942,7 @@
     domain: switch
   - delay:
       hours: 0
-      minutes: 10
+      minutes: 25
       seconds: 0
       milliseconds: 0
   - type: turn_off
