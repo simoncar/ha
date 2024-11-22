@@ -2942,7 +2942,7 @@
     domain: switch
   - delay:
       hours: 0
-      minutes: 25
+      minutes: 10
       seconds: 0
       milliseconds: 0
   - type: turn_off
