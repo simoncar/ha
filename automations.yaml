@@ -2940,6 +2940,7 @@
     device_id: 86dd471a6237bc5574dd92e01984a804
     entity_id: f08b696d8ac2854e199812d4970d5e43
     domain: switch
+    enabled: false
   - delay:
       hours: 0
       minutes: 10
@@ -2949,6 +2950,7 @@
     device_id: 86dd471a6237bc5574dd92e01984a804
     entity_id: f08b696d8ac2854e199812d4970d5e43
     domain: switch
+    enabled: false
   mode: single
 - id: '1717694488828'
   alias: Spa notification
