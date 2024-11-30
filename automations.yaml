@@ -3042,3 +3042,27 @@
     entity_id: light.bath_circle
     domain: light
   mode: single
+- id: '1732895823208'
+  alias: Alarm - Play Message
+  description: ''
+  triggers:
+  - type: opened
+    device_id: 9aaa2ec04264aef1d47ef722576b59b1
+    entity_id: 50963627ebbb91cd63bf85c920770c4d
+    domain: binary_sensor
+    trigger: device
+  conditions: []
+  actions:
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 5
+      milliseconds: 0
+  - action: media_player.play_media
+    metadata: {}
+    data:
+      media_content_id: http://192.168.87.25:8123/local/alarm_message.mp3
+      media_content_type: music
+    target:
+      device_id: 08bc393f35640fa1188c130d63e366e4
+  mode: single

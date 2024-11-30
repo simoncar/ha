@@ -256,6 +256,14 @@
                       ]
                     }
                   ]
+                },
+                {
+                  "type": "tile",
+                  "entity": "binary_sensor.home_occupied",
+                  "state_content": [
+                    "state",
+                    "last_changed"
+                  ]
                 }
               ]
             },
