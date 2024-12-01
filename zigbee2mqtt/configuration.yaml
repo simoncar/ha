@@ -31,6 +31,7 @@ advanced:
   legacy_api: false
   legacy_availability_payload: false
   transmit_power: 20
+  log_level: debug
 mqtt:
   server: mqtt://core-mosquitto:1883
   user: mqtt
@@ -61,8 +62,14 @@ devices:
     friendly_name: Philips Backyard Sensor
   '0x5c0272fffebb9cde':
     friendly_name: Water Sensor 1
+  '0x0015bc0043006306':
+    friendly_name: Alarm Keypad
+  '0x0015bc0022000242':
+    friendly_name: Alarm Repeater
+    state_action: false
 availability:
   active:
     timeout: 10
   passive:
     timeout: 2880
+permit_join: true

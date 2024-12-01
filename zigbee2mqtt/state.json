@@ -1,10 +1,10 @@
 {
     "0xa4c13812921dddfd": {
-        "voltage": 233,
+        "voltage": 231,
         "energy": 16.74,
         "power": 0,
         "current": 0,
-        "linkquality": 131,
+        "linkquality": 127,
         "state": "ON",
         "update": {
             "state": "idle",
@@ -18,7 +18,7 @@
     },
     "0xb4e3f9fffe753317": {
         "battery": 90,
-        "linkquality": 120,
+        "linkquality": 43,
         "update": {
             "state": "idle",
             "installed_version": 604241926,
@@ -32,7 +32,7 @@
             "installed_version": 604241926,
             "latest_version": 604241926
         },
-        "linkquality": 83
+        "linkquality": 102
     },
     "0x04cd15fffe7ff98b": {
         "battery": 75,
@@ -41,11 +41,11 @@
             "installed_version": 604241926,
             "latest_version": 604241926
         },
-        "linkquality": 116
+        "linkquality": 83
     },
     "0x04cd15fffe268dcc": {
         "battery": 1,
-        "linkquality": 0,
+        "linkquality": 40,
         "update": {
             "state": "idle",
             "installed_version": 604241926,
@@ -55,8 +55,8 @@
     "0x54ef4410006a43c7": {
         "operation_mode": "action_mode",
         "side": 2,
-        "linkquality": 83,
-        "voltage": 3063,
+        "linkquality": 123,
+        "voltage": 3067,
         "battery": 100,
         "power_outage_count": 159,
         "current": 0,
@@ -67,9 +67,9 @@
         "occupancy_timeout": 60,
         "occupancy": false,
         "motion_sensitivity": "high",
-        "illuminance": 23942,
-        "illuminance_lux": 248,
-        "temperature": 12.34,
+        "illuminance": 22190,
+        "illuminance_lux": 166,
+        "temperature": 14.6,
         "update": {
             "state": "idle",
             "installed_version": 1107323831,
@@ -84,6 +84,25 @@
         "battery_low": false,
         "battery": 84,
         "voltage": 2900,
-        "linkquality": 116
+        "linkquality": 32
+    },
+    "0x0015bc0043006306": {
+        "update": {
+            "state": "idle",
+            "installed_version": 131077,
+            "latest_version": 131077
+        },
+        "battery": 100,
+        "voltage": 6400,
+        "tamper": false,
+        "battery_low": false,
+        "linkquality": 43
+    },
+    "0x0015bc0022000242": {
+        "alarm_2": false,
+        "alarm_1": false,
+        "battery_low": false,
+        "tamper": false,
+        "linkquality": 40
     }
 }

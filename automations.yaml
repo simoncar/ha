@@ -3058,6 +3058,7 @@
       minutes: 0
       seconds: 5
       milliseconds: 0
+    enabled: false
   - action: media_player.play_media
     metadata: {}
     data:
@@ -3065,4 +3066,43 @@
       media_content_type: music
     target:
       device_id: 08bc393f35640fa1188c130d63e366e4
+    enabled: false
+  - action: mqtt.publish
+    data:
+      evaluate_payload: false
+      qos: 0
+      retain: false
+      payload: "{\n \"arm_mode\": \n  {\n   \"mode\": \"exit_delay\"\n  }\n}\n"
+      topic: zigbee2mqtt/Alarm Keypad/set
+  mode: single
+- id: '1732975286461'
+  alias: PIN-Keypads for Zigbee2MQTT
+  description: ''
+  use_blueprint:
+    path: AndrejDelany/zigbee2mqtt-sync-keypad-and-alarm-control-panel-states.yaml
+    input:
+      control_panel: alarm_control_panel.ha_alarm
+      z2m_keypad_path: zigbee2mqtt/Alarm Keypad
+      pin: '3344'
+      action_arming: []
+      z2m_keypad_path_set: zigbee2mqtt/Alarm Keypad/set
+      action_disarmed: []
+      action_panic: []
+      action_pending: []
+      action_cust2:
+      - action: persistent_notification.create
+        metadata: {}
+        data:
+          message: '1111'
+- id: '1732976639044'
+  alias: Alarm Trigger
+  description: ''
+  triggers: []
+  conditions: []
+  actions:
+  - action: alarm_control_panel.alarm_trigger
+    metadata: {}
+    data: {}
+    target:
+      entity_id: alarm_control_panel.ha_alarm
   mode: single

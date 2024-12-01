@@ -24,7 +24,7 @@ influxdb:
  
 alarm_control_panel:
   - platform: manual
-    code: 1234
+    code: !secret alarm_code
     delay_time: 30
     arming_time: 30
     trigger_time: 30

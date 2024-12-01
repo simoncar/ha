@@ -264,6 +264,15 @@
                     "state",
                     "last_changed"
                   ]
+                },
+                {
+                  "states": [
+                    "arm_home",
+                    "arm_away",
+                    "arm_night"
+                  ],
+                  "type": "alarm-panel",
+                  "entity": "alarm_control_panel.ha_alarm"
                 }
               ]
             },
