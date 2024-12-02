@@ -31,7 +31,7 @@ advanced:
   legacy_api: false
   legacy_availability_payload: false
   transmit_power: 20
-  log_level: debug
+  log_level: info
 mqtt:
   server: mqtt://core-mosquitto:1883
   user: mqtt
@@ -67,6 +67,8 @@ devices:
   '0x0015bc0022000242':
     friendly_name: Alarm Repeater
     state_action: false
+  '0x0015bc0041007a25':
+    friendly_name: Alarm Siren
 availability:
   active:
     timeout: 10

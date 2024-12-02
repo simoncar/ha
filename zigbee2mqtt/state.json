@@ -1,10 +1,10 @@
 {
     "0xa4c13812921dddfd": {
-        "voltage": 231,
+        "voltage": 234,
         "energy": 16.74,
         "power": 0,
         "current": 0,
-        "linkquality": 127,
+        "linkquality": 109,
         "state": "ON",
         "update": {
             "state": "idle",
@@ -32,7 +32,7 @@
             "installed_version": 604241926,
             "latest_version": 604241926
         },
-        "linkquality": 102
+        "linkquality": 127
     },
     "0x04cd15fffe7ff98b": {
         "battery": 75,
@@ -41,11 +41,11 @@
             "installed_version": 604241926,
             "latest_version": 604241926
         },
-        "linkquality": 83
+        "linkquality": 102
     },
     "0x04cd15fffe268dcc": {
         "battery": 1,
-        "linkquality": 40,
+        "linkquality": 47,
         "update": {
             "state": "idle",
             "installed_version": 604241926,
@@ -55,8 +55,8 @@
     "0x54ef4410006a43c7": {
         "operation_mode": "action_mode",
         "side": 2,
-        "linkquality": 123,
-        "voltage": 3067,
+        "linkquality": 109,
+        "voltage": 3068,
         "battery": 100,
         "power_outage_count": 159,
         "current": 0,
@@ -67,15 +67,15 @@
         "occupancy_timeout": 60,
         "occupancy": false,
         "motion_sensitivity": "high",
-        "illuminance": 22190,
-        "illuminance_lux": 166,
-        "temperature": 14.6,
+        "illuminance": 24480,
+        "illuminance_lux": 280,
+        "temperature": 13.19,
         "update": {
             "state": "idle",
             "installed_version": 1107323831,
             "latest_version": 1107323831
         },
-        "linkquality": 127,
+        "linkquality": 76,
         "led_indication": true
     },
     "0x5c0272fffebb9cde": {
@@ -84,7 +84,7 @@
         "battery_low": false,
         "battery": 84,
         "voltage": 2900,
-        "linkquality": 32
+        "linkquality": 47
     },
     "0x0015bc0043006306": {
         "update": {
@@ -103,6 +103,20 @@
         "alarm_1": false,
         "battery_low": false,
         "tamper": false,
-        "linkquality": 40
+        "linkquality": 47
+    },
+    "0x0015bc0041007a25": {
+        "enrolled": true,
+        "ias_cie_address": "0x00124b002e0e1c5f",
+        "zone_id": 23,
+        "max_duration": 10,
+        "linkquality": 65,
+        "alarm": false,
+        "tamper": false,
+        "battery_low": false,
+        "supervision_reports": true,
+        "restore_reports": true,
+        "ac_status": false,
+        "test": false
     }
 }
