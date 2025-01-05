@@ -1,5 +1,4 @@
-homeassistant:
-  enabled: true
+homeassistant: true
 advanced:
   network_key:
     - 230
@@ -68,9 +67,8 @@ devices:
   '0x0015bc0041007a25':
     friendly_name: Alarm Siren
 availability:
-  enabled: true
   active:
     timeout: 10
   passive:
     timeout: 2880
-version: 4
+version: 2

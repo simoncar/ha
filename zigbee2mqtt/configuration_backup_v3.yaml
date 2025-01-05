@@ -73,4 +73,4 @@ availability:
     timeout: 10
   passive:
     timeout: 2880
-version: 4
+version: 3

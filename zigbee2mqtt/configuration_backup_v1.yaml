@@ -1,5 +1,4 @@
-homeassistant:
-  enabled: true
+homeassistant: true
 advanced:
   network_key:
     - 230
@@ -28,6 +27,9 @@ advanced:
     - 26
     - 188
     - 167
+  homeassistant_legacy_entity_attributes: false
+  legacy_api: false
+  legacy_availability_payload: false
   transmit_power: 20
   log_level: info
 mqtt:
@@ -39,9 +41,9 @@ serial:
   baudrate: 115200
   disable_led: false
 frontend:
-  enabled: true
   port: 8099
-device_options: {}
+device_options:
+  legacy: false
 devices:
   '0xb4e3f9fffe249e15':
     friendly_name: Button 4 - Movie
@@ -68,9 +70,8 @@ devices:
   '0x0015bc0041007a25':
     friendly_name: Alarm Siren
 availability:
-  enabled: true
   active:
     timeout: 10
   passive:
     timeout: 2880
-version: 4
+permit_join: true
