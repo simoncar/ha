@@ -1,10 +1,10 @@
 {
     "0xa4c13812921dddfd": {
-        "voltage": 236,
+        "voltage": 234,
         "energy": 16.74,
         "power": 0,
         "current": 0,
-        "linkquality": 109,
+        "linkquality": 105,
         "state": "OFF",
         "update": {
             "state": "idle",
@@ -17,8 +17,8 @@
         "countdown": 0
     },
     "0xb4e3f9fffe753317": {
-        "battery": 90,
-        "linkquality": 43,
+        "battery": 75,
+        "linkquality": 0,
         "update": {
             "state": "idle",
             "installed_version": 604241926,
@@ -32,20 +32,20 @@
             "installed_version": 604241926,
             "latest_version": 604241926
         },
-        "linkquality": 127
+        "linkquality": 109
     },
     "0x04cd15fffe7ff98b": {
-        "battery": 50,
+        "battery": 1,
         "update": {
             "state": "idle",
             "installed_version": 604241926,
             "latest_version": 604241926
         },
-        "linkquality": 102
+        "linkquality": 47
     },
     "0x04cd15fffe268dcc": {
         "battery": 1,
-        "linkquality": 47,
+        "linkquality": 0,
         "update": {
             "state": "idle",
             "installed_version": 604241926,
@@ -55,27 +55,26 @@
     "0x54ef4410006a43c7": {
         "operation_mode": "action_mode",
         "side": 2,
-        "linkquality": 109,
-        "voltage": 3040,
+        "linkquality": 105,
+        "voltage": 3052,
         "battery": 100,
         "power_outage_count": 159,
         "current": 0,
         "power": 2
     },
     "0x001788010649a073": {
-        "battery": 50.5,
+        "battery": 49.5,
         "occupancy_timeout": 60,
         "occupancy": false,
         "motion_sensitivity": "high",
-        "illuminance": 0,
-        "illuminance_lux": 0,
-        "temperature": 10.93,
+        "illuminance": 204,
+        "temperature": 9.94,
         "update": {
             "state": "idle",
             "installed_version": 1107323831,
             "latest_version": 1107323831
         },
-        "linkquality": 76,
+        "linkquality": 109,
         "led_indication": true
     },
     "0x5c0272fffebb9cde": {
@@ -84,7 +83,7 @@
         "battery_low": false,
         "battery": 76,
         "voltage": 2800,
-        "linkquality": 47
+        "linkquality": 102
     },
     "0x0015bc0043006306": {
         "update": {
@@ -93,10 +92,10 @@
             "latest_version": 131077
         },
         "battery": 100,
-        "voltage": 6100,
+        "voltage": 6000,
         "tamper": false,
         "battery_low": false,
-        "linkquality": 43
+        "linkquality": 29
     },
     "0x0015bc0022000242": {
         "alarm_2": false,

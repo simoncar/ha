@@ -36,12 +36,14 @@ mqtt:
   password: mqtt_4837q
 serial:
   port: tcp://192.168.87.68:6638
+  adapter: zstack
   baudrate: 115200
   disable_led: false
 frontend:
   enabled: true
   port: 8099
-device_options: {}
+device_options: 
+  legacy: false
 devices:
   '0xb4e3f9fffe249e15':
     friendly_name: Button 4 - Movie
