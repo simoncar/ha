@@ -17,8 +17,8 @@
         "countdown": 0
     },
     "0xb4e3f9fffe753317": {
-        "battery": 75,
-        "linkquality": 0,
+        "battery": 90,
+        "linkquality": 112,
         "update": {
             "state": "idle",
             "installed_version": 604241926,
@@ -35,17 +35,17 @@
         "linkquality": 109
     },
     "0x04cd15fffe7ff98b": {
-        "battery": 1,
+        "battery": 100,
         "update": {
             "state": "idle",
             "installed_version": 604241926,
             "latest_version": 604241926
         },
-        "linkquality": 47
+        "linkquality": 102
     },
     "0x04cd15fffe268dcc": {
         "battery": 1,
-        "linkquality": 0,
+        "linkquality": 3,
         "update": {
             "state": "idle",
             "installed_version": 604241926,
@@ -55,8 +55,8 @@
     "0x54ef4410006a43c7": {
         "operation_mode": "action_mode",
         "side": 2,
-        "linkquality": 105,
-        "voltage": 3052,
+        "linkquality": 102,
+        "voltage": 3057,
         "battery": 100,
         "power_outage_count": 159,
         "current": 0,
@@ -67,14 +67,14 @@
         "occupancy_timeout": 60,
         "occupancy": false,
         "motion_sensitivity": "high",
-        "illuminance": 204,
-        "temperature": 9.94,
+        "illuminance": 120,
+        "temperature": 9.66,
         "update": {
             "state": "idle",
             "installed_version": 1107323831,
             "latest_version": 1107323831
         },
-        "linkquality": 109,
+        "linkquality": 105,
         "led_indication": true
     },
     "0x5c0272fffebb9cde": {
@@ -83,7 +83,7 @@
         "battery_low": false,
         "battery": 76,
         "voltage": 2800,
-        "linkquality": 102
+        "linkquality": 116
     },
     "0x0015bc0043006306": {
         "update": {
@@ -95,7 +95,7 @@
         "voltage": 6000,
         "tamper": false,
         "battery_low": false,
-        "linkquality": 29
+        "linkquality": 36
     },
     "0x0015bc0022000242": {
         "alarm_2": false,
