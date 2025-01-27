@@ -1,6 +1,6 @@
 {
     "0xa4c13812921dddfd": {
-        "voltage": 236,
+        "voltage": 237,
         "energy": 16.74,
         "power": 0,
         "current": 0,
@@ -67,8 +67,8 @@
         "occupancy_timeout": 60,
         "occupancy": false,
         "motion_sensitivity": "high",
-        "illuminance": 137,
-        "temperature": 11.35,
+        "illuminance": 196,
+        "temperature": 17.43,
         "update": {
             "state": "idle",
             "installed_version": 1107323831,
