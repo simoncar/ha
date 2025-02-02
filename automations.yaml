@@ -3106,3 +3106,20 @@
     target:
       entity_id: alarm_control_panel.ha_alarm
   mode: single
+- id: '1738441845600'
+  alias: Random hard off
+  description: ''
+  triggers:
+  - at: 01:12:00
+    trigger: time
+  conditions: []
+  actions:
+  - type: turn_off
+    device_id: e2d9c795303d91a6d576077b39fe32d3
+    entity_id: light.bath_circle
+    domain: light
+  - type: turn_off
+    device_id: 11a686020163e55732126863d48b41de
+    entity_id: f44167e9d6ebdef7fc2a0e79dc86d842
+    domain: light
+  mode: single
