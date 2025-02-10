@@ -63,15 +63,15 @@
         "power": 2
     },
     "0x001788010649a073": {
-        "battery": 48,
+        "battery": 45,
         "occupancy_timeout": 60,
         "occupancy": false,
         "motion_sensitivity": "high",
-        "illuminance": 196,
-        "temperature": 8.39,
+        "illuminance": 289,
+        "temperature": 10.93,
         "update": {
-            "state": "available",
-            "installed_version": 1107323831,
+            "state": "idle",
+            "installed_version": 1124102917,
             "latest_version": 1124102917
         },
         "linkquality": 105,
@@ -92,7 +92,7 @@
             "latest_version": 131077
         },
         "battery": 100,
-        "voltage": 6000,
+        "voltage": 5900,
         "tamper": false,
         "battery_low": false,
         "linkquality": 36
