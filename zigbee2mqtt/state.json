@@ -67,8 +67,8 @@
         "occupancy_timeout": 60,
         "occupancy": false,
         "motion_sensitivity": "high",
-        "illuminance": 216,
-        "temperature": 12.06,
+        "illuminance": 330,
+        "temperature": 11.07,
         "update": {
             "state": "idle",
             "installed_version": 1124102917,
