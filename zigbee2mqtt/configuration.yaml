@@ -42,7 +42,7 @@ serial:
 frontend:
   enabled: true
   port: 8099
-device_options: 
+device_options:
   legacy: false
 devices:
   '0xb4e3f9fffe249e15':
@@ -60,6 +60,8 @@ devices:
     legacy: false
   '0x001788010649a073':
     friendly_name: Philips Backyard Sensor
+    illuminance_calibration: 0
+    no_occupancy_since: []
   '0x5c0272fffebb9cde':
     friendly_name: Water Sensor 1
   '0x0015bc0043006306':

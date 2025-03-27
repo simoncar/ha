@@ -412,15 +412,15 @@
 - id: '1632239999448'
   alias: Outdoor Party Lights Motion ON
   description: ''
-  trigger:
+  triggers:
   - type: motion
-    platform: device
     device_id: d06d9529f30f8fa576b2fccdff62516f
     entity_id: bbe35a4bf2ef5fa28ad73e63bcab829e
     domain: binary_sensor
-  condition:
+    trigger: device
+  conditions:
   - condition: numeric_state
-    entity_id: sensor.philips_backyard_sensor_illuminance_lux
+    entity_id: sensor.gw2000a_solar_lux
     below: '20'
   - condition: not
     conditions:
@@ -430,7 +430,7 @@
   - condition: state
     entity_id: input_select.outdoor_lights
     state: Auto
-  action:
+  actions:
   - type: turn_on
     device_id: bff2976ba3365a33a441c70f43bdbe18
     entity_id: switch.node_8
