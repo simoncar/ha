@@ -82,25 +82,29 @@
 - id: '1627146339094'
   alias: Nighttime Family Room Sunset TV Strip
   description: ''
-  trigger:
-  - platform: sun
-    event: sunset
+  triggers:
+  - event: sunset
     offset: -00:29:00
-  - platform: time
-    at: '19:00:00'
+    trigger: sun
+  - at: '19:00:00'
+    trigger: time
   - type: illuminance
-    platform: device
     device_id: 1fd39b205e3707ea8a7dddb2c7c9cca7
     entity_id: d332fff76b75f9190915c484f0dbfdc5
     domain: sensor
-    below: 5000
-  condition:
+    below: 2000
+    trigger: device
+    for:
+      hours: 0
+      minutes: 1
+      seconds: 0
+  conditions:
   - condition: state
     entity_id: input_select.home_mode
     state: Normal
   - condition: time
     after: '15:00:00'
-  action:
+  actions:
   - type: turn_on
     device_id: 817d13a2421b3abc46991c8c7d8c4a65
     entity_id: light.controller_tv_lights
@@ -1172,14 +1176,14 @@
 - id: '1662826655444'
   alias: Bedroom Nighttime Toilet
   description: ''
-  trigger:
+  triggers:
   - type: motion
-    platform: device
     device_id: ff51915b13dc1e63995c222c38cf76f3
     entity_id: 6269696692461a243abc6aead66853ce
     domain: binary_sensor
-  condition: []
-  action:
+    trigger: device
+  conditions: []
+  actions:
   - if:
     - condition: time
       before: '23:00:00'
@@ -1189,6 +1193,7 @@
       device_id: e2d9c795303d91a6d576077b39fe32d3
       entity_id: light.bath_circle
       domain: light
+      enabled: false
     - type: turn_on
       device_id: 96eebeea5c10f7a7e98cf4f484918c1c
       entity_id: light.bathroom_mirror_right
@@ -1231,16 +1236,16 @@
         minutes: 0
         seconds: 20
         milliseconds: 0
-  - service: light.turn_off
-    target:
+  - target:
       entity_id: light.bathroom_mirror_left
     data:
       transition: 60
-  - service: light.turn_off
-    target:
+    action: light.turn_off
+  - target:
       entity_id: light.bathroom_mirror_right
     data:
       transition: 60
+    action: light.turn_off
   - delay:
       hours: 0
       minutes: 20
