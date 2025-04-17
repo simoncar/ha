@@ -417,7 +417,7 @@
   alias: Outdoor Party Lights Motion ON
   description: ''
   triggers:
-  - type: motion
+  - type: occupied
     device_id: d06d9529f30f8fa576b2fccdff62516f
     entity_id: bbe35a4bf2ef5fa28ad73e63bcab829e
     domain: binary_sensor
@@ -949,6 +949,10 @@
       domain: light
     - data: {}
       action: script.air_con_off
+    - type: turn_off
+      device_id: 840fc824e00664e9c9cc36def0d6e277
+      entity_id: ad1964bd8453755c582e791a4a2169d4
+      domain: light
   mode: parallel
   max: 10
 - id: '1646312502247'
