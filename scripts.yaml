@@ -191,15 +191,15 @@ range_hood_power_cycle:
     domain: switch
   mode: single
   alias: Range Hood Power Cycle
-bedroom_skylight_open:
+bedroom_skylight_close:
   alias: Bedroom Skylight Close
   sequence:
-  - service: remote.send_command
-    data:
+  - data:
       device: skylight
       command: close
     target:
       device_id: 57fdd525cc96afe7982612e0e1c15b14
+    action: remote.send_command
   mode: single
 bedroom_skylight_open_2:
   alias: Bedroom Skylight Open

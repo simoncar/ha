@@ -949,10 +949,6 @@
       domain: light
     - data: {}
       action: script.air_con_off
-    - type: turn_off
-      device_id: 840fc824e00664e9c9cc36def0d6e277
-      entity_id: ad1964bd8453755c582e791a4a2169d4
-      domain: light
   mode: parallel
   max: 10
 - id: '1646312502247'
@@ -1429,12 +1425,12 @@
 - id: '1666706803522'
   alias: Bedroom Close Skylight at 10am
   description: ''
-  trigger:
-  - platform: time
-    at: 00:10:00
-  condition: []
-  action:
-  - service: script.bedroom_skylight_open
+  triggers:
+  - at: 00:10:00
+    trigger: time
+  conditions: []
+  actions:
+  - action: script.bedroom_skylight_close
     data: {}
   mode: single
 - id: '1666792121740'
@@ -2394,13 +2390,13 @@
 - id: '1682849332738'
   alias: Rain
   description: ''
-  trigger:
-  - platform: numeric_state
-    entity_id: sensor.gracia_precipitation
+  triggers:
+  - entity_id: sensor.gracia_precipitation
     above: 0
-  condition: []
-  action:
-  - service: script.bedroom_skylight_open
+    trigger: numeric_state
+  conditions: []
+  actions:
+  - action: script.bedroom_skylight_close
     data: {}
   mode: single
 - id: '1684737233395'
@@ -2798,9 +2794,8 @@
     device_id: 605e572814970daeb76e0dca4f8a17d7
     entity_id: 276db57a236348e7c0011435198f907f
     domain: light
-  - data: {}
-    enabled: true
-    action: script.bedroom_skylight_open
+  - action: script.bedroom_skylight_close
+    data: {}
   - type: turn_on
     device_id: 605e572814970daeb76e0dca4f8a17d7
     entity_id: 7e3c4cb93faca5053d36eee005a23b4a
@@ -3108,4 +3103,31 @@
     device_id: 11a686020163e55732126863d48b41de
     entity_id: f44167e9d6ebdef7fc2a0e79dc86d842
     domain: light
+  mode: single
+- id: '1745057343497'
+  alias: Open skylight on shower humidity spike
+  description: 'When indoor humidity rises by >10% within 5 minutes (shower) and it’s
+    not raining, open the skylight and close it after 40 minutes.
+
+    '
+  triggers:
+  - entity_id: sensor.gw2000a_indoor_humidity
+    trigger: state
+  conditions:
+  - condition: template
+    value_template: '{{ trigger.to_state.state|float - trigger.from_state.state|float
+      > 10 }}
+
+      '
+  - condition: template
+    value_template: "{{ (as_timestamp(trigger.to_state.last_updated)\n    - as_timestamp(trigger.from_state.last_updated))
+      <= 300 }}\n"
+  - condition: numeric_state
+    entity_id: sensor.gw2000a_rain_rate_piezo
+    below: 0.1
+  actions:
+  - action: script.bedroom_skylight_open_2
+    data: {}
+  - delay: 00:40:00
+  - action: script.bedroom_skylight_close
   mode: single
