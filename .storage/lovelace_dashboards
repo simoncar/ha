@@ -5,22 +5,13 @@
   "data": {
     "items": [
       {
-        "id": "dashboard_general",
+        "id": "dashboard_areas",
         "show_in_sidebar": true,
-        "icon": "mdi:monitor-dashboard",
-        "title": "General",
+        "icon": "mdi:hoop-house",
+        "title": "Areas",
         "require_admin": false,
         "mode": "storage",
-        "url_path": "dashboard-general"
-      },
-      {
-        "id": "map",
-        "icon": "mdi:map",
-        "title": "Map",
-        "url_path": "map",
-        "require_admin": false,
-        "mode": "storage",
-        "show_in_sidebar": true
+        "url_path": "dashboard-areas"
       }
     ]
   }

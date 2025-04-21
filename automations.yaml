@@ -908,9 +908,8 @@
       device_id: 96eebeea5c10f7a7e98cf4f484918c1c
       entity_id: light.bathroom_mirror_right
       domain: light
-    - data: {}
-      enabled: true
-      action: script.bedroom_skylight_open
+    - action: script.bedroom_skylight_close
+      data: {}
     - type: turn_off
       device_id: 6f872fd46e4d0439ef2456f700d4398b
       entity_id: light.bed_lamp_mel
@@ -3116,12 +3115,12 @@
   conditions:
   - condition: template
     value_template: '{{ trigger.to_state.state|float - trigger.from_state.state|float
-      > 10 }}
+      > 5 }}
 
       '
   - condition: template
     value_template: "{{ (as_timestamp(trigger.to_state.last_updated)\n    - as_timestamp(trigger.from_state.last_updated))
-      <= 300 }}\n"
+      <= 200 }}\n"
   - condition: numeric_state
     entity_id: sensor.gw2000a_rain_rate_piezo
     below: 0.1
@@ -3130,4 +3129,5 @@
     data: {}
   - delay: 00:40:00
   - action: script.bedroom_skylight_close
+    data: {}
   mode: single

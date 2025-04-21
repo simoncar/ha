@@ -32,7 +32,7 @@
             "installed_version": 604241926,
             "latest_version": 604241926
         },
-        "linkquality": 91
+        "linkquality": 98
     },
     "0x04cd15fffe7ff98b": {
         "battery": 75,
@@ -55,7 +55,7 @@
     "0x54ef4410006a43c7": {
         "operation_mode": "action_mode",
         "side": 2,
-        "linkquality": 98,
+        "linkquality": 69,
         "voltage": 3068,
         "battery": 100,
         "power_outage_count": 159,
@@ -63,18 +63,18 @@
         "power": 2
     },
     "0x001788010649a073": {
-        "battery": 45,
+        "battery": 46,
         "occupancy_timeout": 60,
         "occupancy": false,
         "motion_sensitivity": "high",
-        "illuminance": 169,
-        "temperature": 13.33,
+        "illuminance": 295,
+        "temperature": 13.76,
         "update": {
             "state": "idle",
             "installed_version": 1124102917,
             "latest_version": 1124102917
         },
-        "linkquality": 76,
+        "linkquality": 98,
         "led_indication": true
     },
     "0x5c0272fffebb9cde": {
@@ -83,7 +83,7 @@
         "battery_low": false,
         "battery": 76,
         "voltage": 2800,
-        "linkquality": 29
+        "linkquality": 40
     },
     "0x0015bc0043006306": {
         "update": {
@@ -92,10 +92,10 @@
             "latest_version": 131077
         },
         "battery": 100,
-        "voltage": 5800,
+        "voltage": 5900,
         "tamper": false,
         "battery_low": false,
-        "linkquality": 25
+        "linkquality": 29
     },
     "0x0015bc0022000242": {
         "alarm_2": false,

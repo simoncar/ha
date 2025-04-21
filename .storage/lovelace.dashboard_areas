@@ -1,11 +1,11 @@
 {
   "version": 1,
   "minor_version": 1,
-  "key": "lovelace.map",
+  "key": "lovelace.dashboard_areas",
   "data": {
     "config": {
       "strategy": {
-        "type": "map"
+        "type": "areas"
       }
     }
   }
