@@ -1289,23 +1289,24 @@
 - id: '1663264053588'
   alias: Master Closet On
   description: ''
-  trigger:
+  triggers:
   - type: motion
-    platform: device
     device_id: ee233693d4a6f7534b434a3c8eda6108
     entity_id: binary_sensor.motion_sensor_closet_home_security_motion_detection_3
     domain: binary_sensor
-  condition:
+    trigger: device
+  conditions:
   - type: is_illuminance
     condition: device
     device_id: ee233693d4a6f7534b434a3c8eda6108
     entity_id: sensor.motion_sensor_closet_illuminance_3
     domain: sensor
-    below: 80
+    below: 500
+    enabled: false
   - condition: state
     entity_id: input_boolean.bedroom_curtain_motion
     state: 'off'
-  action:
+  actions:
   - type: turn_on
     device_id: 6f6cf472f4fef1f0c20d9931d001ac70
     entity_id: switch.master_closet
@@ -2449,18 +2450,18 @@
 - id: '1686069739638'
   alias: Master Closet Off
   description: ''
-  trigger:
+  triggers:
   - type: no_motion
-    platform: device
     device_id: ee233693d4a6f7534b434a3c8eda6108
     entity_id: binary_sensor.motion_sensor_closet_home_security_motion_detection_3
     domain: binary_sensor
     for:
       hours: 0
-      minutes: 4
+      minutes: 6
       seconds: 0
-  condition: []
-  action:
+    trigger: device
+  conditions: []
+  actions:
   - type: turn_off
     device_id: 6f6cf472f4fef1f0c20d9931d001ac70
     entity_id: switch.master_closet

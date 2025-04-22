@@ -67,8 +67,8 @@
         "occupancy_timeout": 60,
         "occupancy": false,
         "motion_sensitivity": "high",
-        "illuminance": 295,
-        "temperature": 13.76,
+        "illuminance": 274,
+        "temperature": 15.45,
         "update": {
             "state": "idle",
             "installed_version": 1124102917,
@@ -92,7 +92,7 @@
             "latest_version": 131077
         },
         "battery": 100,
-        "voltage": 5900,
+        "voltage": 5800,
         "tamper": false,
         "battery_low": false,
         "linkquality": 29
