@@ -131,6 +131,8 @@ ios:
 tts:
   - platform: google_translate
 
+trace:
+  stored_traces: 20 
         
 notify:
   - platform: tts
