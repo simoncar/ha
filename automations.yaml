@@ -1777,18 +1777,18 @@
 - id: '1671466128765'
   alias: Entry Bathroom OFF
   description: ''
-  trigger:
+  triggers:
   - type: no_motion
-    platform: device
-    device_id: dfbd36b1b522aa65205358681ff35f4e
-    entity_id: binary_sensor.entry_bathroom_motion_sensor_motion_detection
+    device_id: 2c7afe1ea1948c9b1d2d3be192ba197b
+    entity_id: 08252b5db0eea64787a6f58edf325492
     domain: binary_sensor
+    trigger: device
     for:
       hours: 0
-      minutes: 2
+      minutes: 4
       seconds: 0
-  condition: []
-  action:
+  conditions: []
+  actions:
   - type: turn_off
     device_id: 8ec5845bc5cccb9b58298481f99b49ad
     entity_id: light.entry_bathroom_spotlights
@@ -1806,14 +1806,14 @@
 - id: '1671466503267'
   alias: Entry Bathroom ON
   description: ''
-  trigger:
+  triggers:
   - type: motion
-    platform: device
-    device_id: dfbd36b1b522aa65205358681ff35f4e
-    entity_id: binary_sensor.entry_bathroom_motion_sensor_motion_detection
+    device_id: 2c7afe1ea1948c9b1d2d3be192ba197b
+    entity_id: 08252b5db0eea64787a6f58edf325492
     domain: binary_sensor
-  condition: []
-  action:
+    trigger: device
+  conditions: []
+  actions:
   - type: turn_on
     device_id: 2c18e1cb84c339cec12d4877c38d80e5
     entity_id: light.entry_bathroom_led_controller
