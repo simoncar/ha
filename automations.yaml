@@ -2684,9 +2684,8 @@
 - id: '1698426476155'
   alias: Shower Motion OFF
   description: ''
-  trigger:
+  triggers:
   - type: no_motion
-    platform: device
     device_id: bfdde3fbf181992236092bedff305a06
     entity_id: ce6fe015d759890617cd5f5571222ecc
     domain: binary_sensor
@@ -2694,11 +2693,16 @@
       hours: 0
       minutes: 5
       seconds: 0
-  condition: []
-  action:
+    trigger: device
+  conditions: []
+  actions:
   - type: turn_off
     device_id: e2d9c795303d91a6d576077b39fe32d3
     entity_id: 0f38e3773e1aa8639d867ba4417e9a42
+    domain: light
+  - type: turn_off
+    device_id: 11a686020163e55732126863d48b41de
+    entity_id: 43137feae1931f7180f780096e75b1ca
     domain: light
   mode: single
 - id: '1700588200711'
