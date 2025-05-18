@@ -703,12 +703,19 @@
 - id: '1640803753969'
   alias: Pendant ON Sunset ++ 5
   description: ''
-  trigger:
-  - platform: sun
-    event: sunset
-    offset: 02:00:00
-  condition: []
-  action:
+  triggers:
+  - type: illuminance
+    device_id: 1fd39b205e3707ea8a7dddb2c7c9cca7
+    entity_id: d332fff76b75f9190915c484f0dbfdc5
+    domain: sensor
+    trigger: device
+    below: 1000
+    for:
+      hours: 0
+      minutes: 2
+      seconds: 0
+  conditions: []
+  actions:
   - type: turn_on
     device_id: 09a12aab6e27c3f64fdc160918e9d8ca
     entity_id: light.entry_pendant
@@ -1177,7 +1184,16 @@
     entity_id: 6269696692461a243abc6aead66853ce
     domain: binary_sensor
     trigger: device
-  conditions: []
+  conditions:
+  - type: is_illuminance
+    condition: device
+    device_id: 1fd39b205e3707ea8a7dddb2c7c9cca7
+    entity_id: d332fff76b75f9190915c484f0dbfdc5
+    domain: sensor
+    below: 3000
+  - condition: state
+    entity_id: input_boolean.bathtime
+    state: 'off'
   actions:
   - if:
     - condition: time
@@ -1315,14 +1331,14 @@
 - id: '1663500500086'
   alias: Curtains Open Timer
   description: ''
-  trigger:
-  - platform: sun
-    event: sunrise
+  triggers:
+  - event: sunrise
     offset: -0:25:00
     enabled: false
-  - platform: time
-    at: 07:00:00
-  condition:
+    trigger: sun
+  - at: 07:00:00
+    trigger: time
+  conditions:
   - condition: time
     weekday:
     - sat
@@ -1331,7 +1347,6 @@
     - wed
     - tue
     - mon
-    - sun
     after: 06:58:00
   - condition: device
     device_id: 2f3366a2291c0b2ac9f21b04546ad5df
@@ -1339,7 +1354,7 @@
     entity_id: cover.bedroom_curtains
     type: is_position
     below: 99
-  action:
+  actions:
   - data: {}
     action: script.bedroom_skylight_open_2
     enabled: false
@@ -2669,7 +2684,16 @@
     entity_id: ce6fe015d759890617cd5f5571222ecc
     domain: binary_sensor
     trigger: device
-  conditions: []
+  conditions:
+  - type: is_illuminance
+    condition: device
+    device_id: 1fd39b205e3707ea8a7dddb2c7c9cca7
+    entity_id: d332fff76b75f9190915c484f0dbfdc5
+    domain: sensor
+    below: 3000
+  - condition: state
+    entity_id: input_boolean.bathtime
+    state: 'off'
   actions:
   - type: turn_on
     device_id: e2d9c795303d91a6d576077b39fe32d3

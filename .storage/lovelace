@@ -676,15 +676,18 @@
                       "cards": [
                         {
                           "type": "tile",
-                          "entity": "script.bedroom_tv_power_cycle",
+                          "entity": "input_boolean.bathtime",
                           "tap_action": {
                             "action": "call-service",
                             "service": "script.bedroom_tv_power_cycle",
                             "data": {},
                             "target": {}
                           },
-                          "name": "TV Reset",
-                          "icon": "mdi:power-plug-off-outline"
+                          "icon": "",
+                          "features_position": "bottom",
+                          "vertical": false,
+                          "name": "Bath",
+                          "state_content": "state"
                         }
                       ]
                     },
