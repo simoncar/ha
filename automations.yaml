@@ -1858,18 +1858,18 @@
 - id: '1671725325984'
   alias: Everything Living Room No Motion
   description: ''
-  trigger:
+  triggers:
   - type: not_occupied
-    platform: device
     device_id: c3a8396028ad77fe1ae6078045f0e9a9
     entity_id: binary_sensor.occupancy_living_room
     domain: binary_sensor
     for:
       hours: 0
-      minutes: 15
+      minutes: 35
       seconds: 0
-  condition: []
-  action:
+    trigger: device
+  conditions: []
+  actions:
   - type: turn_off
     device_id: b733ae3ffdf5a2025971b625500b1a33
     entity_id: light.chandelier
@@ -2197,9 +2197,8 @@
 - id: '1675353057599'
   alias: Lift Button Blue 1 Press All OFF
   description: ''
-  trigger:
-  - platform: device
-    device_id: 5b0738fa5401ea46ad2b1d6350f5ab5d
+  triggers:
+  - device_id: 5b0738fa5401ea46ad2b1d6350f5ab5d
     domain: zwave_js
     type: event.value_notification.central_scene
     property: scene
@@ -2208,19 +2207,50 @@
     command_class: 91
     subtype: Endpoint 0 Scene 001
     value: 0
-  condition: []
-  action:
+    trigger: device
+  - device_id: 5b0738fa5401ea46ad2b1d6350f5ab5d
+    domain: zwave_js
+    type: event.value_notification.central_scene
+    property: scene
+    property_key: '001'
+    endpoint: 0
+    command_class: 91
+    subtype: Endpoint 0 Scene 001
+    trigger: device
+    value: 2
+  - device_id: 5b0738fa5401ea46ad2b1d6350f5ab5d
+    domain: zwave_js
+    type: event.value_notification.central_scene
+    property: scene
+    property_key: '001'
+    endpoint: 0
+    command_class: 91
+    subtype: Endpoint 0 Scene 001
+    trigger: device
+    value: 3
+  - device_id: 5b0738fa5401ea46ad2b1d6350f5ab5d
+    domain: zwave_js
+    type: event.value_notification.central_scene
+    property: scene
+    property_key: '001'
+    endpoint: 0
+    command_class: 91
+    subtype: Endpoint 0 Scene 001
+    trigger: device
+    value: 1
+  conditions: []
+  actions:
   - parallel:
-    - service: media_player.volume_set
-      data:
+    - data:
         volume_level: 0.63
       target:
         device_id: 08bc393f35640fa1188c130d63e366e4
-    - service: tts.google_translate_say
-      data:
+      action: media_player.volume_set
+    - data:
         cache: true
         entity_id: media_player.family_room_speaker
         message: Turning Everything Off, Good night.
+      action: tts.google_translate_say
     - type: turn_off
       device_id: 3bde07aac5e6792e1ab5ebad70800b27
       entity_id: switch.kitchen_lights
@@ -2241,13 +2271,13 @@
       device_id: 87b30484f04bc58897eb73ff16aa11e5
       entity_id: switch.smart_plug_20072944061154251h5448e1e927dba2_outlet
       domain: switch
-    - service: script.air_con_off
-      data: {}
-    - service: light.turn_off
-      target:
+    - data: {}
+      action: script.air_con_off
+    - target:
         device_id: 09a12aab6e27c3f64fdc160918e9d8ca
       data:
         transition: 60
+      action: light.turn_off
     - type: turn_off
       device_id: bff2976ba3365a33a441c70f43bdbe18
       entity_id: switch.node_8
@@ -2268,10 +2298,10 @@
       device_id: b3cd0f6a14cd02f85de8e20c76356ee9
       entity_id: switch.kitchen_led
       domain: switch
-    - service: script.range_hood_power_cycle
-      data: {}
-    - service: script.study_hvac_off
-      data: {}
+    - data: {}
+      action: script.range_hood_power_cycle
+    - data: {}
+      action: script.study_hvac_off
     - type: turn_off
       device_id: 63e0fd14c627720090b913f2b1e45ff3
       entity_id: switch.m8_study_fan_outlet
@@ -2294,8 +2324,7 @@
       device_id: 9589be47ae6db0a86b8925d0d69a6cf5
       entity_id: light.living_room_spotlights
       domain: light
-    - service: remote.send_command
-      data:
+    - data:
         device: Dog Door
         command: open
         num_repeats: 200
@@ -2304,8 +2333,9 @@
       target:
         device_id: 57fdd525cc96afe7982612e0e1c15b14
       enabled: false
-    - service: script.air_con_off
-      data: {}
+      action: remote.send_command
+    - data: {}
+      action: script.air_con_off
     - type: turn_off
       device_id: a51c183cf093f8ca49a63262b69c6ded
       entity_id: switch.pantry
