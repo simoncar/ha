@@ -35,7 +35,7 @@
         "linkquality": 102
     },
     "0x04cd15fffe7ff98b": {
-        "battery": 50,
+        "battery": 75,
         "update": {
             "state": "idle",
             "installed_version": 604241926,
@@ -67,8 +67,8 @@
         "occupancy_timeout": 60,
         "occupancy": false,
         "motion_sensitivity": "high",
-        "illuminance": 305,
-        "temperature": 19.12,
+        "illuminance": 348,
+        "temperature": 18.7,
         "update": {
             "state": "idle",
             "installed_version": 1124102917,

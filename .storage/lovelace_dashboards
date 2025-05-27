@@ -12,6 +12,14 @@
         "require_admin": false,
         "mode": "storage",
         "url_path": "dashboard-areas"
+      },
+      {
+        "id": "dashboard_test",
+        "show_in_sidebar": true,
+        "title": "Test",
+        "require_admin": false,
+        "mode": "storage",
+        "url_path": "dashboard-test"
       }
     ]
   }

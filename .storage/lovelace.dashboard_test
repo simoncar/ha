@@ -1,0 +1,146 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace.dashboard_test",
+  "data": {
+    "config": {
+      "wallpanel": {
+        "enabled": true,
+        "hide_toolbar": false,
+        "hide_sidebar": false,
+        "show_images": false,
+        "idle_time": 0
+      },
+      "title": "Gracia",
+      "views": [
+        {
+          "title": "Ground Floor",
+          "path": "tablet",
+          "theme": "mushroom",
+          "type": "custom:grid-layout",
+          "layout": {
+            "grid-template-columns": "repeat(auto-fill, minmax(300px, 1fr))",
+            "grid-gap": "12px"
+          },
+          "cards": [
+            {
+              "type": "tile",
+              "entity": "script.blinds_down",
+              "icon": "mdi:blinds",
+              "tap_action": {
+                "action": "call-service",
+                "service": "script.blinds_down"
+              },
+              "hide_state": true,
+              "color": "blue-grey"
+            },
+            {
+              "type": "tile",
+              "entity": "script.blinds_up",
+              "icon": "mdi:blinds-open",
+              "tap_action": {
+                "action": "call-service",
+                "service": "script.blinds_up"
+              },
+              "hide_state": true,
+              "color": "blue-grey"
+            },
+            {
+              "type": "custom:mushroom-template-card",
+              "primary": "Holiday",
+              "entity": "input_select.home_mode",
+              "tap_action": {
+                "action": "call-service",
+                "service": "input_select.select_option",
+                "data": {
+                  "option": "Away"
+                }
+              },
+              "icon": "mdi:airplane",
+              "icon_color": "{{ 'blue' if is_state(entity, 'Away') else 'grey' }}"
+            },
+            {
+              "type": "custom:mushroom-template-card",
+              "primary": "Normal",
+              "entity": "input_select.home_mode",
+              "tap_action": {
+                "action": "call-service",
+                "service": "input_select.select_option",
+                "data": {
+                  "option": "Normal"
+                }
+              },
+              "icon": "mdi:home",
+              "icon_color": "{{ 'blue' if is_state(entity, 'Normal') else 'grey' }}"
+            },
+            {
+              "type": "custom:mushroom-template-card",
+              "primary": "Dark",
+              "entity": "input_select.home_mode",
+              "tap_action": {
+                "action": "call-service",
+                "service": "input_select.select_option",
+                "data": {
+                  "option": "Dark"
+                }
+              },
+              "icon": "mdi:weather-night",
+              "icon_color": "{{ 'blue' if is_state(entity, 'Dark') else 'grey' }}"
+            },
+            {
+              "type": "alarm-panel",
+              "entity": "alarm_control_panel.ha_alarm",
+              "states": [
+                "arm_home",
+                "arm_away",
+                "arm_night"
+              ]
+            },
+            {
+              "type": "custom:apexcharts-card",
+              "header": {
+                "show": true,
+                "title": "Temperature Trends"
+              },
+              "graph_span": "2d",
+              "series": [
+                {
+                  "entity": "sensor.rm4_study_temperature",
+                  "name": "Living Room",
+                  "stroke_width": 2,
+                  "curve": "smooth"
+                },
+                {
+                  "entity": "sensor.gw2000a_indoor_temperature",
+                  "name": "Bedroom",
+                  "stroke_width": 2
+                },
+                {
+                  "entity": "sensor.rm4_level_2_temperature",
+                  "name": "Level 2",
+                  "stroke_width": 2
+                },
+                {
+                  "entity": "sensor.gw2000a_outdoor_temperature",
+                  "name": "Plaça Rovira",
+                  "stroke_width": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Tasks",
+          "path": "tasks",
+          "icon": "mdi:checkbox-marked-circle-auto-outline",
+          "cards": [
+            {
+              "type": "todo-list",
+              "entity": "todo.programming_todo"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
