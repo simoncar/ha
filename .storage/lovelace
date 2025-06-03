@@ -728,7 +728,9 @@
                           "type": "tile",
                           "name": "Simon",
                           "entity": "light.bathroom_mirror_left",
-                          "icon": "mdi:face-man"
+                          "icon": "mdi:face-man",
+                          "features_position": "bottom",
+                          "vertical": false
                         },
                         {
                           "type": "tile",
@@ -745,13 +747,9 @@
                           "type": "tile",
                           "entity": "light.bed_lamp_mel",
                           "icon": "mdi:spotlight-beam",
-                          "name": "Mel"
-                        },
-                        {
-                          "type": "tile",
-                          "entity": "light.bed_lamp_left",
-                          "icon": "mdi:spotlight-beam",
-                          "name": "Simon"
+                          "name": "Mel",
+                          "features_position": "bottom",
+                          "vertical": false
                         },
                         {
                           "type": "tile",
@@ -768,7 +766,9 @@
                           "type": "tile",
                           "entity": "light.bath_circle",
                           "icon": "mdi:dome-light",
-                          "show_entity_picture": false
+                          "show_entity_picture": false,
+                          "features_position": "bottom",
+                          "vertical": false
                         },
                         {
                           "type": "tile",
@@ -777,9 +777,11 @@
                         },
                         {
                           "type": "tile",
-                          "entity": "light.bathroom_mirror_spotlights",
+                          "entity": "light.bedroom_spotlights_mirror_basic",
                           "name": "Mirror Spot",
-                          "icon": "mdi:vanity-light"
+                          "icon": "mdi:vanity-light",
+                          "features_position": "bottom",
+                          "vertical": false
                         }
                       ]
                     },
@@ -790,13 +792,17 @@
                           "type": "tile",
                           "entity": "switch.bedroom_lamp",
                           "icon": "mdi:floor-lamp",
-                          "name": "Lamp"
+                          "name": "Lamp",
+                          "features_position": "bottom",
+                          "vertical": false
                         },
                         {
                           "type": "tile",
-                          "entity": "switch.bedroom_lights",
+                          "entity": "switch.bedroom_lights_3",
                           "icon": "mdi:light-recessed",
-                          "name": "Lights"
+                          "name": "Lights",
+                          "features_position": "bottom",
+                          "vertical": false
                         },
                         {
                           "type": "tile",
@@ -841,7 +847,9 @@
                   "cards": [
                     {
                       "type": "tile",
-                      "entity": "input_boolean.living_room_occupied"
+                      "entity": "input_boolean.living_room_occupied",
+                      "features_position": "bottom",
+                      "vertical": false
                     }
                   ]
                 },
@@ -936,16 +944,7 @@
                 },
                 {
                   "type": "horizontal-stack",
-                  "cards": [
-                    {
-                      "type": "tile",
-                      "entity": "climate.nest_hvac"
-                    },
-                    {
-                      "type": "tile",
-                      "entity": "sensor.temperature"
-                    }
-                  ]
+                  "cards": []
                 },
                 {
                   "type": "horizontal-stack",

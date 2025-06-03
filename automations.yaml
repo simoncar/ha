@@ -86,13 +86,15 @@
   - event: sunset
     offset: -00:29:00
     trigger: sun
-  - at: '19:00:00'
+    enabled: true
+  - at: '20:30:00'
     trigger: time
+    enabled: true
   - type: illuminance
     device_id: 1fd39b205e3707ea8a7dddb2c7c9cca7
     entity_id: d332fff76b75f9190915c484f0dbfdc5
     domain: sensor
-    below: 2000
+    below: 5000
     trigger: device
     for:
       hours: 0
@@ -908,6 +910,10 @@
   actions:
   - parallel:
     - type: turn_off
+      device_id: 840fc824e00664e9c9cc36def0d6e277
+      entity_id: ad1964bd8453755c582e791a4a2169d4
+      domain: light
+    - type: turn_off
       device_id: 96eebeea5c10f7a7e98cf4f484918c1c
       entity_id: light.bathroom_mirror_left
       domain: light
@@ -1348,7 +1354,7 @@
     - tue
     - mon
     - sun
-    after: 06:58:00
+    after: 06:43:00
   - condition: device
     device_id: 2f3366a2291c0b2ac9f21b04546ad5df
     domain: cover
