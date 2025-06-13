@@ -26,7 +26,7 @@
         }
     },
     "0xb4e3f9fffe249e15": {
-        "battery": 90,
+        "battery": 100,
         "update": {
             "state": "idle",
             "installed_version": 604241926,
@@ -35,7 +35,7 @@
         "linkquality": 69
     },
     "0x04cd15fffe7ff98b": {
-        "battery": 75,
+        "battery": 90,
         "update": {
             "state": "idle",
             "installed_version": 604241926,
@@ -56,19 +56,19 @@
         "operation_mode": "action_mode",
         "side": 2,
         "linkquality": 131,
-        "voltage": 3075,
+        "voltage": 3072,
         "battery": 100,
         "power_outage_count": 159,
         "current": 0,
         "power": 2
     },
     "0x001788010649a073": {
-        "battery": 43,
+        "battery": 40.5,
         "occupancy_timeout": 60,
         "occupancy": false,
         "motion_sensitivity": "high",
-        "illuminance": 182,
-        "temperature": 24.49,
+        "illuminance": 310,
+        "temperature": 23.64,
         "update": {
             "state": "idle",
             "installed_version": 1124102917,
