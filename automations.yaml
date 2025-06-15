@@ -1170,12 +1170,23 @@
 - id: '1654539286740'
   alias: Nighttime Family Room Lights
   description: ''
-  trigger:
-  - platform: sun
-    event: sunset
+  triggers:
+  - event: sunset
     offset: -00:30:00
-  condition: []
-  action:
+    trigger: sun
+    enabled: false
+  - type: illuminance
+    device_id: 1fd39b205e3707ea8a7dddb2c7c9cca7
+    entity_id: d332fff76b75f9190915c484f0dbfdc5
+    domain: sensor
+    trigger: device
+    below: 10
+    for:
+      hours: 0
+      minutes: 5
+      seconds: 0
+  conditions: []
+  actions:
   - type: turn_on
     device_id: 09a12aab6e27c3f64fdc160918e9d8ca
     entity_id: light.entry_pendant
