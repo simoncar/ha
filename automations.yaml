@@ -606,20 +606,23 @@
 - id: '1640796248500'
   alias: Kitchen Motion Sensor OFF - Daytime
   description: ''
-  trigger:
-  - platform: state
-    entity_id:
+  triggers:
+  - entity_id:
     - binary_sensor.group_downstairs_motion_detection
     to: 'off'
     for:
       hours: 0
       minutes: 5
       seconds: 10
-  condition:
-  - condition: sun
-    before: sunset
-    after: sunrise
-  action:
+    trigger: state
+  conditions:
+  - type: is_illuminance
+    condition: device
+    device_id: 1fd39b205e3707ea8a7dddb2c7c9cca7
+    entity_id: d332fff76b75f9190915c484f0dbfdc5
+    domain: sensor
+    above: 2000
+  actions:
   - type: turn_off
     device_id: 3bde07aac5e6792e1ab5ebad70800b27
     entity_id: switch.kitchen_lights
