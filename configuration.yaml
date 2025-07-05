@@ -74,9 +74,6 @@ sensor:
   - platform: edata
     debug: true
    
-  - platform: ide
-    username: !secret edistribucion_user
-    password: !secret edistribucion_pass
     
     # ENERGY COST #
   - platform: template

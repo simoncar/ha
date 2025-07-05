@@ -1,0 +1,28 @@
+[2025-07-04 15:53:54] info: 	z2m: Logging to console, file (filename: log.log)
+[2025-07-04 15:53:54] info: 	z2m: Starting Zigbee2MQTT version 2.5.1 (commit #unknown)
+[2025-07-04 15:53:54] info: 	z2m: Starting zigbee-herdsman (4.3.1)
+[2025-07-04 15:53:55] info: 	zh:zstack:znp: Opening TCP socket with 192.168.87.68:6638
+[2025-07-04 15:53:55] info: 	zh:zstack:znp: Socket connected
+[2025-07-04 15:53:55] info: 	zh:zstack:znp: Socket ready
+[2025-07-04 15:53:55] info: 	zh:zstack:znp: Writing CC2530/CC2531 skip bootloader payload
+[2025-07-04 15:53:56] info: 	zh:zstack:znp: Skip bootloader for CC2652/CC1352
+[2025-07-04 15:53:57] info: 	z2m: zigbee-herdsman started (resumed)
+[2025-07-04 15:53:57] info: 	z2m: Coordinator firmware version: '{"meta":{"maintrel":1,"majorrel":2,"minorrel":7,"product":1,"revision":20240710,"transportrev":2},"type":"ZStack3x0"}'
+[2025-07-04 15:53:57] info: 	z2m: Button 4 - Movie (0xb4e3f9fffe249e15): E1812 - IKEA TRADFRI shortcut button (EndDevice)
+[2025-07-04 15:53:57] info: 	z2m: Smart Plug Z1 (0xa4c13812921dddfd): A1Z - Nous Smart plug (with power monitoring) (Router)
+[2025-07-04 15:53:57] info: 	z2m: Button 3 (0xb4e3f9fffe753317): E1812 - IKEA TRADFRI shortcut button (EndDevice)
+[2025-07-04 15:53:57] info: 	z2m: Button 2 - Chandelier (0x04cd15fffe7ff98b): E1812 - IKEA TRADFRI shortcut button (EndDevice)
+[2025-07-04 15:53:57] info: 	z2m: Button 1 (0x04cd15fffe268dcc): E1812 - IKEA TRADFRI shortcut button (EndDevice)
+[2025-07-04 15:53:57] info: 	z2m: Cube (0x54ef4410006a43c7): CTP-R01 - Aqara Cube T1 Pro (EndDevice)
+[2025-07-04 15:53:57] info: 	z2m: Philips Backyard Sensor (0x001788010649a073): 9290019758 - Philips Hue motion outdoor sensor (EndDevice)
+[2025-07-04 15:53:57] info: 	z2m: Water Sensor 1 (0x5c0272fffebb9cde): TS0207_water_leak_detector_3 - Tuya Zigbee water leak sensor (EndDevice)
+[2025-07-04 15:53:57] info: 	z2m: Alarm Keypad (0x0015bc0043006306): KEYZB-110 - Develco Keypad (EndDevice)
+[2025-07-04 15:53:57] info: 	z2m: Alarm Repeater (0x0015bc0022000242): Not supported (Router)
+[2025-07-04 15:53:57] info: 	z2m: Alarm Siren (0x0015bc0041007a25): SIRZB-111 - Develco Customizable siren (Router)
+[2025-07-04 15:53:57] info: 	z2m: Currently 11 devices are joined.
+[2025-07-04 15:53:57] info: 	z2m: Connecting to MQTT server at mqtt://core-mosquitto:1883
+[2025-07-04 15:54:02] error: 	z2m: MQTT failed to connect, exiting... (getaddrinfo ENOTFOUND core-mosquitto)
+[2025-07-04 15:54:02] info: 	z2m: Stopping zigbee-herdsman...
+[2025-07-04 15:54:14] info: 	zh:controller: Wrote coordinator backup to '/config/zigbee2mqtt/coordinator_backup.json'
+[2025-07-04 15:54:14] info: 	zh:zstack:znp: closing
+[2025-07-04 15:54:14] info: 	z2m: Stopped zigbee-herdsman
