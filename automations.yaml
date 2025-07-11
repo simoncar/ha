@@ -2365,7 +2365,7 @@
       device_id: 09a12aab6e27c3f64fdc160918e9d8ca
       entity_id: ea1345f7f25f78893f390a3d5aa98944
       domain: light
-      enabled: false
+      enabled: true
     - type: turn_off
       device_id: f40b8bbfb30009c2050e83b2a02c1585
       entity_id: be23b82757583d7a6b57bb8f7ee9df0a
