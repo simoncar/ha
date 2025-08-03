@@ -63,11 +63,11 @@
         "power": 2
     },
     "0x001788010649a073": {
-        "battery": 34,
+        "battery": 35,
         "occupancy_timeout": 60,
         "occupancy": false,
         "motion_sensitivity": "high",
-        "illuminance": 613,
+        "illuminance": 393,
         "temperature": 24.49,
         "update": {
             "state": "idle",
