@@ -2,9 +2,9 @@
   "metadata": {
     "format": "zigpy/open-coordinator-backup",
     "version": 1,
-    "source": "zigbee-herdsman@4.3.1",
+    "source": "zigbee-herdsman@5.0.4",
     "internal": {
-      "date": "2025-08-02T18:54:14.675Z",
+      "date": "2025-08-04T02:05:00.306Z",
       "znpVersion": 1
     }
   },
@@ -25,7 +25,7 @@
   "network_key": {
     "key": "e6e2cdf07d0d3aaa80796a371192625b",
     "sequence_number": 0,
-    "frame_counter": 4161933
+    "frame_counter": 4173945
   },
   "devices": [
     {
@@ -75,7 +75,7 @@
       "link_key": {
         "key": "c4fe54b285a9cc9596523405459e8f49",
         "rx_counter": 0,
-        "tx_counter": 910
+        "tx_counter": 920
       }
     },
     {
@@ -95,7 +95,7 @@
       "link_key": {
         "key": "82d68783fcbdf52c5e842be34b7dc26f",
         "rx_counter": 0,
-        "tx_counter": 200
+        "tx_counter": 210
       }
     },
     {
