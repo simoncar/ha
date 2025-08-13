@@ -993,112 +993,116 @@
 - id: '1648372335632'
   alias: Study Smoke Detected
   description: ''
-  trigger:
+  triggers:
   - type: smoke
-    platform: device
     device_id: 8a9bd4c8eda6ac20de8a9bccd6a1cf7e
     entity_id: binary_sensor.smoke_detector_smoke_alarm_smoke_detected
     domain: binary_sensor
-  condition: []
-  action:
-  - service: notify.mobile_app_simons_iphone_14
+    trigger: device
+  - type: smoke
+    device_id: 2f83bfdc6aca0f9ae436b480073336fc
+    entity_id: d379f17595b434bc9c51d692f15b8382
+    domain: binary_sensor
+    trigger: device
+  conditions: []
+  actions:
+  - action: notify.mobile_app_sm_s928b
     data:
-      message: smoke detected
-      title: SMOKE
-  - service: tts.google_translate_say
-    data:
+      message: Rovira Smoke
+  - data:
       entity_id: media_player.everywhere
       message: Smoke Detected In Study
+    action: tts.google_translate_say
   - delay:
       hours: 0
       minutes: 0
       seconds: 20
       milliseconds: 0
-  - service: tts.google_translate_say
-    data:
+  - data:
       entity_id: media_player.everywhere
       message: Smoke Detected In Study
+    action: tts.google_translate_say
   - delay:
       hours: 0
       minutes: 0
       seconds: 20
       milliseconds: 0
-  - service: tts.google_translate_say
-    data:
+  - data:
       entity_id: media_player.everywhere
       message: Smoke Detected In Study
+    action: tts.google_translate_say
   - delay:
       hours: 0
       minutes: 0
       seconds: 20
       milliseconds: 0
-  - service: tts.google_translate_say
-    data:
+  - data:
       entity_id: media_player.everywhere
       message: Smoke Detected In Study
+    action: tts.google_translate_say
   - delay:
       hours: 0
       minutes: 0
       seconds: 20
       milliseconds: 0
-  - service: tts.google_translate_say
-    data:
+  - data:
       entity_id: media_player.everywhere
       message: Smoke Detected In Study
+    action: tts.google_translate_say
   - delay:
       hours: 0
       minutes: 0
       seconds: 20
       milliseconds: 0
-  - service: tts.google_translate_say
-    data:
+  - data:
       entity_id: media_player.everywhere
       message: Smoke Detected In Study
+    action: tts.google_translate_say
   - delay:
       hours: 0
       minutes: 0
       seconds: 20
       milliseconds: 0
-  - service: tts.google_translate_say
-    data:
+  - data:
       entity_id: media_player.everywhere
       message: Smoke Detected In Study
+    action: tts.google_translate_say
   - delay:
       hours: 0
       minutes: 0
       seconds: 20
       milliseconds: 0
-  - service: tts.google_translate_say
-    data:
+  - data:
       entity_id: media_player.everywhere
       message: Smoke Detected In Study
+    action: tts.google_translate_say
   - delay:
       hours: 0
       minutes: 0
       seconds: 20
       milliseconds: 0
-  - service: tts.google_translate_say
-    data:
+  - data:
       entity_id: media_player.everywhere
       message: Smoke Detected In Study
+    action: tts.google_translate_say
   - delay:
       hours: 0
       minutes: 0
       seconds: 20
       milliseconds: 0
-  - service: tts.google_translate_say
-    data:
+  - data:
       entity_id: media_player.everywhere
       message: Smoke Detected In Study
+    action: tts.google_translate_say
   - delay:
       hours: 0
       minutes: 0
       seconds: 20
       milliseconds: 0
-  - service: tts.google_translate_say
-    data:
+  - data:
       entity_id: media_player.everywhere
       message: Smoke Detected In Study
+    action: tts.google_translate_say
   - delay:
       hours: 0
       minutes: 0
