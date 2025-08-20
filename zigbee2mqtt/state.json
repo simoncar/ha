@@ -17,7 +17,7 @@
         "countdown": 0
     },
     "0xb4e3f9fffe753317": {
-        "battery": 100,
+        "battery": 90,
         "linkquality": 0,
         "update": {
             "state": "idle",
@@ -63,12 +63,12 @@
         "power": 2
     },
     "0x001788010649a073": {
-        "battery": 37.5,
+        "battery": 36.5,
         "occupancy_timeout": 60,
         "occupancy": false,
         "motion_sensitivity": "high",
-        "illuminance": 115,
-        "temperature": 27.31,
+        "illuminance": 516,
+        "temperature": 24.77,
         "update": {
             "state": "idle",
             "installed_version": 1124102917,
