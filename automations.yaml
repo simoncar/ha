@@ -899,7 +899,7 @@
     subtype: Endpoint 0 Scene 001
     value: 0
     trigger: device
-  - device_id: 653fdf321218685604af0c6c29592c40
+  - device_id: 4462addf2a7572ee5e6a13e22c8d9e1a
     domain: zwave_js
     type: event.value_notification.central_scene
     property: scene
@@ -907,8 +907,8 @@
     endpoint: 0
     command_class: 91
     subtype: Endpoint 0 Scene 001
-    value: 0
     trigger: device
+    value: 0
   conditions: []
   actions:
   - parallel:
@@ -2861,7 +2861,7 @@
     subtype: Endpoint 0 Scene 001
     value: 2
     trigger: device
-  - device_id: 653fdf321218685604af0c6c29592c40
+  - device_id: 4462addf2a7572ee5e6a13e22c8d9e1a
     domain: zwave_js
     type: event.value_notification.central_scene
     property: scene
@@ -2869,8 +2869,18 @@
     endpoint: 0
     command_class: 91
     subtype: Endpoint 0 Scene 001
-    value: 2
     trigger: device
+    value: 3
+  - device_id: 4462addf2a7572ee5e6a13e22c8d9e1a
+    domain: zwave_js
+    type: event.value_notification.central_scene
+    property: scene
+    property_key: '001'
+    endpoint: 0
+    command_class: 91
+    subtype: Endpoint 0 Scene 001
+    trigger: device
+    value: 2
   conditions: []
   actions:
   - type: turn_on
