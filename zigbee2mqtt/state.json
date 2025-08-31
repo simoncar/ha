@@ -56,19 +56,19 @@
         "operation_mode": "action_mode",
         "side": 2,
         "linkquality": 105,
-        "voltage": 3056,
+        "voltage": 3054,
         "battery": 100,
         "power_outage_count": 159,
         "current": 0,
         "power": 2
     },
     "0x001788010649a073": {
-        "battery": 35,
+        "battery": 34,
         "occupancy_timeout": 60,
         "occupancy": false,
         "motion_sensitivity": "high",
-        "illuminance": 289,
-        "temperature": 22.23,
+        "illuminance": 322,
+        "temperature": 22.65,
         "update": {
             "state": "idle",
             "installed_version": 1124102917,
@@ -92,7 +92,7 @@
             "latest_version": 131077
         },
         "battery": 100,
-        "voltage": 5600,
+        "voltage": 5700,
         "tamper": false,
         "battery_low": false,
         "linkquality": 43
