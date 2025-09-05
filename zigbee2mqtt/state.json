@@ -18,7 +18,7 @@
     },
     "0xb4e3f9fffe753317": {
         "battery": 90,
-        "linkquality": 7,
+        "linkquality": 0,
         "update": {
             "state": "idle",
             "installed_version": 604241926,
@@ -32,16 +32,16 @@
             "installed_version": 604241926,
             "latest_version": 604241926
         },
-        "linkquality": 123
+        "linkquality": 94
     },
     "0x04cd15fffe7ff98b": {
-        "battery": 90,
+        "battery": 75,
         "update": {
             "state": "idle",
             "installed_version": 604241926,
             "latest_version": 604241926
         },
-        "linkquality": 65
+        "linkquality": 61
     },
     "0x04cd15fffe268dcc": {
         "battery": 1,
@@ -54,8 +54,8 @@
     },
     "0x54ef4410006a43c7": {
         "operation_mode": "action_mode",
-        "side": 2,
-        "linkquality": 105,
+        "side": 4,
+        "linkquality": 131,
         "voltage": 3050,
         "battery": 100,
         "power_outage_count": 159,
@@ -63,18 +63,18 @@
         "power": 2
     },
     "0x001788010649a073": {
-        "battery": 33,
+        "battery": 31,
         "occupancy_timeout": 60,
         "occupancy": false,
         "motion_sensitivity": "high",
-        "illuminance": 2579,
-        "temperature": 27.6,
+        "illuminance": 450,
+        "temperature": 22.51,
         "update": {
             "state": "idle",
             "installed_version": 1124102917,
             "latest_version": 1124102917
         },
-        "linkquality": 61,
+        "linkquality": 29,
         "led_indication": true
     },
     "0x5c0272fffebb9cde": {
@@ -83,7 +83,7 @@
         "battery_low": false,
         "battery": 76,
         "voltage": 2800,
-        "linkquality": 40
+        "linkquality": 36
     },
     "0x0015bc0043006306": {
         "update": {
@@ -95,7 +95,7 @@
         "voltage": 5600,
         "tamper": false,
         "battery_low": false,
-        "linkquality": 43
+        "linkquality": 47
     },
     "0x0015bc0022000242": {
         "alarm_2": false,

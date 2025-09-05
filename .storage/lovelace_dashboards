@@ -20,6 +20,15 @@
         "require_admin": false,
         "mode": "storage",
         "url_path": "dashboard-test"
+      },
+      {
+        "id": "dashboard_home",
+        "show_in_sidebar": true,
+        "icon": "mdi:home-circle",
+        "title": "Home",
+        "require_admin": false,
+        "mode": "storage",
+        "url_path": "dashboard-home"
       }
     ]
   }
