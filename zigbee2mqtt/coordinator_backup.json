@@ -4,7 +4,7 @@
     "version": 1,
     "source": "zigbee-herdsman@6.0.4",
     "internal": {
-      "date": "2025-09-03T06:01:57.858Z",
+      "date": "2025-09-05T07:29:55.737Z",
       "znpVersion": 1
     }
   },
@@ -25,7 +25,7 @@
   "network_key": {
     "key": "e6e2cdf07d0d3aaa80796a371192625b",
     "sequence_number": 0,
-    "frame_counter": 4436458
+    "frame_counter": 4447718
   },
   "devices": [
     {
@@ -35,7 +35,7 @@
       "link_key": {
         "key": "5c297ae34b7dc26f807bd683fcbdf52c",
         "rx_counter": 0,
-        "tx_counter": 3094
+        "tx_counter": 3171
       }
     },
     {
@@ -45,7 +45,7 @@
       "link_key": {
         "key": "49593c4987dd33d9fe990b0a5b8f9fb9",
         "rx_counter": 0,
-        "tx_counter": 3072
+        "tx_counter": 3149
       }
     },
     {
@@ -55,7 +55,7 @@
       "link_key": {
         "key": "1bd78462db29f0f27b60445598f5a25e",
         "rx_counter": 0,
-        "tx_counter": 2924
+        "tx_counter": 3001
       }
     },
     {
@@ -65,7 +65,7 @@
       "link_key": {
         "key": "7bd33b4a7b341691297f5bfdbb03554d",
         "rx_counter": 2,
-        "tx_counter": 3154
+        "tx_counter": 3231
       }
     },
     {
@@ -75,7 +75,7 @@
       "link_key": {
         "key": "c4fe54b285a9cc9596523405459e8f49",
         "rx_counter": 0,
-        "tx_counter": 1050
+        "tx_counter": 1160
       }
     },
     {
@@ -85,7 +85,7 @@
       "link_key": {
         "key": "22b117035452771d701d77b4946534c1",
         "rx_counter": 0,
-        "tx_counter": 3083
+        "tx_counter": 3160
       }
     },
     {
@@ -95,7 +95,7 @@
       "link_key": {
         "key": "82d68783fcbdf52c5e842be34b7dc26f",
         "rx_counter": 0,
-        "tx_counter": 280
+        "tx_counter": 357
       }
     },
     {
@@ -105,27 +105,7 @@
       "link_key": {
         "key": "4b794983fc3614c4972be5e34bf62387",
         "rx_counter": 0,
-        "tx_counter": 3040
-      }
-    },
-    {
-      "nwk_address": "12ce",
-      "ieee_address": "0015bc0022000242",
-      "is_child": false,
-      "link_key": {
-        "key": "f55c1d96849dce95a7f07d2144aa8d49",
-        "rx_counter": 0,
-        "tx_counter": 2896
-      }
-    },
-    {
-      "nwk_address": "e5d0",
-      "ieee_address": "0015bc0041007a25",
-      "is_child": false,
-      "link_key": {
-        "key": "263e16d9490b4b1d91fe219a9559e77d",
-        "rx_counter": 0,
-        "tx_counter": 2896
+        "tx_counter": 3117
       }
     },
     {
@@ -135,7 +115,27 @@
       "link_key": {
         "key": "9d613649a1087980aa22ea1b0d68ce40",
         "rx_counter": 0,
-        "tx_counter": 60
+        "tx_counter": 137
+      }
+    },
+    {
+      "nwk_address": "12ce",
+      "ieee_address": "0015bc0022000242",
+      "is_child": false,
+      "link_key": {
+        "key": "f55c1d96849dce95a7f07d2144aa8d49",
+        "rx_counter": 0,
+        "tx_counter": 2973
+      }
+    },
+    {
+      "nwk_address": "e5d0",
+      "ieee_address": "0015bc0041007a25",
+      "is_child": false,
+      "link_key": {
+        "key": "263e16d9490b4b1d91fe219a9559e77d",
+        "rx_counter": 0,
+        "tx_counter": 2973
       }
     }
   ]
