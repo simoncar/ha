@@ -375,14 +375,16 @@
 - id: '1630578384761'
   alias: Button 4 - Watch a movie
   description: ''
-  trigger:
-  - platform: device
-    domain: mqtt
+  triggers:
+  - domain: mqtt
     device_id: e651d586bf8a6f90f2a298b9a0b56fa1
     type: action
     subtype: 'on'
-  condition: []
-  action:
+    trigger: device
+  - trigger: tag
+    tag_id: 23ba0e39-b852-401f-b574-963ac0052a27
+  conditions: []
+  actions:
   - type: turn_on
     device_id: 7c945f90dc76ab5e53ea466957d840c0
     entity_id: light.bookshelf_lights
@@ -1638,38 +1640,6 @@
   action:
   - service: script.air_con_off
     data: {}
-  mode: single
-- id: '1670316588879'
-  alias: Movie Button
-  description: ''
-  trigger:
-  - platform: device
-    domain: mqtt
-    device_id: e651d586bf8a6f90f2a298b9a0b56fa1
-    type: action
-    subtype: 'on'
-  condition: []
-  action:
-  - type: turn_off
-    device_id: eb5a340722cdfdd321e5e297e1657e3a
-    entity_id: light.study_lights
-    domain: light
-  - type: turn_off
-    device_id: 3bde07aac5e6792e1ab5ebad70800b27
-    entity_id: 5f4fd4a3f2f37af6e2bc2f5c1ab9f1c2
-    domain: switch
-  - type: turn_off
-    device_id: b3cd0f6a14cd02f85de8e20c76356ee9
-    entity_id: 6d5a165b529eab66615539733447147d
-    domain: switch
-  - type: turn_off
-    device_id: b733ae3ffdf5a2025971b625500b1a33
-    entity_id: 1483429bcf749116b85078bfff7655f2
-    domain: light
-  - type: turn_off
-    device_id: 09a12aab6e27c3f64fdc160918e9d8ca
-    entity_id: ea1345f7f25f78893f390a3d5aa98944
-    domain: light
   mode: single
 - id: '1670688450998'
   alias: Bedroom Heater ON - Evening
