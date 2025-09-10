@@ -2475,7 +2475,7 @@
     domain: binary_sensor
     for:
       hours: 0
-      minutes: 6
+      minutes: 10
       seconds: 0
     trigger: device
   conditions: []

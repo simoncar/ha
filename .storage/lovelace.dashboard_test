@@ -88,15 +88,6 @@
               "icon_color": "{{ 'blue' if is_state(entity, 'Dark') else 'grey' }}"
             },
             {
-              "type": "alarm-panel",
-              "entity": "alarm_control_panel.ha_alarm",
-              "states": [
-                "arm_home",
-                "arm_away",
-                "arm_night"
-              ]
-            },
-            {
               "type": "custom:apexcharts-card",
               "header": {
                 "show": true,
@@ -124,6 +115,163 @@
                   "entity": "sensor.gw2000a_outdoor_temperature",
                   "name": "Plaça Rovira",
                   "stroke_width": 2
+                }
+              ]
+            },
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "custom:button-card",
+                      "entity": "input_select.home_mode",
+                      "name": "Normal",
+                      "icon": "mdi:account",
+                      "state": [
+                        {
+                          "value": "Normal",
+                          "styles": {
+                            "card": [
+                              {
+                                "background-color": "green"
+                              },
+                              {
+                                "color": "white"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "input_select.select_option",
+                        "service_data": {
+                          "entity_id": "input_select.home_mode",
+                          "option": "Normal"
+                        }
+                      }
+                    },
+                    {
+                      "type": "custom:button-card",
+                      "entity": "input_select.home_mode",
+                      "name": "Away",
+                      "icon": "mdi:account-off",
+                      "state": [
+                        {
+                          "value": "Away",
+                          "styles": {
+                            "card": [
+                              {
+                                "background-color": "red"
+                              },
+                              {
+                                "color": "white"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "input_select.select_option",
+                        "service_data": {
+                          "entity_id": "input_select.home_mode",
+                          "option": "Away"
+                        }
+                      }
+                    },
+                    {
+                      "type": "custom:button-card",
+                      "entity": "input_select.home_mode",
+                      "name": "Dark",
+                      "icon": "mdi:football-australian",
+                      "state": [
+                        {
+                          "value": "Dark",
+                          "styles": {
+                            "card": [
+                              {
+                                "background-color": "black"
+                              },
+                              {
+                                "color": "white"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "input_select.select_option",
+                        "service_data": {
+                          "entity_id": "input_select.home_mode",
+                          "option": "Dark"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "custom:mushroom-chips-card",
+                  "alignment": "center",
+                  "chips": [
+                    {
+                      "type": "template",
+                      "icon": "mdi:account",
+                      "content": "Normal",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "input_select.select_option",
+                        "target": {
+                          "entity_id": "input_select.home_mode"
+                        },
+                        "data": {
+                          "option": "Normal"
+                        }
+                      },
+                      "card_mod": {
+                        "style": "ha-card {\n  background: {{ 'var(--rgb-green)' if is_state('input_select.home_mode','Normal') else 'var(--ha-card-background)' }};\n  color: {{ 'white' if is_state('input_select.home_mode','Normal') else 'inherit' }};\n}\n"
+                      }
+                    },
+                    {
+                      "type": "template",
+                      "icon": "mdi:account-off",
+                      "content": "Away",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "input_select.select_option",
+                        "target": {
+                          "entity_id": "input_select.home_mode"
+                        },
+                        "data": {
+                          "option": "Away"
+                        }
+                      },
+                      "card_mod": {
+                        "style": "ha-card {\n  background: {{ 'var(--rgb-red)' if is_state('input_select.home_mode','Away') else 'var(--ha-card-background)' }};\n  color: {{ 'white' if is_state('input_select.home_mode','Away') else 'inherit' }};\n}\n"
+                      }
+                    },
+                    {
+                      "type": "template",
+                      "icon": "mdi:football-australian",
+                      "content": "Dark",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "input_select.select_option",
+                        "target": {
+                          "entity_id": "input_select.home_mode"
+                        },
+                        "data": {
+                          "option": "Dark"
+                        }
+                      },
+                      "card_mod": {
+                        "style": "ha-card {\n  background: {{ 'black' if is_state('input_select.home_mode','Dark') else 'var(--ha-card-background)' }};\n  color: {{ 'white' if is_state('input_select.home_mode','Dark') else 'inherit' }};\n}\n"
+                      }
+                    }
+                  ]
                 }
               ]
             }
