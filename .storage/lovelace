@@ -62,7 +62,6 @@
                 },
                 {
                   "type": "horizontal-stack",
-                  "title": "Home Mode",
                   "cards": [
                     {
                       "type": "custom:button-card",
@@ -86,14 +85,24 @@
                         },
                         {
                           "value": "Normal",
-                          "color": "#FFFFFF"
+                          "color": "#131313"
                         },
                         {
                           "value": "Dark",
-                          "color": "#FFFFFF",
+                          "color": "#131313",
                           "font-weight": "bold"
                         }
-                      ]
+                      ],
+                      "styles": {
+                        "name": [
+                          {
+                            "font-family": "Roboto"
+                          },
+                          {
+                            "font-size": "14px"
+                          }
+                        ]
+                      }
                     },
                     {
                       "type": "custom:button-card",
@@ -113,7 +122,7 @@
                       "state": [
                         {
                           "value": "Away",
-                          "color": "#FFFFFF"
+                          "color": "#131313"
                         },
                         {
                           "value": "Normal",
@@ -121,10 +130,20 @@
                         },
                         {
                           "value": "Dark",
-                          "color": "#FFFFFF",
+                          "color": "#131313",
                           "font-weight": "bold"
                         }
-                      ]
+                      ],
+                      "styles": {
+                        "name": [
+                          {
+                            "font-family": "Roboto"
+                          },
+                          {
+                            "font-size": "14px"
+                          }
+                        ]
+                      }
                     },
                     {
                       "type": "custom:button-card",
@@ -144,28 +163,37 @@
                       "state": [
                         {
                           "value": "Away",
-                          "color": "#FFFFFF"
+                          "color": "#131313"
                         },
                         {
                           "value": "Normal",
-                          "color": "#FFFFFF"
+                          "color": "#131313"
                         },
                         {
                           "value": "Dark",
                           "color": "rgb(28, 128, 199)",
                           "font-weight": "bold"
                         }
-                      ]
+                      ],
+                      "styles": {
+                        "name": [
+                          {
+                            "font-family": "Roboto"
+                          },
+                          {
+                            "font-size": "14px"
+                          }
+                        ]
+                      }
                     }
                   ]
                 },
                 {
                   "type": "horizontal-stack",
-                  "title": "Outdoor Lights",
                   "cards": [
                     {
                       "type": "custom:button-card",
-                      "name": "On",
+                      "name": "Outdoor On",
                       "entity": "input_select.outdoor_lights",
                       "color_type": "card",
                       "tap_action": {
@@ -185,14 +213,23 @@
                         },
                         {
                           "value": "Off",
-                          "color": "#FFFFFF"
+                          "color": "#131313"
                         },
                         {
                           "value": "Auto",
-                          "color": "#FFFFFF",
-                          "font-weight": "bold"
+                          "color": "#131313"
                         }
-                      ]
+                      ],
+                      "styles": {
+                        "name": [
+                          {
+                            "font-family": "Roboto"
+                          },
+                          {
+                            "font-size": "14px"
+                          }
+                        ]
+                      }
                     },
                     {
                       "type": "custom:button-card",
@@ -212,18 +249,28 @@
                       "state": [
                         {
                           "value": "On",
-                          "color": "#FFFFFF"
+                          "color": "#131313"
                         },
                         {
                           "value": "Off",
-                          "color": "#FFFFFF"
+                          "color": "#131313"
                         },
                         {
                           "value": "Auto",
                           "color": "rgb(28, 128, 199)",
                           "font-weight": "bold"
                         }
-                      ]
+                      ],
+                      "styles": {
+                        "name": [
+                          {
+                            "font-family": "Roboto"
+                          },
+                          {
+                            "font-size": "14px"
+                          }
+                        ]
+                      }
                     },
                     {
                       "type": "custom:button-card",
@@ -243,7 +290,7 @@
                       "state": [
                         {
                           "value": "On",
-                          "color": "#FFFFFF"
+                          "color": "#131313"
                         },
                         {
                           "value": "Off",
@@ -251,10 +298,20 @@
                         },
                         {
                           "value": "Auto",
-                          "color": "#FFFFFF",
+                          "color": "#131313",
                           "font-weight": "bold"
                         }
-                      ]
+                      ],
+                      "styles": {
+                        "name": [
+                          {
+                            "font-family": "Roboto"
+                          },
+                          {
+                            "font-size": "14px"
+                          }
+                        ]
+                      }
                     }
                   ]
                 },

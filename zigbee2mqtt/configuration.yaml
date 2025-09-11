@@ -71,6 +71,8 @@ devices:
     state_action: false
   '0x0015bc0041007a25':
     friendly_name: Alarm Siren
+  '0x54ef441000b757df':
+    friendly_name: Workshop Light
 availability:
   enabled: true
   active:

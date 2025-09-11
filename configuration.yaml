@@ -31,6 +31,24 @@ alarm_control_panel:
     
 homeassistant:
   packages: !include_dir_named packages
+  customize: !include customize.yaml
+  customize_glob:
+    "sensor.*":
+      last_seen: null
+    "binary_sensor.*":
+      last_seen: null
+    "switch.*":
+      last_seen: null
+    "light.*":
+      last_seen: null
+    "lock.*":
+      last_seen: null
+    "cover.*":
+      last_seen: null
+    "fan.*":
+      last_seen: null
+    "climate.*":
+      last_seen: null
     
 
 # UTILITY METER #

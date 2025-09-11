@@ -18,7 +18,7 @@
     },
     "0xb4e3f9fffe753317": {
         "battery": 90,
-        "linkquality": 3,
+        "linkquality": 40,
         "update": {
             "state": "idle",
             "installed_version": 604241926,
@@ -32,16 +32,16 @@
             "installed_version": 604241926,
             "latest_version": 604241926
         },
-        "linkquality": 91
+        "linkquality": 94
     },
     "0x04cd15fffe7ff98b": {
-        "battery": 75,
+        "battery": 50,
         "update": {
             "state": "idle",
             "installed_version": 604241926,
             "latest_version": 604241926
         },
-        "linkquality": 98
+        "linkquality": 61
     },
     "0x04cd15fffe268dcc": {
         "battery": 1,
@@ -55,26 +55,26 @@
     "0x54ef4410006a43c7": {
         "operation_mode": "action_mode",
         "side": 4,
-        "linkquality": 105,
-        "voltage": 3039,
+        "linkquality": 61,
+        "voltage": 3038,
         "battery": 100,
         "power_outage_count": 159,
         "current": 0,
         "power": 2
     },
     "0x001788010649a073": {
-        "battery": 32,
+        "battery": 16.5,
         "occupancy_timeout": 60,
         "occupancy": false,
         "motion_sensitivity": "high",
-        "illuminance": 290,
-        "temperature": 21.1,
+        "illuminance": 75,
+        "temperature": 22.94,
         "update": {
             "state": "idle",
             "installed_version": 1124102917,
             "latest_version": 1124102917
         },
-        "linkquality": 32,
+        "linkquality": 43,
         "led_indication": true
     },
     "0x5c0272fffebb9cde": {
@@ -83,7 +83,7 @@
         "battery_low": false,
         "battery": 76,
         "voltage": 2800,
-        "linkquality": 3
+        "linkquality": 0
     },
     "0x0015bc0043006306": {
         "update": {
@@ -95,7 +95,7 @@
         "voltage": 5600,
         "tamper": false,
         "battery_low": false,
-        "linkquality": 29
+        "linkquality": 61
     },
     "0x0015bc0022000242": {
         "alarm_2": false,
@@ -117,5 +117,21 @@
         "restore_reports": true,
         "ac_status": true,
         "test": false
+    },
+    "0x54ef441000b757df": {
+        "device_temperature": 37,
+        "power_outage_count": 24,
+        "state": "OFF",
+        "power_on_behaviour": "off",
+        "state_white": "OFF",
+        "color_mode_rgb": "xy",
+        "color_rgb": {
+            "x": 0.313,
+            "y": 0.21
+        },
+        "brightness_rgb": 254,
+        "state_rgb": "OFF",
+        "brightness_white": 254,
+        "linkquality": 58
     }
 }
