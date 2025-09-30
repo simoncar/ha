@@ -1376,7 +1376,7 @@
     offset: -0:25:00
     enabled: false
     trigger: sun
-  - at: 06:45:00
+  - at: 07:45:00
     trigger: time
   conditions:
   - condition: time
