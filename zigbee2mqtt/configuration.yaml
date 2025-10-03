@@ -54,7 +54,7 @@ devices:
   '0xb4e3f9fffe753317':
     friendly_name: Button 3 - Workshop
   '0x04cd15fffe268dcc':
-    friendly_name: Button 1
+    friendly_name: Button 1 - Kitchen
   '0x54ef4410006a43c7':
     friendly_name: Cube
     legacy: false

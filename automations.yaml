@@ -383,13 +383,17 @@
     trigger: device
   - trigger: tag
     tag_id: 23ba0e39-b852-401f-b574-963ac0052a27
+  - domain: mqtt
+    device_id: 138f8a3d02192b9d6c5f8e63d2bff146
+    type: action
+    subtype: 'on'
+    trigger: device
   conditions: []
   actions:
-  - type: turn_on
+  - type: turn_off
     device_id: 7c945f90dc76ab5e53ea466957d840c0
-    entity_id: light.bookshelf_lights
+    entity_id: 7dd935187d64f7fb0e40adb07a5020e9
     domain: light
-    brightness_pct: 5
   - type: turn_on
     device_id: 817d13a2421b3abc46991c8c7d8c4a65
     entity_id: light.controller_tv_lights
@@ -404,10 +408,10 @@
     device_id: b733ae3ffdf5a2025971b625500b1a33
     entity_id: light.chandelier
     domain: light
-  - device_id: 09a12aab6e27c3f64fdc160918e9d8ca
+  - type: turn_off
+    device_id: 09a12aab6e27c3f64fdc160918e9d8ca
+    entity_id: ea1345f7f25f78893f390a3d5aa98944
     domain: light
-    entity_id: light.entry_pendant
-    type: brightness_decrease
   - type: turn_off
     device_id: b3cd0f6a14cd02f85de8e20c76356ee9
     entity_id: switch.kitchen_led

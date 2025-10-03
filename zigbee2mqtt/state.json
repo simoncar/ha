@@ -32,7 +32,7 @@
             "installed_version": 604241926,
             "latest_version": 604241926
         },
-        "linkquality": 131
+        "linkquality": 138
     },
     "0x04cd15fffe7ff98b": {
         "battery": 50,
@@ -44,8 +44,8 @@
         "linkquality": 54
     },
     "0x04cd15fffe268dcc": {
-        "battery": 1,
-        "linkquality": 3,
+        "battery": 100,
+        "linkquality": 54,
         "update": {
             "state": "idle",
             "installed_version": 604241926,
@@ -55,8 +55,8 @@
     "0x54ef4410006a43c7": {
         "operation_mode": "action_mode",
         "side": 4,
-        "linkquality": 94,
-        "voltage": 3017,
+        "linkquality": 105,
+        "voltage": 3014,
         "battery": 100,
         "power_outage_count": 159,
         "current": 0,
@@ -65,16 +65,16 @@
     "0x001788010649a073": {
         "battery": 27.5,
         "occupancy_timeout": 60,
-        "occupancy": true,
+        "occupancy": false,
         "motion_sensitivity": "high",
-        "illuminance": 414,
-        "temperature": 20.54,
+        "illuminance": 224,
+        "temperature": 19.97,
         "update": {
             "state": "idle",
             "installed_version": 1124102917,
             "latest_version": 1124102917
         },
-        "linkquality": 54,
+        "linkquality": 83,
         "led_indication": true
     },
     "0x5c0272fffebb9cde": {
@@ -83,7 +83,7 @@
         "battery_low": false,
         "battery": 76,
         "voltage": 2800,
-        "linkquality": 54
+        "linkquality": 58
     },
     "0x0015bc0043006306": {
         "update": {
@@ -95,7 +95,7 @@
         "voltage": 5500,
         "tamper": false,
         "battery_low": false,
-        "linkquality": 58
+        "linkquality": 54
     },
     "0x0015bc0022000242": {
         "alarm_2": false,
@@ -119,7 +119,7 @@
         "test": false
     },
     "0x54ef441000b757df": {
-        "device_temperature": 35,
+        "device_temperature": 37,
         "power_outage_count": 27,
         "state": "OFF",
         "power_on_behaviour": "off",
