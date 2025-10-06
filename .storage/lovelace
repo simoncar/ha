@@ -27,6 +27,10 @@
                     {
                       "type": "tile",
                       "entity": "script.blinds_down",
+                      "name": "Down",
+                      "icon": "mdi:blinds",
+                      "color": "blue-grey",
+                      "hide_state": true,
                       "vertical": true,
                       "tap_action": {
                         "action": "call-service",
@@ -38,13 +42,14 @@
                         "service": "script.blinds_down",
                         "target": {}
                       },
-                      "hide_state": true,
-                      "color": "blue-grey",
                       "features_position": "bottom"
                     },
                     {
                       "type": "tile",
                       "entity": "script.blinds_up",
+                      "name": "Up",
+                      "icon": "mdi:blinds-open",
+                      "hide_state": true,
                       "vertical": true,
                       "tap_action": {
                         "action": "call-service",
@@ -56,7 +61,7 @@
                         "service": "script.blinds_up",
                         "target": {}
                       },
-                      "hide_state": true
+                      "features_position": "bottom"
                     }
                   ]
                 },
@@ -332,26 +337,15 @@
                       "icon": "mdi:bookshelf",
                       "vertical": true,
                       "hide_state": true
-                    }
-                  ]
-                },
-                {
-                  "type": "horizontal-stack",
-                  "cards": [
-                    {
-                      "type": "tile",
-                      "entity": "switch.meross_m7_lamp_short_outlet",
-                      "icon": "mdi:lamp",
-                      "vertical": true,
-                      "hide_state": true
                     },
                     {
                       "type": "tile",
-                      "entity": "switch.smart_plug_20072944061154251h5448e1e927dba2_outlet",
-                      "icon": "mdi:floor-lamp",
-                      "name": "Lamp Tall",
+                      "entity": "switch.kitchen_led",
+                      "name": "Cooking",
+                      "icon": "mdi:led-strip",
+                      "hide_state": true,
                       "vertical": true,
-                      "hide_state": true
+                      "features_position": "bottom"
                     }
                   ]
                 },
@@ -369,10 +363,25 @@
                     {
                       "type": "tile",
                       "entity": "light.living_room_spotlights",
-                      "icon": "mdi:spotlight-beam",
                       "name": "Spotlights",
+                      "icon": "mdi:spotlight-beam",
                       "hide_state": true,
-                      "vertical": true
+                      "vertical": true,
+                      "features_position": "bottom"
+                    },
+                    {
+                      "type": "horizontal-stack",
+                      "cards": [
+                        {
+                          "type": "tile",
+                          "entity": "switch.living_room_lamps",
+                          "name": "Lamps",
+                          "icon": "mdi:lamp",
+                          "hide_state": true,
+                          "vertical": true,
+                          "features_position": "bottom"
+                        }
+                      ]
                     }
                   ]
                 },
@@ -389,12 +398,27 @@
                       "vertical": true
                     },
                     {
+                      "type": "horizontal-stack",
+                      "cards": [
+                        {
+                          "type": "tile",
+                          "entity": "light.art_light_staircase",
+                          "name": "Art Light",
+                          "icon": "mdi:palette",
+                          "hide_state": true,
+                          "vertical": true,
+                          "features_position": "bottom"
+                        }
+                      ]
+                    },
+                    {
                       "type": "tile",
-                      "entity": "switch.kitchen_led",
-                      "icon": "mdi:led-strip",
+                      "entity": "light.entry_pendant",
+                      "name": "Entry",
+                      "icon": "mdi:lighthouse",
                       "hide_state": true,
-                      "name": "LED",
-                      "vertical": true
+                      "vertical": true,
+                      "features_position": "bottom"
                     }
                   ]
                 }
@@ -414,16 +438,10 @@
                   "series": [
                     {
                       "entity": "sensor.rm4_study_temperature",
-                      "name": "Living Room",
+                      "name": "Ground 1",
                       "stroke_width": 2,
                       "curve": "stepline",
                       "color": "#3399DC"
-                    },
-                    {
-                      "entity": "sensor.gw2000a_indoor_temperature",
-                      "name": "Bedroom",
-                      "stroke_width": 2,
-                      "color": "#FF9800"
                     },
                     {
                       "entity": "sensor.rm4_level_2_temperature",
@@ -432,8 +450,14 @@
                       "color": "#E74C3C"
                     },
                     {
+                      "entity": "sensor.gw2000a_indoor_temperature",
+                      "name": "Dormitori Principal",
+                      "stroke_width": 2,
+                      "color": "#FF9800"
+                    },
+                    {
                       "entity": "sensor.gw2000a_outdoor_temperature",
-                      "name": "Plaça Rovira",
+                      "name": "Outside",
                       "stroke_width": 2
                     }
                   ],
