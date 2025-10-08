@@ -3241,3 +3241,24 @@
     target:
       entity_id: input_select.workshop_mode
   mode: single
+- id: '1759868230300'
+  alias: Front door – keep last 4 events
+  description: ''
+  triggers:
+  - entity_id: binary_sensor.node_7_access_control_window_door_is_open
+    trigger: state
+  actions:
+  - target:
+      entity_id: input_text.front_door_events
+    data:
+      value: '{{ joined }}'
+    action: input_text.set_value
+  mode: single
+  variables:
+    new_line: "{{ now().strftime('%Y-%m-%d %H:%M') ~ ' - ' ~\n   ('OPENED' if trigger.to_state.state
+      == 'on' else 'CLOSED') }}\n"
+    old_lines: "{{ (states('input_text.front_door_events') or '')\n   .split('\\n')
+      | reject('equalto','') | list }}\n"
+    joined: '{{ ([new_line] + old_lines)[:4] | join(''\n'') }}
+
+      '

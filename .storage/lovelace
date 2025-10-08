@@ -414,13 +414,20 @@
                     {
                       "type": "tile",
                       "entity": "light.entry_pendant",
-                      "name": "Entry",
-                      "icon": "mdi:lighthouse",
+                      "name": "Entry Pendant",
+                      "icon": "mdi:chandelier",
                       "hide_state": true,
                       "vertical": true,
                       "features_position": "bottom"
                     }
                   ]
+                },
+                {
+                  "type": "custom:mushroom-template-card",
+                  "primary": "Front door security",
+                  "secondary": "{{ states('input_text.front_door_events') }}\n",
+                  "multiline_secondary": true,
+                  "icon": "mdi:door"
                 }
               ]
             },
