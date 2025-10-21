@@ -544,7 +544,7 @@
                     },
                     {
                       "entity": "switch.pool_fan_switch_out",
-                      "transform": "return x == 'on' ? 90 : 0;",
+                      "transform": "return x == 'on' ? 45 : 0;",
                       "type": "area",
                       "curve": "stepline",
                       "stroke_width": 0,
@@ -552,9 +552,8 @@
                     },
                     {
                       "entity": "sensor.gw2000a_humidity",
-                      "name": "Rovira Scaled",
-                      "stroke_width": 3,
-                      "transform": "return 80 + ((100 - 80) * (x - 20) / (100 - 20));"
+                      "name": "Rovira Humidity",
+                      "stroke_width": 3
                     }
                   ],
                   "apex_config": {
@@ -565,7 +564,7 @@
                       {
                         "show": true,
                         "decimalsInFloat": 0,
-                        "min": 80,
+                        "min": 40,
                         "max": 100
                       }
                     ]
