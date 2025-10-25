@@ -476,7 +476,7 @@
               "cards": [
                 {
                   "type": "custom:apexcharts-card",
-                  "graph_span": "2d",
+                  "graph_span": "5d",
                   "header": {
                     "show": true,
                     "show_states": true,
@@ -522,7 +522,7 @@
                 },
                 {
                   "type": "custom:apexcharts-card",
-                  "graph_span": "2d",
+                  "graph_span": "5d",
                   "header": {
                     "show": true,
                     "title": "Swimming Pool",
@@ -544,7 +544,7 @@
                     },
                     {
                       "entity": "switch.pool_fan_switch_out",
-                      "transform": "return x == 'on' ? 45 : 0;",
+                      "transform": "return x == 'on' ? 10 : 0;",
                       "type": "area",
                       "curve": "stepline",
                       "stroke_width": 0,
@@ -564,7 +564,7 @@
                       {
                         "show": true,
                         "decimalsInFloat": 0,
-                        "min": 40,
+                        "min": 0,
                         "max": 100
                       }
                     ]
