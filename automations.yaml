@@ -737,7 +737,7 @@
     below: 1000
     for:
       hours: 0
-      minutes: 2
+      minutes: 20
       seconds: 0
   conditions: []
   actions:
