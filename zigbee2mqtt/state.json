@@ -26,7 +26,7 @@
         }
     },
     "0xb4e3f9fffe249e15": {
-        "battery": 100,
+        "battery": 90,
         "update": {
             "state": "idle",
             "installed_version": 604241926,
@@ -56,19 +56,19 @@
         "operation_mode": "action_mode",
         "side": 4,
         "linkquality": 112,
-        "voltage": 2995,
-        "battery": 97,
+        "voltage": 2986,
+        "battery": 91,
         "power_outage_count": 159,
         "current": 0,
         "power": 2
     },
     "0x001788010649a073": {
-        "battery": 22,
+        "battery": 23,
         "occupancy_timeout": 60,
         "occupancy": false,
         "motion_sensitivity": "high",
-        "illuminance": 282,
-        "temperature": 12.91,
+        "illuminance": 298,
+        "temperature": 14.6,
         "update": {
             "state": "idle",
             "installed_version": 1124102917,
@@ -119,11 +119,11 @@
         "test": false
     },
     "0x54ef441000b757df": {
-        "device_temperature": 37,
+        "device_temperature": 32,
         "power_outage_count": 28,
         "state": "OFF",
         "power_on_behaviour": "off",
-        "state_white": "ON",
+        "state_white": "OFF",
         "color_mode_rgb": "xy",
         "color_rgb": {
             "x": 0.313,
