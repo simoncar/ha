@@ -56,8 +56,8 @@
         "operation_mode": "action_mode",
         "side": 4,
         "linkquality": 54,
-        "voltage": 2929,
-        "battery": 53,
+        "voltage": 2927,
+        "battery": 51,
         "power_outage_count": 159,
         "current": 0,
         "power": 2
@@ -67,8 +67,8 @@
         "occupancy_timeout": 60,
         "occupancy": false,
         "motion_sensitivity": "high",
-        "illuminance": 165,
-        "temperature": 10.93,
+        "illuminance": 37,
+        "temperature": 14.04,
         "update": {
             "state": "idle",
             "installed_version": 1124102917,
