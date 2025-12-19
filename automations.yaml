@@ -1446,13 +1446,13 @@
 - id: '1664129718864'
   alias: Bedroom Entry Lights
   description: ''
-  trigger:
+  triggers:
   - type: motion
-    platform: device
     device_id: dc623ed6f5b820c9b9b22b5aa5512450
     entity_id: binary_sensor.bedroom_entry_sensor
     domain: binary_sensor
-  condition:
+    trigger: device
+  conditions:
   - condition: or
     conditions:
     - condition: sun
@@ -1460,12 +1460,13 @@
     - condition: sun
       after: sunset
       after_offset: '-1:00'
-  action:
+  actions:
   - type: turn_on
     device_id: 605e572814970daeb76e0dca4f8a17d7
     entity_id: light.master_bed_led_2_2
     domain: light
     brightness_pct: 6
+    enabled: false
   - type: turn_on
     device_id: 247f56cc429ca49a254e3df37e263e37
     entity_id: switch.bedroom_lamp
