@@ -17,7 +17,7 @@
         "countdown": 0
     },
     "0xb4e3f9fffe753317": {
-        "battery": 75,
+        "battery": 90,
         "linkquality": 54,
         "update": {
             "state": "idle",
@@ -56,8 +56,8 @@
         "operation_mode": "action_mode",
         "side": 4,
         "linkquality": 54,
-        "voltage": 2935,
-        "battery": 57,
+        "voltage": 2932,
+        "battery": 55,
         "power_outage_count": 159,
         "current": 0,
         "power": 2
@@ -67,8 +67,8 @@
         "occupancy_timeout": 60,
         "occupancy": false,
         "motion_sensitivity": "high",
-        "illuminance": 118,
-        "temperature": 11.07,
+        "illuminance": 22,
+        "temperature": 12.48,
         "update": {
             "state": "idle",
             "installed_version": 1124102917,
@@ -119,7 +119,7 @@
         "test": false
     },
     "0x54ef441000b757df": {
-        "device_temperature": 33,
+        "device_temperature": 32,
         "power_outage_count": 37,
         "state": "OFF",
         "power_on_behaviour": "off",
