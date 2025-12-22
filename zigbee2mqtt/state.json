@@ -67,8 +67,8 @@
         "occupancy_timeout": 60,
         "occupancy": false,
         "motion_sensitivity": "high",
-        "illuminance": 100,
-        "temperature": 12.2,
+        "illuminance": 45,
+        "temperature": 8.25,
         "update": {
             "state": "idle",
             "installed_version": 1124102917,
@@ -119,7 +119,7 @@
         "test": false
     },
     "0x54ef441000b757df": {
-        "device_temperature": 33,
+        "device_temperature": 30,
         "power_outage_count": 37,
         "state": "OFF",
         "power_on_behaviour": "off",
