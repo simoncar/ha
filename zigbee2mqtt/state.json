@@ -56,19 +56,19 @@
         "operation_mode": "action_mode",
         "side": 4,
         "linkquality": 54,
-        "voltage": 2942,
-        "battery": 61,
+        "voltage": 2927,
+        "battery": 51,
         "power_outage_count": 159,
         "current": 0,
         "power": 2
     },
     "0x001788010649a073": {
-        "battery": 13.5,
+        "battery": 15.5,
         "occupancy_timeout": 60,
         "occupancy": false,
         "motion_sensitivity": "high",
-        "illuminance": 36,
-        "temperature": 7.68,
+        "illuminance": 113,
+        "temperature": 10.51,
         "update": {
             "state": "idle",
             "installed_version": 1124102917,
@@ -119,9 +119,9 @@
         "test": false
     },
     "0x54ef441000b757df": {
-        "device_temperature": 33,
+        "device_temperature": 31,
         "power_outage_count": 37,
-        "state": "ON",
+        "state": "OFF",
         "power_on_behaviour": "off",
         "state_white": "OFF",
         "color_mode_rgb": "xy",
