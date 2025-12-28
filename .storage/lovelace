@@ -894,6 +894,14 @@
                           "icon": "mdi:mirror",
                           "vertical": false,
                           "features_position": "bottom"
+                        },
+                        {
+                          "type": "tile",
+                          "entity": "light.bedroom_spotlights_mirror",
+                          "name": "Bathroom",
+                          "icon": "mdi:light-recessed",
+                          "vertical": false,
+                          "features_position": "bottom"
                         }
                       ]
                     },

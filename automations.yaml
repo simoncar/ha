@@ -1229,23 +1229,23 @@
       device_id: 96eebeea5c10f7a7e98cf4f484918c1c
       entity_id: light.bathroom_mirror_right
       domain: light
-      brightness_pct: 50
+      brightness_pct: 55
     - type: turn_on
       device_id: 96eebeea5c10f7a7e98cf4f484918c1c
       entity_id: light.bathroom_mirror_left
       domain: light
-      brightness_pct: 50
+      brightness_pct: 55
     else:
     - type: turn_on
       device_id: 96eebeea5c10f7a7e98cf4f484918c1c
       entity_id: light.bathroom_mirror_right
       domain: light
-      brightness_pct: 20
+      brightness_pct: 55
     - type: turn_on
       device_id: 96eebeea5c10f7a7e98cf4f484918c1c
       entity_id: light.bathroom_mirror_left
       domain: light
-      brightness_pct: 20
+      brightness_pct: 55
   - delay:
       hours: 0
       minutes: 1
@@ -1264,8 +1264,8 @@
     else:
     - delay:
         hours: 0
-        minutes: 0
-        seconds: 20
+        minutes: 1
+        seconds: 30
         milliseconds: 0
   - target:
       entity_id: light.bathroom_mirror_left
