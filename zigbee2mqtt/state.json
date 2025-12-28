@@ -18,7 +18,7 @@
     },
     "0xb4e3f9fffe753317": {
         "battery": 90,
-        "linkquality": 54,
+        "linkquality": 7,
         "update": {
             "state": "idle",
             "installed_version": 604241926,
@@ -32,20 +32,20 @@
             "installed_version": 604241926,
             "latest_version": 604241926
         },
-        "linkquality": 54
+        "linkquality": 109
     },
     "0x04cd15fffe7ff98b": {
-        "battery": 30,
+        "battery": 20,
         "update": {
             "state": "idle",
             "installed_version": 604241926,
             "latest_version": 604241926
         },
-        "linkquality": 54
+        "linkquality": 105
     },
     "0x04cd15fffe268dcc": {
         "battery": 90,
-        "linkquality": 87,
+        "linkquality": 7,
         "update": {
             "state": "idle",
             "installed_version": 604241926,
@@ -55,9 +55,9 @@
     "0x54ef4410006a43c7": {
         "operation_mode": "action_mode",
         "side": 4,
-        "linkquality": 54,
-        "voltage": 2928,
-        "battery": 52,
+        "linkquality": 7,
+        "voltage": 2925,
+        "battery": 50,
         "power_outage_count": 159,
         "current": 0,
         "power": 2
@@ -67,14 +67,14 @@
         "occupancy_timeout": 60,
         "occupancy": false,
         "motion_sensitivity": "high",
-        "illuminance": 40,
-        "temperature": 12.06,
+        "illuminance": 148,
+        "temperature": 10.08,
         "update": {
             "state": "idle",
             "installed_version": 1124102917,
             "latest_version": 1124102917
         },
-        "linkquality": 54,
+        "linkquality": 65,
         "led_indication": true
     },
     "0x5c0272fffebb9cde": {
@@ -83,7 +83,7 @@
         "battery_low": false,
         "battery": 70,
         "voltage": 2800,
-        "linkquality": 3
+        "linkquality": 7
     },
     "0x0015bc0043006306": {
         "update": {
@@ -95,7 +95,7 @@
         "voltage": 5300,
         "tamper": false,
         "battery_low": false,
-        "linkquality": 54
+        "linkquality": 18
     },
     "0x0015bc0022000242": {
         "alarm_2": false,
@@ -132,7 +132,7 @@
         "brightness_rgb": 254,
         "state_rgb": "OFF",
         "brightness_white": 254,
-        "linkquality": 54,
+        "linkquality": 18,
         "dimming_range_minimum": 1,
         "dimming_range_maximum": 100,
         "level_config_white": {

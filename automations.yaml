@@ -944,8 +944,6 @@
       device_id: 96eebeea5c10f7a7e98cf4f484918c1c
       entity_id: light.bathroom_mirror_right
       domain: light
-    - action: script.bedroom_skylight_close
-      data: {}
     - type: turn_off
       device_id: 6f872fd46e4d0439ef2456f700d4398b
       entity_id: light.bed_lamp_mel
@@ -971,17 +969,9 @@
       entity_id: 8c52c5923dca051ee143780ffee4fbcb
       domain: light
     - type: turn_off
-      device_id: e2d9c795303d91a6d576077b39fe32d3
-      entity_id: light.bath_circle
-      domain: light
-    - type: turn_off
       device_id: f664adcdadd558ce399a7ba96dd2c7e1
       entity_id: switch.bedroom_entry
       domain: switch
-    - type: turn_off
-      device_id: 11a686020163e55732126863d48b41de
-      entity_id: light.shower_spotlights
-      domain: light
     - data: {}
       action: script.air_con_off
   mode: parallel
@@ -1228,27 +1218,13 @@
     entity_id: 6269696692461a243abc6aead66853ce
     domain: binary_sensor
     trigger: device
-  conditions:
-  - type: is_illuminance
-    condition: device
-    device_id: 1fd39b205e3707ea8a7dddb2c7c9cca7
-    entity_id: d332fff76b75f9190915c484f0dbfdc5
-    domain: sensor
-    below: 3000
-  - condition: state
-    entity_id: input_boolean.bathtime
-    state: 'off'
+  conditions: []
   actions:
   - if:
     - condition: time
       before: '23:00:00'
       after: '18:00:00'
     then:
-    - type: turn_on
-      device_id: e2d9c795303d91a6d576077b39fe32d3
-      entity_id: light.bath_circle
-      domain: light
-      enabled: false
     - type: turn_on
       device_id: 96eebeea5c10f7a7e98cf4f484918c1c
       entity_id: light.bathroom_mirror_right
@@ -1310,10 +1286,6 @@
     device_id: 605e572814970daeb76e0dca4f8a17d7
     entity_id: light.master_bed_led_2_2
     domain: light
-  - type: turn_off
-    device_id: e2d9c795303d91a6d576077b39fe32d3
-    entity_id: light.bath_circle
-    domain: light
   mode: restart
 - id: '1663222775661'
   alias: Tag e1f1cdf3-c790-4f2e-9280-82d976c2d1be is scanned
@@ -1366,6 +1338,7 @@
   - condition: state
     entity_id: input_boolean.bedroom_curtain_motion
     state: 'off'
+    enabled: false
   actions:
   - type: turn_on
     device_id: 6f6cf472f4fef1f0c20d9931d001ac70
@@ -1421,28 +1394,6 @@
       entity_id: input_boolean.bedroom_curtain_motion
     action: input_boolean.turn_off
   mode: single
-- id: '1663837975051'
-  alias: Bed Lamp LED gradually turn off
-  description: ''
-  trigger:
-  - platform: device
-    type: turned_off
-    device_id: 3928371e49be816319eec1dac9c531a6
-    entity_id: light.bed_lamp_left
-    domain: light
-  - platform: device
-    type: turned_off
-    device_id: 6a19562dbd6094045283a87bbc87d90f
-    entity_id: light.bed_lamp_right
-    domain: light
-  condition: []
-  action:
-  - service: light.turn_off
-    target:
-      entity_id: light.master_bed_led_2_2
-    data:
-      transition: 11
-  mode: single
 - id: '1664129718864'
   alias: Bedroom Entry Lights
   description: ''
@@ -1457,9 +1408,12 @@
     conditions:
     - condition: sun
       before: sunrise
+      enabled: false
     - condition: sun
       after: sunset
       after_offset: '-1:00'
+      enabled: false
+    enabled: false
   actions:
   - type: turn_on
     device_id: 605e572814970daeb76e0dca4f8a17d7
@@ -1493,22 +1447,6 @@
   actions:
   - action: script.bedroom_skylight_close
     data: {}
-  mode: single
-- id: '1666792121740'
-  alias: Bedroom Lamp off with Mel Light
-  description: ''
-  trigger:
-  - platform: device
-    type: turned_off
-    device_id: 6a19562dbd6094045283a87bbc87d90f
-    entity_id: light.bed_lamp_right
-    domain: light
-  condition: []
-  action:
-  - type: turn_off
-    device_id: 247f56cc429ca49a254e3df37e263e37
-    entity_id: switch.bedroom_lamp
-    domain: switch
   mode: single
 - id: '1667051590173'
   alias: AEOTEC-2 Button 1 AC
@@ -1916,51 +1854,6 @@
     entity_id: switch.bedroom_lights
     domain: switch
   mode: single
-- id: '1672307224838'
-  alias: Bedroom Daytime Off No Motion
-  description: ''
-  triggers:
-  - entity_id:
-    - binary_sensor.group_bedroom_motion_detection
-    to: 'off'
-    for:
-      hours: 0
-      minutes: 10
-      seconds: 0
-    trigger: state
-  conditions:
-  - condition: time
-    after: 07:00:00
-    before: '20:00:00'
-  actions:
-  - type: turn_off
-    device_id: f664adcdadd558ce399a7ba96dd2c7e1
-    entity_id: switch.bedroom_entry_lights
-    domain: switch
-  - type: turn_off
-    device_id: 11a686020163e55732126863d48b41de
-    entity_id: light.shower_spotlights
-    domain: light
-  - type: turn_off
-    device_id: 96eebeea5c10f7a7e98cf4f484918c1c
-    entity_id: light.bathroom_mirror_left
-    domain: light
-  - type: turn_off
-    device_id: 96eebeea5c10f7a7e98cf4f484918c1c
-    entity_id: light.bathroom_mirror_right
-    domain: light
-  - type: turn_off
-    device_id: e2d9c795303d91a6d576077b39fe32d3
-    entity_id: light.bath_circle
-    domain: light
-  - type: turn_off
-    device_id: 605e572814970daeb76e0dca4f8a17d7
-    entity_id: light.master_bed_led_2_2
-    domain: light
-  - data: {}
-    enabled: false
-    action: script.bedroom_air_con_off
-  mode: single
 - id: '1672331267768'
   alias: Living Room set Occupied - ON
   description: ''
@@ -2212,46 +2105,36 @@
   alias: Lift Button Blue 1 Press All OFF
   description: ''
   triggers:
-  - device_id: 5b0738fa5401ea46ad2b1d6350f5ab5d
+  - device_id: 14a16136393b5cf16d7f7ea86a944371
     domain: zwave_js
     type: event.value_notification.central_scene
     property: scene
-    property_key: '001'
+    property_key: '003'
     endpoint: 0
     command_class: 91
-    subtype: Endpoint 0 Scene 001
+    subtype: Endpoint 0 Scene 003
+    trigger: device
     value: 0
-    trigger: device
-  - device_id: 5b0738fa5401ea46ad2b1d6350f5ab5d
+  - device_id: 14a16136393b5cf16d7f7ea86a944371
     domain: zwave_js
     type: event.value_notification.central_scene
     property: scene
-    property_key: '001'
+    property_key: '003'
     endpoint: 0
     command_class: 91
-    subtype: Endpoint 0 Scene 001
-    trigger: device
-    value: 2
-  - device_id: 5b0738fa5401ea46ad2b1d6350f5ab5d
-    domain: zwave_js
-    type: event.value_notification.central_scene
-    property: scene
-    property_key: '001'
-    endpoint: 0
-    command_class: 91
-    subtype: Endpoint 0 Scene 001
-    trigger: device
-    value: 3
-  - device_id: 5b0738fa5401ea46ad2b1d6350f5ab5d
-    domain: zwave_js
-    type: event.value_notification.central_scene
-    property: scene
-    property_key: '001'
-    endpoint: 0
-    command_class: 91
-    subtype: Endpoint 0 Scene 001
+    subtype: Endpoint 0 Scene 003
     trigger: device
     value: 1
+  - device_id: 14a16136393b5cf16d7f7ea86a944371
+    domain: zwave_js
+    type: event.value_notification.central_scene
+    property: scene
+    property_key: '003'
+    endpoint: 0
+    command_class: 91
+    subtype: Endpoint 0 Scene 003
+    trigger: device
+    value: 2
   conditions: []
   actions:
   - parallel:
@@ -2697,122 +2580,71 @@
     data:
       message: Water Leak Study
   mode: single
-- id: '1698426456972'
-  alias: Shower Motion ON
-  description: ''
-  triggers:
-  - type: motion
-    device_id: bfdde3fbf181992236092bedff305a06
-    entity_id: ce6fe015d759890617cd5f5571222ecc
-    domain: binary_sensor
-    trigger: device
-  conditions:
-  - type: is_illuminance
-    condition: device
-    device_id: 1fd39b205e3707ea8a7dddb2c7c9cca7
-    entity_id: d332fff76b75f9190915c484f0dbfdc5
-    domain: sensor
-    below: 3000
-  - condition: state
-    entity_id: input_boolean.bathtime
-    state: 'off'
-  actions:
-  - type: turn_on
-    device_id: e2d9c795303d91a6d576077b39fe32d3
-    entity_id: 0f38e3773e1aa8639d867ba4417e9a42
-    domain: light
-    brightness_pct: 100
-  - type: turn_on
-    device_id: 11a686020163e55732126863d48b41de
-    entity_id: 43137feae1931f7180f780096e75b1ca
-    domain: light
-  mode: single
-- id: '1698426476155'
-  alias: Shower Motion OFF
-  description: ''
-  triggers:
-  - type: no_motion
-    device_id: bfdde3fbf181992236092bedff305a06
-    entity_id: ce6fe015d759890617cd5f5571222ecc
-    domain: binary_sensor
-    for:
-      hours: 0
-      minutes: 5
-      seconds: 0
-    trigger: device
-  conditions: []
-  actions:
-  - type: turn_off
-    device_id: e2d9c795303d91a6d576077b39fe32d3
-    entity_id: 0f38e3773e1aa8639d867ba4417e9a42
-    domain: light
-  - type: turn_off
-    device_id: 11a686020163e55732126863d48b41de
-    entity_id: 43137feae1931f7180f780096e75b1ca
-    domain: light
-  mode: single
 - id: '1700588200711'
   alias: Lift Button Blue 1 Press All OFF - 5 hrs Automatic
   description: ''
-  trigger:
-  - platform: time
-    at: '22:02:00'
-  condition:
+  triggers:
+  - at: '22:02:00'
+    trigger: time
+  conditions:
   - condition: state
-    entity_id: input_boolean.living_room_occupied
+    entity_id: binary_sensor.ground_floor_occupancy_with_1m_delay
     for:
       hours: 1
       minutes: 0
       seconds: 0
-    state: 'off'
-  action:
-  - service: automation.trigger
-    data:
+    state:
+    - 'off'
+  actions:
+  - data:
       skip_condition: true
     target:
       entity_id: automation.automation_86
+    action: automation.trigger
   mode: single
 - id: '1702903582538'
   alias: Blue Off 5 hours backup
   description: ''
-  trigger:
-  - platform: time
-    at: '23:59:00'
-  condition:
+  triggers:
+  - at: '23:59:00'
+    trigger: time
+  conditions:
   - condition: state
-    entity_id: input_boolean.living_room_occupied
+    entity_id: binary_sensor.ground_floor_occupancy_with_1m_delay
     for:
       hours: 1
       minutes: 0
       seconds: 0
-    state: 'off'
-  action:
-  - service: automation.trigger
-    data:
+    state:
+    - 'off'
+  actions:
+  - data:
       skip_condition: true
     target:
       entity_id: automation.automation_86
+    action: automation.trigger
   mode: single
 - id: '1703595247910'
   alias: Blue Off 5 hours backup 3am
   description: ''
-  trigger:
-  - platform: time
-    at: 03:00:00
-  condition:
+  triggers:
+  - at: 03:00:00
+    trigger: time
+  conditions:
   - condition: state
-    entity_id: input_boolean.living_room_occupied
+    entity_id: binary_sensor.ground_floor_occupancy_with_1m_delay
     for:
       hours: 1
       minutes: 0
       seconds: 0
-    state: 'off'
-  action:
-  - service: automation.trigger
-    data:
+    state:
+    - 'off'
+  actions:
+  - data:
       skip_condition: true
     target:
       entity_id: automation.automation_86
+    action: automation.trigger
   mode: single
 - id: '1708346140895'
   alias: Push Button White HOLD
@@ -2854,8 +2686,6 @@
     device_id: 605e572814970daeb76e0dca4f8a17d7
     entity_id: 276db57a236348e7c0011435198f907f
     domain: light
-  - action: script.bedroom_skylight_close
-    data: {}
   - type: turn_on
     device_id: 605e572814970daeb76e0dca4f8a17d7
     entity_id: 7e3c4cb93faca5053d36eee005a23b4a
@@ -2890,19 +2720,16 @@
     entity_id: 8c52c5923dca051ee143780ffee4fbcb
     domain: light
   - type: turn_off
-    device_id: e2d9c795303d91a6d576077b39fe32d3
-    entity_id: light.bath_circle
-    domain: light
-  - type: turn_off
     device_id: f664adcdadd558ce399a7ba96dd2c7e1
     entity_id: switch.bedroom_entry
     domain: switch
-  - type: turn_off
-    device_id: 11a686020163e55732126863d48b41de
-    entity_id: light.shower_spotlights
-    domain: light
   - data: {}
     action: script.air_con_off
+  - action: light.turn_off
+    metadata: {}
+    target:
+      entity_id: light.bedroom_spotlights_mirror
+    data: {}
   mode: single
 - id: '1710246401199'
   alias: Home Assistant Auto-update on a schedule base
@@ -3051,38 +2878,6 @@
     entity_id: e4aed43d5f1f0c0940575e777bdb2c37
     domain: light
   mode: single
-- id: '1730451790730'
-  alias: Random Light On/Off
-  description: ''
-  triggers:
-  - at: '19:51:00'
-    trigger: time
-  actions:
-  - delay:
-      minutes: '{{ range(0, 121) | random }}'
-  - type: turn_on
-    device_id: e2d9c795303d91a6d576077b39fe32d3
-    entity_id: light.bath_circle
-    domain: light
-  - delay:
-      minutes: '{{ range(30, 91) | random }}'
-  - type: turn_off
-    device_id: e2d9c795303d91a6d576077b39fe32d3
-    entity_id: light.bath_circle
-    domain: light
-  - delay:
-      minutes: '{{ range(0, 121) | random }}'
-  - type: turn_on
-    device_id: e2d9c795303d91a6d576077b39fe32d3
-    entity_id: light.bath_circle
-    domain: light
-  - delay:
-      minutes: '{{ range(30, 91) | random }}'
-  - type: turn_off
-    device_id: e2d9c795303d91a6d576077b39fe32d3
-    entity_id: light.bath_circle
-    domain: light
-  mode: single
 - id: '1732895823208'
   alias: Alarm - Play Message
   description: ''
@@ -3146,23 +2941,6 @@
     data: {}
     target:
       entity_id: alarm_control_panel.ha_alarm
-  mode: single
-- id: '1738441845600'
-  alias: Random hard off
-  description: ''
-  triggers:
-  - at: 01:12:00
-    trigger: time
-  conditions: []
-  actions:
-  - type: turn_off
-    device_id: e2d9c795303d91a6d576077b39fe32d3
-    entity_id: light.bath_circle
-    domain: light
-  - type: turn_off
-    device_id: 11a686020163e55732126863d48b41de
-    entity_id: f44167e9d6ebdef7fc2a0e79dc86d842
-    domain: light
   mode: single
 - id: '1745057343497'
   alias: Open skylight on shower humidity spike
@@ -3263,3 +3041,70 @@
     joined: '{{ ([new_line] + old_lines)[:4] | join(''\n'') }}
 
       '
+- id: '1766904328931'
+  alias: Aeotec Lift Button - Lamps
+  description: ''
+  triggers:
+  - device_id: 14a16136393b5cf16d7f7ea86a944371
+    domain: zwave_js
+    type: event.value_notification.central_scene
+    property: scene
+    property_key: '001'
+    endpoint: 0
+    command_class: 91
+    subtype: Endpoint 0 Scene 001
+    trigger: device
+    value: 0
+  conditions: []
+  actions:
+  - type: toggle
+    device_id: 87b30484f04bc58897eb73ff16aa11e5
+    entity_id: 042f035f22fefbe590220e48e79b9368
+    domain: switch
+  - type: toggle
+    device_id: 24d89796ab08b28ed3780aa80be5873b
+    entity_id: 3656b647e02672b3393af49164e0c2a9
+    domain: switch
+  mode: single
+- id: '1766904437634'
+  alias: Aeotec Lift Button - TV
+  description: ''
+  triggers:
+  - device_id: 14a16136393b5cf16d7f7ea86a944371
+    domain: zwave_js
+    type: event.value_notification.central_scene
+    property: scene
+    property_key: '002'
+    endpoint: 0
+    command_class: 91
+    subtype: Endpoint 0 Scene 002
+    trigger: device
+    value: 0
+  conditions: []
+  actions:
+  - type: toggle
+    device_id: 817d13a2421b3abc46991c8c7d8c4a65
+    entity_id: cce6e072f71792a9e77f695432f42237
+    domain: light
+  mode: single
+- id: '1766905156803'
+  alias: Aeotec Lift Button - Bookshelf
+  description: ''
+  triggers:
+  - device_id: 14a16136393b5cf16d7f7ea86a944371
+    domain: zwave_js
+    type: event.value_notification.central_scene
+    property: scene
+    property_key: '004'
+    endpoint: 0
+    command_class: 91
+    subtype: Endpoint 0 Scene 004
+    trigger: device
+    value: 0
+  conditions: []
+  actions:
+  - type: toggle
+    device_id: 7c945f90dc76ab5e53ea466957d840c0
+    entity_id: 7dd935187d64f7fb0e40adb07a5020e9
+    domain: light
+  mode: single

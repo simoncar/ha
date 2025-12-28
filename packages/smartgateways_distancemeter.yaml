@@ -58,20 +58,18 @@ mqtt:
     payload_on: "yes"
     payload_off: "no"
 
-### SmartGateways.nl Distancemeter Gateway - Berekeningen
-sensor:
-  - platform: template
-    sensors:
-##  Distancemeter_last_changed
-      distancemeter_lastchanged:
-        value_template: >
-          {% set values = [
-            states.sensor.distancemeter_wifi_signaalsterkte_rssi.last_changed, ] %}
-          {{ values | min }}
-        device_class: timestamp
-
 template:
   - binary_sensor:
       - name: "Distancemeter connectivity status"
         state: "{{ now() - states.sensor.distancemeter_wifi_signaalsterkte_rssi.last_changed < timedelta(minutes=10) }}"
         device_class: connectivity
+  - sensor:
+    - device_class: timestamp
+      default_entity_id: sensor.distancemeter_lastchanged
+      state: "{% set values = [\n  states.sensor.distancemeter_wifi_signaalsterkte_rssi.last_changed,
+        ] %}\n{{ values | min }}"
+      name: distancemeter_lastchanged
+        
+        
+        
+        

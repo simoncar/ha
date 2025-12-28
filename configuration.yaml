@@ -88,49 +88,31 @@ samsungtv_smart:
     app_list: '{"Netflix": "11101200001/org.tizen.netflix-app", "Prime Video": "3201512006785/org.tizen.ignition", "Spotify": "3201606009684"}'
 
 
-sensor:
-  - platform: edata
-    debug: true
-   
-    
-    # ENERGY COST #
-  - platform: template
-    sensors:
-      home_energy_cost:
-          friendly_name: "Home Energy Cost"
-          unit_of_measurement: "€"
-          value_template: >
-            {% if is_state_attr('sensor.pvpc', 'period', 'P1') %} {% set peaje=states('input_number.peaje_energia_p1') | float %}
-            {% elif is_state_attr('sensor.pvpc', 'period', 'P2') %} {% set peaje=states('input_number.peaje_energia_p2') | float %}
-            {% elif is_state_attr('sensor.pvpc', 'period', 'P3') %} {% set peaje=states('input_number.peaje_energia_p3') | float %}
-            {% endif %}
-            {{ (( states('sensor.home_energy_hourly') | float * (peaje + states('sensor.pvpc') | float) ) * states('input_number.impuesto_energia') | float * states('input_number.iva_energia') | float) | round(3) }}
-      home_current_power:
-          friendly_name: "Home Current Power"
-          unit_of_measurement: 'W'
-          device_class: power
-          value_template: >
-            {{ 
-                float(states('sensor.shelly_power_meter_l1_l2_channel_1_power')) 
-                + float(states('sensor.shelly_power_meter_l1_l2_channel_2_power')) 
-                + float(states('sensor.shelly_power_meter_l3_spa_channel_1_power')) 
-                + float(states('sensor.shelly_power_meter_l3_spa_channel_2_power')) 
-            }}
-      home_meter_power:
-          friendly_name: "Home Meter Energy"
-          unit_of_measurement: 'W'
-          device_class: power
-          value_template: >
-            {{ 
-                float(states('sensor.shelly_power_meter_l1_l2_channel_1_energy')) 
-                + float(states('sensor.shelly_power_meter_l1_l2_channel_2_energy')) 
-                + float(states('sensor.shelly_power_meter_l3_spa_channel_1_energy')) 
-                + float(states('sensor.shelly_power_meter_l3_spa_channel_2_energy')) 
-            }}
-      uptime_minutes:
-        friendly_name: UpTime Minutes
-        value_template: >
-          {{ (as_timestamp(now()) - as_timestamp(states('sensor.uptime'))) // 60| round (0)  }}
+
+template:
+    - sensor:
+      - unit_of_measurement: W
+        device_class: power
+        default_entity_id: sensor.home_meter_power
+        name: Home Meter Energy
+        state: "{{ \n    float(states('sensor.shelly_power_meter_l1_l2_channel_1_energy'))
+          \n    + float(states('sensor.shelly_power_meter_l1_l2_channel_2_energy')) \n
+          \   + float(states('sensor.shelly_power_meter_l3_spa_channel_1_energy')) \n
+          \   + float(states('sensor.shelly_power_meter_l3_spa_channel_2_energy')) \n}}"
+      - default_entity_id: sensor.uptime_minutes
+        name: UpTime Minutes
+        state: '{{ (as_timestamp(now()) - as_timestamp(states(''sensor.uptime''))) //
+          60| round (0)  }}'
+    - binary_sensor:
+      - name: "Ground Floor Occupancy with 1m Delay"
+        unique_id: ground_floor_occ_Xmin_delay
+        device_class: occupancy
+        state: "{{ is_state('binary_sensor.group_downstairs_motion_detection', 'on') }}"
+        delay_off:
+          minutes: 1     
+        
+        
+        
         
 ios:
   actions:

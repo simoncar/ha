@@ -577,15 +577,7 @@
           "background": {
             "image": "/api/image/serve/87efa7a89bdc9eee902b5947f4cd5156/original"
           },
-          "badges": [
-            {
-              "type": "entity",
-              "show_name": false,
-              "show_state": true,
-              "show_icon": true,
-              "entity": "sensor.home_current_power"
-            }
-          ]
+          "badges": []
         },
         {
           "title": "Upper Floors",
@@ -795,26 +787,6 @@
                       "type": "horizontal-stack",
                       "cards": [
                         {
-                          "type": "tile",
-                          "entity": "input_boolean.bathtime",
-                          "tap_action": {
-                            "action": "call-service",
-                            "service": "script.bedroom_tv_power_cycle",
-                            "data": {},
-                            "target": {}
-                          },
-                          "icon": "",
-                          "features_position": "bottom",
-                          "vertical": false,
-                          "name": "Bath",
-                          "state_content": "state"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "horizontal-stack",
-                      "cards": [
-                        {
                           "type": "custom:mushroom-entity-card",
                           "entity": "sensor.remote_master_bedroom_temperature",
                           "icon": "mdi:hvac",
@@ -846,25 +818,6 @@
                       "cards": [
                         {
                           "type": "tile",
-                          "name": "Simon",
-                          "entity": "light.bathroom_mirror_left",
-                          "icon": "mdi:face-man",
-                          "features_position": "bottom",
-                          "vertical": false
-                        },
-                        {
-                          "type": "tile",
-                          "name": "Mel",
-                          "entity": "light.bathroom_mirror_right",
-                          "icon": "mdi:face-woman-profile"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "horizontal-stack",
-                      "cards": [
-                        {
-                          "type": "tile",
                           "entity": "light.bed_lamp_mel",
                           "icon": "mdi:spotlight-beam",
                           "name": "Mel",
@@ -873,9 +826,11 @@
                         },
                         {
                           "type": "tile",
-                          "entity": "light.master_bed_led_2_2",
-                          "icon": "mdi:led-strip",
-                          "name": "LED"
+                          "entity": "light.bed_lamp_simon",
+                          "name": "Simon",
+                          "icon": "mdi:spotlight-beam",
+                          "vertical": false,
+                          "features_position": "bottom"
                         }
                       ]
                     },
@@ -884,24 +839,19 @@
                       "cards": [
                         {
                           "type": "tile",
-                          "entity": "light.bath_circle",
-                          "icon": "mdi:dome-light",
-                          "show_entity_picture": false,
-                          "features_position": "bottom",
-                          "vertical": false
+                          "entity": "switch.master_closet",
+                          "name": "Closet",
+                          "icon": "mdi:light-recessed",
+                          "vertical": false,
+                          "features_position": "bottom"
                         },
                         {
                           "type": "tile",
-                          "entity": "light.shower_spotlights",
-                          "name": "Shower"
-                        },
-                        {
-                          "type": "tile",
-                          "entity": "light.bedroom_spotlights_mirror_basic",
-                          "name": "Mirror Spot",
-                          "icon": "mdi:vanity-light",
-                          "features_position": "bottom",
-                          "vertical": false
+                          "entity": "light.master_bed_led_2_2",
+                          "name": "LED",
+                          "icon": "mdi:led-strip",
+                          "vertical": false,
+                          "features_position": "bottom"
                         }
                       ]
                     },
@@ -918,17 +868,32 @@
                         },
                         {
                           "type": "tile",
-                          "entity": "switch.bedroom_lights_3",
-                          "icon": "mdi:light-recessed",
+                          "entity": "switch.bedroom_lights",
                           "name": "Lights",
-                          "features_position": "bottom",
-                          "vertical": false
+                          "icon": "mdi:light-recessed",
+                          "vertical": false,
+                          "features_position": "bottom"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "horizontal-stack",
+                      "cards": [
+                        {
+                          "type": "tile",
+                          "entity": "light.bathroom_mirror_right",
+                          "name": "Mel Mirror",
+                          "icon": "mdi:mirror",
+                          "vertical": false,
+                          "features_position": "bottom"
                         },
                         {
                           "type": "tile",
-                          "entity": "switch.master_closet",
-                          "icon": "mdi:light-recessed",
-                          "name": "Closet"
+                          "entity": "light.bathroom_mirror_left",
+                          "name": "Simon Mirror",
+                          "icon": "mdi:mirror",
+                          "vertical": false,
+                          "features_position": "bottom"
                         }
                       ]
                     },
@@ -1313,46 +1278,6 @@
           "badges": [],
           "cards": [
             {
-              "type": "gauge",
-              "entity": "sensor.connectix_distancemeter_percentage_full",
-              "needle": true,
-              "name": "Percentage Full",
-              "unit": "%",
-              "max": 100,
-              "min": 1,
-              "severity": {
-                "green": 0,
-                "yellow": 60,
-                "red": 85
-              }
-            },
-            {
-              "type": "gauge",
-              "entity": "sensor.connectix_distancemeter_level_full",
-              "needle": true,
-              "name": "Tank Level",
-              "unit": "cm",
-              "max": 450,
-              "min": 1,
-              "severity": {
-                "green": 0,
-                "yellow": 300,
-                "red": 400
-              }
-            },
-            {
-              "type": "gauge",
-              "entity": "sensor.distancemeter_wifi_signaalsterkte_rssi",
-              "min": -20,
-              "max": -90,
-              "severity": {
-                "green": -67,
-                "yellow": -70,
-                "red": -80
-              },
-              "name": "Wifi Strength"
-            },
-            {
               "type": "entities",
               "entities": [
                 {
@@ -1386,20 +1311,6 @@
               "show_header_toggle": false,
               "title": "Smart Gateways Distancemeter",
               "state_color": true
-            },
-            {
-              "type": "gauge",
-              "entity": "sensor.connectix_distancemeter_corrected_distance",
-              "min": 20,
-              "name": "Corrected Distance",
-              "severity": {
-                "green": 2,
-                "yellow": 265,
-                "red": 380
-              },
-              "max": 450,
-              "needle": true,
-              "unit": "cm"
             },
             {
               "type": "custom:apexcharts-card",
