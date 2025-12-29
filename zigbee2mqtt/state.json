@@ -63,12 +63,12 @@
         "power": 2
     },
     "0x001788010649a073": {
-        "battery": 14.5,
+        "battery": 15.5,
         "occupancy_timeout": 60,
         "occupancy": false,
         "motion_sensitivity": "high",
-        "illuminance": 405,
-        "temperature": 10.79,
+        "illuminance": 53,
+        "temperature": 10.93,
         "update": {
             "state": "idle",
             "installed_version": 1124102917,
@@ -119,7 +119,7 @@
         "test": false
     },
     "0x54ef441000b757df": {
-        "device_temperature": 30,
+        "device_temperature": 31,
         "power_outage_count": 37,
         "state": "OFF",
         "power_on_behaviour": "off",
