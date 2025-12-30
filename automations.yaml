@@ -2970,25 +2970,6 @@
   - action: script.bedroom_skylight_close
     data: {}
   mode: single
-- id: '1756908394183'
-  alias: Tag Door is scanned
-  description: ''
-  triggers:
-  - trigger: tag
-    tag_id: 57b269da-a393-4c40-bf4f-6ece9c27ada7
-  - trigger: tag
-    tag_id: 19d5c69d-defb-454a-84ab-f5955e2a166b
-  conditions: []
-  actions:
-  - action: notify.mobile_app_sm_s928b
-    metadata: {}
-    data:
-      message: Test
-  - device_id: 374bd914c01dd6bd4cde0fd72c78614f
-    domain: button
-    entity_id: 0e915a833869dc46ed6e01cb6bcb0d4e
-    type: press
-  mode: single
 - id: '1757497463381'
   alias: Workshop Button
   description: ''
