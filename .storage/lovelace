@@ -14,196 +14,6 @@
       "title": "Gracia",
       "views": [
         {
-          "title": "Upper Floors",
-          "path": "upper",
-          "icon": "mdi:home-floor-3",
-          "theme": "Mushroom",
-          "cards": [
-            {
-              "type": "vertical-stack",
-              "title": "Level 2 (Gym & Bedrooms)",
-              "cards": [
-                {
-                  "type": "horizontal-stack",
-                  "cards": [
-                    {
-                      "type": "vertical-stack",
-                      "cards": [
-                        {
-                          "show_name": true,
-                          "show_icon": true,
-                          "type": "custom:button-card",
-                          "tap_action": {
-                            "action": "call-service",
-                            "service": "script.bedroom_air_con_off",
-                            "target": {}
-                          },
-                          "entity": "script.bedroom_air_con_off",
-                          "name": "AC Off",
-                          "icon": "mdi:fan-off"
-                        },
-                        {
-                          "show_name": true,
-                          "show_icon": true,
-                          "type": "custom:button-card",
-                          "tap_action": {
-                            "action": "call-service",
-                            "service": "script.bedroom_air_con_adjust_18",
-                            "target": {}
-                          },
-                          "entity": "script.bedroom_air_con_adjust_18",
-                          "name": "AC On",
-                          "icon": "mdi:fan"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "vertical-stack",
-                      "cards": [
-                        {
-                          "show_name": true,
-                          "show_icon": true,
-                          "type": "custom:button-card",
-                          "tap_action": {
-                            "action": "call-service",
-                            "service": "script.air_con_off",
-                            "target": {}
-                          },
-                          "entity": "script.air_con_off",
-                          "name": "Heat Off",
-                          "icon": "mdi:hvac-off"
-                        },
-                        {
-                          "show_name": true,
-                          "show_icon": true,
-                          "type": "custom:button-card",
-                          "tap_action": {
-                            "action": "call-service",
-                            "service": "script.bedroom_heater",
-                            "target": {}
-                          },
-                          "entity": "script.bedroom_heater",
-                          "icon": "mdi:heat-wave",
-                          "name": "Heater"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "graph": "line",
-                  "hours_to_show": 24,
-                  "type": "sensor",
-                  "entity": "sensor.rm4_level_2_temperature",
-                  "detail": 2,
-                  "name": "Level 2 Temperature"
-                }
-              ]
-            },
-            {
-              "type": "vertical-stack",
-              "title": "Master Bedroom",
-              "cards": [
-                {
-                  "type": "horizontal-stack",
-                  "cards": [
-                    {
-                      "type": "vertical-stack",
-                      "cards": [
-                        {
-                          "show_name": true,
-                          "show_icon": true,
-                          "type": "custom:button-card",
-                          "tap_action": {
-                            "action": "call-service",
-                            "service": "script.bedroom_air_con_off",
-                            "target": {}
-                          },
-                          "entity": "script.bedroom_air_con_off",
-                          "name": "AC Off",
-                          "icon": "mdi:fan-off"
-                        },
-                        {
-                          "show_name": true,
-                          "show_icon": true,
-                          "type": "custom:button-card",
-                          "tap_action": {
-                            "action": "call-service",
-                            "service": "script.bedroom_air_con_adjust_18",
-                            "target": {}
-                          },
-                          "entity": "script.bedroom_air_con_adjust_18",
-                          "name": "AC On",
-                          "icon": "mdi:fan"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "vertical-stack",
-                      "cards": [
-                        {
-                          "show_name": true,
-                          "show_icon": true,
-                          "type": "custom:button-card",
-                          "tap_action": {
-                            "action": "call-service",
-                            "service": "script.air_con_off",
-                            "target": {}
-                          },
-                          "entity": "script.air_con_off",
-                          "name": "Heat Off",
-                          "icon": "mdi:hvac-off"
-                        },
-                        {
-                          "show_name": true,
-                          "show_icon": true,
-                          "type": "custom:button-card",
-                          "tap_action": {
-                            "action": "call-service",
-                            "service": "script.bedroom_heater",
-                            "target": {}
-                          },
-                          "entity": "script.bedroom_heater",
-                          "icon": "mdi:heat-wave",
-                          "name": "Heater"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "graph": "line",
-                  "hours_to_show": 24,
-                  "type": "sensor",
-                  "entity": "sensor.remote_master_bedroom_temperature",
-                  "detail": 2,
-                  "name": "Bedroom Temperature"
-                }
-              ]
-            },
-            {
-              "type": "vertical-stack",
-              "title": ". ",
-              "cards": [
-                {
-                  "type": "horizontal-stack",
-                  "cards": [
-                    {
-                      "type": "custom:mushroom-cover-card",
-                      "entity": "cover.bedroom_curtains",
-                      "layout": "vertical",
-                      "fill_container": true,
-                      "show_buttons_control": true,
-                      "show_tilt_position_control": false,
-                      "show_position_control": true
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
           "title": "Ground Floor",
           "path": "tablet",
           "theme": "Mushroom",
@@ -768,6 +578,196 @@
             "image": "/api/image/serve/87efa7a89bdc9eee902b5947f4cd5156/original"
           },
           "badges": []
+        },
+        {
+          "title": "Upper Floors",
+          "path": "upper",
+          "icon": "mdi:home-floor-3",
+          "theme": "Mushroom",
+          "cards": [
+            {
+              "type": "vertical-stack",
+              "title": "Level 2 (Gym & Bedrooms)",
+              "cards": [
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "vertical-stack",
+                      "cards": [
+                        {
+                          "show_name": true,
+                          "show_icon": true,
+                          "type": "custom:button-card",
+                          "tap_action": {
+                            "action": "call-service",
+                            "service": "script.bedroom_air_con_off",
+                            "target": {}
+                          },
+                          "entity": "script.bedroom_air_con_off",
+                          "name": "AC Off",
+                          "icon": "mdi:fan-off"
+                        },
+                        {
+                          "show_name": true,
+                          "show_icon": true,
+                          "type": "custom:button-card",
+                          "tap_action": {
+                            "action": "call-service",
+                            "service": "script.bedroom_air_con_adjust_18",
+                            "target": {}
+                          },
+                          "entity": "script.bedroom_air_con_adjust_18",
+                          "name": "AC On",
+                          "icon": "mdi:fan"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "vertical-stack",
+                      "cards": [
+                        {
+                          "show_name": true,
+                          "show_icon": true,
+                          "type": "custom:button-card",
+                          "tap_action": {
+                            "action": "call-service",
+                            "service": "script.air_con_off",
+                            "target": {}
+                          },
+                          "entity": "script.air_con_off",
+                          "name": "Heat Off",
+                          "icon": "mdi:hvac-off"
+                        },
+                        {
+                          "show_name": true,
+                          "show_icon": true,
+                          "type": "custom:button-card",
+                          "tap_action": {
+                            "action": "call-service",
+                            "service": "script.bedroom_heater",
+                            "target": {}
+                          },
+                          "entity": "script.bedroom_heater",
+                          "icon": "mdi:heat-wave",
+                          "name": "Heater"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "graph": "line",
+                  "hours_to_show": 24,
+                  "type": "sensor",
+                  "entity": "sensor.rm4_level_2_temperature",
+                  "detail": 2,
+                  "name": "Level 2 Temperature"
+                }
+              ]
+            },
+            {
+              "type": "vertical-stack",
+              "title": "Master Bedroom",
+              "cards": [
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "vertical-stack",
+                      "cards": [
+                        {
+                          "show_name": true,
+                          "show_icon": true,
+                          "type": "custom:button-card",
+                          "tap_action": {
+                            "action": "call-service",
+                            "service": "script.bedroom_air_con_off",
+                            "target": {}
+                          },
+                          "entity": "script.bedroom_air_con_off",
+                          "name": "AC Off",
+                          "icon": "mdi:fan-off"
+                        },
+                        {
+                          "show_name": true,
+                          "show_icon": true,
+                          "type": "custom:button-card",
+                          "tap_action": {
+                            "action": "call-service",
+                            "service": "script.bedroom_air_con_adjust_18",
+                            "target": {}
+                          },
+                          "entity": "script.bedroom_air_con_adjust_18",
+                          "name": "AC On",
+                          "icon": "mdi:fan"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "vertical-stack",
+                      "cards": [
+                        {
+                          "show_name": true,
+                          "show_icon": true,
+                          "type": "custom:button-card",
+                          "tap_action": {
+                            "action": "call-service",
+                            "service": "script.air_con_off",
+                            "target": {}
+                          },
+                          "entity": "script.air_con_off",
+                          "name": "Heat Off",
+                          "icon": "mdi:hvac-off"
+                        },
+                        {
+                          "show_name": true,
+                          "show_icon": true,
+                          "type": "custom:button-card",
+                          "tap_action": {
+                            "action": "call-service",
+                            "service": "script.bedroom_heater",
+                            "target": {}
+                          },
+                          "entity": "script.bedroom_heater",
+                          "icon": "mdi:heat-wave",
+                          "name": "Heater"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "graph": "line",
+                  "hours_to_show": 24,
+                  "type": "sensor",
+                  "entity": "sensor.remote_master_bedroom_temperature",
+                  "detail": 2,
+                  "name": "Bedroom Temperature"
+                }
+              ]
+            },
+            {
+              "type": "vertical-stack",
+              "title": ". ",
+              "cards": [
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "custom:mushroom-cover-card",
+                      "entity": "cover.bedroom_curtains",
+                      "layout": "vertical",
+                      "fill_container": true,
+                      "show_buttons_control": true,
+                      "show_tilt_position_control": false,
+                      "show_position_control": true
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         },
         {
           "path": "detail_view",
