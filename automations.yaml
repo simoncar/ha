@@ -602,13 +602,15 @@
 - id: '1640792814094'
   alias: Kitchen Motion Sensor ON
   description: ''
-  trigger:
-  - platform: state
-    entity_id:
-    - binary_sensor.group_downstairs_motion_detection
-    from: 'off'
-    to: 'on'
-  condition:
+  triggers:
+  - entity_id:
+    - binary_sensor.kitchen_motion_sensor_2_motion_detection
+    from:
+    - 'off'
+    to:
+    - 'on'
+    trigger: state
+  conditions:
   - condition: not
     conditions:
     - condition: state
@@ -617,7 +619,7 @@
   - condition: numeric_state
     entity_id: sensor.gw2000a_solar_lux
     below: 30000
-  action:
+  actions:
   - type: turn_on
     device_id: 3bde07aac5e6792e1ab5ebad70800b27
     entity_id: switch.kitchen_lights
@@ -1366,16 +1368,7 @@
     - mon
     - sun
     after: 06:43:00
-  - condition: device
-    device_id: 2f3366a2291c0b2ac9f21b04546ad5df
-    domain: cover
-    entity_id: cover.bedroom_curtains
-    type: is_position
-    below: 99
   actions:
-  - data: {}
-    action: script.bedroom_skylight_open_2
-    enabled: false
   - data: {}
     target:
       entity_id: input_boolean.bedroom_curtain_motion

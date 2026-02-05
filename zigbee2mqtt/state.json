@@ -6,58 +6,47 @@
         "current": 0,
         "linkquality": 120,
         "state": "OFF",
-        "update": {
-            "state": "idle",
-            "installed_version": 192,
-            "latest_version": 192
-        },
         "power_outage_memory": "off",
         "indicator_mode": "off/on",
         "child_lock": "UNLOCK",
         "countdown": 0
     },
     "0xb4e3f9fffe753317": {
-        "battery": 75,
-        "linkquality": 25,
+        "battery": 90,
+        "linkquality": 43,
         "update": {
             "state": "idle",
             "installed_version": 604241926,
-            "latest_version": 604241926
+            "latest_version": 604241926,
+            "latest_source": "https://raw.githubusercontent.com/Koenkk/zigbee-OTA/master/images/IKEA/tradfri-shortcut-button_release_prod_v604241926_56f5d8d1-78b1-4088-afc1-05d3b7e3314b.ota",
+            "latest_release_notes": "https://ww8.ikea.com/ikeahomesmart/releasenotes/releasenotes.html"
         }
     },
     "0xb4e3f9fffe249e15": {
         "battery": 90,
-        "update": {
-            "state": "idle",
-            "installed_version": 604241926,
-            "latest_version": 604241926
-        },
-        "linkquality": 98
+        "linkquality": 43
     },
     "0x04cd15fffe7ff98b": {
-        "battery": 10,
+        "battery": 20,
+        "linkquality": 109,
         "update": {
             "state": "idle",
             "installed_version": 604241926,
-            "latest_version": 604241926
-        },
-        "linkquality": 25
+            "latest_version": 604241926,
+            "latest_source": "https://raw.githubusercontent.com/Koenkk/zigbee-OTA/master/images/IKEA/tradfri-shortcut-button_release_prod_v604241926_56f5d8d1-78b1-4088-afc1-05d3b7e3314b.ota",
+            "latest_release_notes": "https://ww8.ikea.com/ikeahomesmart/releasenotes/releasenotes.html"
+        }
     },
     "0x04cd15fffe268dcc": {
         "battery": 90,
-        "linkquality": 21,
-        "update": {
-            "state": "idle",
-            "installed_version": 604241926,
-            "latest_version": 604241926
-        }
+        "linkquality": 47
     },
     "0x54ef4410006a43c7": {
         "operation_mode": "action_mode",
         "side": 4,
-        "linkquality": 127,
-        "voltage": 2921,
-        "battery": 47,
+        "linkquality": 105,
+        "voltage": 2925,
+        "battery": 50,
         "power_outage_count": 159,
         "current": 0,
         "power": 2
@@ -67,15 +56,17 @@
         "occupancy_timeout": 60,
         "occupancy": false,
         "motion_sensitivity": "high",
-        "illuminance": 114,
-        "temperature": 10.79,
+        "illuminance": 186,
+        "temperature": 11.5,
+        "linkquality": 83,
+        "led_indication": true,
         "update": {
             "state": "idle",
             "installed_version": 1124102917,
-            "latest_version": 1124102917
-        },
-        "linkquality": 61,
-        "led_indication": true
+            "latest_version": 1124102917,
+            "latest_source": "https://raw.githubusercontent.com/Koenkk/zigbee-OTA/master/images/Hue/Sensor-ATmega_0012.sbl-ota",
+            "latest_release_notes": null
+        }
     },
     "0x5c0272fffebb9cde": {
         "water_leak": false,
@@ -83,19 +74,21 @@
         "battery_low": false,
         "battery": 70,
         "voltage": 2800,
-        "linkquality": 25
+        "linkquality": 43
     },
     "0x0015bc0043006306": {
-        "update": {
-            "state": "idle",
-            "installed_version": 131077,
-            "latest_version": 131077
-        },
         "battery": 100,
         "voltage": 5200,
         "tamper": false,
         "battery_low": false,
-        "linkquality": 32
+        "linkquality": 43,
+        "update": {
+            "state": "idle",
+            "installed_version": 131077,
+            "latest_version": 131077,
+            "latest_source": "https://raw.githubusercontent.com/Koenkk/zigbee-OTA/master/images/Develco/IntelligentKeyPad_2.0.5.zigbee",
+            "latest_release_notes": null
+        }
     },
     "0x0015bc0022000242": {
         "alarm_2": false,
@@ -119,7 +112,7 @@
         "test": false
     },
     "0x54ef441000b757df": {
-        "device_temperature": 29,
+        "device_temperature": 31,
         "power_outage_count": 41,
         "state": "OFF",
         "power_on_behaviour": "off",
@@ -132,7 +125,7 @@
         "brightness_rgb": 254,
         "state_rgb": "OFF",
         "brightness_white": 254,
-        "linkquality": 32,
+        "linkquality": 43,
         "dimming_range_minimum": 1,
         "dimming_range_maximum": 100,
         "level_config_white": {
