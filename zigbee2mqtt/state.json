@@ -13,7 +13,7 @@
     },
     "0xb4e3f9fffe753317": {
         "battery": 90,
-        "linkquality": 43,
+        "linkquality": 40,
         "update": {
             "state": "idle",
             "installed_version": 604241926,
@@ -24,11 +24,18 @@
     },
     "0xb4e3f9fffe249e15": {
         "battery": 90,
-        "linkquality": 43
+        "linkquality": 43,
+        "update": {
+            "state": "idle",
+            "installed_version": 604241926,
+            "latest_version": 604241926,
+            "latest_source": "https://raw.githubusercontent.com/Koenkk/zigbee-OTA/master/images/IKEA/tradfri-shortcut-button_release_prod_v604241926_56f5d8d1-78b1-4088-afc1-05d3b7e3314b.ota",
+            "latest_release_notes": "https://ww8.ikea.com/ikeahomesmart/releasenotes/releasenotes.html"
+        }
     },
     "0x04cd15fffe7ff98b": {
         "battery": 20,
-        "linkquality": 109,
+        "linkquality": 112,
         "update": {
             "state": "idle",
             "installed_version": 604241926,
@@ -39,26 +46,33 @@
     },
     "0x04cd15fffe268dcc": {
         "battery": 90,
-        "linkquality": 47
+        "linkquality": 43,
+        "update": {
+            "state": "idle",
+            "installed_version": 604241926,
+            "latest_version": 604241926,
+            "latest_source": "https://raw.githubusercontent.com/Koenkk/zigbee-OTA/master/images/IKEA/tradfri-shortcut-button_release_prod_v604241926_56f5d8d1-78b1-4088-afc1-05d3b7e3314b.ota",
+            "latest_release_notes": "https://ww8.ikea.com/ikeahomesmart/releasenotes/releasenotes.html"
+        }
     },
     "0x54ef4410006a43c7": {
         "operation_mode": "action_mode",
         "side": 4,
-        "linkquality": 105,
-        "voltage": 2925,
-        "battery": 50,
+        "linkquality": 116,
+        "voltage": 2926,
+        "battery": 51,
         "power_outage_count": 159,
         "current": 0,
         "power": 2
     },
     "0x001788010649a073": {
-        "battery": 10,
+        "battery": 11,
         "occupancy_timeout": 60,
         "occupancy": false,
         "motion_sensitivity": "high",
-        "illuminance": 186,
-        "temperature": 11.5,
-        "linkquality": 83,
+        "illuminance": 194,
+        "temperature": 12.34,
+        "linkquality": 76,
         "led_indication": true,
         "update": {
             "state": "idle",
@@ -74,7 +88,7 @@
         "battery_low": false,
         "battery": 70,
         "voltage": 2800,
-        "linkquality": 43
+        "linkquality": 40
     },
     "0x0015bc0043006306": {
         "battery": 100,
@@ -112,7 +126,7 @@
         "test": false
     },
     "0x54ef441000b757df": {
-        "device_temperature": 31,
+        "device_temperature": 32,
         "power_outage_count": 41,
         "state": "OFF",
         "power_on_behaviour": "off",
