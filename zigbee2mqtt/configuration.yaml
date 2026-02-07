@@ -74,7 +74,7 @@ devices:
   '0x54ef441000b757df':
     friendly_name: Workshop Light
   '0x54ef44100124a3ca':
-    friendly_name: '0x54ef44100124a3ca'
+    friendly_name: Kitchen Presence
 availability:
   enabled: true
   active:

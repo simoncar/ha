@@ -13,7 +13,7 @@
     },
     "0xb4e3f9fffe753317": {
         "battery": 90,
-        "linkquality": 40,
+        "linkquality": 54,
         "update": {
             "state": "idle",
             "installed_version": 604241926,
@@ -24,7 +24,7 @@
     },
     "0xb4e3f9fffe249e15": {
         "battery": 90,
-        "linkquality": 43,
+        "linkquality": 47,
         "update": {
             "state": "idle",
             "installed_version": 604241926,
@@ -35,7 +35,7 @@
     },
     "0x04cd15fffe7ff98b": {
         "battery": 20,
-        "linkquality": 112,
+        "linkquality": 109,
         "update": {
             "state": "idle",
             "installed_version": 604241926,
@@ -58,7 +58,7 @@
     "0x54ef4410006a43c7": {
         "operation_mode": "action_mode",
         "side": 4,
-        "linkquality": 116,
+        "linkquality": 123,
         "voltage": 2926,
         "battery": 51,
         "power_outage_count": 159,
@@ -70,8 +70,8 @@
         "occupancy_timeout": 60,
         "occupancy": false,
         "motion_sensitivity": "high",
-        "illuminance": 194,
-        "temperature": 12.34,
+        "illuminance": 219,
+        "temperature": 11.07,
         "linkquality": 76,
         "led_indication": true,
         "update": {
@@ -88,7 +88,7 @@
         "battery_low": false,
         "battery": 70,
         "voltage": 2800,
-        "linkquality": 40
+        "linkquality": 47
     },
     "0x0015bc0043006306": {
         "battery": 100,
@@ -126,7 +126,7 @@
         "test": false
     },
     "0x54ef441000b757df": {
-        "device_temperature": 32,
+        "device_temperature": 31,
         "power_outage_count": 41,
         "state": "OFF",
         "power_on_behaviour": "off",
@@ -139,7 +139,7 @@
         "brightness_rgb": 254,
         "state_rgb": "OFF",
         "brightness_white": 254,
-        "linkquality": 43,
+        "linkquality": 36,
         "dimming_range_minimum": 1,
         "dimming_range_maximum": 100,
         "level_config_white": {
@@ -147,5 +147,23 @@
             "off_transition_time": 15
         },
         "effect_speed": 0
+    },
+    "0x54ef44100124a3ca": {
+        "update": {
+            "state": "idle",
+            "installed_version": 29,
+            "latest_version": 29,
+            "latest_source": null,
+            "latest_release_notes": null
+        },
+        "linkquality": 47,
+        "presence": false,
+        "target_distance": 0,
+        "movement": "no_presence",
+        "device_temperature": 25,
+        "power_outage_count": 1,
+        "detection_range": 6,
+        "ai_sensitivity_adaptive": "ON",
+        "ai_interference_source_selfidentification": "ON"
     }
 }
