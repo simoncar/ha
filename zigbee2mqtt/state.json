@@ -13,7 +13,7 @@
     },
     "0xb4e3f9fffe753317": {
         "battery": 90,
-        "linkquality": 54,
+        "linkquality": 40,
         "update": {
             "state": "idle",
             "installed_version": 604241926,
@@ -24,7 +24,7 @@
     },
     "0xb4e3f9fffe249e15": {
         "battery": 90,
-        "linkquality": 47,
+        "linkquality": 25,
         "update": {
             "state": "idle",
             "installed_version": 604241926,
@@ -35,7 +35,7 @@
     },
     "0x04cd15fffe7ff98b": {
         "battery": 20,
-        "linkquality": 109,
+        "linkquality": 69,
         "update": {
             "state": "idle",
             "installed_version": 604241926,
@@ -46,7 +46,7 @@
     },
     "0x04cd15fffe268dcc": {
         "battery": 90,
-        "linkquality": 43,
+        "linkquality": 36,
         "update": {
             "state": "idle",
             "installed_version": 604241926,
@@ -58,9 +58,9 @@
     "0x54ef4410006a43c7": {
         "operation_mode": "action_mode",
         "side": 4,
-        "linkquality": 123,
-        "voltage": 2926,
-        "battery": 51,
+        "linkquality": 127,
+        "voltage": 2929,
+        "battery": 53,
         "power_outage_count": 159,
         "current": 0,
         "power": 2
@@ -70,9 +70,9 @@
         "occupancy_timeout": 60,
         "occupancy": false,
         "motion_sensitivity": "high",
-        "illuminance": 219,
-        "temperature": 11.07,
-        "linkquality": 76,
+        "illuminance": 136,
+        "temperature": 10.22,
+        "linkquality": 54,
         "led_indication": true,
         "update": {
             "state": "idle",
@@ -88,14 +88,14 @@
         "battery_low": false,
         "battery": 70,
         "voltage": 2800,
-        "linkquality": 47
+        "linkquality": 36
     },
     "0x0015bc0043006306": {
         "battery": 100,
         "voltage": 5200,
         "tamper": false,
         "battery_low": false,
-        "linkquality": 43,
+        "linkquality": 36,
         "update": {
             "state": "idle",
             "installed_version": 131077,
@@ -126,7 +126,7 @@
         "test": false
     },
     "0x54ef441000b757df": {
-        "device_temperature": 31,
+        "device_temperature": 32,
         "power_outage_count": 41,
         "state": "OFF",
         "power_on_behaviour": "off",
@@ -139,7 +139,7 @@
         "brightness_rgb": 254,
         "state_rgb": "OFF",
         "brightness_white": 254,
-        "linkquality": 36,
+        "linkquality": 29,
         "dimming_range_minimum": 1,
         "dimming_range_maximum": 100,
         "level_config_white": {
@@ -153,14 +153,14 @@
             "state": "idle",
             "installed_version": 29,
             "latest_version": 29,
-            "latest_source": null,
+            "latest_source": "https://raw.githubusercontent.com/Koenkk/zigbee-OTA/master/images/Aqara/20250827143703_lumi.sensor_occupy.agl1_0.0.0_0029_20250804_33D437.ota",
             "latest_release_notes": null
         },
-        "linkquality": 47,
+        "linkquality": 29,
         "presence": false,
         "target_distance": 0,
         "movement": "no_presence",
-        "device_temperature": 25,
+        "device_temperature": 26,
         "power_outage_count": 1,
         "detection_range": 6,
         "ai_sensitivity_adaptive": "ON",
