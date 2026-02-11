@@ -13,7 +13,7 @@
     },
     "0xb4e3f9fffe753317": {
         "battery": 90,
-        "linkquality": 40,
+        "linkquality": 0,
         "update": {
             "state": "idle",
             "installed_version": 604241926,
@@ -24,7 +24,7 @@
     },
     "0xb4e3f9fffe249e15": {
         "battery": 90,
-        "linkquality": 65,
+        "linkquality": 134,
         "update": {
             "state": "idle",
             "installed_version": 604241926,
@@ -35,7 +35,7 @@
     },
     "0x04cd15fffe7ff98b": {
         "battery": 20,
-        "linkquality": 69,
+        "linkquality": 76,
         "update": {
             "state": "idle",
             "installed_version": 604241926,
@@ -46,7 +46,7 @@
     },
     "0x04cd15fffe268dcc": {
         "battery": 90,
-        "linkquality": 36,
+        "linkquality": 98,
         "update": {
             "state": "idle",
             "installed_version": 604241926,
@@ -58,21 +58,21 @@
     "0x54ef4410006a43c7": {
         "operation_mode": "action_mode",
         "side": 4,
-        "linkquality": 127,
-        "voltage": 2929,
-        "battery": 53,
+        "linkquality": 0,
+        "voltage": 2928,
+        "battery": 52,
         "power_outage_count": 159,
         "current": 0,
         "power": 2
     },
     "0x001788010649a073": {
-        "battery": 7,
+        "battery": 11,
         "occupancy_timeout": 60,
         "occupancy": false,
         "motion_sensitivity": "high",
-        "illuminance": 244,
-        "temperature": 11.78,
-        "linkquality": 54,
+        "illuminance": 200,
+        "temperature": 16.44,
+        "linkquality": 0,
         "led_indication": true,
         "update": {
             "state": "idle",
@@ -88,14 +88,14 @@
         "battery_low": false,
         "battery": 70,
         "voltage": 2800,
-        "linkquality": 36
+        "linkquality": 18
     },
     "0x0015bc0043006306": {
         "battery": 100,
         "voltage": 5200,
         "tamper": false,
         "battery_low": false,
-        "linkquality": 61,
+        "linkquality": 0,
         "update": {
             "state": "idle",
             "installed_version": 131077,
@@ -126,11 +126,11 @@
         "test": false
     },
     "0x54ef441000b757df": {
-        "device_temperature": 31,
+        "device_temperature": 39,
         "power_outage_count": 46,
-        "state": "OFF",
+        "state": "ON",
         "power_on_behaviour": "off",
-        "state_white": "OFF",
+        "state_white": "ON",
         "color_mode_rgb": "xy",
         "color_rgb": {
             "x": 0.313,
@@ -139,7 +139,7 @@
         "brightness_rgb": 254,
         "state_rgb": "OFF",
         "brightness_white": 254,
-        "linkquality": 29,
+        "linkquality": 0,
         "dimming_range_minimum": 1,
         "dimming_range_maximum": 100,
         "level_config_white": {
