@@ -1340,7 +1340,7 @@
   - condition: state
     entity_id: input_boolean.bedroom_curtain_motion
     state: 'off'
-    enabled: false
+    enabled: true
   actions:
   - type: turn_on
     device_id: 6f6cf472f4fef1f0c20d9931d001ac70
