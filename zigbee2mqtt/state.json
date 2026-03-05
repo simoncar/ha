@@ -12,7 +12,7 @@
         "countdown": 0
     },
     "0xb4e3f9fffe753317": {
-        "battery": 75,
+        "battery": 90,
         "linkquality": 51,
         "update": {
             "state": "idle",
@@ -59,8 +59,8 @@
         "operation_mode": "action_mode",
         "side": 4,
         "linkquality": 54,
-        "voltage": 2928,
-        "battery": 52,
+        "voltage": 2927,
+        "battery": 51,
         "power_outage_count": 159,
         "current": 0,
         "power": 2
@@ -70,8 +70,8 @@
         "occupancy_timeout": 60,
         "occupancy": false,
         "motion_sensitivity": "high",
-        "illuminance": 447,
-        "temperature": 14.74,
+        "illuminance": 200,
+        "temperature": 14.32,
         "linkquality": 51,
         "led_indication": true,
         "update": {
