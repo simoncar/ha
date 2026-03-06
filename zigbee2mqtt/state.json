@@ -34,7 +34,7 @@
         }
     },
     "0x04cd15fffe7ff98b": {
-        "battery": 20,
+        "battery": 14,
         "linkquality": 54,
         "update": {
             "state": "idle",
@@ -70,8 +70,8 @@
         "occupancy_timeout": 60,
         "occupancy": false,
         "motion_sensitivity": "high",
-        "illuminance": 200,
-        "temperature": 14.32,
+        "illuminance": 121,
+        "temperature": 12.34,
         "linkquality": 51,
         "led_indication": true,
         "update": {
