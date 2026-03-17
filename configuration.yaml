@@ -12,15 +12,7 @@ automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
 switch: !include switch.yaml
-    
-influxdb:
-  host: a0d7b954-influxdb
-  port: 8086
-  database: homeassistant
-  username: homeassistant
-  password: hainfluxdb383ijf8eh
-  max_retries: 3
-  default_measurement: state
+
  
 alarm_control_panel:
   - platform: manual
