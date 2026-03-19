@@ -1397,16 +1397,9 @@
     domain: binary_sensor
     trigger: device
   conditions:
-  - condition: or
-    conditions:
-    - condition: sun
-      before: sunrise
-      enabled: false
-    - condition: sun
-      after: sunset
-      after_offset: '-1:00'
-      enabled: false
-    enabled: false
+  - condition: numeric_state
+    entity_id: sensor.gw2000a_solar_lux
+    below: 30000
   actions:
   - type: turn_on
     device_id: 605e572814970daeb76e0dca4f8a17d7
