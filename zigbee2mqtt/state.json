@@ -59,8 +59,8 @@
         "operation_mode": "action_mode",
         "side": 4,
         "linkquality": 131,
-        "voltage": 2906,
-        "battery": 37,
+        "voltage": 2902,
+        "battery": 35,
         "power_outage_count": 160,
         "current": 0,
         "power": 2
@@ -70,8 +70,8 @@
         "occupancy_timeout": 60,
         "occupancy": false,
         "motion_sensitivity": "high",
-        "illuminance": 692,
-        "temperature": 12.2,
+        "illuminance": 499,
+        "temperature": 11.92,
         "linkquality": 76,
         "led_indication": true,
         "update": {
@@ -126,7 +126,7 @@
         "test": false
     },
     "0x54ef441000b757df": {
-        "device_temperature": 32,
+        "device_temperature": 31,
         "power_outage_count": 47,
         "state": "OFF",
         "power_on_behaviour": "off",
