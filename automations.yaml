@@ -1351,12 +1351,12 @@
   alias: Curtains Open Timer
   description: ''
   triggers:
+  - at: 07:00:00
+    trigger: time
   - event: sunrise
     offset: -0:25:00
     enabled: false
     trigger: sun
-  - at: 07:45:00
-    trigger: time
   conditions:
   - condition: time
     weekday:
