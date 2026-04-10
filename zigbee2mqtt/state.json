@@ -66,12 +66,12 @@
         "power": 2
     },
     "0x001788010649a073": {
-        "battery": 5.5,
+        "battery": 7,
         "occupancy_timeout": 60,
         "occupancy": false,
         "motion_sensitivity": "high",
-        "illuminance": 453,
-        "temperature": 14.46,
+        "illuminance": 337,
+        "temperature": 16.58,
         "linkquality": 76,
         "led_indication": true,
         "update": {
@@ -126,7 +126,7 @@
         "test": false
     },
     "0x54ef441000b757df": {
-        "device_temperature": 33,
+        "device_temperature": 32,
         "power_outage_count": 48,
         "state": "OFF",
         "power_on_behaviour": "off",
