@@ -70,8 +70,8 @@
         "occupancy_timeout": 60,
         "occupancy": false,
         "motion_sensitivity": "high",
-        "illuminance": 452,
-        "temperature": 16.86,
+        "illuminance": 321,
+        "temperature": 16.44,
         "linkquality": 76,
         "led_indication": true,
         "update": {
@@ -99,8 +99,8 @@
         "update": {
             "state": "idle",
             "installed_version": 131078,
-            "latest_version": 131078,
-            "latest_source": "https://raw.githubusercontent.com/Koenkk/zigbee-OTA/master/images/Develco/IntelligentKeyPad_2.0.6.zigbee",
+            "latest_version": 131077,
+            "latest_source": "https://raw.githubusercontent.com/Koenkk/zigbee-OTA/master/images/Develco/IntelligentKeyPad_2.0.5.zigbee",
             "latest_release_notes": null
         }
     },
@@ -126,7 +126,7 @@
         "test": false
     },
     "0x54ef441000b757df": {
-        "device_temperature": 34,
+        "device_temperature": 33,
         "power_outage_count": 48,
         "state": "OFF",
         "power_on_behaviour": "off",
