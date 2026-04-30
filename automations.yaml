@@ -583,6 +583,7 @@
     data:
       message: Door Open
       title: Gracia Door
+    enabled: false
   mode: single
 - id: '1639863852901'
   alias: Pendant Night OFF
@@ -2991,7 +2992,8 @@
   alias: Front door – keep last 4 events
   description: ''
   triggers:
-  - entity_id: binary_sensor.node_7_access_control_window_door_is_open
+  - entity_id:
+    - binary_sensor.front_door_sensor_open
     trigger: state
   actions:
   - target:

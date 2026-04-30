@@ -66,17 +66,17 @@
         "power": 2
     },
     "0x001788010649a073": {
-        "battery": 4.5,
+        "battery": 100,
         "occupancy_timeout": 60,
         "occupancy": false,
         "motion_sensitivity": "high",
-        "illuminance": 376,
-        "temperature": 17.85,
+        "illuminance": 603,
+        "temperature": 17.29,
         "linkquality": 76,
         "led_indication": true,
         "update": {
-            "state": "available",
-            "installed_version": 1124102917,
+            "state": "idle",
+            "installed_version": 1124103169,
             "latest_version": 1124103169,
             "latest_source": "https://raw.githubusercontent.com/Koenkk/zigbee-OTA/master/images/Hue/Sensor-ATmega_0012.sbl-ota",
             "latest_release_notes": null
@@ -126,7 +126,7 @@
         "test": false
     },
     "0x54ef441000b757df": {
-        "device_temperature": 35,
+        "device_temperature": 34,
         "power_outage_count": 48,
         "state": "OFF",
         "power_on_behaviour": "off",
