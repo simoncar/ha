@@ -3077,3 +3077,16 @@
     entity_id: 7dd935187d64f7fb0e40adb07a5020e9
     domain: light
   mode: single
+- id: '1777556370460'
+  alias: Gandolapp
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - tag.trttt
+  conditions: []
+  actions:
+  - action: script.blinds_down
+    metadata: {}
+    data: {}
+  mode: single
