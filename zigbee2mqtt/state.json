@@ -70,8 +70,8 @@
         "occupancy_timeout": 60,
         "occupancy": false,
         "motion_sensitivity": "high",
-        "illuminance": 291,
-        "temperature": 17.29,
+        "illuminance": 556,
+        "temperature": 17.43,
         "linkquality": 76,
         "led_indication": true,
         "update": {
@@ -130,7 +130,7 @@
         "power_outage_count": 48,
         "state": "OFF",
         "power_on_behaviour": "off",
-        "state_white": "ON",
+        "state_white": "OFF",
         "color_mode_rgb": "xy",
         "color_rgb": {
             "x": 0.313,
@@ -143,8 +143,8 @@
         "dimming_range_minimum": 1,
         "dimming_range_maximum": 100,
         "level_config_white": {
-            "on_transition_time": 15,
-            "off_transition_time": 15
+            "on_transition_time": 1.5,
+            "off_transition_time": 1.5
         },
         "effect_speed": 0,
         "color_temp_white": 250,
