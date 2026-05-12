@@ -1,0 +1,5 @@
+[2026-05-11 18:34:49] info: 	z2m: Logging to console, file (filename: log.log)
+[2026-05-11 18:34:49] info: 	z2m: Starting Zigbee2MQTT version 2.10.1 (commit #unknown)
+[2026-05-11 18:34:49] info: 	z2m: Starting zigbee-herdsman (10.0.7)
+[2026-05-11 18:34:49] info: 	zh:zstack:znp: Opening TCP socket with 192.168.87.68:6638
+[2026-05-11 18:34:51] error: 	zh:zstack:znp: Socket error Error: connect EHOSTUNREACH 192.168.87.68:6638
