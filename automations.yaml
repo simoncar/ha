@@ -3085,3 +3085,46 @@
     metadata: {}
     data: {}
   mode: single
+- id: '1778834359060'
+  alias: Keep Zigbee2MQTT running
+  description: Restart Zigbee2MQTT after boot or hourly if it is not started
+  triggers:
+  - event: start
+    id: boot
+    trigger: homeassistant
+    enabled: true
+  - hours: /1
+    id: hourly
+    trigger: time_pattern
+  actions:
+  - choose:
+    - conditions:
+      - condition: trigger
+        id: boot
+      sequence:
+      - repeat:
+          count: 12
+          sequence:
+          - delay:
+              minutes: 5
+          - condition: template
+            value_template: '{{ states(''sensor.zigbee2mqtt_addon_state'') != ''started''
+              }}
+
+              '
+          - data:
+              addon: 45df7312_zigbee2mqtt
+            action: hassio.addon_restart
+    - conditions:
+      - condition: trigger
+        id: hourly
+      - condition: template
+        value_template: '{{ states(''sensor.zigbee2mqtt_addon_state'') != ''started''
+          }}
+
+          '
+      sequence:
+      - data:
+          addon: 45df7312_zigbee2mqtt
+        action: hassio.addon_restart
+  mode: restart
