@@ -12,7 +12,7 @@
         "countdown": 0
     },
     "0xb4e3f9fffe753317": {
-        "battery": 75,
+        "battery": 90,
         "linkquality": 65,
         "update": {
             "state": "idle",
@@ -70,8 +70,8 @@
         "occupancy_timeout": 60,
         "occupancy": false,
         "motion_sensitivity": "high",
-        "illuminance": 361,
-        "temperature": 19.69,
+        "illuminance": 331,
+        "temperature": 20.25,
         "linkquality": 65,
         "led_indication": true,
         "update": {
