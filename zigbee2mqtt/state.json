@@ -41,7 +41,7 @@
             "installed_version": 604241926,
             "latest_version": 604241926,
             "latest_source": "https://raw.githubusercontent.com/Koenkk/zigbee-OTA/master/images/IKEA/tradfri-shortcut-button_release_prod_v604241926_56f5d8d1-78b1-4088-afc1-05d3b7e3314b.ota",
-            "latest_release_notes": "https://ww8.ikea.com/ikeahomesmart/releasenotes/releasenotes.html"
+            "latest_release_notes": "Enables double-clicks.\r\nhttps://www.zigbee2mqtt.io/devices/E1812.html\r\nhttps://ww8.ikea.com/ikeahomesmart/releasenotes/releasenotes.html"
         }
     },
     "0x04cd15fffe268dcc": {
@@ -71,7 +71,7 @@
         "occupancy": false,
         "motion_sensitivity": "high",
         "illuminance": 331,
-        "temperature": 21.24,
+        "temperature": 22.94,
         "linkquality": 65,
         "led_indication": true,
         "update": {
