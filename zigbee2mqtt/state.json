@@ -70,8 +70,8 @@
         "occupancy_timeout": 60,
         "occupancy": false,
         "motion_sensitivity": "high",
-        "illuminance": 413,
-        "temperature": 22.09,
+        "illuminance": 302,
+        "temperature": 19.69,
         "linkquality": 65,
         "led_indication": true,
         "update": {
