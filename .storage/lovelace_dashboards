@@ -33,11 +33,19 @@
       {
         "id": "lovelace",
         "icon": "mdi:view-dashboard",
-        "title": "Overview",
+        "title": "Tablet",
         "url_path": "lovelace",
         "mode": "storage",
         "require_admin": false,
         "show_in_sidebar": true
+      },
+      {
+        "id": "tablet_2",
+        "show_in_sidebar": true,
+        "title": "Tablet 2",
+        "require_admin": false,
+        "mode": "storage",
+        "url_path": "tablet-2"
       }
     ]
   }

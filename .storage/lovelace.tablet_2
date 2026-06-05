@@ -1,0 +1,93 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace.tablet_2",
+  "data": {
+    "config": {
+      "views": [
+        {
+          "type": "sections",
+          "sections": [
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading": "New section"
+                },
+                {
+                  "type": "tile",
+                  "entity": "light.bookshelf_lights",
+                  "features": [
+                    {
+                      "type": "light-brightness"
+                    }
+                  ]
+                },
+                {
+                  "type": "tile",
+                  "entity": "light.controller_tv_lights_led",
+                  "features": [
+                    {
+                      "type": "light-brightness"
+                    }
+                  ]
+                },
+                {
+                  "type": "tile",
+                  "entity": "light.chandelier",
+                  "features": [
+                    {
+                      "type": "light-brightness"
+                    }
+                  ]
+                },
+                {
+                  "type": "tile",
+                  "entity": "light.living_room_spotlights",
+                  "features": [
+                    {
+                      "type": "light-brightness"
+                    }
+                  ]
+                },
+                {
+                  "type": "tile",
+                  "entity": "switch.living_room_lamps",
+                  "name": "Lamps",
+                  "icon": "mdi:floor-lamp",
+                  "hide_state": true,
+                  "vertical": false,
+                  "features": [
+                    {
+                      "type": "toggle"
+                    }
+                  ],
+                  "features_position": "bottom"
+                },
+                {
+                  "type": "tile",
+                  "entity": "switch.kitchen_lights",
+                  "features": [
+                    {
+                      "type": "toggle"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading": "New section"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
