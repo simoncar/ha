@@ -630,15 +630,15 @@
   alias: Kitchen Motion Sensor OFF - Daytime
   description: ''
   triggers:
-  - entity_id:
+  - trigger: state
+    entity_id:
     - binary_sensor.group_downstairs_motion_detection
     to:
     - 'off'
     for:
       hours: 0
-      minutes: 10
-      seconds: 10
-    trigger: state
+      minutes: 5
+      seconds: 0
   conditions: []
   actions:
   - type: turn_off
@@ -1347,7 +1347,7 @@
   alias: Curtains Open Timer
   description: ''
   triggers:
-  - at: 07:00:00
+  - at: 06:30:00
     trigger: time
   - event: sunrise
     offset: -0:25:00
@@ -1363,7 +1363,7 @@
     - tue
     - mon
     - sun
-    after: 06:43:00
+    after: 06:20:00
   actions:
   - data: {}
     target:
