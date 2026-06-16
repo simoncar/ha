@@ -3128,3 +3128,26 @@
           addon: 45df7312_zigbee2mqtt
         action: hassio.addon_restart
   mode: restart
+- id: '1781589921148'
+  alias: Pool Fans Off For 20 Minutes When Front Door Opens
+  description: Turns off pool fans for 20 minutes when the front door opens, then
+    turns them back on.
+  triggers:
+  - entity_id: binary_sensor.node_7_access_control_window_door_is_open
+    to: 'on'
+    trigger: state
+  actions:
+  - target:
+      entity_id:
+      - switch.pool_fan_switch_in
+      - switch.pool_fan_switch_out
+    action: switch.turn_off
+    data: {}
+  - delay: 00:20:00
+  - target:
+      entity_id:
+      - switch.pool_fan_switch_in
+      - switch.pool_fan_switch_out
+    action: switch.turn_on
+    data: {}
+  mode: restart
