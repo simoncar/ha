@@ -132,4 +132,10 @@ notify:
 shell_command:
   pushupdates_to_github: /bin/bash pushupdates.sh
             
-            
+logbook:
+  exclude:
+    entity_globs:
+      - sensor.*_last_seen
+      - binary_sensor.*_last_seen  
+      - sensor.*_node_status
+      - sensor.*_power_management

@@ -3133,8 +3133,10 @@
   description: Turns off pool fans for 20 minutes when the front door opens, then
     turns them back on.
   triggers:
-  - entity_id: binary_sensor.node_7_access_control_window_door_is_open
-    to: 'on'
+  - entity_id:
+    - binary_sensor.front_door_sensor_open
+    to:
+    - 'on'
     trigger: state
   actions:
   - target:
