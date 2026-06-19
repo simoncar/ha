@@ -13,7 +13,7 @@
     },
     "0xb4e3f9fffe753317": {
         "battery": 90,
-        "linkquality": 65,
+        "linkquality": 29,
         "update": {
             "state": "idle",
             "installed_version": 604241926,
@@ -24,7 +24,7 @@
     },
     "0xb4e3f9fffe249e15": {
         "battery": 90,
-        "linkquality": 134,
+        "linkquality": 87,
         "update": {
             "state": "idle",
             "installed_version": 604241926,
@@ -46,7 +46,7 @@
     },
     "0x04cd15fffe268dcc": {
         "battery": 90,
-        "linkquality": 83,
+        "linkquality": 87,
         "update": {
             "state": "idle",
             "installed_version": 604241926,
@@ -70,9 +70,9 @@
         "occupancy_timeout": 60,
         "occupancy": false,
         "motion_sensitivity": "high",
-        "illuminance": 282,
-        "temperature": 23.08,
-        "linkquality": 87,
+        "illuminance": 324,
+        "temperature": 23.78,
+        "linkquality": 61,
         "led_indication": true,
         "update": {
             "state": "idle",
@@ -88,14 +88,14 @@
         "battery_low": false,
         "battery": 70,
         "voltage": 2800,
-        "linkquality": 65
+        "linkquality": 40
     },
     "0x0015bc0043006306": {
         "battery": 100,
         "voltage": 5100,
         "tamper": false,
         "battery_low": false,
-        "linkquality": 36,
+        "linkquality": 21,
         "update": {
             "state": "idle",
             "installed_version": 131078,
@@ -126,7 +126,7 @@
         "test": false
     },
     "0x54ef441000b757df": {
-        "device_temperature": 38,
+        "device_temperature": 37,
         "power_outage_count": 51,
         "state": "OFF",
         "power_on_behaviour": "off",
@@ -139,7 +139,7 @@
         "brightness_rgb": 112,
         "state_rgb": "OFF",
         "brightness_white": 254,
-        "linkquality": 36,
+        "linkquality": 21,
         "dimming_range_minimum": 1,
         "dimming_range_maximum": 100,
         "level_config_white": {
