@@ -620,6 +620,7 @@
   - condition: numeric_state
     entity_id: sensor.gw2000a_solar_lux
     below: 30000
+    enabled: true
   actions:
   - type: turn_on
     device_id: 3bde07aac5e6792e1ab5ebad70800b27
