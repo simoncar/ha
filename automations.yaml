@@ -3154,3 +3154,30 @@
     action: switch.turn_on
     data: {}
   mode: restart
+- id: '1781966273115'
+  alias: Pool Fan Off
+  description: ''
+  triggers:
+  - trigger: switch.turned_on
+    target:
+      device_id: 569b61e2bf0cf74f841878bb5cc501fc
+    options:
+      behavior: each
+  - trigger: switch.turned_on
+    target:
+      device_id: aa5942e72c8f672f6dddaab02ebec531
+    options:
+      behavior: each
+  conditions: []
+  actions:
+  - action: switch.turn_off
+    metadata: {}
+    target:
+      device_id: 569b61e2bf0cf74f841878bb5cc501fc
+    data: {}
+  - action: switch.turn_off
+    metadata: {}
+    target:
+      device_id: aa5942e72c8f672f6dddaab02ebec531
+    data: {}
+  mode: single
