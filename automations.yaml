@@ -1420,17 +1420,6 @@
   - service: script.bedroom_air_con_off
     data: {}
   mode: single
-- id: '1666706803522'
-  alias: Bedroom Close Skylight at 10am
-  description: ''
-  triggers:
-  - at: 00:10:00
-    trigger: time
-  conditions: []
-  actions:
-  - action: script.bedroom_skylight_close
-    data: {}
-  mode: single
 - id: '1667051590173'
   alias: AEOTEC-2 Button 1 AC
   description: ''
@@ -2925,34 +2914,6 @@
     target:
       entity_id: alarm_control_panel.ha_alarm
   mode: single
-- id: '1745057343497'
-  alias: Open skylight on shower humidity spike
-  description: 'When indoor humidity rises by >10% within 5 minutes (shower) and it’s
-    not raining, open the skylight and close it after 40 minutes.
-
-    '
-  triggers:
-  - entity_id: sensor.gw2000a_indoor_humidity
-    trigger: state
-  conditions:
-  - condition: template
-    value_template: '{{ trigger.to_state.state|float - trigger.from_state.state|float
-      > 5 }}
-
-      '
-  - condition: template
-    value_template: "{{ (as_timestamp(trigger.to_state.last_updated)\n    - as_timestamp(trigger.from_state.last_updated))
-      <= 200 }}\n"
-  - condition: numeric_state
-    entity_id: sensor.gw2000a_rain_rate_piezo
-    below: 0.1
-  actions:
-  - action: script.bedroom_skylight_open_2
-    data: {}
-  - delay: 00:40:00
-  - action: script.bedroom_skylight_close
-    data: {}
-  mode: single
 - id: '1757497463381'
   alias: Workshop Button
   description: ''
@@ -3179,5 +3140,32 @@
     metadata: {}
     target:
       device_id: aa5942e72c8f672f6dddaab02ebec531
+    data: {}
+  mode: single
+- id: '1782983551215'
+  alias: Pool Fan Disable
+  description: ''
+  triggers:
+  - trigger: switch.turned_on
+    target:
+      entity_id:
+      - switch.pool_fan_switch_out
+      - switch.pool_fan_switch_in
+    options:
+      behavior: each
+      for: 00:00:00
+  - trigger: time_pattern
+    minutes: /1
+  conditions: []
+  actions:
+  - action: switch.turn_off
+    metadata: {}
+    target:
+      device_id: 569b61e2bf0cf74f841878bb5cc501fc
+    data: {}
+  - action: switch.turn_off
+    metadata: {}
+    target:
+      entity_id: switch.pool_fan_switch_in
     data: {}
   mode: single

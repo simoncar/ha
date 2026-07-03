@@ -68,10 +68,10 @@
     "0x001788010649a073": {
         "battery": 100,
         "occupancy_timeout": 60,
-        "occupancy": false,
+        "occupancy": true,
         "motion_sensitivity": "high",
-        "illuminance": 265,
-        "temperature": 24.07,
+        "illuminance": 165,
+        "temperature": 25.34,
         "linkquality": 61,
         "led_indication": true,
         "update": {
@@ -126,11 +126,11 @@
         "test": false
     },
     "0x54ef441000b757df": {
-        "device_temperature": 37,
+        "device_temperature": 38,
         "power_outage_count": 51,
         "state": "OFF",
         "power_on_behaviour": "off",
-        "state_white": "ON",
+        "state_white": "OFF",
         "color_mode_rgb": "xy",
         "color_rgb": {
             "x": 0.313,
@@ -148,7 +148,9 @@
         },
         "effect_speed": 0,
         "color_temp_white": 250,
-        "color_mode_white": "color_temp"
+        "color_mode_white": "color_temp",
+        "off_on_duration": 1.5,
+        "on_off_duration": 1.5
     },
     "0x54ef44100124a3ca": {
         "update": {
