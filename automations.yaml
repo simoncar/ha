@@ -3169,3 +3169,22 @@
       entity_id: switch.pool_fan_switch_in
     data: {}
   mode: single
+- id: '1783769940400'
+  alias: Water leak notification
+  description: ''
+  triggers:
+  - trigger: moisture.detected
+    target:
+      entity_id: binary_sensor.flood_sensor_water_alarm_water_leak_detected
+    options:
+      behavior: each
+      for: 00:00:00
+  conditions: []
+  actions:
+  - action: notify.send_message
+    metadata: {}
+    target:
+      device_id: 5cacf1dfa893af2ba6e7c13710c4fc2c
+    data:
+      message: Water leak
+  mode: single
