@@ -70,8 +70,8 @@
         "occupancy_timeout": 60,
         "occupancy": false,
         "motion_sensitivity": "high",
-        "illuminance": 347,
-        "temperature": 25.34,
+        "illuminance": 342,
+        "temperature": 25.76,
         "linkquality": 61,
         "led_indication": true,
         "update": {
@@ -126,7 +126,7 @@
         "test": false
     },
     "0x54ef441000b757df": {
-        "device_temperature": 40,
+        "device_temperature": 39,
         "power_outage_count": 54,
         "state": "OFF",
         "power_on_behaviour": "off",
