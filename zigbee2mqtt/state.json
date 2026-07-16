@@ -70,8 +70,8 @@
         "occupancy_timeout": 60,
         "occupancy": false,
         "motion_sensitivity": "high",
-        "illuminance": 273,
-        "temperature": 26.19,
+        "illuminance": 321,
+        "temperature": 26.61,
         "linkquality": 61,
         "led_indication": true,
         "update": {
@@ -126,11 +126,11 @@
         "test": false
     },
     "0x54ef441000b757df": {
-        "device_temperature": 58,
-        "power_outage_count": 54,
-        "state": "ON",
+        "device_temperature": 37,
+        "power_outage_count": 55,
+        "state": "OFF",
         "power_on_behaviour": "off",
-        "state_white": "ON",
+        "state_white": "OFF",
         "color_mode_rgb": "xy",
         "color_rgb": {
             "x": 0.313,
