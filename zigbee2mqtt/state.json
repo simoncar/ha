@@ -34,7 +34,7 @@
         }
     },
     "0x04cd15fffe7ff98b": {
-        "battery": 20,
+        "battery": 30,
         "linkquality": 109,
         "update": {
             "state": "idle",
@@ -66,12 +66,12 @@
         "power": 2
     },
     "0x001788010649a073": {
-        "battery": 100,
+        "battery": 92,
         "occupancy_timeout": 60,
         "occupancy": false,
         "motion_sensitivity": "high",
-        "illuminance": 331,
-        "temperature": 26.19,
+        "illuminance": 308,
+        "temperature": 26.33,
         "linkquality": 61,
         "led_indication": true,
         "update": {
@@ -126,7 +126,7 @@
         "test": false
     },
     "0x54ef441000b757df": {
-        "device_temperature": 37,
+        "device_temperature": 39,
         "power_outage_count": 55,
         "state": "OFF",
         "power_on_behaviour": "off",

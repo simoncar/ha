@@ -104,7 +104,7 @@ template:
           minutes: 1     
         
         
-        
+homekit:        
         
 ios:
   actions:
