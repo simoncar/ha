@@ -68,10 +68,10 @@
     "0x001788010649a073": {
         "battery": 100,
         "occupancy_timeout": 60,
-        "occupancy": false,
+        "occupancy": true,
         "motion_sensitivity": "high",
-        "illuminance": 288,
-        "temperature": 26.47,
+        "illuminance": 249,
+        "temperature": 26.89,
         "linkquality": 61,
         "led_indication": true,
         "update": {
@@ -126,8 +126,8 @@
         "test": false
     },
     "0x54ef441000b757df": {
-        "device_temperature": 30,
-        "power_outage_count": 56,
+        "device_temperature": 38,
+        "power_outage_count": 58,
         "state": "OFF",
         "power_on_behaviour": "off",
         "state_white": "OFF",
