@@ -72,12 +72,6 @@ utility_meter:
 
 bluetooth:
 
-# Example configuration.yaml entry
-samsungtv_smart:
-    host: 192.168.87.31
-    mac: 7c:0a:3f:9f:f5:3a
-    name: HA Rovira TV Bedroom
-    app_list: '{"Netflix": "11101200001/org.tizen.netflix-app", "Prime Video": "3201512006785/org.tizen.ignition", "Spotify": "3201606009684"}'
 
 
 
@@ -105,17 +99,6 @@ template:
         
         
 homekit:        
-        
-ios:
-  actions:
-    - name: Fred
-      background_color: "#000000"
-      label:
-        text: "Hello, World"
-        color: "#ff0000"
-      icon:
-        icon: earth
-        color: "#ffffff"    
         
 tts:
   - platform: google_translate
