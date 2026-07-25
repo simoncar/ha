@@ -617,10 +617,17 @@
     - condition: state
       entity_id: input_select.home_mode
       state: Dark
-  - condition: numeric_state
-    entity_id: sensor.gw2000a_solar_lux
-    below: 30000
-    enabled: true
+  - condition: illuminance.is_value
+    target:
+      entity_id: sensor.kitchen_motion_sensor_2_illuminance
+    options:
+      behavior: any
+      for: 00:00:00
+      threshold:
+        type: below
+        value:
+          active_choice: number
+          number: 85
   actions:
   - type: turn_on
     device_id: 3bde07aac5e6792e1ab5ebad70800b27
