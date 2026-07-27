@@ -191,26 +191,6 @@ range_hood_power_cycle:
     domain: switch
   mode: single
   alias: Range Hood Power Cycle
-bedroom_skylight_close:
-  alias: Bedroom Skylight Close
-  sequence:
-  - data:
-      device: skylight
-      command: close
-    target:
-      device_id: 57fdd525cc96afe7982612e0e1c15b14
-    action: remote.send_command
-  mode: single
-bedroom_skylight_open_2:
-  alias: Bedroom Skylight Open
-  sequence:
-  - service: remote.send_command
-    data:
-      device: skylight
-      command: open
-    target:
-      device_id: 57fdd525cc96afe7982612e0e1c15b14
-  mode: single
 living_room_hvac_30:
   alias: Living Room HVAC 30
   sequence:
@@ -233,24 +213,6 @@ bedroom_heater:
       device_id: 57fdd525cc96afe7982612e0e1c15b14
   mode: single
   icon: mdi:heat-pump
-bedroom_tv_power_cycle:
-  alias: Bedroom TV power cycle
-  sequence:
-  - type: turn_off
-    device_id: dc0014ad1642075d60139c27023c265b
-    entity_id: switch.meross_m6_bedroom_tv_outlet
-    domain: switch
-  - delay:
-      hours: 0
-      minutes: 0
-      seconds: 5
-      milliseconds: 0
-  - type: turn_on
-    device_id: dc0014ad1642075d60139c27023c265b
-    entity_id: switch.meross_m6_bedroom_tv_outlet
-    domain: switch
-  mode: single
-  icon: mdi:lock-reset
 air_con_on_maintain_25:
   alias: Living Room Air Con On maintain 25
   sequence:

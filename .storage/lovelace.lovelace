@@ -497,15 +497,10 @@
                       "color": "#E74C3C"
                     },
                     {
-                      "entity": "sensor.gw2000a_indoor_temperature",
+                      "entity": "sensor.remote_master_bedroom_temperature",
                       "name": "Dormitori Principal",
                       "stroke_width": 2,
                       "color": "#FF9800"
-                    },
-                    {
-                      "entity": "sensor.gw2000a_outdoor_temperature",
-                      "name": "Outside",
-                      "stroke_width": 2
                     }
                   ],
                   "apex_config": {
@@ -549,11 +544,6 @@
                       "curve": "stepline",
                       "stroke_width": 0,
                       "name": "Vent Fan"
-                    },
-                    {
-                      "entity": "sensor.gw2000a_humidity",
-                      "name": "Rovira Humidity",
-                      "stroke_width": 3
                     }
                   ],
                   "apex_config": {
