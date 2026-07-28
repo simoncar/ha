@@ -1888,3 +1888,29 @@
     data:
       message: Water leak
   mode: single
+- id: '1785163824516'
+  alias: Curtains Open Timer
+  description: ''
+  triggers:
+  - at: 06:30:00
+    trigger: time
+  conditions: []
+  actions:
+  - data: {}
+    target:
+      entity_id: input_boolean.bedroom_curtain_motion
+    action: input_boolean.turn_on
+  - device_id: 2f3366a2291c0b2ac9f21b04546ad5df
+    domain: cover
+    entity_id: 188d965a044b2f7f3079892f268ebe16
+    type: open
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 30
+      milliseconds: 0
+  - data: {}
+    target:
+      entity_id: input_boolean.bedroom_curtain_motion
+    action: input_boolean.turn_off
+  mode: single
