@@ -1892,7 +1892,7 @@
   alias: Curtains Open Timer
   description: ''
   triggers:
-  - at: 06:30:00
+  - at: 06:40:00
     trigger: time
   conditions: []
   actions:

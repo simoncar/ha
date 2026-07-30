@@ -5,32 +5,6 @@
   "data": {
     "items": [
       {
-        "id": "dashboard_areas",
-        "show_in_sidebar": true,
-        "icon": "mdi:hoop-house",
-        "title": "Areas",
-        "require_admin": false,
-        "mode": "storage",
-        "url_path": "dashboard-areas"
-      },
-      {
-        "id": "dashboard_test",
-        "show_in_sidebar": true,
-        "title": "Test",
-        "require_admin": false,
-        "mode": "storage",
-        "url_path": "dashboard-test"
-      },
-      {
-        "id": "dashboard_home",
-        "show_in_sidebar": true,
-        "icon": "mdi:home-circle",
-        "title": "Home",
-        "require_admin": false,
-        "mode": "storage",
-        "url_path": "dashboard-home"
-      },
-      {
         "id": "lovelace",
         "icon": "mdi:view-dashboard",
         "title": "Tablet",
@@ -38,14 +12,6 @@
         "mode": "storage",
         "require_admin": false,
         "show_in_sidebar": true
-      },
-      {
-        "id": "tablet_2",
-        "show_in_sidebar": true,
-        "title": "Tablet 2",
-        "require_admin": false,
-        "mode": "storage",
-        "url_path": "tablet-2"
       }
     ]
   }
