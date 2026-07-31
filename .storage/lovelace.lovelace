@@ -926,18 +926,6 @@
               "cards": [
                 {
                   "type": "horizontal-stack",
-                  "title": "Living Room",
-                  "cards": [
-                    {
-                      "type": "tile",
-                      "entity": "input_boolean.living_room_occupied",
-                      "features_position": "bottom",
-                      "vertical": false
-                    }
-                  ]
-                },
-                {
-                  "type": "horizontal-stack",
                   "cards": [
                     {
                       "type": "tile",
@@ -964,34 +952,6 @@
                   "cards": [
                     {
                       "type": "tile",
-                      "entity": "binary_sensor.occupancy_living_room",
-                      "name": "POne Occupancy"
-                    },
-                    {
-                      "type": "tile",
-                      "entity": "binary_sensor.group_downstairs_motion_detection"
-                    }
-                  ]
-                },
-                {
-                  "type": "horizontal-stack",
-                  "cards": [
-                    {
-                      "type": "tile",
-                      "entity": "binary_sensor.pir_living_room"
-                    },
-                    {
-                      "type": "tile",
-                      "entity": "binary_sensor.mmwave_living_room",
-                      "icon": "mdi:sine-wave"
-                    }
-                  ]
-                },
-                {
-                  "type": "horizontal-stack",
-                  "cards": [
-                    {
-                      "type": "tile",
                       "entity": "light.controller_tv_lights_led",
                       "icon": "mdi:awning-outline"
                     },
@@ -1009,6 +969,12 @@
                       "type": "tile",
                       "entity": "switch.meross_m7_lamp_short_outlet",
                       "icon": "mdi:lamp"
+                    },
+                    {
+                      "type": "tile",
+                      "entity": "switch.smart_plug_20072944061154251h5448e1e927dba2_outlet",
+                      "name": "Lamp Tall",
+                      "icon": "mdi:floor-lamp"
                     }
                   ]
                 },
@@ -1024,10 +990,6 @@
                       "entity": "script.blinds_down"
                     }
                   ]
-                },
-                {
-                  "type": "horizontal-stack",
-                  "cards": []
                 },
                 {
                   "type": "horizontal-stack",
@@ -1068,12 +1030,6 @@
                   "cards": [
                     {
                       "type": "tile",
-                      "entity": "switch.smart_plug_20072944061154251h5448e1e927dba2_outlet",
-                      "name": "Lamp Tall",
-                      "icon": "mdi:floor-lamp"
-                    },
-                    {
-                      "type": "tile",
                       "name": "Glasses",
                       "icon": "mdi:glass-cocktail",
                       "entity": "switch.kitchen_cabinets"
@@ -1083,12 +1039,6 @@
                 {
                   "type": "horizontal-stack",
                   "cards": [
-                    {
-                      "type": "tile",
-                      "entity": "switch.shelly_1_record_player",
-                      "icon": "mdi:album",
-                      "name": "Record Player"
-                    },
                     {
                       "type": "tile",
                       "entity": "light.art_light_staircase"

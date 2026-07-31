@@ -236,14 +236,14 @@
   alias: Outdoor Party Lights Motion ON
   description: ''
   triggers:
-  - type: occupied
-    device_id: d06d9529f30f8fa576b2fccdff62516f
-    entity_id: bbe35a4bf2ef5fa28ad73e63bcab829e
-    domain: binary_sensor
-    trigger: device
+  - trigger: motion.detected
+    target:
+      device_id: b185dfeedb51bea2c43ccd79034de832
+    options:
+      behavior: each
   conditions:
   - condition: numeric_state
-    entity_id: sensor.gw2000a_solar_lux
+    entity_id: sensor.backyard_outdoor_motion_sensor_illuminance
     below: '20'
   - condition: not
     conditions:
@@ -271,21 +271,21 @@
 - id: '1633107104655'
   alias: Outdoor Party Lights Motion OFF
   description: ''
-  trigger:
-  - type: no_motion
-    platform: device
-    device_id: d06d9529f30f8fa576b2fccdff62516f
-    entity_id: bbe35a4bf2ef5fa28ad73e63bcab829e
-    domain: binary_sensor
-    for:
-      hours: 0
-      minutes: 5
-      seconds: 0
-  condition:
+  triggers:
+  - trigger: motion.cleared
+    target:
+      device_id: b185dfeedb51bea2c43ccd79034de832
+    options:
+      behavior: each
+      for:
+        hours: 0
+        minutes: 5
+        seconds: 0
+  conditions:
   - condition: state
     entity_id: input_select.outdoor_lights
     state: Auto
-  action:
+  actions:
   - type: turn_off
     device_id: bff2976ba3365a33a441c70f43bdbe18
     entity_id: switch.node_8
