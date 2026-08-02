@@ -118,38 +118,6 @@
     domain: light
     brightness_pct: 30
   mode: single
-- id: '1627149007172'
-  alias: Nighttime Family Room Blinds Down
-  description: ''
-  trigger:
-  - platform: sun
-    event: sunset
-    offset: -00:40:00
-  - platform: time
-    at: '18:45:00'
-  condition: []
-  action:
-  - service: script.blinds_down
-    data: {}
-  - delay:
-      hours: 0
-      minutes: 8
-      seconds: 5
-      milliseconds: 0
-  - service: script.blinds_down
-    data: {}
-  - delay:
-      hours: 0
-      minutes: 0
-      seconds: 5
-      milliseconds: 0
-  - service: script.blinds_down
-    data: {}
-  - service: input_boolean.turn_off
-    data: {}
-    target:
-      entity_id: input_boolean.daytime
-  mode: single
 - id: '1627154759247'
   alias: Outdoor Party Lights ON
   description: ''
@@ -503,23 +471,6 @@
     entity_id: switch.kitchen_cabinets
     domain: switch
   mode: restart
-- id: '1643993735383'
-  alias: Chandelier Ikea Button On Off
-  description: ''
-  trigger:
-  - platform: device
-    domain: mqtt
-    device_id: d927f9fe3e7666f066ce0ec490e3ef37
-    type: action
-    subtype: 'on'
-  condition: []
-  action:
-  - type: toggle
-    device_id: b733ae3ffdf5a2025971b625500b1a33
-    entity_id: light.chandelier
-    domain: light
-  mode: queued
-  max: 10
 - id: '1646310528896'
   alias: Push Button White Bedroom Off
   description: ''
@@ -1031,34 +982,6 @@
       domain: light
       brightness_pct: 1
     enabled: false
-  mode: single
-- id: '1671725325984'
-  alias: Everything Living Room No Motion
-  description: ''
-  triggers:
-  - type: not_occupied
-    device_id: c3a8396028ad77fe1ae6078045f0e9a9
-    entity_id: binary_sensor.occupancy_living_room
-    domain: binary_sensor
-    for:
-      hours: 0
-      minutes: 35
-      seconds: 0
-    trigger: device
-  conditions: []
-  actions:
-  - type: turn_off
-    device_id: b733ae3ffdf5a2025971b625500b1a33
-    entity_id: light.chandelier
-    domain: light
-  - type: turn_off
-    device_id: b3cd0f6a14cd02f85de8e20c76356ee9
-    entity_id: switch.kitchen_led
-    domain: switch
-  - type: turn_off
-    device_id: 3bde07aac5e6792e1ab5ebad70800b27
-    entity_id: switch.kitchen_lights
-    domain: switch
   mode: single
 - id: '1672332061462'
   alias: Living Room set Occupied - OFF
@@ -1705,22 +1628,6 @@
   - type: turn_on
     device_id: f40b8bbfb30009c2050e83b2a02c1585
     entity_id: e4aed43d5f1f0c0940575e777bdb2c37
-    domain: light
-  mode: single
-- id: '1757497463381'
-  alias: Workshop Button
-  description: ''
-  triggers:
-  - domain: mqtt
-    device_id: 37f42e1efc4c08c7c921d4d96fac739e
-    type: action
-    subtype: 'on'
-    trigger: device
-  conditions: []
-  actions:
-  - type: toggle
-    device_id: b1b27a97112ca98db1370a04e12448c3
-    entity_id: c767f448e5b09cb9daba483d02f5bd60
     domain: light
   mode: single
 - id: '1766904328931'
