@@ -174,23 +174,6 @@ study_hvac_off:
     target:
       device_id: 9325eec3a09d66cf232af2fbc3ac7c42
   mode: single
-range_hood_power_cycle:
-  sequence:
-  - type: turn_off
-    device_id: c66858c5e356895cd1b8712db6867be5
-    entity_id: switch.range_hood
-    domain: switch
-  - delay:
-      hours: 0
-      minutes: 0
-      seconds: 5
-      milliseconds: 0
-  - type: turn_on
-    device_id: c66858c5e356895cd1b8712db6867be5
-    entity_id: switch.range_hood
-    domain: switch
-  mode: single
-  alias: Range Hood Power Cycle
 living_room_hvac_30:
   alias: Living Room HVAC 30
   sequence:
@@ -223,22 +206,4 @@ air_con_on_maintain_25:
     data:
       device: aircon
       command: maintain25
-  mode: single
-tablet_button_tab_1:
-  alias: Tablet Button Tab 1
-  sequence:
-  - service: input_select.select_option
-    data:
-      option: Living
-    target:
-      entity_id: input_select.dashboard
-  mode: single
-tablet_button_tab_2:
-  alias: Tablet Button Tab 2
-  sequence:
-  - service: input_select.select_option
-    data:
-      option: Upstairs
-    target:
-      entity_id: input_select.dashboard
   mode: single

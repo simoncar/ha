@@ -333,7 +333,7 @@
   description: ''
   triggers:
   - entity_id:
-    - binary_sensor.kitchen_motion_sensor_2_motion_detection
+    - binary_sensor.group_kitchen_motion
     from:
     - 'off'
     to:
@@ -368,7 +368,7 @@
   triggers:
   - trigger: state
     entity_id:
-    - binary_sensor.group_downstairs_motion_detection
+    - binary_sensor.group_kitchen_motion
     to:
     - 'off'
     for:
@@ -569,27 +569,26 @@
 - id: '1648585519581'
   alias: AWAY Turn Off at Night
   description: ''
-  trigger:
-  - platform: time
-    at: '21:10:00'
-  condition:
+  triggers:
+  - at: '21:10:00'
+    trigger: time
+  conditions:
   - condition: state
     entity_id: input_select.home_mode
     state: Away
-  action:
-  - service: tts.google_translate_say
-    data:
+  actions:
+  - data:
       entity_id: media_player.family_room_speaker
       message: Turning everything off, Goodnight
       cache: true
-  - service: script.air_con_off
-    data: {}
-  - scene: scene.entry_lights_off
-  - service: light.turn_off
-    target:
+    action: tts.google_translate_say
+  - data: {}
+    action: script.air_con_off
+  - target:
       device_id: 09a12aab6e27c3f64fdc160918e9d8ca
     data:
       transition: 60
+    action: light.turn_off
   - type: turn_off
     device_id: bff2976ba3365a33a441c70f43bdbe18
     entity_id: switch.node_8
@@ -626,10 +625,8 @@
     device_id: b733ae3ffdf5a2025971b625500b1a33
     entity_id: light.chandelier
     domain: light
-  - service: script.range_hood_power_cycle
-    data: {}
-  - service: script.study_hvac_off
-    data: {}
+  - data: {}
+    action: script.study_hvac_off
   mode: single
 - id: '1654539286740'
   alias: Nighttime Family Room Lights
@@ -1229,8 +1226,6 @@
       device_id: b3cd0f6a14cd02f85de8e20c76356ee9
       entity_id: switch.kitchen_led
       domain: switch
-    - data: {}
-      action: script.range_hood_power_cycle
     - data: {}
       action: script.study_hvac_off
     - type: turn_off

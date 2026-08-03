@@ -13,13 +13,7 @@ script: !include scripts.yaml
 scene: !include scenes.yaml
 switch: !include switch.yaml
 
- 
-alarm_control_panel:
-  - platform: manual
-    code: !secret alarm_code
-    delay_time: 30
-    arming_time: 30
-    trigger_time: 30
+
     
 homeassistant:
   packages: !include_dir_named packages
@@ -43,61 +37,6 @@ homeassistant:
       last_seen: null
     
 
-# UTILITY METER #
-utility_meter:
-  # HOME ENERGY #
-  home_energy_hourly:
-    source: sensor.ide_meter_reading
-    cycle: hourly
-
-  home_energy_daily:
-    source: sensor.ide_meter_reading
-    cycle: daily
-
-  home_energy_monthly:
-    source: sensor.ide_meter_reading
-    cycle: monthly
-
-  home_energy_cost_hourly:
-    source: sensor.home_energy_cost
-    cycle: hourly
-
-  home_energy_cost_daily:
-    source: sensor.home_energy_cost
-    cycle: daily
-
-  home_energy_cost_monthly:
-    source: sensor.home_energy_cost
-    cycle: monthly
-
-bluetooth:
-
-
-
-
-template:
-    - sensor:
-      - unit_of_measurement: W
-        device_class: power
-        default_entity_id: sensor.home_meter_power
-        name: Home Meter Energy
-        state: "{{ \n    float(states('sensor.shelly_power_meter_l1_l2_channel_1_energy'))
-          \n    + float(states('sensor.shelly_power_meter_l1_l2_channel_2_energy')) \n
-          \   + float(states('sensor.shelly_power_meter_l3_spa_channel_1_energy')) \n
-          \   + float(states('sensor.shelly_power_meter_l3_spa_channel_2_energy')) \n}}"
-      - default_entity_id: sensor.uptime_minutes
-        name: UpTime Minutes
-        state: '{{ (as_timestamp(now()) - as_timestamp(states(''sensor.uptime''))) //
-          60| round (0)  }}'
-    - binary_sensor:
-      - name: "Ground Floor Occupancy with 1m Delay"
-        unique_id: ground_floor_occ_Xmin_delay
-        device_class: occupancy
-        state: "{{ is_state('binary_sensor.group_downstairs_motion_detection', 'on') }}"
-        delay_off:
-          minutes: 1     
-        
-        
 homekit:        
         
 tts:
