@@ -119,35 +119,35 @@
 - id: '1627154759247'
   alias: Outdoor Party Lights ON
   description: ''
-  trigger:
-  - platform: state
-    entity_id:
+  triggers:
+  - entity_id:
     - input_select.outdoor_lights
     to: 'On'
-  condition: []
-  action:
+    trigger: state
+  conditions: []
+  actions:
   - type: turn_on
     device_id: bff2976ba3365a33a441c70f43bdbe18
-    entity_id: switch.node_8
+    entity_id: e28a119810febcb49b140b7d89108b83
     domain: switch
   mode: single
 - id: '1627154800447'
   alias: Outdoor Party Lights OFF
   description: ''
-  trigger:
-  - platform: state
-    entity_id:
+  triggers:
+  - entity_id:
     - input_select.outdoor_lights
     to: 'Off'
-  - platform: state
-    entity_id:
+    trigger: state
+  - entity_id:
     - input_select.outdoor_lights
     to: Auto
-  condition: []
-  action:
+    trigger: state
+  conditions: []
+  actions:
   - type: turn_off
     device_id: bff2976ba3365a33a441c70f43bdbe18
-    entity_id: switch.node_8
+    entity_id: e28a119810febcb49b140b7d89108b83
     domain: switch
   mode: single
 - id: '1629659730250'
@@ -589,7 +589,7 @@
     action: light.turn_off
   - type: turn_off
     device_id: bff2976ba3365a33a441c70f43bdbe18
-    entity_id: switch.node_8
+    entity_id: e28a119810febcb49b140b7d89108b83
     domain: switch
   - type: turn_off
     device_id: 817d13a2421b3abc46991c8c7d8c4a65
@@ -1206,7 +1206,7 @@
       action: light.turn_off
     - type: turn_off
       device_id: bff2976ba3365a33a441c70f43bdbe18
-      entity_id: switch.node_8
+      entity_id: e28a119810febcb49b140b7d89108b83
       domain: switch
     - type: turn_off
       device_id: 817d13a2421b3abc46991c8c7d8c4a65
@@ -1813,4 +1813,49 @@
     target:
       entity_id: input_boolean.bedroom_curtain_motion
     action: input_boolean.turn_off
+  mode: single
+- id: wallmote_quad_2_button_1_outside
+  alias: WallMote Quad - Button 1 (Outside) - Press to toggle
+  description: Press toggles the outdoor party lights. No hold action (not dimmable).
+  triggers:
+  - trigger: event.received
+    target:
+      entity_id: event.wallmote_quad_2_scene_001_outside
+    options:
+      event_type:
+      - KeyPressed
+  actions:
+  - action: switch.toggle
+    target:
+      entity_id: switch.outdoor_party_lights
+  mode: single
+- id: wallmote_quad_2_button_1_outside
+  alias: WallMote Quad - Button 1 (Outside) - Press to toggle
+  description: Press toggles the outdoor party lights. No hold action (not dimmable).
+  triggers:
+  - trigger: event.received
+    target:
+      entity_id: event.wallmote_quad_2_scene_001_outside
+    options:
+      event_type:
+      - KeyPressed
+  actions:
+  - action: switch.toggle
+    target:
+      entity_id: switch.outdoor_party_lights
+  mode: single
+- id: wallmote_quad_2_button_1_outside
+  alias: WallMote Quad - Button 1 (Outside) - Press to toggle
+  description: Press toggles the outdoor party lights. No hold action (not dimmable).
+  triggers:
+  - trigger: event.received
+    target:
+      entity_id: event.wallmote_quad_2_scene_001_outside
+    options:
+      event_type:
+      - KeyPressed
+  actions:
+  - action: switch.toggle
+    target:
+      entity_id: switch.outdoor_party_lights
   mode: single
