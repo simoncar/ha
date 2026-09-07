@@ -88,16 +88,6 @@
   - at: '20:30:00'
     trigger: time
     enabled: true
-  - type: illuminance
-    device_id: 1fd39b205e3707ea8a7dddb2c7c9cca7
-    entity_id: d332fff76b75f9190915c484f0dbfdc5
-    domain: sensor
-    below: 5000
-    trigger: device
-    for:
-      hours: 0
-      minutes: 1
-      seconds: 0
   conditions:
   - condition: state
     entity_id: input_select.home_mode
@@ -626,31 +616,6 @@
   - data: {}
     action: script.study_hvac_off
   mode: single
-- id: '1654539286740'
-  alias: Nighttime Family Room Lights
-  description: ''
-  triggers:
-  - event: sunset
-    offset: -00:30:00
-    trigger: sun
-    enabled: false
-  - type: illuminance
-    device_id: 1fd39b205e3707ea8a7dddb2c7c9cca7
-    entity_id: d332fff76b75f9190915c484f0dbfdc5
-    domain: sensor
-    trigger: device
-    below: 10
-    for:
-      hours: 0
-      minutes: 5
-      seconds: 0
-  conditions: []
-  actions:
-  - type: turn_on
-    device_id: 09a12aab6e27c3f64fdc160918e9d8ca
-    entity_id: light.entry_pendant
-    domain: light
-  mode: single
 - id: '1662826655444'
   alias: Bedroom Nighttime Toilet
   description: ''
@@ -772,31 +737,6 @@
     entity_id: switch.master_closet
     domain: switch
   mode: restart
-- id: '1664129718864'
-  alias: Bedroom Entry Lights
-  description: ''
-  triggers:
-  - type: motion
-    device_id: dc623ed6f5b820c9b9b22b5aa5512450
-    entity_id: binary_sensor.bedroom_entry_sensor
-    domain: binary_sensor
-    trigger: device
-  conditions:
-  - condition: numeric_state
-    entity_id: sensor.gw2000a_solar_lux
-    below: 10000
-  actions:
-  - type: turn_on
-    device_id: 605e572814970daeb76e0dca4f8a17d7
-    entity_id: light.master_bed_led_2_2
-    domain: light
-    brightness_pct: 6
-    enabled: false
-  - type: turn_on
-    device_id: 247f56cc429ca49a254e3df37e263e37
-    entity_id: switch.bedroom_lamp
-    domain: switch
-  mode: single
 - id: '1668425141640'
   alias: AWAY Cycle Bedroom Light
   description: ''
@@ -1858,4 +1798,60 @@
   - action: switch.toggle
     target:
       entity_id: switch.outdoor_party_lights
+  mode: single
+- id: '1788706443822'
+  alias: 'WallMote Quad - Button 2 (Bookshelf) '
+  description: ''
+  triggers:
+  - trigger: event.received
+    target:
+      entity_id:
+      - event.wallmote_quad_2_scene_002_bookshelf
+    options:
+      event_type:
+      - KeyPressed
+  conditions: []
+  actions:
+  - action: light.toggle
+    target:
+      entity_id: light.bookshelf_lights
+    data: {}
+  mode: single
+- id: '1788706563385'
+  alias: WallMote Quad - Button 3 (TV LED)
+  description: ''
+  triggers:
+  - trigger: event.received
+    target:
+      entity_id:
+      - event.wallmote_quad_2_scene_003_tv
+    options:
+      event_type:
+      - KeyPressed
+  conditions: []
+  actions:
+  - action: light.toggle
+    target:
+      entity_id:
+      - light.controller_tv_lights_led
+    data: {}
+  mode: single
+- id: '1788706706750'
+  alias: WallMote Quad - Button 4 (Chandelier)
+  description: ''
+  triggers:
+  - trigger: event.received
+    target:
+      entity_id:
+      - event.wallmote_quad_2_scene_004_chandelier
+    options:
+      event_type:
+      - KeyPressed
+  conditions: []
+  actions:
+  - action: light.toggle
+    target:
+      entity_id:
+      - light.chandelier
+    data: {}
   mode: single
