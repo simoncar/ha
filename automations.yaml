@@ -1754,7 +1754,8 @@
       entity_id: input_boolean.bedroom_curtain_motion
     action: input_boolean.turn_off
   mode: single
-- id: wallmote_quad_2_button_1_outside
+- &id001
+  id: wallmote_quad_2_button_1_outside
   alias: WallMote Quad - Button 1 (Outside) - Press to toggle
   description: Press toggles the outdoor party lights. No hold action (not dimmable).
   triggers:
@@ -1768,37 +1769,10 @@
   - action: switch.toggle
     target:
       entity_id: switch.outdoor_party_lights
-  mode: single
-- id: wallmote_quad_2_button_1_outside
-  alias: WallMote Quad - Button 1 (Outside) - Press to toggle
-  description: Press toggles the outdoor party lights. No hold action (not dimmable).
-  triggers:
-  - trigger: event.received
-    target:
-      entity_id: event.wallmote_quad_2_scene_001_outside
-    options:
-      event_type:
-      - KeyPressed
-  actions:
-  - action: switch.toggle
-    target:
-      entity_id: switch.outdoor_party_lights
-  mode: single
-- id: wallmote_quad_2_button_1_outside
-  alias: WallMote Quad - Button 1 (Outside) - Press to toggle
-  description: Press toggles the outdoor party lights. No hold action (not dimmable).
-  triggers:
-  - trigger: event.received
-    target:
-      entity_id: event.wallmote_quad_2_scene_001_outside
-    options:
-      event_type:
-      - KeyPressed
-  actions:
-  - action: switch.toggle
-    target:
-      entity_id: switch.outdoor_party_lights
-  mode: single
+  mode: parallel
+  max: 2
+- *id001
+- *id001
 - id: '1788706443822'
   alias: 'WallMote Quad - Button 2 (Bookshelf) '
   description: ''
@@ -1815,7 +1789,8 @@
   - action: light.toggle
     target:
       entity_id: light.bookshelf_lights
-    data: {}
+    data:
+      transition: 0
   mode: single
 - id: '1788706563385'
   alias: WallMote Quad - Button 3 (TV LED)
@@ -1834,7 +1809,8 @@
     target:
       entity_id:
       - light.controller_tv_lights_led
-    data: {}
+    data:
+      transition: 0
   mode: single
 - id: '1788706706750'
   alias: WallMote Quad - Button 4 (Chandelier)
@@ -1853,5 +1829,6 @@
     target:
       entity_id:
       - light.chandelier
-    data: {}
+    data:
+      transition: 0
   mode: single
