@@ -987,23 +987,6 @@
                       "name": "Study Fan"
                     }
                   ]
-                },
-                {
-                  "type": "horizontal-stack",
-                  "cards": [
-                    {
-                      "type": "tile",
-                      "entity": "binary_sensor.presence_study_occupancy"
-                    },
-                    {
-                      "type": "tile",
-                      "entity": "binary_sensor.presence_study_mmwave"
-                    },
-                    {
-                      "type": "tile",
-                      "entity": "binary_sensor.presence_study_pir"
-                    }
-                  ]
                 }
               ],
               "title": "Study"
@@ -1057,53 +1040,13 @@
               "type": "vertical-stack",
               "cards": [
                 {
-                  "type": "horizontal-stack",
-                  "title": "Backyard",
-                  "cards": [
-                    {
-                      "type": "tile",
-                      "name": "Water",
-                      "entity": "sensor.shelly1_pool_temperature_2"
-                    },
-                    {
-                      "type": "tile",
-                      "name": "Pump",
-                      "entity": "sensor.shelly1_pool_temperature"
-                    },
-                    {
-                      "type": "tile",
-                      "name": "Humidity",
-                      "entity": "sensor.rm4_pool_humidity"
-                    }
-                  ]
-                },
-                {
-                  "type": "horizontal-stack",
-                  "cards": [
-                    {
-                      "type": "tile",
-                      "name": "Lights",
-                      "entity": "switch.node_8"
-                    },
-                    {
-                      "type": "tile",
-                      "name": "Occupancy",
-                      "entity": "binary_sensor.philips_backyard_sensor_occupancy"
-                    },
-                    {
-                      "type": "tile",
-                      "name": "Lux",
-                      "entity": "sensor.philips_backyard_sensor_illuminance"
-                    }
-                  ]
-                },
-                {
-                  "type": "sensor",
-                  "entity": "sensor.shelly1_pool_temperature_2",
-                  "hours_to_show": 281,
-                  "graph": "line"
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "entity": "switch.outdoor_party_lights"
                 }
-              ]
+              ],
+              "title": "Backyard"
             },
             {
               "type": "entities",
