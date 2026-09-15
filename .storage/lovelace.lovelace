@@ -69,10 +69,142 @@
                   "type": "horizontal-stack",
                   "cards": [
                     {
+                      "type": "tile",
+                      "entity": "script.air_con_on",
+                      "name": "AC On",
+                      "icon": "mdi:air-conditioner",
+                      "show_entity_picture": false,
+                      "hide_state": true,
+                      "vertical": true,
+                      "features_position": "bottom"
+                    },
+                    {
+                      "type": "tile",
+                      "entity": "script.air_con_off",
+                      "name": "AC Off",
+                      "icon": "mdi:fan-off",
+                      "hide_state": true,
+                      "vertical": true,
+                      "icon_tap_action": {
+                        "action": "call-service",
+                        "service": "script.living_room_hvac_30",
+                        "data": {},
+                        "target": {}
+                      },
+                      "features_position": "bottom"
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "tile",
+                      "entity": "light.controller_tv_lights_led",
+                      "icon": "mdi:awning-outline",
+                      "vertical": true,
+                      "hide_state": true,
+                      "features_position": "bottom"
+                    },
+                    {
+                      "type": "tile",
+                      "entity": "light.bookshelf_lights",
+                      "icon": "mdi:bookshelf",
+                      "vertical": true,
+                      "hide_state": true
+                    },
+                    {
+                      "type": "tile",
+                      "entity": "input_select.outdoor_lights",
+                      "name": "Outdoor",
+                      "hide_state": true,
+                      "vertical": true,
+                      "features_position": "bottom"
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "tile",
+                      "entity": "light.chandelier",
+                      "icon": "mdi:chandelier",
+                      "hide_state": true,
+                      "vertical": true,
+                      "features_position": "bottom"
+                    },
+                    {
+                      "type": "tile",
+                      "entity": "light.living_room_spotlights",
+                      "name": "Spotlights",
+                      "icon": "mdi:spotlight-beam",
+                      "hide_state": true,
+                      "vertical": true,
+                      "features_position": "bottom"
+                    },
+                    {
+                      "type": "horizontal-stack",
+                      "cards": [
+                        {
+                          "type": "tile",
+                          "entity": "switch.living_room_lamps",
+                          "name": "Lamps",
+                          "icon": "mdi:lamp",
+                          "hide_state": true,
+                          "vertical": true,
+                          "features_position": "bottom"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "tile",
+                      "entity": "switch.kitchen_lights",
+                      "icon": "mdi:light-recessed",
+                      "hide_state": true,
+                      "name": "Kitchen",
+                      "features_position": "bottom",
+                      "vertical": true
+                    },
+                    {
+                      "type": "horizontal-stack",
+                      "cards": [
+                        {
+                          "type": "tile",
+                          "entity": "light.art_light_staircase",
+                          "name": "Art Light",
+                          "icon": "mdi:palette",
+                          "hide_state": true,
+                          "vertical": true,
+                          "features_position": "bottom"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "tile",
+                      "entity": "light.entry_pendant",
+                      "name": "Entry Pendant",
+                      "icon": "mdi:chandelier",
+                      "hide_state": true,
+                      "vertical": true,
+                      "features_position": "bottom"
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
                       "type": "custom:button-card",
                       "name": "Holiday",
                       "entity": "input_select.home_mode",
                       "color_type": "card",
+                      "icon": "mdi:bag-suitcase",
                       "tap_action": {
                         "action": "call-service",
                         "service": "input_select.select_option",
@@ -155,6 +287,7 @@
                       "entity": "input_select.home_mode",
                       "name": "Dark",
                       "color_type": "card",
+                      "icon": "mdi:candle",
                       "tap_action": {
                         "action": "call-service",
                         "service": "input_select.select_option",
@@ -194,280 +327,18 @@
                   ]
                 },
                 {
-                  "type": "horizontal-stack",
-                  "cards": [
-                    {
-                      "type": "custom:button-card",
-                      "name": "Outdoor On",
-                      "entity": "input_select.outdoor_lights",
-                      "color_type": "card",
-                      "tap_action": {
-                        "action": "call-service",
-                        "service": "input_select.select_option",
-                        "data": {
-                          "option": "On"
-                        },
-                        "target": {
-                          "entity_id": "input_select.outdoor_lights"
-                        }
-                      },
-                      "state": [
-                        {
-                          "value": "On",
-                          "color": "rgb(28, 128, 199)"
-                        },
-                        {
-                          "value": "Off",
-                          "color": "#131313"
-                        },
-                        {
-                          "value": "Auto",
-                          "color": "#131313"
-                        }
-                      ],
-                      "styles": {
-                        "name": [
-                          {
-                            "font-family": "Roboto"
-                          },
-                          {
-                            "font-size": "14px"
-                          }
-                        ]
-                      }
-                    },
-                    {
-                      "type": "custom:button-card",
-                      "entity": "input_select.outdoor_lights",
-                      "name": "Auto",
-                      "color_type": "card",
-                      "tap_action": {
-                        "action": "call-service",
-                        "service": "input_select.select_option",
-                        "data": {
-                          "option": "Auto"
-                        },
-                        "target": {
-                          "entity_id": "input_select.outdoor_lights"
-                        }
-                      },
-                      "state": [
-                        {
-                          "value": "On",
-                          "color": "#131313"
-                        },
-                        {
-                          "value": "Off",
-                          "color": "#131313"
-                        },
-                        {
-                          "value": "Auto",
-                          "color": "rgb(28, 128, 199)",
-                          "font-weight": "bold"
-                        }
-                      ],
-                      "styles": {
-                        "name": [
-                          {
-                            "font-family": "Roboto"
-                          },
-                          {
-                            "font-size": "14px"
-                          }
-                        ]
-                      }
-                    },
-                    {
-                      "type": "custom:button-card",
-                      "entity": "input_select.outdoor_lights",
-                      "name": "Off",
-                      "color_type": "card",
-                      "tap_action": {
-                        "action": "call-service",
-                        "service": "input_select.select_option",
-                        "data": {
-                          "option": "Off"
-                        },
-                        "target": {
-                          "entity_id": "input_select.outdoor_lights"
-                        }
-                      },
-                      "state": [
-                        {
-                          "value": "On",
-                          "color": "#131313"
-                        },
-                        {
-                          "value": "Off",
-                          "color": "rgb(28, 128, 199)"
-                        },
-                        {
-                          "value": "Auto",
-                          "color": "#131313",
-                          "font-weight": "bold"
-                        }
-                      ],
-                      "styles": {
-                        "name": [
-                          {
-                            "font-family": "Roboto"
-                          },
-                          {
-                            "font-size": "14px"
-                          }
-                        ]
-                      }
-                    }
-                  ]
+                  "graph": "line",
+                  "type": "sensor",
+                  "entity": "sensor.family_room_temperature",
+                  "detail": 2,
+                  "name": "Temp",
+                  "theme": "Mushroom",
+                  "hours_to_show": 24
                 },
                 {
-                  "type": "horizontal-stack",
-                  "cards": [
-                    {
-                      "type": "tile",
-                      "entity": "light.controller_tv_lights_led",
-                      "icon": "mdi:awning-outline",
-                      "vertical": true,
-                      "hide_state": true,
-                      "features_position": "bottom"
-                    },
-                    {
-                      "type": "tile",
-                      "entity": "light.bookshelf_lights",
-                      "icon": "mdi:bookshelf",
-                      "vertical": true,
-                      "hide_state": true
-                    },
-                    {
-                      "type": "tile",
-                      "entity": "switch.kitchen_led",
-                      "name": "Cooking",
-                      "icon": "mdi:led-strip",
-                      "hide_state": true,
-                      "vertical": true,
-                      "features_position": "bottom"
-                    }
-                  ]
-                },
-                {
-                  "type": "horizontal-stack",
-                  "cards": [
-                    {
-                      "type": "tile",
-                      "entity": "light.chandelier",
-                      "icon": "mdi:chandelier",
-                      "hide_state": true,
-                      "vertical": true,
-                      "features_position": "bottom"
-                    },
-                    {
-                      "type": "tile",
-                      "entity": "light.living_room_spotlights",
-                      "name": "Spotlights",
-                      "icon": "mdi:spotlight-beam",
-                      "hide_state": true,
-                      "vertical": true,
-                      "features_position": "bottom"
-                    },
-                    {
-                      "type": "horizontal-stack",
-                      "cards": [
-                        {
-                          "type": "tile",
-                          "entity": "switch.living_room_lamps",
-                          "name": "Lamps",
-                          "icon": "mdi:lamp",
-                          "hide_state": true,
-                          "vertical": true,
-                          "features_position": "bottom"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "horizontal-stack",
-                  "cards": [
-                    {
-                      "type": "tile",
-                      "entity": "switch.kitchen_lights",
-                      "icon": "mdi:light-recessed",
-                      "hide_state": true,
-                      "name": "Kitchen",
-                      "features_position": "bottom",
-                      "vertical": true
-                    },
-                    {
-                      "type": "horizontal-stack",
-                      "cards": [
-                        {
-                          "type": "tile",
-                          "entity": "light.art_light_staircase",
-                          "name": "Art Light",
-                          "icon": "mdi:palette",
-                          "hide_state": true,
-                          "vertical": true,
-                          "features_position": "bottom"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "tile",
-                      "entity": "light.entry_pendant",
-                      "name": "Entry Pendant",
-                      "icon": "mdi:chandelier",
-                      "hide_state": true,
-                      "vertical": true,
-                      "features_position": "bottom"
-                    }
-                  ]
-                },
-                {
-                  "type": "vertical-stack",
-                  "title": "Entry",
-                  "cards": [
-                    {
-                      "type": "horizontal-stack",
-                      "cards": [
-                        {
-                          "type": "tile",
-                          "entity": "light.entry_bathroom_spotlights",
-                          "icon": "mdi:lightbulb-spot",
-                          "vertical": false,
-                          "features_position": "bottom"
-                        },
-                        {
-                          "type": "tile",
-                          "entity": "light.entry_bathroom_led_led",
-                          "icon": "mdi:led-strip"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "horizontal-stack",
-                      "cards": [
-                        {
-                          "type": "tile",
-                          "entity": "light.entry_pendant",
-                          "icon": "mdi:chandelier"
-                        },
-                        {
-                          "type": "tile",
-                          "entity": "light.controller_lights_front_door",
-                          "icon": "mdi:led-strip",
-                          "name": "Front Door"
-                        },
-                        {
-                          "type": "tile",
-                          "entity": "binary_sensor.node_7_access_control_window_door_is_open"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "tile",
-                      "entity": "switch.art_light_entry"
-                    }
-                  ]
+                  "type": "weather-forecast",
+                  "entity": "weather.gracia",
+                  "forecast_type": "daily"
                 }
               ]
             }
@@ -1035,40 +906,496 @@
                   "entity": "switch.art_light_entry"
                 }
               ]
-            },
-            {
-              "type": "vertical-stack",
-              "cards": [
-                {
-                  "show_name": true,
-                  "show_icon": true,
-                  "type": "button",
-                  "entity": "switch.outdoor_party_lights"
-                }
-              ],
-              "title": "Backyard"
-            },
-            {
-              "type": "entities",
-              "entities": [
-                "sensor.uptime"
-              ],
-              "title": "Uptime"
-            },
-            {
-              "type": "custom:mushroom-select-card",
-              "entity": "input_select.home_mode",
-              "tap_action": {
-                "action": "call-service",
-                "service": "input_boolean.toggle",
-                "target": {
-                  "entity_id": "input_boolean.away"
-                },
-                "data": {}
-              },
-              "fill_container": false
             }
           ]
+        },
+        {
+          "title": "Home",
+          "path": "home",
+          "icon": "mdi:home",
+          "type": "sections",
+          "max_columns": 3,
+          "dense_section_placement": true,
+          "header": {
+            "layout": "responsive",
+            "badges_position": "bottom",
+            "badges_wrap": "scroll",
+            "card": {
+              "type": "markdown",
+              "text_only": true,
+              "content": "# {% if now().hour < 12 %}Good morning{% elif now().hour < 18 %}Good afternoon{% else %}Good evening{% endif %}, {{ user }}\n**{{ states('input_select.home_mode') }} mode** · Family room {{ states('sensor.family_room_temperature') }} {{ state_attr('sensor.family_room_temperature', 'unit_of_measurement') or '°C' }}"
+            }
+          },
+          "badges": [
+            {
+              "type": "entity",
+              "entity": "input_select.home_mode",
+              "name": "Mode",
+              "show_name": true,
+              "show_state": true,
+              "icon": "mdi:home-switch",
+              "color": "accent"
+            },
+            {
+              "type": "entity",
+              "entity": "sensor.family_room_temperature",
+              "name": "Family room",
+              "show_name": true,
+              "show_state": true,
+              "color": "state"
+            },
+            {
+              "type": "entity",
+              "entity": "weather.gracia",
+              "show_name": false,
+              "show_state": true,
+              "color": "state"
+            }
+          ],
+          "sections": [
+            {
+              "type": "grid",
+              "column_span": 1,
+              "background": {
+                "color": "#56718c",
+                "opacity": 8
+              },
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading": "Home mode",
+                  "icon": "mdi:home-switch",
+                  "badges": [
+                    {
+                      "type": "entity",
+                      "entity": "input_select.home_mode",
+                      "show_icon": false,
+                      "show_state": true
+                    },
+                    {
+                      "type": "button",
+                      "text": "Away",
+                      "icon": "mdi:bag-suitcase",
+                      "color": "blue",
+                      "tap_action": {
+                        "action": "perform-action",
+                        "perform_action": "input_select.select_option",
+                        "target": {
+                          "entity_id": "input_select.home_mode"
+                        },
+                        "data": {
+                          "option": "Away"
+                        }
+                      }
+                    },
+                    {
+                      "type": "button",
+                      "text": "Normal",
+                      "icon": "mdi:home",
+                      "color": "green",
+                      "tap_action": {
+                        "action": "perform-action",
+                        "perform_action": "input_select.select_option",
+                        "target": {
+                          "entity_id": "input_select.home_mode"
+                        },
+                        "data": {
+                          "option": "Normal"
+                        }
+                      }
+                    },
+                    {
+                      "type": "button",
+                      "text": "Dark",
+                      "icon": "mdi:candle",
+                      "color": "deep-purple",
+                      "tap_action": {
+                        "action": "perform-action",
+                        "perform_action": "input_select.select_option",
+                        "target": {
+                          "entity_id": "input_select.home_mode"
+                        },
+                        "data": {
+                          "option": "Dark"
+                        }
+                      }
+                    }
+                  ],
+                  "grid_options": {
+                    "columns": "full",
+                    "rows": "auto"
+                  }
+                },
+                {
+                  "type": "heading",
+                  "heading": "Blinds",
+                  "heading_style": "subtitle",
+                  "icon": "mdi:blinds",
+                  "badges": [
+                    {
+                      "type": "button",
+                      "text": "Down",
+                      "icon": "mdi:arrow-down",
+                      "color": "blue-grey",
+                      "tap_action": {
+                        "action": "perform-action",
+                        "perform_action": "script.turn_on",
+                        "target": {
+                          "entity_id": "script.blinds_down"
+                        }
+                      }
+                    },
+                    {
+                      "type": "button",
+                      "text": "Up",
+                      "icon": "mdi:arrow-up",
+                      "color": "blue-grey",
+                      "tap_action": {
+                        "action": "perform-action",
+                        "perform_action": "script.turn_on",
+                        "target": {
+                          "entity_id": "script.blinds_up"
+                        }
+                      }
+                    }
+                  ],
+                  "grid_options": {
+                    "columns": "full",
+                    "rows": "auto"
+                  }
+                },
+                {
+                  "type": "heading",
+                  "heading": "Air conditioning",
+                  "heading_style": "subtitle",
+                  "icon": "mdi:air-conditioner",
+                  "badges": [
+                    {
+                      "type": "button",
+                      "text": "On",
+                      "icon": "mdi:fan",
+                      "color": "cyan",
+                      "tap_action": {
+                        "action": "perform-action",
+                        "perform_action": "script.turn_on",
+                        "target": {
+                          "entity_id": "script.air_con_on"
+                        }
+                      }
+                    },
+                    {
+                      "type": "button",
+                      "text": "Off",
+                      "icon": "mdi:fan-off",
+                      "color": "grey",
+                      "tap_action": {
+                        "action": "perform-action",
+                        "perform_action": "script.turn_on",
+                        "target": {
+                          "entity_id": "script.air_con_off"
+                        }
+                      }
+                    }
+                  ],
+                  "grid_options": {
+                    "columns": "full",
+                    "rows": "auto"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "column_span": 1,
+              "background": {
+                "color": "#d99b36",
+                "opacity": 8
+              },
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading": "Lighting",
+                  "icon": "mdi:lightbulb-group",
+                  "badges": [
+                    {
+                      "type": "button",
+                      "text": "All off",
+                      "icon": "mdi:lightbulb-group-off",
+                      "color": "amber",
+                      "tap_action": {
+                        "action": "perform-action",
+                        "perform_action": "homeassistant.turn_off",
+                        "target": {
+                          "entity_id": [
+                            "light.controller_tv_lights_led",
+                            "light.bookshelf_lights",
+                            "light.chandelier",
+                            "light.living_room_spotlights",
+                            "light.art_light_staircase",
+                            "light.entry_pendant",
+                            "switch.living_room_lamps",
+                            "switch.kitchen_lights"
+                          ]
+                        }
+                      }
+                    }
+                  ],
+                  "grid_options": {
+                    "columns": "full",
+                    "rows": "auto"
+                  }
+                },
+                {
+                  "type": "tile",
+                  "entity": "input_select.outdoor_lights",
+                  "name": "Outdoor lights",
+                  "icon": "mdi:outdoor-lamp",
+                  "color": "amber",
+                  "features_position": "inline",
+                  "features": [
+                    {
+                      "type": "select-options"
+                    }
+                  ],
+                  "grid_options": {
+                    "columns": "full",
+                    "rows": "auto"
+                  }
+                },
+                {
+                  "type": "tile",
+                  "entity": "light.controller_tv_lights_led",
+                  "name": "TV lights",
+                  "icon": "mdi:awning-outline",
+                  "color": "amber",
+                  "state_content": [
+                    "state",
+                    "brightness"
+                  ],
+                  "features": [
+                    {
+                      "type": "light-brightness"
+                    }
+                  ],
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": "auto"
+                  }
+                },
+                {
+                  "type": "tile",
+                  "entity": "light.bookshelf_lights",
+                  "name": "Bookshelf",
+                  "icon": "mdi:bookshelf",
+                  "color": "amber",
+                  "state_content": [
+                    "state",
+                    "brightness"
+                  ],
+                  "features": [
+                    {
+                      "type": "light-brightness"
+                    }
+                  ],
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": "auto"
+                  }
+                },
+                {
+                  "type": "tile",
+                  "entity": "light.chandelier",
+                  "name": "Chandelier",
+                  "icon": "mdi:chandelier",
+                  "color": "amber",
+                  "state_content": [
+                    "state",
+                    "brightness"
+                  ],
+                  "features": [
+                    {
+                      "type": "light-brightness"
+                    }
+                  ],
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": "auto"
+                  }
+                },
+                {
+                  "type": "tile",
+                  "entity": "light.living_room_spotlights",
+                  "name": "Spotlights",
+                  "icon": "mdi:spotlight-beam",
+                  "color": "amber",
+                  "state_content": [
+                    "state",
+                    "brightness"
+                  ],
+                  "features": [
+                    {
+                      "type": "light-brightness"
+                    }
+                  ],
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": "auto"
+                  }
+                },
+                {
+                  "type": "tile",
+                  "entity": "switch.living_room_lamps",
+                  "name": "Lamps",
+                  "icon": "mdi:lamp",
+                  "color": "amber",
+                  "features_position": "inline",
+                  "features": [
+                    {
+                      "type": "toggle"
+                    }
+                  ],
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": "auto"
+                  }
+                },
+                {
+                  "type": "tile",
+                  "entity": "switch.kitchen_lights",
+                  "name": "Kitchen",
+                  "icon": "mdi:light-recessed",
+                  "color": "amber",
+                  "features_position": "inline",
+                  "features": [
+                    {
+                      "type": "toggle"
+                    }
+                  ],
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": "auto"
+                  }
+                },
+                {
+                  "type": "tile",
+                  "entity": "light.art_light_staircase",
+                  "name": "Art light",
+                  "icon": "mdi:palette",
+                  "color": "amber",
+                  "state_content": [
+                    "state",
+                    "brightness"
+                  ],
+                  "features": [
+                    {
+                      "type": "light-brightness"
+                    }
+                  ],
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": "auto"
+                  }
+                },
+                {
+                  "type": "tile",
+                  "entity": "light.entry_pendant",
+                  "name": "Entry pendant",
+                  "icon": "mdi:chandelier",
+                  "color": "amber",
+                  "state_content": [
+                    "state",
+                    "brightness"
+                  ],
+                  "features": [
+                    {
+                      "type": "light-brightness"
+                    }
+                  ],
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": "auto"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "column_span": 1,
+              "background": {
+                "color": "#4b8ca8",
+                "opacity": 8
+              },
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading": "Climate & weather",
+                  "icon": "mdi:home-thermometer-outline",
+                  "badges": [
+                    {
+                      "type": "entity",
+                      "entity": "sensor.family_room_temperature",
+                      "name": "Family room",
+                      "show_name": true,
+                      "show_state": true,
+                      "color": "red"
+                    }
+                  ],
+                  "grid_options": {
+                    "columns": "full",
+                    "rows": "auto"
+                  }
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.family_room_temperature",
+                  "name": "Family room temperature",
+                  "icon": "mdi:thermometer",
+                  "color": "red",
+                  "features": [
+                    {
+                      "type": "trend-graph",
+                      "hours_to_show": 24,
+                      "detail": true
+                    }
+                  ],
+                  "grid_options": {
+                    "columns": "full",
+                    "rows": "auto"
+                  }
+                },
+                {
+                  "type": "tile",
+                  "entity": "weather.gracia",
+                  "name": "Gràcia forecast",
+                  "icon": "mdi:weather-partly-cloudy",
+                  "color": "state",
+                  "state_content": [
+                    "state",
+                    "temperature",
+                    "humidity"
+                  ],
+                  "features": [
+                    {
+                      "type": "temperature-forecast",
+                      "forecast_type": "daily",
+                      "days_to_show": 5
+                    },
+                    {
+                      "type": "precipitation-forecast",
+                      "forecast_type": "daily",
+                      "days_to_show": 5,
+                      "precipitation_type": "probability"
+                    }
+                  ],
+                  "grid_options": {
+                    "columns": "full",
+                    "rows": "auto"
+                  }
+                }
+              ]
+            }
+          ],
+          "cards": []
         }
       ]
     }
