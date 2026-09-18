@@ -115,7 +115,7 @@
                     },
                     {
                       "type": "tile",
-                      "entity": "input_select.outdoor_lights",
+                      "entity": "switch.outdoor_party_lights",
                       "name": "Outdoor",
                       "hide_state": true,
                       "vertical": true,

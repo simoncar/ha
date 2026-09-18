@@ -1340,17 +1340,17 @@
 - id: '1693419564492'
   alias: Galaxy Art Light Motion
   description: ''
-  trigger:
+  triggers:
   - type: motion
-    platform: device
     device_id: 14a3e6ecd209194f49ecbda65ec89e84
     entity_id: 392172ee573afe78f38c80cd67a9b29e
     domain: binary_sensor
-  condition: []
-  action:
+    trigger: device
+  conditions: []
+  actions:
   - type: turn_on
-    device_id: 26e70ac262459c625c60e7c722fb6ecf
-    entity_id: 586e11fe010a0a261d1f4be75d5d211c
+    device_id: 88eebe8d91c8fc38420629b6f77622e6
+    entity_id: 3b565407200b13f780a68f483eae49e9
     domain: switch
   mode: single
 - id: '1698249463736'
@@ -1446,7 +1446,17 @@
     endpoint: 0
     command_class: 91
     subtype: Endpoint 0 Scene 001
-    value: 2
+    value: '2'
+    trigger: device
+  - device_id: 1d3ea4833ddfda743e05e05368213cd2
+    domain: zwave_js
+    type: event.value_notification.central_scene
+    property: scene
+    property_key: '001'
+    endpoint: 0
+    command_class: 91
+    subtype: Endpoint 0 Scene 001
+    value: '3'
     trigger: device
   - device_id: 4462addf2a7572ee5e6a13e22c8d9e1a
     domain: zwave_js
